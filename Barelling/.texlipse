@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Wed Feb 25 15:22:54 CET 2015
+markTmpDer=true
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=BarellingVorobyev.tex
+outputFile=BarellingVorobyev.pdf
+langSpell=en
+markDer=true
+srcDir=
