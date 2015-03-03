@@ -122,17 +122,28 @@ This template helps you to create a properly formatted \LaTeX\ manuscript.
 
 The finite element program COMSOL Multiphysics 4.4 \cite{Comsol} was used for
 the experimental simulations.
-The entire cube with singular side was modeledwith 3D solid elements.
+The entire cube with singular side was modeled with 3D solid elements.
 The platens of universal testing mashine were not considered in the model.
-Instead the load were directly applied to the top surface of the cube. The
-bottom surface of the cube was completely {\color{red}fastned}. However two
-perpendicular edges of the bottom side were alloud to move in its perpendicular
-direction. The same was done tot he top surface in addition to the applied
-compressive force perpendicular to the surface.
+Instead compressive load was directly applied perpendicularilly to the top
+surface of the cube. 
+The bottom surface of the cube was constrained from the displacement along
+Z axis. However its two mutually orthogonal edges were alloud to move in
+perpendicular directions along X and Y axises. The same was done for the edges in the top surface.
+
+\begin{description}
+\item[{\color {red}Friction}]
+\end{description}
+
+In order to simulate the friction between the platens and the sample we have
+introduced friction parameters that were applied to the mutually orthogonal
+edges on the top and the bottom surface of the cube. Those parameters were
+variating from zero and up to the value which equals to the stiffness along
+Z axis of the cube.
+
 
 {\color {red}Add the picture that is showing the axises and add the
 description to the the text in accodance to that. Add the bottom surface, the
-free adges the friction, the coeffitients, the variability of frictions}
+free edges the friction, the coeffitients, the variability of frictions that }
 \begin{itemize}
 \color{red}
 
