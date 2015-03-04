@@ -19,8 +19,9 @@
 \usepackage{color}
 \usepackage[hidelinks]{hyperref}
 \usepackage{graphicx}
-\graphicspath{ {./figures/} }
 \usepackage{epstopdf}
+\graphicspath{ {./figures/} }
+
 
 
 \modulolinenumbers[5]
@@ -126,16 +127,16 @@ The finite element program COMSOL Multiphysics 4.4 \cite{Comsol} was used for
 the experimental simulations.
 The entire cube with singular side was modeled with 3D solid elements.
 The platens of universal testing mashine were not considered in the model.
-Instead compressive load was directly applied perpendicularilly to the top
-surface of the cube. 
+Instead compressive load was simulated as prescribe displacement and  directly
+applied perpendicularilly to the top surface of the cube in Z direction.
 The bottom surface of the cube was constrained from the displacement along
 Z axis. However its two mutually orthogonal edges were alloud to move in
 perpendicular directions along X and Y axises. The same was done for the edges in the top surface.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.5\textwidth]{CubeFEM.png}
-\caption{\label{fig:figurelbl} An illustration of the quick brown fox \emph{jumping} over the lazy dog.}
+\includegraphics[width=5cm]{CubeFEM.eps}
+\caption{\label{fig:figurelbl} Finite element model of cubic specimen}
 \end{figure}
 
 
