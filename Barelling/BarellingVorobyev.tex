@@ -18,7 +18,9 @@
 \usepackage{lineno}
 \usepackage{color}
 \usepackage[hidelinks]{hyperref}
-
+\usepackage{graphicx}
+\graphicspath{ {./figures/} }
+\usepackage{epstopdf}
 
 
 \modulolinenumbers[5]
@@ -130,15 +132,22 @@ The bottom surface of the cube was constrained from the displacement along
 Z axis. However its two mutually orthogonal edges were alloud to move in
 perpendicular directions along X and Y axises. The same was done for the edges in the top surface.
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{CubeFEM.png}
+\caption{\label{fig:figurelbl} An illustration of the quick brown fox \emph{jumping} over the lazy dog.}
+\end{figure}
+
+
 \begin{description}
 \item[{\color {red}Friction}]
 \end{description}
 
-In order to simulate the friction between the platens and the sample we have
+To simulate the friction between the platens and the sample we have
 introduced friction parameters that were applied to the mutually orthogonal
 edges on the top and the bottom surface of the cube. Those parameters were
-variating from zero and up to the value which equals to the stiffness along
-Z axis of the cube.
+acting as a resistance for displacement variating from zero and up to the value
+which equals to the stiffness along Z axis of the cube.
 
 
 {\color {red}Add the picture that is showing the axises and add the
