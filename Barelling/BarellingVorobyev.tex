@@ -120,20 +120,30 @@ This template helps you to create a properly formatted \LaTeX\ manuscript.
 \item Provide the transition to the rest
 \end{itemize}
 
-\section{Materialss and Methods}
+\section{Materials and Methods}
 \section{Model}
 
 The finite element program COMSOL Multiphysics 4.4 \cite{Comsol} was used for
 the experimental simulations.
-The entire cube with singular side was modeled with 3D solid elements.
-The platens of universal testing mashine were not considered in the model.
-Instead compressive load was simulated as prescribe displacement and  directly
-applied perpendicularilly to the top surface of the cube in Z direction.
-The bottom surface of the cube was constrained from the displacement along
-Z axis. However its two mutually orthogonal edges were alloud to move in
-perpendicular directions along X and Y axises. The same was done for the edges in the top surface.
+The entire cube with singular side was modeled with 3D solid elements. Geometry
+of the speciment was considered to be  The platens of universal testing mashine
+were not considered in the model.
+Instead compressive load was simulated as prescribed displacement and normally
+applied to the top surface of the cube.
+The bottom surface was constrained from the displacement along
+\textit{Z} axis. However mutually perpendicular edges of the bottom and top
+surfaces were alloud to move in perpendicular directions along \textit{X} and
+\textit{Y} axises respectively.
 
-\begin{figure}[h]
+We simulated orthotropic, transverse isotropic and isotropic material behaviour.
+The model was linear elastic. A mesh refining procedures have been performed in
+order to identify the effect of mesh on the accuracy of the results.
+{\textit{\color {red}Add the mesh refining plot from comsol to the paper}}
+
+
+
+
+ \begin{figure}[h]
 \centering
 \includegraphics[width=5cm]{CubeFEM.eps}
 \caption{\label{fig:figurelbl} Finite element model of cubic specimen}
@@ -148,12 +158,12 @@ To simulate the friction between the platens and the sample we have
 introduced friction parameters that were applied to the mutually orthogonal
 edges on the top and the bottom surface of the cube. Those parameters were
 acting as a resistance for displacement variating from zero and up to the value
-which equals to the stiffness along Z axis of the cube.
+which equals to the stiffness along \textit{Z} axis of the cube.
 
 
-{\color {red}Add the picture that is showing the axises and add the
+\textit{{\color {red}Add the picture that is showing the axises and add the
 description to the the text in accodance to that. Add the bottom surface, the
-free edges the friction, the coeffitients, the variability of frictions that }
+free edges the friction, the coeffitients, the variability of frictions that }}
 \begin{itemize}
 \color{red}
 
