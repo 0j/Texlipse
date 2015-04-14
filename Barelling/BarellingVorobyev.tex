@@ -125,34 +125,45 @@ This template helps you to create a properly formatted \LaTeX\ manuscript.
 
 The finite element program COMSOL Multiphysics 4.4 \cite{Comsol} was used for
 the experimental simulations.
-The entire cube with singular side was modeled with 3D solid elements. Geometry
-of the speciment was considered to be  The platens of universal testing mashine
+The entire cube (Figure \ref{fig:cubemesh})  with singular side was modeled with
+3D solid elements.
+Geometry of the speciment was considered to be  The platens of universal testing mashine
 were not considered in the model.
 Instead compressive load was simulated as prescribed displacement and normally
 applied to the top surface of the cube.
 The bottom surface was constrained from the displacement along
 \textit{Z} axis. However mutually perpendicular edges of the bottom and top
-surfaces were aloud to move in perpendicular directions along \textit{X} and
+surfaces were aloud to move in its perpendicular directions along \textit{X} and
 \textit{Y} axises respectively.
 
 We simulated orthotropic, transverse isotropic and isotropic material behaviour.
-The model was linear elastic. A mesh refining procedures have been performed in
-order to identify the effect of mesh on the accuracy of the results.
+The model was linear elastic. A \textit{\color {red}Add the type of mesh} mesh
+was placed on a top surface and \textit{\color{red}swapped} throughout
+the whole geometry.
+In order to identify the effect of number of finite elements a mesh refining procedures
+have been performed.
 {\textit{\color {red}Add the mesh refining plot from comsol to the paper}}
 
 Simulations of experiments in compression are not new. Previousely the
 orthotropic samples were simulated by \cite{Toftegaard1999849} in order to investigate the effect of
 geometrical imperfections of prism samples on identification of engineering
-constants. 
+constants by simulating the strain field in relation to the measurements
+obtained using the strain gauge. 
+Present work uses DSP in order to obtain the experimental strainfield, which
+containes strain deata of observed area and not between two points as it is for the strain gauge. 
+Another simulation was performed by \cite{Chen001}.
+He has simulated the behaviour of the specimien with geometrical
+imperfections on a locked heispherical seat duing the compressive experiments. 
 
 
 
 
 
- \begin{figure}[h]
+\begin{figure}[h]
 \centering
 \includegraphics[width=5cm]{CubeFEM.eps}
-\caption{\label{fig:figurelbl} Finite element model of cubic specimen}
+\label{fig:cubemesh}
+\caption{\label{fig:cubemesh} Finite element model of cubic specimen}
 \end{figure}
 
 
@@ -160,16 +171,17 @@ constants.
 \item[{\color {red}Friction}]
 \end{description}
 
-To simulate the friction between the platens and the sample we have
-introduced friction parameters that were applied to the mutually orthogonal
+The friction between platens and speciemen is consider to be a reason for the
+barrelling formation \textit{\color{red} add citations} To simulate the friction
+between the platens and the sample we have introduced friction parameters that were applied to the mutually orthogonal
 edges on the top and the bottom surface of the cube. Those parameters were
 acting as a resistance for displacement variating from zero and up to the value
 which equals to the stiffness along \textit{Z} axis of the cube.
 
 
-\textit{{\color {red}Add the picture that is showing the axises and add the
+\textit{\color {red}Add the picture that is showing the axises and add the
 description to the the text in accodance to that. Add the bottom surface, the
-free edges the friction, the coeffitients, the variability of frictions that }}
+free edges the friction, the coeffitients, the variability of frictions that }
 \begin{itemize}
 \color{red}
 
