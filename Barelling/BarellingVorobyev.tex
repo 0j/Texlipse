@@ -20,6 +20,9 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{graphicx}
 \usepackage{epstopdf}
+\usepackage{multirow}
+\usepackage{lineno}
+\usepackage{amssymb}
 \graphicspath{ {./figures/} }
 
 
@@ -128,24 +131,24 @@ The entire cube (Figure \ref{fig:cubemesh})  with singular side was modeled with
 3D solid elements.
 The platens of universal testing machine were not considered in the model.
 Instead compressive load was simulated as prescribed displacement and normally
-applied to the top surface of the cube.
-The bottom surface was constrained from the displacement along
-\textit{Z} axis. However mutually perpendicular edges of the bottom and top
-surfaces were aloud to move in its perpendicular directions along \textit{X} and
-\textit{Y} axises respectively.
+applied to the top surface of the cube towards the lower plane. The
+displacement was performed by 0.01 and 0.1 dimensional units which corresponds
+to approximate 1\%  and 10\% of average strain respectively. The bottom surface
+was constrained from the displacement along \textit{Z} axis. However mutually perpendicular edges of the bottom and top surfaces were aloud to move in its perpendicular directions along \textit{X} and \textit{Y} axises respectively.
 
-A \textit{\color {red}Add the type of mesh} mesh
-was placed on a top surface and swept  throughout
-the whole geometry.
-In order to identify the effect of number of finite elements a mesh refining procedures
-have been performed.
-{\textit{\color {red}Add the mesh refining plot from comsol to the paper}}
+A \textit{Free Quad} mesh was placed on a top surface and swept throughout
+the whole geometry using \textit{Quadrilateral} meshing method which generates
+hexahedrons. We have solved the model using different number of FE. The model
+contained 1000 finite elements. This number was identified by solving and
+refining the elements multiple times while identifying best performance vs.
+accuracy of solution. 
 
 \begin{description}
 \item[{\color {red}Material input parameters}]
 \end{description}
 We simulated orthotropic, transverse isotropic and isotropic material behaviour.
-The model was linear elastic. 
+The model was linear elastic. Material properties were experimentally determined
+based on compression tests \textit{insert table with the constants}.  
 
 \begin{description}
 \item[{\color {red}Conclusions for the model}]
@@ -217,6 +220,47 @@ free edges the friction, the coefficients, the variability of frictions that }
 \section*{Acknowledgements}
 
 \section*{References}
+
+
+\pagebreak
+
+\section*{Tables}
+
+\begin{description}
+
+\item[]
+\begin{table}[ht]\
+\caption{Engineering constants used in model} % title of Table
+\centering % used for centering table
+\begin{tabular}{l c c c c c c c c c} % centered columns (4 columns)
+\hline\hline %inserts double horizontal lines
+Model & $E_{1}$ (GPa) & $E_{2}$ (GPa) & $E_{3}$ (GPa) & $\nu_{12}$ & $\nu_{13}$
+& $\nu_{23}$ & $G_{12}$ (GPa) & $G_{13}$ (GPa) & $G_{23}$ (GPa) \\ % inserts
+% table heading
+
+\hline % inserts single horizontal line
+Orthotropic & 1.49 & 0.89 & 12.14 & 0.66 & 0.06 & 0.04 & 0.2 & 0.6 & 0.72 \\
+% inserting body of the table
+%Transverse isotropic & 1.49 & $E_1=E_2$ & 12.14 & 0.66 & 0.06 & 0.04 & 0.2 &
+% 0.6 & 0.72\\
+%Isotropic & 31 & 25 & 415 \\
+ [1ex] % [1ex] adds vertical space
+\hline %inserts single line
+\end{tabular}
+\label{table:nonlin} % is used to refer this table in the text
+\end{table}
+
+\it{\color{red}Check whether i need to add the isotropic parameters and transv
+ortho}
+
+\end{description}
+
+%%%%%%%%%%% VIDEO CAPTIONS
+
+%% If submitting video's as a supplement to the manuscript, include only the video captions here (not the figures).  Videos are uploaded separately in the online Elsevier Editorial Submission process.  If videos are not included, comment out this section.
+
+%% Do not remove the page break here.
+\pagebreak
 
 \bibliography{mybibfile}
 
