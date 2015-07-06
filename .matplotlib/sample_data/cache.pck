@@ -1,0 +1,1 @@
+€}qUHhttps://raw.githubusercontent.com/matplotlib/sample_data/master/msft.csvqU9C:\common\git\.matplotlib\sample_data\ata/master\msft.csvqU*"727b1befe36efde44fb5e2558e02410dad75a390"qN‡s.
