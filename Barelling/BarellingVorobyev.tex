@@ -198,18 +198,12 @@ of thick section composite materials..
 \caption{\label{fig:cubemesh} Finite element model of cubic specimen}
 \end{figure}
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=12cm]{KIsotropBoth.eps}
-\label{fig:cubemesh}
-\caption{\label{fig:KIsotropic} Relations between Young's modulus and spring
-coefficient K for isotropic material with different Poisson's ratios.}
-\end{figure}
-
+\begin{center}% note that \centering uses less vspace...
+\begin{figure}[!ht]
 \pgfplotsset{every axis legend/.append style={
 		at={(0.5,1.03)},
 		anchor=north}}
-\begin{center}% note that \centering uses less vspace...
+
 \begin{tikzpicture}[scale=1]
 
 	\pgfplotstableread{
@@ -240,7 +234,7 @@ K	0.05	0.1	0.15	0.2	0.25	0.3	0.35	0.4	0.45
 
 \begin{axis}[
 name=plot0,height=6cm,width=6cm,
-%    title={Plot title},
+    title={a)},
 %    xlabel={Temperature [\textcelsius]},
     ylabel={Measured stiffness [Pa]},
     xmin=1, xmax=9,
@@ -276,12 +270,11 @@ name=plot0,height=6cm,width=6cm,
 %     \addlegendentry{$\nu$=0.4}
     \addplot table[x=K,y=0.45] {\datatable};
 %     \addlegendentry{$\nu$=0.45}
-
 \end{axis}
 
 \begin{axis}[legend pos=outer north east,
 	name=plot2,at={($(plot0.east)+(1cm,0)$)},anchor=west, height=6cm,width=6cm,
-%    title={Plot title},
+    title={b)},
 %    xlabel={Temperature [\textcelsius]},
 %    ylabel={Measured stiffness [Pa]},
     xmin=1, xmax=9,
@@ -318,14 +311,22 @@ name=plot0,height=6cm,width=6cm,
     \addplot table[x=K,y=0.45] {\datatableA};
    \addlegendentry{$\nu$=0.45}
 
+
 \end{axis}
 
 
 \end{tikzpicture}
 
+\caption{Relations between Young's modulus and spring
+coefficient K for a) isotropic material and b) transverse isotropic material
+with different Poisson's ratios.}
 
 
+
+
+\end{figure}
 \end{center}
+
 
 
 \begin{description}
