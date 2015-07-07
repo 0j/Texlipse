@@ -240,9 +240,6 @@ K	0.05	0.1	0.15	0.2	0.25	0.3	0.35	0.4	0.45
 
 \begin{axis}[
 name=plot0,height=6cm,width=6cm,
-legend columns=3,
-legend pos=north west,
-legend to name=named,
 %    title={Plot title},
 %    xlabel={Temperature [\textcelsius]},
     ylabel={Measured stiffness [Pa]},
@@ -253,34 +250,36 @@ legend to name=named,
     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
     $K=1000$, $K=\infty$}, 
     x tick label style={
-        rotate=60,anchor=east},
-    legend pos=north west,
+    rotate=60,anchor=east},
     ymajorgrids=true,
     grid style=dashed,
 ]
+% \end{axis}    
+% \begin{axis}[legend pos=outer north east]
  
-\addplot table[x=K,y=0.05] {\datatable};
-    \addlegendentry{$\nu$=0.05}
+ 
+    \addplot table[x=K,y=0.05] {\datatable};
+%     \addlegendentry{$\nu$=0.05}
     \addplot table[x=K,y=0.1] {\datatable};
-    \addlegendentry{$\nu$=0.1}
+%     \addlegendentry{$\nu$=0.1}
     \addplot table[x=K,y=0.15] {\datatable};
-    \addlegendentry{$\nu$=0.15}
+%     \addlegendentry{$\nu$=0.15}
     \addplot table[x=K,y=0.2] {\datatable};
-    \addlegendentry{$\nu$=0.2}
+%     \addlegendentry{$\nu$=0.2}
     \addplot table[x=K,y=0.25] {\datatable};
-    \addlegendentry{$\nu$=0.25}
+%     \addlegendentry{$\nu$=0.25}
     \addplot table[x=K,y=0.3] {\datatable};
-    \addlegendentry{$\nu$=0.3}
+%     \addlegendentry{$\nu$=0.3}
     \addplot table[x=K,y=0.35] {\datatable};
-    \addlegendentry{$\nu$=0.35}
+%     \addlegendentry{$\nu$=0.35}
     \addplot table[x=K,y=0.4] {\datatable};
-    \addlegendentry{$\nu$=0.4}
+%     \addlegendentry{$\nu$=0.4}
     \addplot table[x=K,y=0.45] {\datatable};
-    \addlegendentry{$\nu$=0.45}
+%     \addlegendentry{$\nu$=0.45}
 
 \end{axis}
 
-\begin{axis}[
+\begin{axis}[legend pos=outer north east,
 	name=plot2,at={($(plot0.east)+(1cm,0)$)},anchor=west, height=6cm,width=6cm,
 %    title={Plot title},
 %    xlabel={Temperature [\textcelsius]},
@@ -292,39 +291,40 @@ legend to name=named,
     xtick={1,...,9},
 %    ytick={0,20,40,60,80},
     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
-    $K=1000$, $K=\infty$}, 
+    $K=1000$, $K=\infty$},
     x tick label style={
         rotate=60,anchor=east},
-    legend pos=north west,
     ymajorgrids=true,
     grid style=dashed,
     bar shift=0pt
 ]
- 
+
 	\addplot table[x=K,y=0.05] {\datatableA};
-%    \addlegendentry{$\nu$=0.05}
+    \addlegendentry{$\nu$=0.05}
     \addplot table[x=K,y=0.1] {\datatableA};
-%    \addlegendentry{$\nu$=0.1}
+    \addlegendentry{$\nu$=0.1}
     \addplot table[x=K,y=0.15] {\datatableA};
-%   \addlegendentry{$\nu$=0.15}
+   \addlegendentry{$\nu$=0.15}
     \addplot table[x=K,y=0.2] {\datatableA};
-%    \addlegendentry{$\nu$=0.2}
+    \addlegendentry{$\nu$=0.2}
     \addplot table[x=K,y=0.25] {\datatableA};
-%    \addlegendentry{$\nu$=0.25}
+    \addlegendentry{$\nu$=0.25}
     \addplot table[x=K,y=0.3] {\datatableA};
-%    \addlegendentry{$\nu$=0.3}
+    \addlegendentry{$\nu$=0.3}
     \addplot table[x=K,y=0.35] {\datatableA};
-%    \addlegendentry{$\nu$=0.35}
+    \addlegendentry{$\nu$=0.35}
     \addplot table[x=K,y=0.4] {\datatableA};
-%    \addlegendentry{$\nu$=0.4}
+    \addlegendentry{$\nu$=0.4}
     \addplot table[x=K,y=0.45] {\datatableA};
-%    \addlegendentry{$\nu$=0.45}
+   \addlegendentry{$\nu$=0.45}
 
 \end{axis}
+
+
 \end{tikzpicture}
 
 
-\ref{named}
+
 \end{center}
 
 
