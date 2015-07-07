@@ -23,6 +23,7 @@
 \usepackage{multirow}
 \usepackage{lineno}
 \usepackage{amssymb}
+\usepackage{pgfplots}
 \graphicspath{ {./figures/} }
 
 
@@ -201,6 +202,60 @@ of thick section composite materials.
 \caption{\label{fig:KIsotropic} Relation between Young's modulus and spring
 coefficient K for isotropic material with different Poisson's ratios.}
 \end{figure}
+
+\begin{tikzpicture}[scale=1]
+	\pgfplotstableread{
+	K	0.05	0.1	0.15	0.2	0.25	0.3	0.35	0.4	0.45
+1	1	1	1	1	1	1	1	1	1
+2	1.00001	1.00002	1.00004	1.00008	1.00013	1.00018	1.00025	1.00033	1.00042
+3	1.00005	1.00019	1.00043	1.00076	1.00121	1.00174	1.00241	1.00319	1.00412
+4	1.00032	1.00127	1.00283	1.00505	1.00802	1.01194	1.01722	1.02472	1.03666
+5	1.00075	1.00292	1.00645	1.0115	1.01853	1.02879	1.04539	1.07813	1.18128
+6	1.00087	1.00335	1.0074	1.01319	1.02137	1.03365	1.0547	1.10164	1.34588
+7	1.00089	1.00341	1.00751	1.01339	1.0217	1.03423	1.05589	1.10502	1.39391
+8	1.00089	1.00341	1.00752	1.0134	1.02174	1.03429	1.05602	1.10538	1.39995
+9	1.00089	1.00341	1.00752	1.01341	1.02174	1.0343	1.05603	1.10542	1.40064
+}\datatable
+\begin{axis}[
+%    title={Plot title},
+%    xlabel={Temperature [\textcelsius]},
+    ylabel={Measured stiffness [Pa]},
+    xmin=1, xmax=9,
+    ymin=0.99, ymax=1.5,
+    xtick={1,...,9},
+%    ytick={0,20,40,60,80},
+    xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
+    $K=1000$, $K=\infty$}, 
+    x tick label style={
+        rotate=60,anchor=east},
+    legend pos=north west,
+    ymajorgrids=true,
+    grid style=dashed,
+    bar shift=0pt
+]
+ 
+\addplot table[x=K,y=0.05] {\datatable};
+    \addlegendentry{$\nu$=0.05}
+    \addplot table[x=K,y=0.1] {\datatable};
+    \addlegendentry{$\nu$=0.1}
+    \addplot table[x=K,y=0.15] {\datatable};
+    \addlegendentry{$\nu$=0.15}
+    \addplot table[x=K,y=0.2] {\datatable};
+    \addlegendentry{$\nu$=0.2}
+    \addplot table[x=K,y=0.25] {\datatable};
+    \addlegendentry{$\nu$=0.25}
+    \addplot table[x=K,y=0.3] {\datatable};
+    \addlegendentry{$\nu$=0.3}
+    \addplot table[x=K,y=0.35] {\datatable};
+    \addlegendentry{$\nu$=0.35}
+    \addplot table[x=K,y=0.4] {\datatable};
+    \addlegendentry{$\nu$=0.4}
+    \addplot table[x=K,y=0.45] {\datatable};
+    \addlegendentry{$\nu$=0.45}
+
+\end{axis}
+\end{tikzpicture}
+
 
 
 \begin{description}
