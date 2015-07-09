@@ -367,12 +367,15 @@ nuxy	tr0	tr0.1	trINF	i0	i0.1	iINF
 0.25	1	1.005	1.00600	1	1.018	1.05900
 0.3	1	1.007	1.00900	1	1.03	1.09800
 0.35	1	1.01	1.01300	1	1.046	1.16100
-0.4	1	1.015	1.01800	1	1.074	1.27500
+0.4	1	1.0145	1.01800	1	1.074	1.27500
 0.45	1	1.02	1.02600	1	1.129	1.53400
 }\experiment
 
+
+%plot transv iso total area DSP
+
 \begin{axis}[
-name=plot0,height=6cm,width=6cm,
+name=b1,height=5cm,width=4cm,
     title={a)},
 %    xlabel={Temperature [\textcelsius]},
     ylabel={Measured stiffness [Pa]},
@@ -393,21 +396,87 @@ name=plot0,height=6cm,width=6cm,
 % \begin{axis}[legend pos=outer north east]
  
  
-    \addplot table[x=nuxy,y=tr0	] {\totarea};
+    \addplot table[x=nuxy,y=tr0	] {\totarea}; \label{k1}
 %     \addlegendentry{$\nu$=0.05}
-    \addplot table[x=nuxy,y=tr0.1 ] {\totarea};
+    \addplot table[x=nuxy,y=tr0.1 ] {\totarea}; \label{k2}
 %     \addlegendentry{$\nu$=0.1}
-    \addplot table[x=nuxy,y=trINF ] {\totarea};
+    \addplot table[x=nuxy,y=trINF ] {\totarea}; \label{k3}
 %     \addlegendentry{$\nu$=0.15}
+
+\end{axis}
+
+
+%plot transviso chosen area  DSP
+
+\begin{axis}[legend pos=outer north east,
+	name=b2,at={($(b1.east)+(1cm,0)$)},anchor=west, height=5cm, width=4cm,
+    title={b)},
+    xlabel={Poisson's ratio [-]},
+%    ylabel={Measured stiffness [Pa]},
+    xmin=0.05, xmax=0.45,
+    ymin=0.9999, ymax=1.01,
+    yticklabel style={/pgf/number format/fixed,
+                  /pgf/number format/precision=3},
+%     xtick={1,...,9},
+%    ytick={0,20,40,60,80},
+%     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
+%     $K=1000$, $K=\infty$},
+%     x tick label style={
+%         rotate=60,anchor=east},
+    ymajorgrids=true,
+    grid style=dashed,
+    bar shift=0pt
+]
+
+    \addplot table[x=nuxy,y=tr0	] {\chosenarea}; \label{k1}
+%     \addlegendentry{$\nu$=0.05}
+    \addplot table[x=nuxy,y=tr0.1 ] {\chosenarea}; \label{k2}
+%     \addlegendentry{$\nu$=0.1}
+    \addplot table[x=nuxy,y=trINF ] {\chosenarea}; \label{k3}
+%     \addlegendentry{$\nu$=0.15}
+
+%Experimental approach
+
+\end{axis}
+
+
+\begin{axis}[legend pos=outer north east,
+	name=b3,at={($(b2.east)+(1cm,0)$)},anchor=west, height=5cm,width=4cm,
+    title={c)},
+%    xlabel={Temperature [\textcelsius]},
+%    ylabel={Measured stiffness [Pa]},
+    xmin=0.05, xmax=0.45,
+    ymin=0.9999, ymax=1.027,
+    yticklabel style={/pgf/number format/fixed,
+                  /pgf/number format/precision=3},
+%     xtick={1,...,9},
+%    ytick={0,20,40,60,80},
+%     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
+%     $K=1000$, $K=\infty$},
+%     x tick label style={
+%         rotate=60,anchor=east},
+    ymajorgrids=true,
+    grid style=dashed,
+    bar shift=0pt
+]
+
+    \addplot table[x=nuxy,y=tr0	] {\experiment}; \label{k1}
+%     \addlegendentry{$\nu$=0.05}
+    \addplot table[x=nuxy,y=tr0.1 ] {\experiment}; \label{k2}
+%     \addlegendentry{$\nu$=0.1}
+    \addplot table[x=nuxy,y=trINF ] {\experiment}; \label{k3}
+%     \addlegendentry{$\nu$=0.15}
+
+
+
 
 \end{axis}
 
 
 \end{tikzpicture}
 
-\caption{Relations between Young's modulus and spring
-coefficient K for a) isotropic material and b) transverse isotropic material
-with different Poisson's ratios.}
+\caption{\color{red} \ldots for spring coefficients $K=0$ (\ref{k1}), $K=0.1$
+(\ref{k2}) and $K=\infty$ (\ref{k3}) }
 
 
 \end{figure}
