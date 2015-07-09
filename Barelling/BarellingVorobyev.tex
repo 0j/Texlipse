@@ -19,6 +19,7 @@
 \usepackage{color}
 \usepackage[hidelinks]{hyperref}
 \usepackage{graphicx}
+\usepackage{caption}
 \usepackage{epstopdf}
 \usepackage{multirow}
 \usepackage{lineno}
@@ -317,6 +318,8 @@ name=plot0,height=6cm,width=6cm,
 
 \end{tikzpicture}
 
+
+\captionsetup{justification=centering}
 \caption{Relations between Young's modulus and spring
 coefficient K for a) isotropic material and b) transverse isotropic material
 with different Poisson's ratios.}
@@ -474,9 +477,12 @@ name=b1,height=5cm,width=4cm,
 
 
 \end{tikzpicture}
-
-\caption{\color{red} \ldots for spring coefficients $K=0$ (\ref{k1}), $K=0.1$
-(\ref{k2}) and $K=\infty$ (\ref{k3}) }
+\captionsetup{justification=centering}
+\caption{Measured stiffness vs. given Poisson's ratio
+($\nu_{31}$, $\nu_{32}$) in transverse-isotropic material for spring
+coefficients $K=0$ (\ref{k1}), $K=0.1$ (\ref{k2}) and $K=\infty$ (\ref{k3});\\
+\color{red}{a) total area of interest, b) chosen area of interest c)
+experiment.}}
 
 
 \end{figure}
@@ -526,6 +532,176 @@ free edges the friction, the coefficients, the variability of frictions that }
 		material
 		\item 3 measuring methods were compared {\color{red} add the plots}
 	\end{enumerate}
+
+
+%poisson's vs poisson's dependency
+
+\begin{center}
+\begin{figure}[!ht]
+\pgfplotsset{every axis legend/.append style={
+		at={(0.5,1.03)},
+		anchor=north}}
+
+\begin{tikzpicture}[scale=1]
+
+\pgfplotstableread{
+nuxy	tr0	tr0.1	trINF	i0	i0.1	iINF
+0.05	0.05	0.04161	0.03981	0.05	0.04691	0.04119
+0.1	0.1	0.08404	0.08063	0.1	0.0942	0.08349
+0.15	0.15	0.12728	0.1224	0.15	0.14194	0.1269
+0.2	0.2	0.1713	0.16507	0.2	0.1902	0.17142
+0.25	0.25	0.21607	0.2086	0.25	0.23904	0.21698
+0.3	0.3	0.26158	0.25295	0.3	0.28856	0.26348
+0.35	0.35	0.30782	0.29808	0.35	0.33888	0.31078
+0.4	0.4	0.35479	0.34396	0.4	0.39023	0.35826
+0.45	0.45	0.40251	0.39058	0.45	0.44309	0.39141
+
+}\nutotarea
+
+\pgfplotstableread{
+nuxy	tr0	tr0.1	trINF	i0	i0.1	iINF
+0.05	0.05	0.0463	0.0455	0.05	0.04906	0.04728
+0.1	0.1	0.09342	0.09201	0.1	0.09847	0.09552
+0.15	0.15	0.14133	0.13944	0.15	0.14821	0.1447
+0.2	0.2	0.18995	0.18774	0.2	0.19829	0.19481
+0.25	0.25	0.23926	0.23685	0.25	0.24866	0.24584
+0.3	0.3	0.28918	0.28671	0.3	0.29933	0.29782
+0.35	0.35	0.33969	0.33727	0.35	0.35026	0.35076
+0.4	0.4	0.39072	0.38847	0.4	0.40142	0.40477
+0.45	0.45	0.44224	0.44027	0.45	0.45283	0.46032
+}\nuchosenarea
+
+\pgfplotstableread{
+nuxy	tr0	tr0.1	trINF	i0	i0.1	iINF
+0.05	0.05	0.0416	0.03970	0.05	0.04690	0.04090
+0.1	0.1	0.0839	0.08040	0.1	0.09410	0.08250
+0.15	0.15	0.127	0.12200	0.15	0.14200	0.12500
+0.2	0.2	0.171	0.16400	0.2	0.19000	0.16800
+0.25	0.25	0.215	0.20700	0.25	0.23900	0.21300
+0.3	0.3	0.26	0.25100	0.3	0.28800	0.26000
+0.35	0.35	0.306	0.29600	0.35	0.33900	0.30900
+0.4	0.4	0.353	0.34200	0.4	0.39000	0.36200
+0.45	0.45	0.401	0.38800	0.45	0.44300	0.41900
+
+}\nuexperiment
+
+
+
+
+\begin{axis}[
+name=b1,height=5cm,width=4cm,
+    title={a)},
+%    xlabel={Temperature [\textcelsius]},
+    ylabel={Measured stiffness [Pa]},
+    xmin=0.05, xmax=0.45,
+    ymin=0.45, ymax=0.45,
+        yticklabel style={/pgf/number format/fixed,
+                  /pgf/number format/precision=3},
+%     xtick={1,...,9},
+%    ytick={0,20,40,60,80},
+%     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
+%     $K=1000$, $K=\infty$}, 
+%     x tick label style={
+%     rotate=60,anchor=east},
+    ymajorgrids=true,
+    grid style=dashed,
+]
+% \end{axis}    
+% \begin{axis}[legend pos=outer north east]
+ 
+ 
+    \addplot table[x=nuxy,y=tr0	] {\nutotarea}; \label{nuk1}
+%     \addlegendentry{$\nu$=0.05}
+    \addplot table[x=nuxy,y=tr0.1 ] {\nutotarea}; \label{nuk2}
+%     \addlegendentry{$\nu$=0.1}
+    \addplot table[x=nuxy,y=trINF ] {\nutotarea}; \label{nuk3}
+%     \addlegendentry{$\nu$=0.15}
+
+\end{axis}
+
+
+%plot transviso chosen area  DSP
+
+% \begin{axis}[legend pos=outer north east,
+% 	name=b2,at={($(b1.east)+(1cm,0)$)},anchor=west, height=5cm, width=4cm,
+%     title={b)},
+%     xlabel={Poisson's ratio [-]},
+% %    ylabel={Measured stiffness [Pa]},
+%     xmin=0.05, xmax=0.45,
+%     ymin=0.9999, ymax=1.01,
+%     yticklabel style={/pgf/number format/fixed,
+%                   /pgf/number format/precision=3},
+% %     xtick={1,...,9},
+% %    ytick={0,20,40,60,80},
+% %     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
+% %     $K=1000$, $K=\infty$},
+% %     x tick label style={
+% %         rotate=60,anchor=east},
+%     ymajorgrids=true,
+%     grid style=dashed,
+%     bar shift=0pt
+% ]
+% 
+%     \addplot table[x=nuxy,y=tr0	] {\chosenarea}; \label{k1}
+% %     \addlegendentry{$\nu$=0.05}
+%     \addplot table[x=nuxy,y=tr0.1 ] {\chosenarea}; \label{k2}
+% %     \addlegendentry{$\nu$=0.1}
+%     \addplot table[x=nuxy,y=trINF ] {\chosenarea}; \label{k3}
+% %     \addlegendentry{$\nu$=0.15}
+% 
+% %Experimental approach
+% 
+% \end{axis}
+% 
+% 
+% \begin{axis}[legend pos=outer north east,
+% 	name=b3,at={($(b2.east)+(1cm,0)$)},anchor=west, height=5cm,width=4cm,
+%     title={c)},
+% %    xlabel={Temperature [\textcelsius]},
+% %    ylabel={Measured stiffness [Pa]},
+%     xmin=0.05, xmax=0.45,
+%     ymin=0.9999, ymax=1.027,
+%     yticklabel style={/pgf/number format/fixed,
+%                   /pgf/number format/precision=3},
+% %     xtick={1,...,9},
+% %    ytick={0,20,40,60,80},
+% %     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
+% %     $K=1000$, $K=\infty$},
+% %     x tick label style={
+% %         rotate=60,anchor=east},
+%     ymajorgrids=true,
+%     grid style=dashed,
+%     bar shift=0pt
+% ]
+% 
+%     \addplot table[x=nuxy,y=tr0	] {\experiment}; \label{k1}
+% %     \addlegendentry{$\nu$=0.05}
+%     \addplot table[x=nuxy,y=tr0.1 ] {\experiment}; \label{k2}
+% %     \addlegendentry{$\nu$=0.1}
+%     \addplot table[x=nuxy,y=trINF ] {\experiment}; \label{k3}
+% %     \addlegendentry{$\nu$=0.15}
+
+
+
+
+% \end{axis}
+
+
+\end{tikzpicture}
+\captionsetup{justification=centering}
+\caption{Measured stiffness vs. given Poisson's ratio
+($\nu_{31}$, $\nu_{32}$) in transverse-isotropic material for spring
+coefficients $K=0$ (\ref{k1}), $K=0.1$ (\ref{k2}) and $K=\infty$ (\ref{k3});\\
+\color{red}{a) total area of interest, b) chosen area of interest c)
+experiment.}}
+
+
+\end{figure}
+\end{center}
+
+
+
+
 
 
 
