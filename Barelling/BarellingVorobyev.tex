@@ -532,9 +532,11 @@ free edges the friction, the coefficients, the variability of frictions that }
 		material
 		\item 3 measuring methods were compared {\color{red} add the plots}
 	\end{enumerate}
+\end{itemize}
 
 
 %poisson's vs poisson's dependency
+\color{black}
 
 \begin{center}
 \begin{figure}[!ht]
@@ -589,12 +591,12 @@ nuxy	tr0	tr0.1	trINF	i0	i0.1	iINF
 
 
 \begin{axis}[
-name=b1,height=5cm,width=4cm,
+name=c1,height=4cm,width=4cm,
     title={a)},
 %    xlabel={Temperature [\textcelsius]},
-    ylabel={Measured stiffness [Pa]},
+    ylabel={Measure Poisson's ratio [-]},
     xmin=0.05, xmax=0.45,
-    ymin=0.45, ymax=0.45,
+    ymin=0.05, ymax=0.45,
         yticklabel style={/pgf/number format/fixed,
                   /pgf/number format/precision=3},
 %     xtick={1,...,9},
@@ -620,76 +622,76 @@ name=b1,height=5cm,width=4cm,
 \end{axis}
 
 
-%plot transviso chosen area  DSP
+plot transviso chosen area  DSP
 
-% \begin{axis}[legend pos=outer north east,
-% 	name=b2,at={($(b1.east)+(1cm,0)$)},anchor=west, height=5cm, width=4cm,
-%     title={b)},
-%     xlabel={Poisson's ratio [-]},
-% %    ylabel={Measured stiffness [Pa]},
-%     xmin=0.05, xmax=0.45,
-%     ymin=0.9999, ymax=1.01,
+\begin{axis}[legend pos=outer north east,
+	name=c2,at={($(c1.east)+(1cm,0)$)},anchor=west, height=4cm, width=4cm,
+    title={b)},
+    xlabel={Given Poisson's ratio [-]},
+%    ylabel={Measured stiffness [Pa]},
+    xmin=0.05, xmax=0.45,
+    ymin=0.05, ymax=0.45,
 %     yticklabel style={/pgf/number format/fixed,
 %                   /pgf/number format/precision=3},
-% %     xtick={1,...,9},
-% %    ytick={0,20,40,60,80},
-% %     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
-% %     $K=1000$, $K=\infty$},
-% %     x tick label style={
-% %         rotate=60,anchor=east},
-%     ymajorgrids=true,
-%     grid style=dashed,
-%     bar shift=0pt
-% ]
-% 
-%     \addplot table[x=nuxy,y=tr0	] {\chosenarea}; \label{k1}
-% %     \addlegendentry{$\nu$=0.05}
-%     \addplot table[x=nuxy,y=tr0.1 ] {\chosenarea}; \label{k2}
-% %     \addlegendentry{$\nu$=0.1}
-%     \addplot table[x=nuxy,y=trINF ] {\chosenarea}; \label{k3}
-% %     \addlegendentry{$\nu$=0.15}
-% 
-% %Experimental approach
-% 
-% \end{axis}
-% 
-% 
-% \begin{axis}[legend pos=outer north east,
-% 	name=b3,at={($(b2.east)+(1cm,0)$)},anchor=west, height=5cm,width=4cm,
-%     title={c)},
-% %    xlabel={Temperature [\textcelsius]},
-% %    ylabel={Measured stiffness [Pa]},
-%     xmin=0.05, xmax=0.45,
-%     ymin=0.9999, ymax=1.027,
+%     xtick={1,...,9},
+%    ytick={0,20,40,60,80},
+%     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
+%     $K=1000$, $K=\infty$},
+%     x tick label style={
+%         rotate=60,anchor=east},
+    ymajorgrids=true,
+    grid style=dashed,
+    bar shift=0pt
+]
+
+    \addplot table[x=nuxy,y=tr0	] {\nuchosenarea}; \label{nuk1}
+%     \addlegendentry{$\nu$=0.05}
+    \addplot table[x=nuxy,y=tr0.1 ] {\nuchosenarea}; \label{nuk2}
+%     \addlegendentry{$\nu$=0.1}
+    \addplot table[x=nuxy,y=trINF ] {\nuchosenarea}; \label{nuk3}
+%     \addlegendentry{$\nu$=0.15}
+
+%Experimental approach
+
+\end{axis}
+
+
+\begin{axis}[legend pos=outer north east,
+	name=c3,at={($(c2.east)+(1cm,0)$)},anchor=west, height=4cm,width=4cm,
+    title={c)},
+%    xlabel={Temperature [\textcelsius]},
+%    ylabel={Measured stiffness [Pa]},
+    xmin=0.05, xmax=0.45,
+    ymin=0.05, ymax=0.45,
 %     yticklabel style={/pgf/number format/fixed,
 %                   /pgf/number format/precision=3},
-% %     xtick={1,...,9},
-% %    ytick={0,20,40,60,80},
-% %     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
-% %     $K=1000$, $K=\infty$},
-% %     x tick label style={
-% %         rotate=60,anchor=east},
-%     ymajorgrids=true,
-%     grid style=dashed,
-%     bar shift=0pt
-% ]
-% 
-%     \addplot table[x=nuxy,y=tr0	] {\experiment}; \label{k1}
-% %     \addlegendentry{$\nu$=0.05}
-%     \addplot table[x=nuxy,y=tr0.1 ] {\experiment}; \label{k2}
-% %     \addlegendentry{$\nu$=0.1}
-%     \addplot table[x=nuxy,y=trINF ] {\experiment}; \label{k3}
-% %     \addlegendentry{$\nu$=0.15}
+%     xtick={1,...,9},
+%    ytick={0,20,40,60,80},
+%     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
+%     $K=1000$, $K=\infty$},
+%     x tick label style={
+%         rotate=60,anchor=east},
+    ymajorgrids=true,
+    grid style=dashed,
+    bar shift=0pt
+]
+
+    \addplot table[x=nuxy,y=tr0	] {\nuexperiment}; \label{nuk1}
+%     \addlegendentry{$\nu$=0.05}
+    \addplot table[x=nuxy,y=tr0.1 ] {\nuexperiment}; \label{nuk2}
+%     \addlegendentry{$\nu$=0.1}
+    \addplot table[x=nuxy,y=trINF ] {\nuexperiment}; \label{nuk3}
+%     \addlegendentry{$\nu$=0.15}
 
 
 
 
-% \end{axis}
+\end{axis}
 
 
 \end{tikzpicture}
 \captionsetup{justification=centering}
-\caption{Measured stiffness vs. given Poisson's ratio
+\caption{Measured vs. given Poisson's ratio
 ($\nu_{31}$, $\nu_{32}$) in transverse-isotropic material for spring
 coefficients $K=0$ (\ref{k1}), $K=0.1$ (\ref{k2}) and $K=\infty$ (\ref{k3});\\
 \color{red}{a) total area of interest, b) chosen area of interest c)
@@ -703,8 +705,8 @@ experiment.}}
 
 
 
-
-
+\color{red}
+\begin{itemize}
 \item Use diagrams and/or tables, objective and truthful presentation
 \item Results and discussion distinguishable
 \item New and old results and discussion
