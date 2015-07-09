@@ -239,7 +239,7 @@ name=plot0,height=6cm,width=6cm,
 %    xlabel={Temperature [\textcelsius]},
     ylabel={Measured stiffness [Pa]},
     xmin=1, xmax=9,
-    ymin=0.99, ymax=1.45,
+    ymin=0.99, ymax=1.5,
     xtick={1,...,9},
 %    ytick={0,20,40,60,80},
     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
@@ -350,15 +350,15 @@ nuxy	tr0	tr0.1	trINF	i0	i0.1	iINF
 
 \pgfplotstableread{
 nuxy	tr0	tr0.1	trINF	i0	i0.1	iINF
-0.05	1	1.00002	1.00011	1	1.00005	1.00013
-0.1	1	1.00006	1.00042	1	1.00015	1.00044
-0.15	1	1.00012	1.00094	1	1.00026	1.00078
-0.2	1	1.00018	1.00168	1	1.00033	1.00101
-0.25	1	1.00023	1.00264	1	1.0003	1.00092
-0.3	1	1.00026	1.00386	1	1.00008	1.00026
-0.35	1	1.00025	1.00538	1	0.99955	0.99847
-0.4	1	1.0002	1.00728	1	0.9984	0.99423
-0.45	1	1.00008	1.00966	1	0.99538	0.98165
+0.05	1	1.00002	1.00002	1	1.00005	1.00013
+0.1	1	1.00006	1.00007	1	1.00015	1.00044
+0.15	1	1.00012	1.00014	1	1.00026	1.00078
+0.2	1	1.00018	1.00022	1	1.00033	1.00101
+0.25	1	1.00023	1.00028	1	1.0003	1.00092
+0.3	1	1.00026	1.00031	1	1.00008	1.00026
+0.35	1	1.00025	1.00031	1	0.99955	0.99847
+0.4	1	1.0002	1.00024	1	0.9984	0.99423
+0.45	1	1.00008	1.0001	1	0.99538	0.98165
 }\chosenarea
 
 \pgfplotstableread{
@@ -412,14 +412,14 @@ name=b1,height=5cm,width=4cm,
 %plot transviso chosen area  DSP
 
 \begin{axis}[legend pos=outer north east,
-	name=b2,at={($(b1.east)+(1cm,0)$)},anchor=west, height=5cm, width=4cm,
+	name=b2,at={($(b1.east)+(1.5cm,0)$)},anchor=west, height=5cm, width=4cm,
     title={b)},
     xlabel={Poisson's ratio [-]},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0.05, xmax=0.45,
-    ymin=0.9999, ymax=1.01,
+    ymin=0.99999, ymax=1.0004,
     yticklabel style={/pgf/number format/fixed,
-                  /pgf/number format/precision=3},
+                  /pgf/number format/precision=4},
 %     xtick={1,...,9},
 %    ytick={0,20,40,60,80},
 %     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
@@ -428,6 +428,7 @@ name=b1,height=5cm,width=4cm,
 %         rotate=60,anchor=east},
     ymajorgrids=true,
     grid style=dashed,
+%     scaled y ticks=base 10:3,
     bar shift=0pt
 ]
 
@@ -444,12 +445,12 @@ name=b1,height=5cm,width=4cm,
 
 
 \begin{axis}[legend pos=outer north east,
-	name=b3,at={($(b2.east)+(1cm,0)$)},anchor=west, height=5cm,width=4cm,
+	name=b3,at={($(b2.east)+(1.5cm,0)$)},anchor=west, height=5cm,width=4cm,
     title={c)},
 %    xlabel={Temperature [\textcelsius]},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0.05, xmax=0.45,
-    ymin=0.9999, ymax=1.027,
+    ymin=0.9999, ymax=1.03,
     yticklabel style={/pgf/number format/fixed,
                   /pgf/number format/precision=3},
 %     xtick={1,...,9},
@@ -701,6 +702,13 @@ experiment.}}
 \end{figure}
 \end{center}
 
+%Data for the plot showing the stability and independency of Emod
+% Emodgiven	0	tr0.1	iso0.1	tr\infty	iso\infty
+% 1	1	1.00638	1.02469	1.00797	0.89131
+% 2	2	2.01276	2.04938	2.01595	1.78262
+% 3	3	3.01914	3.07408	3.02392	2.67393
+% 4	4	4.02551	4.09877	4.0319	3.56524
+% 5	5	5.03189	5.12346	5.03987	4.45655
 
 
 
