@@ -320,8 +320,94 @@ name=plot0,height=6cm,width=6cm,
 \caption{Relations between Young's modulus and spring
 coefficient K for a) isotropic material and b) transverse isotropic material
 with different Poisson's ratios.}
+\end{figure}
+
+\end{center}
+
+\begin{center}
+\begin{figure}[!ht]
+\pgfplotsset{every axis legend/.append style={
+		at={(0.5,1.03)},
+		anchor=north}}
+
+\begin{tikzpicture}[scale=1]
+
+\pgfplotstableread{
+nuxy	tr0	tr0.1	trINF	i0	i0.1	iINF
+0.05	1	1.00009	1.00011	1	1.00032	1.00089
+0.1	1	1.00035	1.00042	1	1.00127	1.00341
+0.15	1	1.00078	1.00094	1	1.00283	1.00752
+0.2	1	1.00139	1.00168	1	1.00506	1.01341
+0.25	1	1.00218	1.00264	1	1.00802	1.02174
+0.3	1	1.00318	1.00386	1	1.01194	1.0343
+0.35	1	1.00442	1.00538	1	1.01722	1.05603
+0.4	1	1.00593	1.00728	1	1.02472	1.10542
+0.45	1	1.00781	1.00966	1	1.03667	1.40064
+}\totarea
+
+\pgfplotstableread{
+nuxy	tr0	tr0.1	trINF	i0	i0.1	iINF
+0.05	1	1.00002	1.00011	1	1.00005	1.00013
+0.1	1	1.00006	1.00042	1	1.00015	1.00044
+0.15	1	1.00012	1.00094	1	1.00026	1.00078
+0.2	1	1.00018	1.00168	1	1.00033	1.00101
+0.25	1	1.00023	1.00264	1	1.0003	1.00092
+0.3	1	1.00026	1.00386	1	1.00008	1.00026
+0.35	1	1.00025	1.00538	1	0.99955	0.99847
+0.4	1	1.0002	1.00728	1	0.9984	0.99423
+0.45	1	1.00008	1.00966	1	0.99538	0.98165
+}\chosenarea
+
+\pgfplotstableread{
+nuxy	tr0	tr0.1	trINF	i0	i0.1	iINF
+0.05	1	1	1.00000	1	1.001	1.00200
+0.1	1	1.001	1.00100	1	1.002	1.00700
+0.15	1	1.002	1.00200	1	1.006	1.01700
+0.2	1	1.003	1.00300	1	1.011	1.03400
+0.25	1	1.005	1.00600	1	1.018	1.05900
+0.3	1	1.007	1.00900	1	1.03	1.09800
+0.35	1	1.01	1.01300	1	1.046	1.16100
+0.4	1	1.015	1.01800	1	1.074	1.27500
+0.45	1	1.02	1.02600	1	1.129	1.53400
+}\experiment
+
+\begin{axis}[
+name=plot0,height=6cm,width=6cm,
+    title={a)},
+%    xlabel={Temperature [\textcelsius]},
+    ylabel={Measured stiffness [Pa]},
+    xmin=0.05, xmax=0.45,
+    ymin=0.9999, ymax=1.01,
+        yticklabel style={/pgf/number format/fixed,
+                  /pgf/number format/precision=3},
+%     xtick={1,...,9},
+%    ytick={0,20,40,60,80},
+%     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
+%     $K=1000$, $K=\infty$}, 
+%     x tick label style={
+%     rotate=60,anchor=east},
+    ymajorgrids=true,
+    grid style=dashed,
+]
+% \end{axis}    
+% \begin{axis}[legend pos=outer north east]
+ 
+ 
+    \addplot table[x=nuxy,y=tr0	] {\totarea};
+%     \addlegendentry{$\nu$=0.05}
+    \addplot table[x=nuxy,y=tr0.1 ] {\totarea};
+%     \addlegendentry{$\nu$=0.1}
+    \addplot table[x=nuxy,y=trINF ] {\totarea};
+%     \addlegendentry{$\nu$=0.15}
+
+\end{axis}
 
 
+\end{tikzpicture}
+
+\caption{Relations between Young's modulus and spring
+coefficient K for a) isotropic material and b) transverse isotropic material
+with different Poisson's ratios.}
 
 
 \end{figure}
