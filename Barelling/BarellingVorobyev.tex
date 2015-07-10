@@ -25,7 +25,9 @@
 \usepackage{lineno}
 \usepackage{amssymb}
 \usepackage{pgfplots}
+\usepackage{tikz}
 \usetikzlibrary{matrix}
+\usetikzlibrary{spy}
 \usepgfplotslibrary{groupplots}
 \pgfplotsset{compat=newest}
 \graphicspath{ {./figures/} }
@@ -704,12 +706,13 @@ experiment.}}
 
 \begin{center}
 \begin{figure}[!ht]
-\pgfplotsset{every axis legend/.append style={
-		at={(0.5,1.03)},
-		anchor=north}}
+% \pgfplotsset{
+% 	every axis plot post/.append style=
+% 		{mark=none}}
 
-\begin{tikzpicture}[scale=1]
-
+\begin{tikzpicture}
+ [spy using outlines={circle,black,magnification=5,size=1cm,
+ connect spies}]
 % Data for the plot showing the stability and independency of Emod
 
 \pgfplotstableread{
@@ -742,26 +745,36 @@ name=c1,height=5cm,width=5cm,
     grid style=dashed,
 ]
 
-    \addplot table[x=Emodgiven,y=nul	] {\emodgivread}; \label{e1}
+    \addplot[mark=, green!60!black, solid] table[x=Emodgiven,y=nul	]
+    {\emodgivread};
+    \label{e1}
 %     \addlegendentry{$\nu$=0.05}
-    \addplot table[x=Emodgiven,y=tr0.1 ] {\emodgivread}; \label{e2}
+    \addplot [mark=, red,  dashed] table[x=Emodgiven,y=tr0.1 ]
+    {\emodgivread}; \label{e2}
 %     \addlegendentry{$\nu$=0.1}
-    \addplot table[x=Emodgiven,y=trinf ] {\emodgivread}; \label{e3}
+    \addplot [mark=, pink,  dashed] table[x=Emodgiven,y=trinf ] {\emodgivread};
+    \label{e3}
 %     \addlegendentry{$\nu$=0.15}
-    \addplot table[x=Emodgiven,y=iso0.1 ] {\emodgivread}; \label{e4}
+    \addplot [mark=, black,,  dashdotted ] table[x=Emodgiven,y=iso0.1 ] {\emodgivread};
+    \label{e4}
 %     \addlegendentry{$\nu$=0.1}
-    \addplot table[x=Emodgiven,y=isoinf ] {\emodgivread}; \label{e5}
+    \addplot [mark=, gray,  dashdotted ] table[x=Emodgiven,y=isoinf ] {\emodgivread};
+    \label{e5}
 %     \addlegendentry{$\nu$=0.15}
 
-
+\coordinate (spypoint) at (axis cs:3,3);
+\coordinate (magnifyglass) at (axis cs:2,4);
 
 \end{axis}
 
+% \spy on (2.5,2.5) in node [left] at (1.25,1.75);
+\spy [gray, size=1.5cm] on (spypoint)
+   in node[fill=white] at (magnifyglass);
 
 \end{tikzpicture}
 \captionsetup{justification=centering}
-\caption{Measured vs. given Poisson's ratio
-($\nu_{31}$, $\nu_{32}$) in transverse-isotropic material for spring
+\caption{Measured vs. given stiffness
+($E_{1}$) in transverse-isotropic and isotropic material for spring
 coefficients $K=0$ (\ref{k1}), $K=0.1$ (\ref{k2}) and $K=\infty$ (\ref{k3});\\
 \color{red}{a) total area of interest, b) chosen area of interest c)
 experiment.}}
