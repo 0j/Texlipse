@@ -191,17 +191,17 @@
     <entry key="window_width" type="gchararray" value="1366"/>
     <entry key="window_height" type="gchararray" value="706"/>
   </document>
-  <document uri="file:///C:/common/git/Barelling/BarellingVorobyev.pdf" atime="1436189650">
-    <entry key="window_x" type="gchararray" value="973"/>
-    <entry key="window_y" type="gchararray" value="60"/>
+  <document uri="file:///C:/common/git/Barelling/BarellingVorobyev.pdf" atime="1439207705">
+    <entry key="window_x" type="gchararray" value="968"/>
+    <entry key="window_y" type="gchararray" value="32"/>
     <entry key="sidebar_visibility" type="gchararray" value="0"/>
     <entry key="window_height" type="gchararray" value="1002"/>
-    <entry key="page" type="gchararray" value="3"/>
+    <entry key="page" type="gchararray" value="1"/>
     <entry key="sidebar_page" type="gchararray" value="links"/>
     <entry key="window_width" type="gchararray" value="944"/>
     <entry key="window_maximized" type="gchararray" value="0"/>
-    <entry key="zoom" type="gchararray" value="0.99100589752197288"/>
-    <entry key="sizing_mode" type="gchararray" value="free"/>
+    <entry key="zoom" type="gchararray" value="1.4270484924316411"/>
+    <entry key="sizing_mode" type="gchararray" value="fit-width"/>
   </document>
   <document uri="file:///C:/Downloads/gorshkov_a_g_rabinskii_l_n_tarlakovskii_d_v_osnovy_tenzornog.pdf" atime="1432820009">
     <entry key="sidebar_visibility" type="gchararray" value="1"/>
@@ -253,9 +253,9 @@
     <entry key="window_width" type="gchararray" value="742"/>
     <entry key="window_height" type="gchararray" value="1453"/>
   </document>
-  <document uri="last-used-value" atime="1436189650">
-    <entry key="window_x" type="gchararray" value="973"/>
-    <entry key="window_y" type="gchararray" value="60"/>
+  <document uri="last-used-value" atime="1439207705">
+    <entry key="window_x" type="gchararray" value="968"/>
+    <entry key="window_y" type="gchararray" value="32"/>
     <entry key="page-ranges" type="gchararray" value=""/>
     <entry key="print-pages" type="gchararray" value="all"/>
     <entry key="page-setup-margin-right" type="gchararray" value="6.3499999999999996"/>
@@ -263,14 +263,14 @@
     <entry key="reverse" type="gchararray" value=""/>
     <entry key="window_height" type="gchararray" value="1002"/>
     <entry key="page-setup-margin-bottom" type="gchararray" value="14.224"/>
-    <entry key="page" type="gchararray" value="3"/>
+    <entry key="page" type="gchararray" value="1"/>
     <entry key="output-uri" type="gchararray" value=""/>
     <entry key="sidebar_page" type="gchararray" value="links"/>
     <entry key="window_width" type="gchararray" value="944"/>
     <entry key="collate" type="gchararray" value="false"/>
     <entry key="window_maximized" type="gchararray" value="0"/>
-    <entry key="zoom" type="gchararray" value="0.99100589752197288"/>
-    <entry key="sizing_mode" type="gchararray" value="free"/>
+    <entry key="zoom" type="gchararray" value="1.4270484924316411"/>
+    <entry key="sizing_mode" type="gchararray" value="fit-width"/>
     <entry key="page-setup-orientation" type="gchararray" value="0"/>
     <entry key="page-setup-margin-left" type="gchararray" value="6.3499999999999996"/>
     <entry key="n-copies" type="gchararray" value="1"/>
