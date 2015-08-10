@@ -191,12 +191,12 @@
     <entry key="window_width" type="gchararray" value="1366"/>
     <entry key="window_height" type="gchararray" value="706"/>
   </document>
-  <document uri="file:///C:/common/git/Barelling/BarellingVorobyev.pdf" atime="1439207705">
+  <document uri="file:///C:/common/git/Barelling/BarellingVorobyev.pdf" atime="1439217944">
     <entry key="window_x" type="gchararray" value="968"/>
     <entry key="window_y" type="gchararray" value="32"/>
     <entry key="sidebar_visibility" type="gchararray" value="0"/>
     <entry key="window_height" type="gchararray" value="1002"/>
-    <entry key="page" type="gchararray" value="1"/>
+    <entry key="page" type="gchararray" value="8"/>
     <entry key="sidebar_page" type="gchararray" value="links"/>
     <entry key="window_width" type="gchararray" value="944"/>
     <entry key="window_maximized" type="gchararray" value="0"/>
@@ -253,7 +253,7 @@
     <entry key="window_width" type="gchararray" value="742"/>
     <entry key="window_height" type="gchararray" value="1453"/>
   </document>
-  <document uri="last-used-value" atime="1439207705">
+  <document uri="last-used-value" atime="1439217944">
     <entry key="window_x" type="gchararray" value="968"/>
     <entry key="window_y" type="gchararray" value="32"/>
     <entry key="page-ranges" type="gchararray" value=""/>
@@ -263,7 +263,7 @@
     <entry key="reverse" type="gchararray" value=""/>
     <entry key="window_height" type="gchararray" value="1002"/>
     <entry key="page-setup-margin-bottom" type="gchararray" value="14.224"/>
-    <entry key="page" type="gchararray" value="1"/>
+    <entry key="page" type="gchararray" value="8"/>
     <entry key="output-uri" type="gchararray" value=""/>
     <entry key="sidebar_page" type="gchararray" value="links"/>
     <entry key="window_width" type="gchararray" value="944"/>

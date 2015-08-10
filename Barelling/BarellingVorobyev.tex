@@ -121,7 +121,8 @@ Compressive experiments are considered to be one of the most common method for i
 modulus, Poisson's ratio.The general approach is to measure material response 
 due to applied forces. 
 \\ \textit{\color {red} Add the citations on
-the compressive experiments methods.Give suggestions on different standards}
+the compressive experiments methods.Give suggestions on different standards ,
+for example common European or American standards, which are the ones that almost everyone uses}
 
 
 The response is usually measured as the change in dimensions of the sample, 
@@ -175,21 +176,44 @@ barrelling formation on two different mechanical types of materials. Additionall
 
 The finite element program COMSOL Multiphysics 4.4 \cite{Comsol} was used for
 the experimental simulations.
-The entire cube (Figure \ref{fig:cubemesh})  with singular side was modeled with
+A cube (Figure \ref{fig:cubemesh})  with unit dimensions was modeled with
 3D solid elements.
-The platens of universal testing machine were not considered in the model.
-Instead compressive load was simulated as prescribed displacement and normally
-applied to the top surface of the cube towards the lower plane. The
-displacement was performed by 0.01 and 0.1 dimensional units which corresponds
-to approximate 1\%  and 10\% of average strain respectively. The bottom surface
+The platens of universal testing machine were not included in the model.
+Instead, the compressive loading was simulated as a downward vertical prescribed
+displacement. The magnitude of this prescribed displacement was set to 0.01
+which corresponds to approximate 1\%  of average strain respectively. The bottom surface
 was constrained from the displacement along \textit{Z} axis. However mutually perpendicular edges of the bottom and top surfaces were aloud to move in its perpendicular directions along \textit{X} and \textit{Y} axises respectively.
+
+
+
+\\ \textit{\color{red} I would put a decent picture that visually shows the
+boundary conditions if possible. That is much easier to understand. Or you can
+put a picture where you give names or letters to the sidees of the cube and mention the boundary conditions in formulas.}
+
+
 
 A \textit{Free Quad} mesh was placed on a top surface and swept throughout
 the whole geometry using \textit{Quadrilateral} meshing method which generates
-hexahedrons. We have solved the model using different number of FE. The model
-contained 1000 finite elements. This number was identified by solving and
-refining the elements multiple times while identifying best performance vs.
-accuracy of solution. 
+hexahedrons. We have solved the model using different number of FE. 
+After a mesh refinement study, a 10x10x10 mesh of quadratic elements was
+ determined to provide reasonably accurate results for the purpose of this study.
+
+\begin{description}
+\item[{\color {red}Friction}]
+\end{description}
+
+The friction between platens and specimen is the main reason for the
+barrelling formation \cite{Narayanasamy198821, kulkarni1969}.  To simulate that
+friction we have introduced friction parameters that were applied to the mutually orthogonal
+edges on the top and the bottom surface of the cube. Those parameters were
+acting as a resistance for displacement varying from zero and up to the value
+which equals to the stiffness along \textit{Z} axis of the cube.
+
+\textit{\color {red}Add the picture that is showing the axises and add the
+description to the the text in accordance to that. Add the bottom surface, the
+free edges the friction, the coefficients, the variability of frictions that }
+
+
 
 \begin{description}
 \item[{\color {red}Material input parameters}]
@@ -507,20 +531,6 @@ experiment.}}
 
 
 
-\begin{description}
-\item[{\color {red}Friction}]
-\end{description}
-
-The friction between platens and specimen is consider to be a reason for the
-barrelling formation \cite{Narayanasamy198821, kulkarni1969}.  To simulate that
-friction we have introduced friction parameters that were applied to the mutually orthogonal
-edges on the top and the bottom surface of the cube. Those parameters were
-acting as a resistance for displacement varying from zero and up to the value
-which equals to the stiffness along \textit{Z} axis of the cube.
-
-\textit{\color {red}Add the picture that is showing the axises and add the
-description to the the text in accordance to that. Add the bottom surface, the
-free edges the friction, the coefficients, the variability of frictions that }
 
 \begin{description}
 \item[{\color {red}Obtaining strain fields both 2D and 3D}]
