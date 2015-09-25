@@ -674,7 +674,7 @@ name=c1,height=4cm,width=4cm,
 \end{axis}
 
 
-plot transviso chosen area  DSP
+% plot transviso chosen area  DSP
 
 \begin{axis}[legend pos=outer north east,
 	name=c2,at={($(c1.east)+(1cm,0)$)},anchor=west, height=4cm, width=4cm,
@@ -921,13 +921,99 @@ $\nu_{32}$ (-) & 0.248 & 0.254\\
 \end{tabular}
 \label{table:nonlin} % is used to refer this table in the text
 \end{table}
+\end{description}
 
 
+\begin{center}% note that \centering uses less vspace...
+\begin{figure}[!ht]
+\pgfplotsset{every axis legend/.append style={
+		at={(0.5,1.03)},
+		anchor=north}}
+
+\begin{tikzpicture}[scale=1]
+
+	\pgfplotstableread{
+stress	areaoi	totarea
+0.18	0.00	0.00
+1.17	0.09	0.00
+2.23	0.15	0.00
+3.36	0.19	0.01
+4.48	0.22	0.01
+5.79	0.26	0.02
+7.16	0.28	0.02
+8.59	0.32	0.03
+9.95	0.30	0.04
+11.45	0.36	0.05
+12.92	0.38	0.06
+14.41	0.39	0.08
+15.85	0.40	0.09
+17.21	0.41	0.11
+18.59	0.45	0.13
+19.79	0.48	0.15
+20.94	0.48	0.17
+22.00	0.49	0.19
+22.94	0.54	0.22
+23.82	0.54	0.26
+24.59	0.57	0.29
+25.24	0.61	0.34
+25.80	0.65	0.38
+26.33	0.70	0.43
+26.72	0.75	0.49
+27.06	0.80	0.55
+27.36	0.88	0.61
+27.60	0.92	0.68
+27.84	0.99	0.76
+27.97	1.07	0.83
+28.08	1.12	0.91
+28.14	1.24	0.99
+
+}\datatable
+
+
+
+
+\begin{axis}[no markers,
+name=plot0,height=6cm,width=6cm,
+    title={a)},
+    xlabel={Strain $\varepsilon_y$ [\%]},
+    ylabel={Stress stress $\sigma_y$ [MPa]},
+    xmin=0, xmax=1.5,
+    ymin=0, ymax=30,
+%     xtick={0,...,5},
+%    ytick={0,20,40,60,80},
+%     xticklabels={$0$,$0.2$,$0.4$,$0.6$,$0.8$, $1$}, 
+%     x tick label style={yshift=-1ex,
+%     rotate=45,anchor=east},
+    ymajorgrids=true,
+    grid style=dashed,
+]
+% \end{axis}    
+% \begin{axis}[legend pos=outer north east]
+ 
+ 
+    \addplot [thick, cyan] table[x=areaoi,y=stress] {\datatable}; \label{ex1}
+%     \addlegendentry{Total surface area}
+    \addplot [thick, violet	] table[x=totarea,y=stress] {\datatable};
+    \label{ex2}
+%     \addlegendentry{Surface area of interest}
+	\addplot [thick, green!60!black] coordinates {(0.0, 0.3) (0.16,25.0)};
+	\addplot [thick, green!60!black] coordinates {(0.25, 5) (0.55,25.0)};
+	
+
+\end{axis}
+
+\end{tikzpicture}
+\captionsetup{justification=centering}
+\caption{Experimental strain vs. stress curves
+for \textit{Vasa} oak  specimen, chosen surface area of interest(\ref{ex1}) and
+total area of surface (\ref{ex2})}
+
+\end{figure}
+\end{center}
 
 \it{\color{red}Check whether i need to add the isotropic parameters and transv
 ortho}
 
-\end{description}
 
 %%%%%%%%%%% VIDEO CAPTIONS
 
