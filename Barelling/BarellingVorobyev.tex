@@ -109,8 +109,8 @@ This template helps you to create a properly formatted \LaTeX\ manuscript.
 \end{abstract}
 
 \begin{keyword}
-\texttt{elsarticle.cls}\sep \LaTeX\sep Elsevier \sep template
-\MSC[2010] 00-01\sep  99-00
+Cubic samples\sep Compressive testing\sep Barrelling formation \sep
+Wood
 \end{keyword}
 
 \end{frontmatter}
@@ -173,7 +173,127 @@ barrelling formation on two different mechanical types of materials. Additionall
 \end{itemize}
 
 \section{Materials and Methods}
-\section{Model}
+
+\begin{description}
+\item{Experiment}
+\end{description}
+
+A Shimatzu Autograph AG-X universal testing machine with 10 kN load cell was
+used to carry out static tests. Initial tests were conducted on dummy wood specimens in order to find the approximate elastic loading range for all specimen orientations. The compression test was repeated twice for each specimen in each L, R and T-direction (cf. Fig. 1). Both loading and unloading cycles were recorded as shown in the example of Figure 2. The Young’s modulus was determined from the unloading part. The main reason for using the unloading curve is that slight surface irregularities of the sample or loading platen is likely to induce local plasticity during the loading part, and an increase of the contact area between the sample and the platen. During the unloading, these effects should be stabilized and the contact area should be close to the whole surface area reached at the maximum load of elastic region. The conventional way to measure strains is by using the built in measurement system or strain gages. Nowadays, full field strain measurement techniques such as digital speckle photography (DSP) (Sjödahl and Synnergren 1999) or 3D/stereo-digital image correlation (DIC) (Majano-Majano et al. 2012) are used more and more. The strain measurement using DIC has shown a good performance in comparison to the traditional strain gauges (Huang et al. 2010; Xavier et al. 2012). In our case, full-field displacements were observed with a digital-image correlation (DIC) equipment GOM Aramis stereo system 5M. The distance to the measured object was 300 mm. Each surface of specimen was spray painted with speckles for better contrast. The applied force values were continuously recorded by the DIC system during testing, and stored together with the sampled images. The displacement rate was 0.5 mm per minute. The ambient conditions were 23°C and 51% relative humidity. All tests were performed without delay after the samples were removed from the conditioning storage container, so that the moisture content would essentially be the same as after conditioning. The measurement sampling frequency was 1 Hz. Every frame that was recorded by the DIC system was compared with the undeformed state in order to calculate the displacement and strain fields. The area of interest used in image analysis was a centred square of 400 mm2, where a uniform deformation field was found. The acquired strain fields were smoothed by averaging of each data pixel with 3 × 3 surrounding pixels.
+The strain determined by DIC in the loading direction was plotted against the applied stress, see Figure 2. 
+Poisson’s ratios νij for all corresponding orthotropic planes were calculated as a negative ratio between the average transverse εjj (passive) and normal εii (compressive and active) strains. The average transverse and normal strains measured along with normal ones were acquired with DIC technique. 
+
+
+
+
+\begin{center}% note that \centering uses less vspace...
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=6cm]{experiment.png}
+\label{fig:experiment}
+\caption{\label{fig:experiment} DIC image of \textit{Vasa} oak specimen during
+compressive testing including displacement field (mm).
+
+\textit{\color {red} Place the figure 2 here as well}}
+
+\end{figure}
+
+
+
+
+\begin{figure}[!ht]
+\pgfplotsset{every axis legend/.append style={
+		at={(0.5,1.03)},
+		anchor=north}}
+
+\begin{tikzpicture}[scale=1]
+
+	\pgfplotstableread{
+stress	areaoi	totarea
+0.18	0.00	0.00
+1.17	0.09	0.00
+2.23	0.15	0.00
+3.36	0.19	0.01
+4.48	0.22	0.01
+5.79	0.26	0.02
+7.16	0.28	0.02
+8.59	0.32	0.03
+9.95	0.30	0.04
+11.45	0.36	0.05
+12.92	0.38	0.06
+14.41	0.39	0.08
+15.85	0.40	0.09
+17.21	0.41	0.11
+18.59	0.45	0.13
+19.79	0.48	0.15
+20.94	0.48	0.17
+22.00	0.49	0.19
+22.94	0.54	0.22
+23.82	0.54	0.26
+24.59	0.57	0.29
+25.24	0.61	0.34
+25.80	0.65	0.38
+26.33	0.70	0.43
+26.72	0.75	0.49
+27.06	0.80	0.55
+27.36	0.88	0.61
+27.60	0.92	0.68
+27.84	0.99	0.76
+27.97	1.07	0.83
+28.08	1.12	0.91
+28.14	1.24	0.99
+
+}\datatable
+
+
+
+
+\begin{axis}[no markers,
+name=plot0,height=6cm,width=6cm,
+    title={b)},
+    xlabel={Strain $\varepsilon_y$ [\%]},
+    ylabel={Stress stress $\sigma_y$ [MPa]},
+    xmin=0, xmax=1.5,
+    ymin=0, ymax=30,
+%     xtick={0,...,5},
+%    ytick={0,20,40,60,80},
+%     xticklabels={$0$,$0.2$,$0.4$,$0.6$,$0.8$, $1$}, 
+%     x tick label style={yshift=-1ex,
+%     rotate=45,anchor=east},
+    ymajorgrids=true,
+    grid style=dashed,
+]
+% \end{axis}    
+% \begin{axis}[legend pos=outer north east]
+ 
+ 
+    \addplot [thick, cyan] table[x=areaoi,y=stress] {\datatable}; \label{ex1}
+%     \addlegendentry{Total surface area}
+    \addplot [thick, violet	] table[x=totarea,y=stress] {\datatable};
+    \label{ex2}
+%     \addlegendentry{Surface area of interest}
+	\addplot [thick, green!60!black] coordinates {(0.0, 0.3) (0.16,25.0)};
+	\addplot [thick, green!60!black] coordinates {(0.25, 5) (0.55,25.0)};
+	
+
+\end{axis}
+
+\end{tikzpicture}
+\captionsetup{justification=centering}
+\caption{Experimental strain vs. stress curves
+for \textit{Vasa} oak  specimen, chosen surface area of interest(\ref{ex1}) and
+total area of surface (\ref{ex2})}
+
+\end{figure}
+\end{center}
+
+
+
+\begin{description}
+\item{Model}
+\end{description}
+
 
 The finite element program COMSOL Multiphysics 4.4 \cite{Comsol} was used for
 the experimental simulations.
@@ -226,7 +346,7 @@ modulus.
 \item[{\color {red} Strain measuring methods}]
 \end{description}
 
-Three strain measuring(?)cases(?) were simulated and the results compared, see 
+Three strain measuring cases were simulated and results were compared, see 
 Figure \ref{fig:expmethods}.
 In the \textit{first} case,  the average of the total strain from the surface was taken and used as a value
 for obtaining axial stiffness $E_1$. In the \textit{second} experimental method
@@ -578,7 +698,7 @@ experiment.}}
 	\color{black}
 		\item Barellling formation is less in transverse isotropic and orthotropic
 		material.
-		\item The larger the Poisson�s ratio in isotropic materials, the more severe
+		\item The larger the Poisson�s ratio in isotropic materials, the more severe
 		the barrelling.
 		\item Barelling effect does not significant for the transverse isotropic
 		material
@@ -924,92 +1044,6 @@ $\nu_{32}$ (-) & 0.248 & 0.254\\
 \end{description}
 
 
-\begin{center}% note that \centering uses less vspace...
-\begin{figure}[!ht]
-\pgfplotsset{every axis legend/.append style={
-		at={(0.5,1.03)},
-		anchor=north}}
-
-\begin{tikzpicture}[scale=1]
-
-	\pgfplotstableread{
-stress	areaoi	totarea
-0.18	0.00	0.00
-1.17	0.09	0.00
-2.23	0.15	0.00
-3.36	0.19	0.01
-4.48	0.22	0.01
-5.79	0.26	0.02
-7.16	0.28	0.02
-8.59	0.32	0.03
-9.95	0.30	0.04
-11.45	0.36	0.05
-12.92	0.38	0.06
-14.41	0.39	0.08
-15.85	0.40	0.09
-17.21	0.41	0.11
-18.59	0.45	0.13
-19.79	0.48	0.15
-20.94	0.48	0.17
-22.00	0.49	0.19
-22.94	0.54	0.22
-23.82	0.54	0.26
-24.59	0.57	0.29
-25.24	0.61	0.34
-25.80	0.65	0.38
-26.33	0.70	0.43
-26.72	0.75	0.49
-27.06	0.80	0.55
-27.36	0.88	0.61
-27.60	0.92	0.68
-27.84	0.99	0.76
-27.97	1.07	0.83
-28.08	1.12	0.91
-28.14	1.24	0.99
-
-}\datatable
-
-
-
-
-\begin{axis}[no markers,
-name=plot0,height=6cm,width=6cm,
-    title={a)},
-    xlabel={Strain $\varepsilon_y$ [\%]},
-    ylabel={Stress stress $\sigma_y$ [MPa]},
-    xmin=0, xmax=1.5,
-    ymin=0, ymax=30,
-%     xtick={0,...,5},
-%    ytick={0,20,40,60,80},
-%     xticklabels={$0$,$0.2$,$0.4$,$0.6$,$0.8$, $1$}, 
-%     x tick label style={yshift=-1ex,
-%     rotate=45,anchor=east},
-    ymajorgrids=true,
-    grid style=dashed,
-]
-% \end{axis}    
-% \begin{axis}[legend pos=outer north east]
- 
- 
-    \addplot [thick, cyan] table[x=areaoi,y=stress] {\datatable}; \label{ex1}
-%     \addlegendentry{Total surface area}
-    \addplot [thick, violet	] table[x=totarea,y=stress] {\datatable};
-    \label{ex2}
-%     \addlegendentry{Surface area of interest}
-	\addplot [thick, green!60!black] coordinates {(0.0, 0.3) (0.16,25.0)};
-	\addplot [thick, green!60!black] coordinates {(0.25, 5) (0.55,25.0)};
-	
-
-\end{axis}
-
-\end{tikzpicture}
-\captionsetup{justification=centering}
-\caption{Experimental strain vs. stress curves
-for \textit{Vasa} oak  specimen, chosen surface area of interest(\ref{ex1}) and
-total area of surface (\ref{ex2})}
-
-\end{figure}
-\end{center}
 
 \it{\color{red}Check whether i need to add the isotropic parameters and transv
 ortho}
