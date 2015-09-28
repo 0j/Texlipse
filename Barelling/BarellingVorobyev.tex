@@ -119,10 +119,32 @@ Wood
 \linenumbers
 
 \section{Introduction}
+
+Characterisation of material stiffness parameters of orthotropic materials can
+be challenging. In  careful design of wood structures, not only one parameter, but the full
+orthotropic set of elastic parameters could be needed \cite{tsoumis1991science},
+e.g. for finite-element modelling of wood joints that are locally subjected to a triaxial stress state.
 Compressive experiments are considered to be one of the most common method for identifying engineering constants such as Young's
-modulus, Poisson's ratio.The general approach is to measure material response 
-due to applied forces. 
-\\ \textit{\color {red} Add the citations on
+modulus, Poisson's ratio.The general approach is to measure material response
+due to applied forces. The procedure is straitforward and easy to perform due to
+simplicity of experimental installation and low requrements to speciemen
+geometry. Standards such as ASTM \cite{standard1997d143},
+\cite{johnson1983compression} are requiring the usage of rectangular prisms for
+the experiments. The geometry can actually be 
+
+For precious wood material, e.g. archaeological wood, it is frequently better to use cubic samples loaded in compression, since the same sample can be loaded elastically by applying load consecutively in all three directions (Ljungdahl and Berglund 2007). 
+The precious material can then be saved to a larger extent and the measurements are done on the same sample. Disadvantages with compressive testing of cubes compared to tensile testing of dog-bone specimens, 
+is that obtaining a pure compressive stress state is more complicated due to inhomogeneous distribution of applied compression force due to geometrical imperfections of test specimen (Toftegaard 1999).
+Moreover, barrelling formation in compressive loading, due to the more or less restrained contact slip on the platens area, makes it difficult to assess the transverse deformations without having to resort to finite element modelling. 
+The Poisson’s ratios are thus more difficult to obtain directly from the kind of loading. Strain field measurements using digital image correlation are often required to estimate the stiffness parameters accurately (Dahl and Malo 2009; Majano-Majano et al. 2012; Xavier et al. 2012; Ozyhar et al. 2013). 
+Additionally, the cylindrical orthotropy and curvature of the annual rings make the stress field even more non-uniform for large specimens. For too small specimens, the tested volume might not be representative, leading to a large scatter in measured stiffness. 
+Nevertheless, compressive testing of wooden cubes is the reasonable choice of test method if the amount of available material is limited. 
+Moreover, this test is relatively easy to carry out and one sample can be used for all three directions, if loading is performed only in the elastic reversible region. 
+
+
+
+ 
+\textit{\color {red} Add the citations on
 the compressive experiments methods.Give suggestions on different standards ,
 for example common European or American standards, which are the ones that almost everyone uses}
 
@@ -155,6 +177,14 @@ machine (UTM) are locked and not automatically adjusted to sample geometry.
 When a prism specimen is compressed between platens it contracts transversely.
 Its surfaces bear heterogenious deformation that are resulting in barrelling
 formation of the prism. 
+
+%The purpose of experiment
+The elastic, ultimate and also creep properties of the Vasa oak are needed in
+stress analysis and design of improved support structure for the ship. 
+The waterlogged Vasa oak has been impregnated with polyethylene glycol (PEG) to prevent cracking and deformation during drying. 
+Both the aging (Bjurhager et al. 2012) and the PEG impregnation (Ljungdahl and Berglund 2007; Bjurhager et al. 2010) affect the mechanical properties. 
+
+
 Present work focuses on an investigation of
 barrelling formation on two different mechanical types of materials. Additionally a comparison of three measuring techniques was made in order to identify the magnitude of error.
 
@@ -317,6 +347,14 @@ name=plot0,height=4cm,width=4cm,
 \item{Model}
 \end{description}
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=8cm]{BarellingPaper.eps}
+\label{fig:Barrelling}
+\caption{\label{fig:Barrelling} Finite element model of cubic specimen}
+\end{figure}
+
+
 
 The finite element program COMSOL Multiphysics 4.4 \cite{Comsol} was used for
 the experimental simulations.
@@ -386,18 +424,6 @@ gauge.
 \item[{\color {red}Conclusions for the model}]
 \end{description}
 
-
-
-
-
-
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=8cm]{BarellingPaper.eps}
-\label{fig:Barrelling}
-\caption{\label{fig:Barrelling} Finite element model of cubic specimen}
-\end{figure}
 
 \begin{center}% note that \centering uses less vspace...
 \begin{figure}[!ht]
