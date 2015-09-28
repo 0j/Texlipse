@@ -139,7 +139,9 @@ Disadvantages with compressive testing of cubes compared to tensile testing of d
 is that obtaining a pure compressive stress state is more complicated due to
 inhomogeneous distribution of applied compression force due to geometrical
 imperfections of test specimen \cite{Toftegaard1999849}.
-Moreover, barrelling formation in compressive loading, due to the more or less restrained contact slip on the platens area, makes it difficult to assess the transverse deformations without having to resort to finite element modelling. 
+Moreover, barrelling \textit{\color{red}( add the reference to the image of
+barreling effect)} formation in compressive loading \cite{oldroyd1966stress},
+due to the more or less restrained contact slip on the platens area, makes it difficult to assess the transverse deformations without having to resort to finite element modelling.
 The Poisson’s ratios are thus more difficult to obtain directly from the kind of loading. 
 Strain field measurements using digital image correlation are often required to
 estimate the stiffness parameters accurately \cite{dahl2009planar,
@@ -147,6 +149,14 @@ majano2012test, ozyhar2013moisture}.
 Additionally, the cylindrical orthotropy and curvature of the annual rings make the stress field even more non-uniform for large specimens. 
 For too small specimens, the tested volume might not be representative, leading to a large scatter in measured stiffness. 
 Nevertheless, compressive testing of wooden cubes is the reasonable choice of test method if the amount of available material is limited. 
+Such problem arises when archaeological material is tetsted.
+The elastic, ultimate and also creep properties of the \textit{Vasa} oak are
+needed in stress analysis and design of improved support structure for the ship. 
+The waterlogged Vasa oak has been impregnated with polyethylene glycol (PEG) to prevent cracking and deformation during drying. 
+Both the aging \cite{bjurhager2012state} and the PEG impregnation
+\cite{ljungdahl2007transverse} affect the mechanical properties.
+
+
 
 Simulations of experiments in compression are not new. Previously compressive
 experiments on prism samples with orthotropic material behavior were simulated
@@ -163,10 +173,7 @@ Its surfaces bear heterogenious deformation that are resulting in barrelling
 formation of the prism. 
 
 %The purpose of experiment
-The elastic, ultimate and also creep properties of the Vasa oak are needed in
-stress analysis and design of improved support structure for the ship. 
-The waterlogged Vasa oak has been impregnated with polyethylene glycol (PEG) to prevent cracking and deformation during drying. 
-Both the aging (Bjurhager et al. 2012) and the PEG impregnation (Ljungdahl and Berglund 2007; Bjurhager et al. 2010) affect the mechanical properties. 
+
 
 
 Present work focuses on an investigation of
@@ -190,7 +197,7 @@ barrelling formation on two different mechanical types of materials. Additionall
 \section{Materials and Methods}
 
 \begin{description}
-\item{Experiment}
+\item{\textit{Experiment}}
 \end{description}
 
 An Instron universal testing machine with 100 kN load cell was
@@ -328,7 +335,7 @@ name=plot0,height=4cm,width=4cm,
 
 
 \begin{description}
-\item{Model}
+\item{\textit{Model}}
 \end{description}
 
 \begin{figure}[h]
@@ -347,7 +354,7 @@ A cube (Figure \ref{fig:Barrelling})  with unit dimensions was modeled with
 The platens of universal testing machine were not included in the model.
 Instead, the compressive loading was simulated as a downward vertical prescribed
 displacement. The magnitude of this prescribed displacement was set to 0.01
-which corresponds to approximate 1\%  of average strain respectively.
+which corresponds to  1\%  of  strain respectively.
 
 \textit{\color{red} I would put a decent picture that visually shows the
 boundary conditions if possible. That is much easier to understand. Or you can
@@ -356,8 +363,8 @@ put a picture where you give names or letters to the sidees of the cube and ment
 A \textit{Free Quad} mesh was placed on a top surface and swept throughout
 the whole geometry using \textit{Quadrilateral} meshing method which generates
 hexahedrons. We have solved the model using different number of FE. 
-After a mesh refinement study, a 10x10x10 mesh of quadratic elements was
- determined to provide reasonably accurate results for the purpose of this study.
+After a mesh refinement study, a $10\times10\times10$ mesh of quadratic
+elements was determined to provide reasonably accurate results for the purpose of this study.
 
 \begin{description}
 \item[{\color {red}Friction}]
@@ -382,8 +389,9 @@ The model was linear elastic. For the isotropic material stiffness \textit{E}
 has a unity value and Poisson's ratio $\nu = 0,3$. For transverse isotropic
 material the stiffness parameters were taken as engineering notation of
 compliance matrix. For simplification the stiffness coefficients $E_{3}$ and
-$E_{1} = E_{2} = a \cdot E_{3}$, where \textit{a} varies from 0,1 (transverse
-isotropy) to 1 (isotropy).The same was done for the Poisson's ratio and shear
+$E_{1} = E_{2} = E_{3}/a$, where \textit{a} varies from 1 (isotropy) to 10
+(transverse isotropy).
+\\The same was done for the Poisson's ratio and shear
 modulus.
 
 
