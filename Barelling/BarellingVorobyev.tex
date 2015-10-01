@@ -27,6 +27,7 @@
 \usepackage{pgfplots}
 \usepackage{tikz}
 \usepackage{subcaption}
+\usepackage{rotating}
 \usetikzlibrary{matrix}
 \usetikzlibrary{spy}
 \usepgfplotslibrary{groupplots}
@@ -212,7 +213,8 @@ A special care was taken in order to manufacture the specimens. Original sizes
 of the sample was $25\times25\times25$ $mm$  The accuracy for parallelity
 between the opposite edges of the cube was 0.01 $mm$. 
 
-An Instron universal testing machine with 100 kN load cell was used to carry out static tests. Initial tests were conducted on dummy wood specimens in order to find the approximate elastic loading range for all specimen orientations.
+An Instron universal testing machine with 100 kN load cell was used to carry out static tests. 
+Initial tests were conducted on dummy wood specimens in order to find the approximate elastic loading range for all specimen orientations.
 The conventional way to measure strains is by using the built in measurement
 system or strain gages. Nowadays, full field strain measurement techniques such
 as digital speckle photography (DSP) \cite{synnergren1999stereoscopic} or
@@ -239,14 +241,6 @@ The average transverse and normal strains measured along with normal ones were a
 
 
 
-
-
-
-	
-
-
-
-
 \begin{figure}
     \centering
     \begin{subfigure}[b]{0.4\textwidth}
@@ -263,6 +257,7 @@ The average transverse and normal strains measured along with normal ones were a
         \label{fig:experiment}
     \end{subfigure}
     \hfill
+    \hspace*{-20px}
     \begin{subfigure}[b]{0.4\textwidth}
         \centering
         \pgfplotsset{every axis legend/.append style={
@@ -344,7 +339,8 @@ The average transverse and normal strains measured along with normal ones were a
     \end{subfigure}
 
 \caption{a) Barelling formation on initial cubic shape. b) DIC image of
-\textit{Vasa} oak specimen during compressive testing including displacement field. c) Experimental strain vs.
+\textit{Vasa} oak specimen during compressive testing including displacement
+field $(mm)$. c) Experimental strain vs.
 stress curves for \textit{Vasa} oak  specimen, chosen surface area of interest(\ref{ex1}) and
 total area of surface (\ref{ex2})\textit{\color{red}
 \\To correct the position of the plots. to add the orientations for the image
@@ -385,44 +381,31 @@ Instead, the compressive loading was simulated as a downward vertical prescribed
 displacement. The magnitude of this prescribed displacement was set to 0.01
 which corresponds to  1\%  of  strain respectively.
 
-\textit{\color{red} I would put a decent picture that visually shows the
-boundary conditions if possible. That is much easier to understand. Or you can
-put a picture where you give names or letters to the sidees of the cube and mention the boundary conditions in formulas.}
-
 A \textit{Free Quad} mesh was placed on a top surface and swept throughout
 the whole geometry using \textit{Quadrilateral} meshing method which generates
 hexahedrons. We have solved the model using different number of FE. 
 After a mesh refinement study, a $10\times10\times10$ mesh of quadratic
 elements was determined to provide reasonably accurate results for the purpose of this study.
 
-\begin{description}
-\item[{\color {red}Friction}]
-\end{description}
-
 The friction between platens and specimen is the main reason for the
 barrelling formation \cite{Narayanasamy198821, kulkarni1969}.  To simulate that
-friction we have introduced friction parameters that were applied to the mutually orthogonal
-edges on the top and the bottom surface of the cube. 
-
-\textit{\color {red}Add the picture that is showing the axises and add the
-description to the the text in accordance to that. Add the bottom surface, the
-free edges the friction, the coefficients, the variability of frictions that }
-
-
+friction we have introduced friction parameters $K$ that were applied to the
+mutually orthogonal edges on the top and the bottom surface of the cube (Figure
+\ref{fig:Barrelling}).
 
 \begin{description}
 \item[{\color {red}Material input parameters}]
 \end{description}
-We simulated orthotropic, transverse isotropic and isotropic material behaviour.
+We simulated transverse isotropic and isotropic material behaviour.
 The model was linear elastic. For the isotropic material stiffness \textit{E}
-has a unity value and Poisson's ratio $\nu = 0,3$. For transverse isotropic
-material the stiffness parameters were taken as engineering notation of
+has a unity value and Poisson's ratio $\nu = 0.25$. For transverse
+isotropic material the stiffness parameters were taken as engineering notation of
 compliance matrix. For simplification the stiffness coefficients $E_{3}$ and
-$E_{1} = E_{2} = E_{3}/a$, where \textit{a} varies from 1 (isotropy) to 10
-(transverse isotropy).
-\\The same was done for the Poisson's ratio and shear
-modulus.
+$E_{1} = E_{2} = E_{3}/a$, where coefficient \textit{a} varies from 1 (isotropy)
+to 10 (transverse isotropy). 
 
+The orthotropic material was simulated with the imput parameters obtained from
+the mechanical experiments that are presented in Table \ref{table:nonlin}.
 
 \begin{description}
 \item[{\color {red} Strain measuring methods}]
@@ -1042,60 +1025,60 @@ experiment.}}
 
 \section*{References}
 
-
 \pagebreak
 
+
 \section*{Tables}
+\it{\color{red}Add the description for the parameters in the tables}
 
 \begin{description}
 
 \item[]
-\begin{table}[ht]\
+\begin{sidewaystable}[!htbp]\
 \caption{Engineering constants used in model} % title of Table
 \centering % used for centering table
-\begin{tabular}{l c c c c c c c c c} % centered columns (4 columns)
+\begin{tabular}{c c c c c c c c c} % centered columns (4 columns)
 \hline\hline %inserts double horizontal lines
-Model & $E_{1}$ (GPa) & $E_{2}$ (GPa) & $E_{3}$ (GPa) & $\nu_{12}$ & $\nu_{13}$
-& $\nu_{23}$ & $G_{12}$ (GPa) & $G_{13}$ (GPa) & $G_{23}$ (GPa) \\ % inserts
-% table heading
+ $E_{1}$ (GPa) & $E_{2}$ (GPa) & $E_{3}$ (GPa) & $G_{31}$ (GPa) &
+$G_{21}$ (GPa) & $G_{32}$ (GPa) & $\nu_{31}$ & $\nu_{21}$ & $\nu_{32}$ \\ %
+% inserts table heading
 
 \hline % inserts single horizontal line
-Orthotropic & 1.49 & 0.89 & 12.14 & 0.66 & 0.06 & 0.04 & 0.2 & 0.6 & 0.72 \\
+$\frac{1}{a}$ & $\frac{1}{a}$ & 1 &
+$G_{21}$  & $\frac{E_2}{2(1+\nu_{21})}$ & $G_{21}$ & $\nu_{21}$ & 0.25 & $\nu_{21}$ \\
 % inserting body of the table
-Transverse isotropic & 1.49 & $E_1=E_2$ & 12.14 & 0.66 & 0.06 & 0.04 & 0.2 &
- 0.6 & 0.72\\
-Isotropic & - & - & 12.14 \\
- [1ex] % [1ex] adds vertical space
+[1ex] % [1ex] adds vertical space
 \hline %inserts single line
 \end{tabular}
-\label{table:nonlin} % is used to refer this table in the text
-\end{table}
+\label{table:simulpar} % is used to refer this table in the text
+\end{sidewaystable}
 
 \item[]
 \begin{table}[ht]\
 \caption{Typical engineering properties of transverse-isotropic materials\cite{hyer2009stress}} % title of Table
 \centering % used for centering table
-\begin{tabular}{l c c } % centered columns (4 columns)
+\begin{tabular}{l c c c } % centered columns (4 columns)
 \hline\hline %inserts double horizontal lines
 
-& Graphite-polymer composite  & Glass-polymer composite\\
+& Graphite-polymer composite \cite{hyer2009stress}  & Glass-polymer composite
+\cite{hyer2009stress} & Archaeoligical wood \cite{vorobyevcharacterisation}\\
 %  & $E_{1}$  & $E_{2}$ (GPa) & $E_{3}$ (GPa) & $\nu_{12}$ & $\nu_{13}$
 % & $\nu_{23}$ & $G_{12}$ (GPa) & $G_{13}$ (GPa) & $G_{23}$ (GPa) \\ % inserts
 % % table heading
 
 \hline % inserts single horizontal line
 
-$E_{1}$ (GPa) & 12.10 & 15.20\\
-$E_{2}$ (GPa) & 12.10 & 15.20\\
-$E_{3}$ (GPa) & 155.0 & 50.0\\
+$E_{1}$ (GPa) & 12.10 & 15.20 & 0.60\\
+$E_{2}$ (GPa) & 12.10 & 15.20 & 0.35\\
+$E_{3}$ (GPa) & 155.0 & 50.00 & 6.75\\
 
-$G_{31}$ (GPa) & 4.40 & 4.70\\
-$G_{21}$ (GPa) & 3.20 & 3.28\\
-$G_{32}$ (GPa) & 4.40 & 4.70\\
+$G_{31}$ (GPa) & 4.40 & 4.70 & 0.62\\
+$G_{21}$ (GPa) & 3.20 & 3.28 & 0.14\\
+$G_{32}$ (GPa) & 4.40 & 4.70 & 0.33\\
 
-$\nu_{31}$ (-) & 0.248 & 0.254\\
-$\nu_{21}$ (-) & 0.458 & 0.428\\
-$\nu_{32}$ (-) & 0.248 & 0.254\\
+$\nu_{31}$ (-) & 0.248 & 0.254 & 0.37\\
+$\nu_{21}$ (-) & 0.458 & 0.428 & 0.30\\
+$\nu_{32}$ (-) & 0.248 & 0.254 & 0.69\\
 
 
 
