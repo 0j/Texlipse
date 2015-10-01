@@ -139,8 +139,10 @@ is that obtaining a pure compressive stress state is more complicated due to
 inhomogeneous distribution of applied compression force due to geometrical
 imperfections of test specimen \cite{Toftegaard1999849}.
 Moreover, barrelling formation (Fig \ref{fig:barrelling}) in compressive
-loading \cite{oldroyd1966stress}, due to the more or less restrained contact slip on the platens area, makes it difficult to assess the transverse deformations without having to resort to finite element modelling.
-The Poisson’s ratios are thus more difficult to obtain directly from the kind of loading. 
+loading \cite{oldroyd1966stress}, due to the more or less restrained contact slip on the platens area, makes it difficult to assess the 
+transverse deformations without having to resort to finite element modelling.
+The Poisson’s ratios are thus more difficult to obtain directly from this kind
+of loading.
 Strain field measurements using digital image correlation are often required to
 estimate the stiffness parameters accurately \cite{dahl2009planar,
 majano2012test, ozyhar2013moisture}.
@@ -148,6 +150,7 @@ Additionally, the cylindrical orthotropy and curvature of the annual rings make 
 For too small specimens, the tested volume might not be representative, leading to a large scatter in measured stiffness. 
 Nevertheless, compressive testing of wooden cubes is the reasonable choice of test method if the amount of available material is limited. 
 Such problem arises when archaeological material is tetsted.
+
 In 2012, a project with the aim of designing a new support structure for the
 archaeological Vasa ship was initiated. The ship was capsized in 1628, and was salvaged in 1961. 
 The waterlogged ship was impregnated with polyethylene glycol (PEG) in an extensive conservation process aiming to prevent deformation during drying. 
@@ -156,11 +159,9 @@ agressive chemical degradation. Both the degradation \cite{bjurhager2012state} a
  have had a negative effect on the mechanical properties of the ship, which is in need of a better support. In 2012 a project with the aim of 
 designing a new support structure for the fragile and soft ship was also initiated. For this task, the elastic, ultimate and creep properties of the 
 Vasa oak need to be determined. Due to the limited access to material, cubic samples which can be tested several times is preferred.
-
-
-
-
-
+In order to verify the results from the compressive experiments the effect of
+barrelling was investifgated by the simulation using the Finate Element
+Modelling (FEM).
 
 Simulations of experiments in compression are not new. Previously compressive
 experiments on prism samples with orthotropic material behavior were simulated
@@ -182,6 +183,9 @@ formation of the prism.
 
 Present work focuses on an investigation of
 barrelling formation on two different mechanical types of materials. Additionally a comparison of three measuring techniques was made in order to identify the magnitude of error.
+The results of presented investigaten can help to identify the ``true'' values
+of material elastic parameters that can be obtainerd during compresive
+experiments on the cubic samples. 
 
 \begin{itemize}
 \color{red}  
@@ -204,8 +208,11 @@ barrelling formation on two different mechanical types of materials. Additionall
 \item{\textit{Experiment}}
 \end{description}
 
-An Instron universal testing machine with 100 kN load cell was
-used to carry out static tests. Initial tests were conducted on dummy wood specimens in order to find the approximate elastic loading range for all specimen orientations. 
+A special care was taken in order to manufacture the specimens. Original sizes
+of the sample was $25\times25\times25$ $mm$  The accuracy for parallelity
+between the opposite edges of the cube was 0.01 $mm$. 
+
+An Instron universal testing machine with 100 kN load cell was used to carry out static tests. Initial tests were conducted on dummy wood specimens in order to find the approximate elastic loading range for all specimen orientations.
 The conventional way to measure strains is by using the built in measurement
 system or strain gages. Nowadays, full field strain measurement techniques such
 as digital speckle photography (DSP) \cite{synnergren1999stereoscopic} or
@@ -244,14 +251,14 @@ The average transverse and normal strains measured along with normal ones were a
     \centering
     \begin{subfigure}[b]{0.4\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{BarellingEffectZoomed.png}
+        \includegraphics[width=\textwidth]{BarellingEffectZoomed.pdf}
         \caption{}
         \label{fig:barrelling}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.4\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{experiment.png}
+        \includegraphics[width=\textwidth]{experiment.eps}
         \caption{}
         \label{fig:experiment}
     \end{subfigure}
@@ -342,7 +349,7 @@ stress curves for \textit{Vasa} oak  specimen, chosen surface area of interest(\
 total area of surface (\ref{ex2})\textit{\color{red}
 \\To correct the position of the plots. to add the orientations for the image
 LR direction}}
-\label{fig:three graphs}
+\label{fig:threegraphs}
 \end{figure}
 
 
