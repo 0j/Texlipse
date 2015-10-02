@@ -28,6 +28,7 @@
 \usepackage{tikz}
 \usepackage{subcaption}
 \usepackage{rotating}
+\usepackage{threeparttable}
 \usetikzlibrary{matrix}
 \usetikzlibrary{spy}
 \usepgfplotslibrary{groupplots}
@@ -365,7 +366,7 @@ LR direction}}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=8cm]{BarellingPaper.eps}
+\includegraphics[width=8cm]{BarellingPaper.pdf}
 \label{fig:Barrelling}
 \caption{\label{fig:Barrelling} Finite element model of cubic specimen}
 \end{figure}
@@ -1037,19 +1038,32 @@ experiment.}}
 \begin{sidewaystable}[!htbp]\
 \caption{Engineering constants used in model} % title of Table
 \centering % used for centering table
-\begin{tabular}{c c c c c c c c c} % centered columns (4 columns)
+\begin{tabular}{c c c c c c c c c c c c} % centered columns (4 columns)
 \hline\hline %inserts double horizontal lines
  $E_{1}$ (GPa) & $E_{2}$ (GPa) & $E_{3}$ (GPa) & $G_{31}$ (GPa) &
-$G_{21}$ (GPa) & $G_{32}$ (GPa) & $\nu_{31}$ & $\nu_{21}$ & $\nu_{32}$ \\ %
-% inserts table heading
+$G_{21}$ (GPa) & $G_{32}$ (GPa) & $\nu_{31}$ & $\nu_{21}$ & $\nu_{32}$ &
+$\nu_{13}$ & $\nu_{12}$ & $\nu_{23}$ \\ % inserts table heading
 
 \hline % inserts single horizontal line
-$\frac{1}{a}$ & $\frac{1}{a}$ & 1 &
-$G_{21}$  & $\frac{E_2}{2(1+\nu_{21})}$ & $G_{21}$ & $\nu_{21}$ & 0.25 & $\nu_{21}$ \\
+$E$ & $E$ & $a\cdot{E}$ & $\frac{(b\cdot(a-1)+1)\cdot{E}}{2(1+\nu)}$  &
+$\frac{a\cdot{E}}{2(1+\nu)}$ & $\frac{(b\cdot(a-1)+1)\cdot{E}}{2(1+\nu)}$ & $\nu$ & $\nu$ & $\nu$ & $\frac{\nu}{a}$ & $\nu$ & $\frac{\nu}{a}$ \\
 % inserting body of the table
 [1ex] % [1ex] adds vertical space
-\hline %inserts single line
+\hline %inserts single lines
+\hline %inserts single lines
+
+\multicolumn{6}{l}{%
+  \begin{minipage}{9cm}%
+\tiny Note: $E=1$; $\nu=0.25$; Parameter $a=1$ for isotropic and $a=10$
+    for transverse-isotropic material model; Shear stiffness parameter 
+    $b=1$ for isotropic and for transverse-isotropic
+    $b=[0.1,2,3]$.
+      \end{minipage}%
+}\\
+      
+	
 \end{tabular}
+
 \label{table:simulpar} % is used to refer this table in the text
 \end{sidewaystable}
 
