@@ -343,9 +343,7 @@ The average transverse and normal strains measured along with normal ones were a
 \textit{Vasa} oak specimen during compressive testing including displacement
 field $(mm)$. c) Experimental strain vs.
 stress curves for \textit{Vasa} oak  specimen, chosen surface area of interest(\ref{ex1}) and
-total area of surface (\ref{ex2})\textit{\color{red}
-\\To correct the position of the plots. to add the orientations for the image
-LR direction}}
+total area of surface (\ref{ex2})}
 \label{fig:threegraphs}
 \end{figure}
 
@@ -375,7 +373,7 @@ LR direction}}
 
 The finite element program COMSOL Multiphysics 4.4 \cite{Comsol} was used for
 the experimental simulations.
-A cube (Figure \ref{fig:Barrelling})  with unit dimensions was modeled with
+A cube (Figure \ref{fig:Barrelling})  with unity dimensions was modeled with
 3D solid elements.
 The platens of universal testing machine were not included in the model.
 Instead, the compressive loading was simulated as a downward vertical prescribed
@@ -389,40 +387,37 @@ After a mesh refinement study, a $10\times10\times10$ mesh of quadratic
 elements was determined to provide reasonably accurate results for the purpose of this study.
 
 The friction between platens and specimen is the main reason for the
-barrelling formation \cite{Narayanasamy198821, kulkarni1969}.  To simulate that
+barrelling formation \cite{Narayanasamy198821, kulkarni1969}. To simulate that
 friction we have introduced friction parameters $K$ that were applied to the
 mutually orthogonal edges on the top and the bottom surface of the cube (Figure
 \ref{fig:Barrelling}).
 
 \begin{description}
-\item[{\color {red}Material input parameters}]
+\item{\textit{Material input parameters}}
 \end{description}
-We simulated transverse isotropic and isotropic material behaviour.
-The model was linear elastic. For the isotropic material stiffness \textit{E}
-has a unity value and Poisson's ratio $\nu = 0.25$. For transverse
-isotropic material the stiffness parameters were taken as engineering notation of
-compliance matrix. For simplification the stiffness coefficients $E_{3}$ and
-$E_{1} = E_{2} = E_{3}/a$, where coefficient \textit{a} varies from 1 (isotropy)
-to 10 (transverse isotropy). 
 
+We simulated transverse isotropic and isotropic material behaviour.
+The model was linear elastic. The material propeties are introduced in
+Table \ref{table:simulpar}. A parametric values $a$ and $b$ were introduced in
+order to vary between the two mechanical models. The first one is parametrising
+the Young's modulus and the Poisson's ratio. The second one has been determined
+numerically to parametrise the shear moduli values from
+materials in Table \ref{table:nonlin}.
 The orthotropic material was simulated with the imput parameters obtained from
-the mechanical experiments that are presented in Table \ref{table:nonlin}.
+the experiments \cite{vorobyevcharacterisation}.
+
 
 \begin{description}
-\item[{\color {red} Strain measuring methods}]
+\item{\textit{Strain measuring methods}}
 \end{description}
 
-Three strain measuring cases were simulated and results were compared, see 
-Figure \ref{fig:expmethods}.
-In the \textit{first} case,  the average of the total strain from the surface was taken and used as a value
-for obtaining axial stiffness $E_1$. In the \textit{second} experimental method
- 50\% of cube surface (Figure \ref{fig:cubemesh}b) was used to calculate the
+Three strain measuring cases were taken intro accont in simulation.
+In the \textit{first} case,  the average strain from the total area surface was
+obtained and used as a value for obtaining axial stiffness $E_1$. In the
+\textit{second} case, the 50\% of cube surface (Figure \ref{fig:experiment}) was used to calculate the
  average strain. The area was chosen in order to disregard the ``clamping''
- effect on strain field of the surface of the cube. Finally the \textit{third}
- method was based on EN code. \\
- \textit{\color {red} Add the European code to the reference}
-The strain is measured between two points on the cube surface as it with strain
-gauge. 
+ effect. Finally in the \textit{third} method the strain is measured between two
+ points in the center of the specimen as it is suggested in ASTM code \cite{american2009standard}.
 
 
 \begin{description}
@@ -731,16 +726,7 @@ experiment.}}
 
 
 
-\begin{description}
-\item[{\color {red}Obtaining strain fields both 2D and 3D}]
-\end{description}
 
-\begin{itemize}
-\color{red}
-\item How was the problem studied 
-\item Description of FEM model, parameters, application, details of the model
-\item Describe the experimental setup, materials and procedure
-\end{itemize}
 
 
 \section{Results and Discussions}
@@ -1050,7 +1036,6 @@ $\frac{a\cdot{E}}{2(1+\nu)}$ & $\frac{(b\cdot(a-1)+1)\cdot{E}}{2(1+\nu)}$ & $\nu
 % inserting body of the table
 [1ex] % [1ex] adds vertical space
 \hline %inserts single lines
-\hline %inserts single lines
 
 \multicolumn{6}{l}{%
   \begin{minipage}{9cm}%
@@ -1068,7 +1053,7 @@ $\frac{a\cdot{E}}{2(1+\nu)}$ & $\frac{(b\cdot(a-1)+1)\cdot{E}}{2(1+\nu)}$ & $\nu
 \end{sidewaystable}
 
 \item[]
-\begin{table}[ht]\
+\begin{sidewaystable}[!htbp]\
 \caption{Typical engineering properties of transverse-isotropic materials\cite{hyer2009stress}} % title of Table
 \centering % used for centering table
 \begin{tabular}{l c c c } % centered columns (4 columns)
@@ -1107,9 +1092,8 @@ $\nu_{32}$ (-) & 0.248 & 0.254 & 0.69\\
 \hline %inserts single line
 \end{tabular}
 \label{table:nonlin} % is used to refer this table in the text
-\end{table}
+\end{sidewaystable}
 \end{description}
-
 
 
 \it{\color{red}Check whether i need to add the isotropic parameters and transv
