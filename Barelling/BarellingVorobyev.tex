@@ -400,11 +400,12 @@ We simulated transverse isotropic and isotropic material behaviour.
 The model was linear elastic. The material propeties are introduced in
 Table \ref{table:simulpar}. A parametric values $a$ and $b$ were introduced in
 order to vary between the two mechanical models. The first one is parametrising
-the Young's modulus and the Poisson's ratio. The second one has been determined
-numerically to parametrise the shear moduli values from
-materials in Table \ref{table:nonlin}.
-The orthotropic material was simulated with the imput parameters obtained from
-the experiments \cite{vorobyevcharacterisation}.
+the Young's modulus and the Poisson's ratio. The second one has
+been determined numerically to parametrise the shear moduli values from
+materials in Table \ref{table:nonlin}. 
+The remaining three Poisson's ratios were be obtained from the symmetry
+principle. relations The orthotropic material was simulated with the imput
+parameters obtained from the experiments \cite{vorobyevcharacterisation}.
 
 
 \begin{description}
@@ -1034,12 +1035,12 @@ experiment.}}
 \begin{tabular}{c c c c c c c c c c c c} % centered columns (4 columns)
 \hline\hline %inserts double horizontal lines
  $E_{1}$ (GPa) & $E_{2}$ (GPa) & $E_{3}$ (GPa) & $G_{31}$ (GPa) &
-$G_{21}$ (GPa) & $G_{32}$ (GPa) & $\nu_{31}$ & $\nu_{21}$ & $\nu_{32}$ &
+$G_{21}$ (GPa) & $G_{32}$ (GPa) &
 $\nu_{13}$ & $\nu_{12}$ & $\nu_{23}$ \\ % inserts table heading
 
 \hline % inserts single horizontal line
 $E$ & $E$ & $a\cdot{E}$ & $\frac{(b\cdot(a-1)+1)\cdot{E}}{2(1+\nu)}$  &
-$\frac{a\cdot{E}}{2(1+\nu)}$ & $\frac{(b\cdot(a-1)+1)\cdot{E}}{2(1+\nu)}$ & $\nu$ & $\nu$ & $\nu$ & $\frac{\nu}{a}$ & $\nu$ & $\frac{\nu}{a}$ \\
+$\frac{a\cdot{E}}{2(1+\nu)}$ & $\frac{(b\cdot(a-1)+1)\cdot{E}}{2(1+\nu)}$ & $\frac{\nu}{a}$ & $\nu$ & $\frac{\nu}{a}$ \\
 % inserting body of the table
 [1ex] % [1ex] adds vertical space
 \hline %inserts single lines
