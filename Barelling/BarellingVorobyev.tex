@@ -551,7 +551,8 @@ name=plot0,height=6cm,width=6cm,
 \captionsetup{justification=centering}
 \caption{Relations between Young's modulus and spring
 coefficient \textit{K} for a) isotropic material and b) transverse isotropic
-[\textit{a=0.1}] material with different Poisson's ratios.}
+[\textit{a=10}] material with different Poisson's ratios.}
+\label{fig:isovstriso}
 \end{figure}
 
 \end{center}
@@ -730,11 +731,20 @@ experiment.}}
 
 \section{Results and Discussions}
 The simulated strain results were aquired in order to compare those with the
-actuals for the experiments. 
+actuals for the experiments. The set of experimental and simulations are
+compared. Simulation results are now possible to use for the estimation of error
+that appears due to different strain estimation principles.
 
-
-
-
+\begin{description}
+\item{\textit{Isotropic vs. Transverse-Isotropic material}}
+\end{description}
+The results of the simulation shows that the isotropic material barrels
+significantly more than transverse-isotropic and as a result orthotropic. 
+Intuitevly two plots can be compared in Figure \ref{fig:isovstriso}. The plot
+compares relative errors depending on the Poisson's ratio and the $K$
+coefficient. The general trend is that with the increasing of Poisson's ratio
+$\nu_{13}$ value, the error is increasing. However in isotropic case it is more
+severe.
 
 
 
@@ -746,7 +756,7 @@ actuals for the experiments.
 	\color{black}
 		\item Barellling formation is less in transverse isotropic and orthotropic
 		material.
-		\item The larger the Poisson�s ratio in isotropic materials, the more severe
+		\item The larger the Poisson's ratio in isotropic materials, the more severe
 		the barrelling.
 		\item The measured poissons is less than actual for the 13 and 23 and opposite
 		for 12.
