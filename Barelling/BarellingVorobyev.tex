@@ -92,11 +92,10 @@ samples with orthotropic properties {\color{red} Preliminary title}}
 %%\fntext[fn2]{Another author footnote, but a little more longer.}
 %%\fntext[fn3]{Yet another author footnote. Indeed, you can have any number of
 % author footnotes.}
-
+\cortext[cor1]{Corresponding author}
 \author{Alexey Vorobyev\corref{cor1}}
 \ead{alexey.vorobyev@angstrom.uu.se}
 
-\cortext[cor1]{Corresponding author}
 
 \author{Ingela Bjurhager}
 \author{Nico P. van Dijk}
@@ -366,7 +365,8 @@ interest(\ref{ex2}) and total area of surface (\ref{ex1}).}
 \centering
 \includegraphics[width=8cm]{BarellingPaper.pdf}
 \label{fig:Barrelling}
-\caption{\label{fig:Barrelling} Finite element model of cubic specimen}
+\caption{\label{fig:Barrelling} MEchanical model of cubic
+specimen used in the FEM simulation}
 \end{figure}
 
 
@@ -414,7 +414,7 @@ parameters obtained from the experiments \cite{vorobyevcharacterisation}.
 
 Three strain measuring cases were taken intro accont in simulation.
 In the \textit{first} case,  the average strain from the total area surface was
-obtained and used as a value for obtaining axial stiffness $E_1$. In the
+obtained and used as a value for obtaining axial stiffness $E_3$. In the
 \textit{second} case, the 50\% of cube surface (Figure \ref{fig:experiment}) was used to calculate the
  average strain. The area was chosen in order to disregard the ``clamping''
  effect between the platens of UTM and contact surface of the cube. Finally in
@@ -551,7 +551,9 @@ name=plot0,height=6cm,width=6cm,
 \captionsetup{justification=centering}
 \caption{Relations between Young's modulus and spring
 coefficient \textit{K} for a) isotropic material and b) transverse isotropic
-[\textit{a=10}] material with different Poisson's ratios.}
+$a=10$ material with different input Poisson's ratios $\nu_{12}$.}
+
+
 \label{fig:isovstriso}
 \end{figure}
 
@@ -714,10 +716,11 @@ name=b1,height=5cm,width=4cm,
 \end{tikzpicture}
 \captionsetup{justification=centering}
 \caption{Measured stiffness vs. given Poisson's ratio
-($\nu_{31}$, $\nu_{32}$) in transverse-isotropic material for spring
+$\nu_{12}$ in transverse-isotropic material for spring
 coefficients $K=0$ (\ref{k1}), $K=0.1$ (\ref{k2}) and $K=\infty$ (\ref{k3});\\
 \color{red}{a) chosen area of interest , b) total area of interest c)
 experiment.}}
+\label{fig:strainmethods}
 
 
 \end{figure}
@@ -732,19 +735,29 @@ experiment.}}
 \section{Results and Discussions}
 The simulated strain results were aquired in order to compare those with the
 actuals for the experiments. The set of experimental and simulations are
-compared. Simulation results are now possible to use for the estimation of error
-that appears due to different strain estimation principles.
+compared. The reasonable experimental $K$ factor is reported to be 0.17
+\cite{Toftegaard1999849}. Simulation results are now possible to use for the
+estimation of error that appears due to different strain estimation principles.
 
 \begin{description}
 \item{\textit{Isotropic vs. Transverse-Isotropic material}}
 \end{description}
 The results of the simulation shows that the isotropic material barrels
-significantly more than transverse-isotropic and as a result orthotropic. 
+significantly more than transverse-isotropic and orthotropic. 
 Intuitevly two plots can be compared in Figure \ref{fig:isovstriso}. The plot
 compares relative errors depending on the Poisson's ratio and the $K$
-coefficient. The general trend is that with the increasing of Poisson's ratio
-$\nu_{13}$ value, the error is increasing. However in isotropic case it is more
-severe.
+factor. The general trend is that with the increasing of Poisson's ratio
+$\nu_{12}$ value, the error is increasing. The error for the reasonable $K$ is
+up to 5\% for the isotropic material whereas it is 0.02\% for transverse
+isotropic. 
+\begin{description}
+\item{\textit{Strain measurement}}
+\end{description}
+Measured Young's modulus varies with the chosen strain measurement method
+(Figure \ref{fig:strainmethods}). Method where the total area of the specimen is
+taken for measuring the strain (Figure \ref{fig:strainmethods}b) is giving
+considerable error for given $K$ values. This is due to ``clamped'' area is
+included in to the evaluation of Young's modulus. 
 
 
 
