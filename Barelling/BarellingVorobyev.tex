@@ -524,7 +524,7 @@ K	0.05	0.1	0.15	0.2	0.25	0.3	0.35	0.4	0.45
 name=plot0,height=6cm,width=5cm,
     title={a)},
 %    xlabel={Temperature [\textcelsius]},
-    ylabel={Error Young's modulus [Pa]},
+    ylabel={Error Young's modulus},
     xmin=1, xmax=9,
     ymin=0.99, ymax=1.5,
     xtick={1,...,9},
@@ -643,7 +643,7 @@ height=6cm,width=5cm, title={b)},
 \begin{axis}[name=plot3,at={($(plot0.south)-(0,1cm)$)},anchor=north,
 height=6cm,width=5cm, title={a')},
 %    xlabel={Temperature [\textcelsius]},
-    ylabel={Error Poisson's ratio[-]},
+    ylabel={Error Poisson's ratio},
     xmin=1, xmax=9,
     ymin=0.94, ymax=1.03,
     xtick={1,...,9},
@@ -770,9 +770,12 @@ height=6cm,width=5cm, title={a')},
 
 
 \captionsetup{justification=centering}
-\caption{Relations between Young's modulus and spring
-coefficient \textit{K} for a) isotropic material and b) transverse isotropic
-$a=10$ material with different input Poisson's ratios $\nu_{12}$.}
+\caption{a)Simulated Young's moduli error values of material with
+different given Poisson's ratio ($\nu_{12}$) values for isotropic material, b)
+$E_3$, and c) $E_1, E_2$ for transverse-isotropic material.
+a')Simulated Poisson's ratio error values of material with different given
+Poisson's ratio ($\nu_{12}$) values for isotropic material, b')
+$\nu_{31},\nu_{32}$ and c') $\nu_{12}$ for transverse-isotropic material.}
 
 
 \label{fig:isovstriso}
@@ -1123,7 +1126,7 @@ experiment.}}
 The simulated strain results were acquired in order to compare those with the
 actuals for the experiments. The set of experimental and simulations are
 compared. The reasonable experimental $K$ factor is reported to be 0.17
-\cite{Toftegaard1999849}. Simulation results are now possible to use for the
+\cite{Toftegaard199x`9849}. Simulation results are now possible to use for the
 estimation of error that appears due to different strain estimation principles.
 
 \begin{description}
