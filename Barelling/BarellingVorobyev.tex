@@ -1,4 +1,4 @@
-\documentclass[5p]{elsarticle}
+\documentclass[review]{elsarticle}
 
 \makeatletter
 \def\@author#1{\g@addto@macro\elsauthors{\normalsize%
@@ -1442,7 +1442,7 @@ compared. Simulation results are now possible to use for the
 estimation of error that appears due to different strain estimation principles.
 
 \begin{description}
-\item{\textit{ Barelling in Isotropic vs. Transverse-Isotropic material}}
+\item{\textit{ Barelling in Isotropic and Transverse-Isotropic material}}
 \end{description}
 The results of the simulation shows that the isotropic material barrels
 significantly more than transverse-isotropic and orthotropic. 
@@ -1450,10 +1450,11 @@ Intuitively three plots can be compared in Figure \ref{fig:isovstriso}. The plot
 (a-c) compares relative errors in measured Young's moduli depending on the
 Poisson's ratio depending on $K$ factor. The barrelling
 for all simulations is leading to an overestimation of the Young's moduli. The
-trend is that with the larger Poisson's ratio $\nu_{12}$, the error
-is larger. However the error for the istropic material is significantly larger
-when factor $K=1$. The error in Young's moduli for the transverse isotropic material, 
-is less in the axial direction $3$ than in transverse direction $1$ (Figure \ref{fig:isovstriso} b,c). 
+overestimation is happenning due to consideration of a strain field in the
+ area close to the edges, where constrained material has a stiffer response.
+In general, the larger Poisson's ratio $\nu_{12}$, the error is larger. However
+the error for the istropic material is significantly larger when factor $K=1$. 
+The error in Young's moduli for the transverse isotropic material, is less in the axial direction $3$ than in transverse direction $1$ (Figure \ref{fig:isovstriso} b,c).
 This behaviour can be discussed with the help of Figure \ref{fig:Error}a', b' and c'. For the
 isotropic material the severe influence of barrelling occurs due to the
 isotropic parameters in all planes. The severe effect of ``clamping'' can be
@@ -1480,24 +1481,26 @@ the overestimation of the value.
 \begin{description}
 \item{\textit{Strain measurement}}
 \end{description}
-Measured Young's modulus varies with the chosen strain measurement method
+Measured mechanical properties varies with strain measurement methods
 (Figure \ref{fig:strainmethods}). Method where the total area of the specimen is
 taken for measuring the strain (Figure \ref{fig:strainmethods}b) is giving
-considerable error for given $K$ values. This is due to ``clamped'' area which
-is included in to the evaluation of $\varepsilon_{33}$ strain. In the second 
-approach (Figure \ref{fig:strainmethods}a) where the part of the area was taken
-for strain determination one can observe the error of maximum of $0.23\%$. The error decline after Poisson's
-ratio $\nu_{12}=0.3$ can be described due to geometry change where the actual
-barrelling spread out of ``area of interest'' and therefore error is minor.
+considerable error for given $K$ factor values. The error emerges from the
+``clammed'' region close to the horisontal edges (Fig \ref{fig:Error}a-c).  In
+the second approach (Figure \ref{fig:strainmethods}a) the part of the area was
+taken for determination of strain. The plot shows that with this method the
+Young's moduli is overestimated by $0.23\%$. 
+The decrease of error for Poisson's ratio more than $\nu_{12}=0.3$ is due to 
+emerging of underestimated strains that are evening out the overestimated within
+the chosen area of interest(Fig \ref{fig:Error}b,c).
 In the last approach (Figure \ref{fig:strainmethods}c) where ASTM standard was
-taken, the error was not as significant as in the ``total area'' approach. 
-However it is more significant than in the second approach. This is due to the
+used, the error was not as significant as in the ``total area'' approach. 
+However it is larger than in the second approach. This is due to the
 strain is measured between two points in the center of the specimen where
 ``clamping'' is still dominating. Large error values for the Young's modulus
-close to the horizontal edges of simulated model are clearly visible in
-Figure \ref{fig:Error}b. Contrarily less error for the transverse-isotropic
-model which can be the result of different mechanical parameters in the
-transverse directions (Fig \ref{fig:Error}b'). These simulations are supporting
+close to the horizontal edges of isotropic model are clearly visible in
+Figure \ref{fig:Error}a'. Contrarily less error (Fig \ref{fig:Error}b') for the
+transverse-isotropic model which can be the result of different mechanical parameters in the
+transverse directions. These simulations are supporting
 the experimental result in Figure \ref{fig:explot}. Where the
 average strain diagram for the total area is showing larger Young's moduli than
 the one for the chosen area.
@@ -1539,13 +1542,16 @@ Transverse-Isotropic material in c'). ($K=0.1;
 		stillactive}
 	    \item Mention underestimation and overestimation of Poisson's in transverse
 	    13,23 direction (DONE)
-	    \item 3 mComment on the evaluation of POissons ratios and the clamping
-	    problems {\color{red} add the plots}
-	    \item 3 Dusciss that ASTM is suitable for the isotropic material for
+	    \item Comment on the evaluation of Poissons ratios and the clamping
+	    problems (DONE)
+	    \item Dusciss that ASTM is suitable for the isotropic material for
 	    estimation of the POisson's ratio check the saved Excel table {\color{red}
 	    add the plots}
-	    \item 3 Maybe add the transverse figures for the Error plot figures(DONE)
+	    \item Maybe add the transverse figures for the Error plot figures(DONE)
 	    \item Change figure 4 b' and a' (DONE)
+	    \item To fix the pictures in the Comsol once it is on and running. 
+	    
+	    
 		
 		
 		
