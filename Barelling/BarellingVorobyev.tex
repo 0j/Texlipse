@@ -1,4 +1,4 @@
-\documentclass[5p]{elsarticle}
+\documentclass[review]{elsarticle}
 
 \makeatletter
 \def\@author#1{\g@addto@macro\elsauthors{\normalsize%
@@ -94,7 +94,7 @@ samples with orthotropic properties {\color{red} Preliminary title}}
 % author footnotes.}
 \cortext[cor1]{Corresponding author}
 \author{Alexey Vorobyev\corref{cor1}}
-\ead{alexey.vorobyev@angstrom.uu.se}
+\ead{alexey.vorobyev@me.com}
 
 
 \author{Ingela Bjurhager}
@@ -305,7 +305,7 @@ The average transverse and normal strains measured along with normal ones were a
 		
 		
 		\begin{axis}[no markers,
-		name=plot0,height=6cm,width=6cm,
+		name=plot0,height=6cm,width=\textwidth,
 		    xlabel={Strain $\varepsilon_y$ [\%]},
 		    ylabel={Stress stress $\sigma_y$ [MPa]},
 		    xmin=0, xmax=1.5,
@@ -1535,41 +1535,6 @@ Transverse-Isotropic material in c'). ($K=0.1;
 
 
 
-\begin{itemize}
-\color{red}
-\item What were the findings?
-
-	\begin{enumerate}
-	\color{black}
-		\item Barrellling formation is less in transverse isotropic and orthotropic
-		material (DONE).
-		\item The larger the Poisson's ratio in isotropic materials, the more severe
-		the barrelling(DONE).
-		\item The measured poisson's is less than actual for the 13 and 23 and
-		opposite for 12(DONE).
-		\item Combine another methods for the are to the 6 plots fo the measurements
-		of poissons and stiffness. {\color{red} The benefit of the chosen area is
-		that the ASTM measurement will be in the center where the clamping is
-		stillactive}
-	    \item Mention underestimation and overestimation of Poisson's in transverse
-	    13,23 direction (DONE)
-	    \item Comment on the evaluation of Poissons ratios and the clamping
-	    problems (DONE)
-	    \item Dusciss that ASTM is suitable for the isotropic material for
-	    estimation of the POisson's ratio check the saved Excel table {\color{red}
-	    add the plots}
-	    \item Maybe add the transverse figures for the Error plot figures(DONE)
-	    \item Change figure 4 b' and a' (DONE)
-	    \item To fix the pictures in the Comsol once it is on and running(DONE). 
-	    
-	    
-		
-		
-		
-	\end{enumerate}
-\end{itemize}
-
-
 %poisson's vs poisson's dependency
 % \color{black}
 % 
@@ -1830,23 +1795,62 @@ Transverse-Isotropic material in c'). ($K=0.1;
 
 
 \section{Conclusions}
-\color{red}
+The barrelling formation can be quantified by the FE modelling. The strain
+measurement using the DIC systems gives better view on the distribution of
+strains and therefore it is easier to identify the distribution of ``clamped''
+regions where the barelling formation appeared. In general the mechanical
+experiments are overestimating the actual values for the Young's moduli due to
+the presence of the underestimated srain regions within the chosen area or
+measuring points. IN the case of quantifying the poisson's ratio, the DIC
+measurement has benefits, because the true values of Poisson's ratio are close
+to the central part of vertical edges of the speciemen and not in the centeer,
+where the strain gauges are usually placed. 
+
 \begin{itemize}
-		\item Generalise the experiments and the simulation results.
+\color{red}
+\item What were the findings?
+
+	\begin{enumerate}
+	\color{black}
+		\item Add the info on the usage of cubic speciemns2.	
+		\item Barrellling formation is less in transverse isotropic and orthotropic
+		material (DONE).
+		\item The larger the Poisson's ratio in isotropic materials, the more severe
+		the barrelling(DONE).
+		\item The measured poisson's is less than actual for the 13 and 23 and
+		opposite for 12(DONE).
+		\item Combine another methods for the are to the 6 plots fo the measurements
+		of poissons and stiffness. {\color{red} The benefit of the chosen area is
+		that the ASTM measurement will be in the center where the clamping is
+		stillactive}
+	    \item Mention underestimation and overestimation of Poisson's in transverse
+	    13,23 direction (DONE)
+	    \item Comment on the evaluation of Poissons ratios and the clamping
+	    problems (DONE)
+	    \item Dusciss that ASTM is suitable for the isotropic material for
+	    estimation of the POisson's ratio check the saved Excel table {\color{red}
+	    add the plots}
+	    \item Maybe add the transverse figures for the Error plot figures(DONE)
+	    \item Change figure 4 b' and a' (DONE)
+	    \item To fix the pictures in the Comsol once it is on and running(DONE). 
+	    
+	    
+		
+		
+		
+	\end{enumerate}
 \end{itemize}
-
-
-
 
 
 \section*{Acknowledgements}
 
 \section*{References}
+\bibliography{mybibfile}
+
 
 \pagebreak
-
-
 \section*{Tables}
+
 \begin{description}
 
 \item[]
@@ -1932,6 +1936,5 @@ $\nu_{32}$ (-) & 0.248 & 0.254 & 0.69\\
 %% Do not remove the page break here.
 \pagebreak
 
-\bibliography{mybibfile}
 
 \end{document}
