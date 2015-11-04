@@ -1548,6 +1548,149 @@ Transverse-Isotropic material in c'). ($K=0.1;
 \end{figure}
 
 
+\begin{description}
+\item{\textit{Barrelling in orthotropic material}}
+\end{description}
+
+\begin{center}% note that \centering uses less vspace...
+\begin{figure}[!ht]
+\pgfplotsset{every axis legend/.append style={
+		at={(0.5,1.03)},
+		anchor=north}}
+
+\begin{tikzpicture}[scale=1]
+
+	\pgfplotstableread{
+K	ZX	ZY	trZX	trZY
+1	1	1	1	1
+2	1.00434	1.00178	1.00875	1.00043
+3	1.0194	1.01256	1.03721	1.0022
+4	1.03056	1.02673	1.05513	1.0042
+5	1.03252	1.02989	1.05792	1.00473
+6	1.03274	1.03025	1.05821	1.00479
+7	1.03276	1.03028	1.05824	1.0048
+8	1.03276	1.03028	1.05825	1.0048
+9	1.03276	1.03028	1.05825	1.0048
+
+}\datatable
+
+\pgfplotstableread{
+K	ZX	ZY	trZX	trZY
+1	0.99999	0.99999	0.99999	1.00034
+2	0.98681	1.00168	0.99672	0.99877
+3	0.95132	0.98912	0.98674	0.99688
+4	0.93821	0.9555	0.98148	1.00231
+5	0.93745	0.94676	0.98092	1.00394
+6	0.9374	0.94575	0.98087	1.0041
+7	0.93739	0.94565	0.98087	1.00411
+8	0.93739	0.94564	0.98087	1.00411
+9	0.93739	0.94564	0.98087	1.00411
+
+
+}\datatableA
+
+
+
+
+\begin{axis}[
+name=plot0,height=6cm,width=5cm,
+    title={a)},
+%    xlabel={Temperature [\textcelsius]},
+    ylabel={Normalized Young's modulus},
+    xmin=1, xmax=9,
+    ymin=0.99, ymax=1.06,
+    xtick={1,...,9},
+%    ytick={0,20,40,60,80},
+    xticklabels={}, 
+    ymajorgrids=true,
+    xmajorgrids=true,
+    grid style=dashed,
+]
+% \end{axis}    
+% \begin{axis}[legend pos=outer north east]
+ 
+ 
+    \addplot table[x=K,y=ZX] {\datatable};
+%     \addlegendentry{$\nu$=0.05}
+    \addplot table[x=K,y=ZY] {\datatable};
+%     \addlegendentry{$\nu$=0.1}
+    \addplot table[x=K,y=trZX] {\datatable};
+%     \addlegendentry{$\nu$=0.15}
+    \addplot table[x=K,y=trZY] {\datatable};
+%     \addlegendentry{$\nu$=0.2}
+%     \addplot table[x=K,y=0.25] {\datatable};
+% %     \addlegendentry{$\nu$=0.25}
+%     \addplot table[x=K,y=0.3] {\datatable};
+% %     \addlegendentry{$\nu$=0.3}
+%     \addplot table[x=K,y=0.35] {\datatable};
+% %     \addlegendentry{$\nu$=0.35}
+%     \addplot table[x=K,y=0.4] {\datatable};
+% %     \addlegendentry{$\nu$=0.4}
+%     \addplot table[x=K,y=0.45] {\datatable};
+% %     \addlegendentry{$\nu$=0.45}
+\end{axis}
+
+\begin{axis}[
+name=plot1,at={($(plot0.east)+(1cm,0)$)},anchor=west,
+height=6cm,width=5cm, title={b)},
+%    xlabel={Temperature [\textcelsius]},
+%    ylabel={Measured stiffness [Pa]},
+    xmin=1, xmax=9,
+    ymin=0,9, ymax=1.003,
+    yticklabel style={/pgf/number format/fixed,
+                  /pgf/number format/precision=3},
+    xtick={1,...,9},
+%    ytick={0,20,40,60,80},
+%     xticklabels={$0$,$0.001$,$0.01$,$0.1$,$1$, $10$, $100$,
+%     $1000$, $\infty$}, 
+    xticklabels={}, 
+    ymajorgrids=true,
+    xmajorgrids=true,
+    grid style=dashed,
+    bar shift=0pt
+]
+
+    \addplot table[x=K,y=ZX] {\datatableA};
+%     \addlegendentry{$\nu$=0.05}
+    \addplot table[x=K,y=ZY] {\datatableA};
+%     \addlegendentry{$\nu$=0.1}
+    \addplot table[x=K,y=trZX] {\datatableA};
+%     \addlegendentry{$\nu$=0.15}
+    \addplot table[x=K,y=trZY] {\datatableA};
+%     \addlegendentry{$\nu$=0.2}
+%     \addplot table[x=K,y=0.25] {\datatable};
+% %     \addlegendentry{$\nu$=0.25}
+%     \addplot table[x=K,y=0.3] {\datatable};
+% %     \addlegendentry{$\nu$=0.3}
+%     \addplot table[x=K,y=0.35] {\datatable};
+% %     \addlegendentry{$\nu$=0.35}
+%     \addplot table[x=K,y=0.4] {\datatable};
+% %     \addlegendentry{$\nu$=0.4}
+%     \addplot table[x=K,y=0.45] {\datatable};
+% %     \addlegendentry{$\nu$=0.45}
+
+
+\end{axis}
+
+
+\end{tikzpicture}
+
+
+\captionsetup{justification=centering}
+\caption{a)Simulated Young's moduli error values of material with
+different given Poisson's ratio ($\nu_{12}$) values for isotropic material, b)
+$E_3$, and c) $E_1, E_2$ for transverse-isotropic material.
+a')Simulated Poisson's ratio error values of material with different given
+Poisson's ratio ($\nu_{12}$) values for isotropic material, b')
+$\nu_{31},\nu_{32}$ and c') $\nu_{12}$ for transverse-isotropic material.}
+
+
+\label{fig:isovstriso}
+\end{figure}
+
+\end{center}
+
+
 
 
 
