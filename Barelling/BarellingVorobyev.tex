@@ -569,7 +569,7 @@ height=6cm,width=5cm, title={b)},
     ymin=1, ymax=1.07,
     yticklabel style={/pgf/number format/fixed,
                   /pgf/number format/precision=3},
-    xtick={1,...,9},
+%     xtick={1,...,9},
 %    ytick={0,20,40,60,80},
 %     xticklabels={$0$,$0.001$,$0.01$,$0.1$,$1$, $10$, $100$,
 %     $1000$, $\infty$}, 
@@ -577,7 +577,6 @@ height=6cm,width=5cm, title={b)},
     ymajorgrids=true,
     xmajorgrids=true,
     grid style=dashed,
-    bar shift=0pt
 ]
 
     \addplot table[y=s1,x=0.05] {\datatableA};
@@ -682,13 +681,13 @@ height=6cm,width=5cm, title={a')},
 %     \addlegendentry{$\nu$=0.45}
 \end{axis}
 
-\begin{axis}[legend style={at={(0.5,-0.2)}, legend columns=5, anchor=north},
+\begin{axis}[legend style={at={(0.5,-0.3)}, legend columns=5, anchor=north},
 	name=plot4,at={($(plot1.south)-(0,1cm)$)},anchor=north, height=6cm,width=5cm,
     title={b')},
     xlabel={Displacement factor},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0, xmax=1,
-    ymin=0.6, ymax=1,
+    ymin=0.5, ymax=1,
     yticklabel style={/pgf/number format/fixed,
                   /pgf/number format/precision=3},
 %     xtick={1,...,9},
@@ -785,365 +784,365 @@ $\nu_{31},\nu_{32}$ and c') $\nu_{12}$ for transverse-isotropic material.}
 
 \end{center}
 
-
-\begin{center}% note that \centering uses less vspace...
-\begin{figure}[!ht]
-\pgfplotsset{every axis legend/.append style={
-		at={(0.5,1.03)},
-		anchor=north}}
-
-\begin{tikzpicture}[scale=1]
-
-	\pgfplotstableread{
-	K	0.05	0.1	0.15	0.2	0.25	0.3	0.35	0.4	0.45
-1	1	1	1	1	1	1	1	1	1
-2	1.00001	1.00002	1.00004	1.00008	1.00013	1.00018	1.00025	1.00033	1.00042
-3	1.00005	1.00019	1.00043	1.00076	1.00121	1.00174	1.00241	1.00319	1.00412
-4	1.00032	1.00127	1.00283	1.00505	1.00802	1.01194	1.01722	1.02472	1.03666
-5	1.00075	1.00292	1.00645	1.0115	1.01853	1.02879	1.04539	1.07813	1.18128
-6	1.00087	1.00335	1.0074	1.01319	1.02137	1.03365	1.0547	1.10164	1.34588
-7	1.00089	1.00341	1.00751	1.01339	1.0217	1.03423	1.05589	1.10502	1.39391
-8	1.00089	1.00341	1.00752	1.0134	1.02174	1.03429	1.05602	1.10538	1.39995
-9	1.00089	1.00341	1.00752	1.01341	1.02174	1.0343	1.05603	1.10542	1.40064
-}\datatable
-
-\pgfplotstableread{
-K	0.05	0.1	0.15	0.2	0.25	0.3	0.35	0.4	0.45
-1	1	1	1	1	1	1	1	1	1
-2	1	1.00001	1.00002	1.00003	1.00004	1.00005	1.00006	1.00006	1.00005
-3	1.00002	1.00008	1.00016	1.00024	1.00033	1.0004	1.00045	1.00046	1.00043
-4	1.00006	1.00023	1.00048	1.00077	1.00107	1.00135	1.00156	1.00166	1.0016
-5	1.00008	1.00029	1.00061	1.00098	1.00138	1.00176	1.00206	1.00222	1.00219
-6	1.00008	1.0003	1.00062	1.00101	1.00142	1.00181	1.00213	1.0023	1.00226
-7	1.00008	1.0003	1.00062	1.00101	1.00143	1.00182	1.00213	1.00231	1.00227
-8	1.00008	1.0003	1.00062	1.00101	1.00143	1.00182	1.00213	1.00231	1.00227
-9	1.00008	1.0003	1.00062	1.00101	1.00143	1.00182	1.00213	1.00231	1.00227
-
-}\datatableA
-
-\pgfplotstableread{
-K	0.05	0.1	0.15	0.2	0.25	0.3	0.35	0.4	0.45
-1	1	1	1	1	1	1	1	1	1
-2	1	1.0001	1.0002	1.0004	1.0007	1.001	1.0014	1.002	1.0026
-3	1.0002	1.0007	1.0016	1.003	1.0048	1.0072	1.0101	1.0138	1.0183
-4	1.0004	1.0017	1.0038	1.0071	1.0116	1.0174	1.0249	1.0344	1.0462
-5	1.0005	1.0019	1.0044	1.0081	1.0132	1.0198	1.0283	1.0389	1.0523
-6	1.0005	1.0019	1.0045	1.0082	1.0133	1.0199	1.0284	1.0391	1.0524
-7	1.0005	1.0019	1.0045	1.0082	1.0133	1.0199	1.0284	1.0391	1.0524
-8	1.0005	1.0019	1.0045	1.0082	1.0133	1.0199	1.0284	1.0391	1.0524
-9	1.0005	1.0019	1.0045	1.0082	1.0133	1.0199	1.0284	1.0391	1.0524
-
-
-}\datatableB
-
-\pgfplotstableread{
-	K	0.05	0.1	0.15	0.2	0.25	0.3	0.35	0.4	0.45
-1	1	1	1	1	1	1	1	1	1
-2	0.9994	0.9995	0.999666667	0.99975	0.99984	0.999933333	1.000028571	1.0001	1.000177778
-3	0.9948	0.9958	0.996733333	0.9977	0.99856	0.9994	1.0002	1.0009	1.001577778
-4	0.972	0.9771	0.982133333	0.9871	0.99188	0.996566667	1.001114286	1.005525	1.009977778
-5	0.9502	0.9591	0.967733333	0.9764	0.98496	0.9935	1.002085714	1.010875	1.020644444
-6	0.946	0.9556	0.965	0.9743	0.98356	0.9928	1.002171429	1.011825	1.022711111
-7	0.9456	0.9552	0.964666667	0.97405	0.9834	0.992733333	1.002171429	1.011925	1.022911111
-8	0.9456	0.9552	0.964666667	0.97405	0.98336	0.992733333	1.002171429	1.011925	1.022933333
-9	0.9456	0.9552	0.964666667	0.97405	0.98336	0.992733333	1.002171429	1.011925	1.022933333
-
-}\datatableC
-
-\pgfplotstableread{
-K	0.05	0.1	0.15	0.2	0.25	0.3	0.35	0.4	0.45
-1	1	1	1	1	1	1	1	1	1
-2	0.987	0.988	0.989	0.98995	0.99084	0.991766667	0.992657143	0.9935	0.994333333
-3	0.9012	0.9079	0.914533333	0.9211	0.92756	0.934	0.940342857	0.9466	0.9528
-4	0.7104	0.7239	0.737466667	0.7511	0.76496	0.778966667	0.793228571	0.807825	0.822866667
-5	0.641	0.6551	0.669066667	0.6831	0.69724	0.711533333	0.726085714	0.740925	0.7562
-6	0.6324	0.6463	0.660266667	0.67425	0.68836	0.702566667	0.717	0.7317	0.746822222
-7	0.6314	0.6454	0.659333333	0.67335	0.68744	0.701633333	0.716057143	0.73075	0.745844444
-8	0.6314	0.6453	0.659266667	0.67325	0.68736	0.701566667	0.715971429	0.730675	0.745755556
-9	0.6314	0.6453	0.659266667	0.67325	0.68736	0.701566667	0.715971429	0.730675	0.745755556
-
-
-
-}\datatableD
-
-\pgfplotstableread{
-K	0.05	0.1	0.15	0.2	0.25	0.3	0.35	0.4	0.45
-1	1	1	1	1	1	1	1	1	1
-2	0.9902	0.99	0.9898	0.9897	0.98964	0.9896	0.989628571	0.989725	0.989888889
-3	0.9328	0.9315	0.930266667	0.9292	0.92832	0.927733333	0.927428571	0.927475	0.927955556
-4	0.84	0.8365	0.833266667	0.83015	0.82724	0.8246	0.822285714	0.820325	0.8188
-5	0.815	0.8118	0.8088	0.80595	0.80328	0.800933333	0.798828571	0.797075	0.795733333
-6	0.8122	0.8094	0.8066	0.80405	0.80172	0.799666667	0.797885714	0.7965	0.795533333
-7	0.812	0.8091	0.8064	0.8039	0.80164	0.7996	0.797885714	0.79655	0.795644444
-8	0.812	0.8091	0.8064	0.8039	0.8016	0.7996	0.797885714	0.79655	0.795666667
-9	0.812	0.8091	0.8064	0.8039	0.8016	0.7996	0.797885714	0.79655	0.795666667
-
-}\datatableE
-
-
-
-\begin{axis}[
-name=plot0,height=6cm,width=5cm,
-    title={a)},
-%    xlabel={Temperature [\textcelsius]},
-    ylabel={Normalized Young's modulus},
-    xmin=1, xmax=9,
-    ymin=0.99, ymax=1.5,
-    xtick={1,...,9},
-%    ytick={0,20,40,60,80},
-    xticklabels={}, 
-    ymajorgrids=true,
-    xmajorgrids=true,
-    grid style=dashed,
-]
-% \end{axis}    
-% \begin{axis}[legend pos=outer north east]
- 
- 
-    \addplot table[x=K,y=0.05] {\datatable};
-%     \addlegendentry{$\nu$=0.05}
-    \addplot table[x=K,y=0.1] {\datatable};
-%     \addlegendentry{$\nu$=0.1}
-    \addplot table[x=K,y=0.15] {\datatable};
-%     \addlegendentry{$\nu$=0.15}
-    \addplot table[x=K,y=0.2] {\datatable};
-%     \addlegendentry{$\nu$=0.2}
-    \addplot table[x=K,y=0.25] {\datatable};
-%     \addlegendentry{$\nu$=0.25}
-    \addplot table[x=K,y=0.3] {\datatable};
-%     \addlegendentry{$\nu$=0.3}
-    \addplot table[x=K,y=0.35] {\datatable};
-%     \addlegendentry{$\nu$=0.35}
-    \addplot table[x=K,y=0.4] {\datatable};
-%     \addlegendentry{$\nu$=0.4}
-    \addplot table[x=K,y=0.45] {\datatable};
-%     \addlegendentry{$\nu$=0.45}
-\end{axis}
-
-\begin{axis}[
-name=plot1,at={($(plot0.east)+(1cm,0)$)},anchor=west,
-height=6cm,width=5cm, title={b)},
-%    xlabel={Temperature [\textcelsius]},
-%    ylabel={Measured stiffness [Pa]},
-    xmin=1, xmax=9,
-    ymin=1, ymax=1.003,
-    yticklabel style={/pgf/number format/fixed,
-                  /pgf/number format/precision=3},
-    xtick={1,...,9},
-%    ytick={0,20,40,60,80},
+% 
+% \begin{center}% note that \centering uses less vspace...
+% \begin{figure}[!ht]
+% \pgfplotsset{every axis legend/.append style={
+% 		at={(0.5,1.03)},
+% 		anchor=north}}
+% 
+% \begin{tikzpicture}[scale=1]
+% 
+% 	\pgfplotstableread{
+% 	K	0.05	0.1	0.15	0.2	0.25	0.3	0.35	0.4	0.45
+% 1	1	1	1	1	1	1	1	1	1
+% 2	1.00001	1.00002	1.00004	1.00008	1.00013	1.00018	1.00025	1.00033	1.00042
+% 3	1.00005	1.00019	1.00043	1.00076	1.00121	1.00174	1.00241	1.00319	1.00412
+% 4	1.00032	1.00127	1.00283	1.00505	1.00802	1.01194	1.01722	1.02472	1.03666
+% 5	1.00075	1.00292	1.00645	1.0115	1.01853	1.02879	1.04539	1.07813	1.18128
+% 6	1.00087	1.00335	1.0074	1.01319	1.02137	1.03365	1.0547	1.10164	1.34588
+% 7	1.00089	1.00341	1.00751	1.01339	1.0217	1.03423	1.05589	1.10502	1.39391
+% 8	1.00089	1.00341	1.00752	1.0134	1.02174	1.03429	1.05602	1.10538	1.39995
+% 9	1.00089	1.00341	1.00752	1.01341	1.02174	1.0343	1.05603	1.10542	1.40064
+% }\datatable
+% 
+% \pgfplotstableread{
+% K	0.05	0.1	0.15	0.2	0.25	0.3	0.35	0.4	0.45
+% 1	1	1	1	1	1	1	1	1	1
+% 2	1	1.00001	1.00002	1.00003	1.00004	1.00005	1.00006	1.00006	1.00005
+% 3	1.00002	1.00008	1.00016	1.00024	1.00033	1.0004	1.00045	1.00046	1.00043
+% 4	1.00006	1.00023	1.00048	1.00077	1.00107	1.00135	1.00156	1.00166	1.0016
+% 5	1.00008	1.00029	1.00061	1.00098	1.00138	1.00176	1.00206	1.00222	1.00219
+% 6	1.00008	1.0003	1.00062	1.00101	1.00142	1.00181	1.00213	1.0023	1.00226
+% 7	1.00008	1.0003	1.00062	1.00101	1.00143	1.00182	1.00213	1.00231	1.00227
+% 8	1.00008	1.0003	1.00062	1.00101	1.00143	1.00182	1.00213	1.00231	1.00227
+% 9	1.00008	1.0003	1.00062	1.00101	1.00143	1.00182	1.00213	1.00231	1.00227
+% 
+% }\datatableA
+% 
+% \pgfplotstableread{
+% K	0.05	0.1	0.15	0.2	0.25	0.3	0.35	0.4	0.45
+% 1	1	1	1	1	1	1	1	1	1
+% 2	1	1.0001	1.0002	1.0004	1.0007	1.001	1.0014	1.002	1.0026
+% 3	1.0002	1.0007	1.0016	1.003	1.0048	1.0072	1.0101	1.0138	1.0183
+% 4	1.0004	1.0017	1.0038	1.0071	1.0116	1.0174	1.0249	1.0344	1.0462
+% 5	1.0005	1.0019	1.0044	1.0081	1.0132	1.0198	1.0283	1.0389	1.0523
+% 6	1.0005	1.0019	1.0045	1.0082	1.0133	1.0199	1.0284	1.0391	1.0524
+% 7	1.0005	1.0019	1.0045	1.0082	1.0133	1.0199	1.0284	1.0391	1.0524
+% 8	1.0005	1.0019	1.0045	1.0082	1.0133	1.0199	1.0284	1.0391	1.0524
+% 9	1.0005	1.0019	1.0045	1.0082	1.0133	1.0199	1.0284	1.0391	1.0524
+% 
+% 
+% }\datatableB
+% 
+% \pgfplotstableread{
+% 	K	0.05	0.1	0.15	0.2	0.25	0.3	0.35	0.4	0.45
+% 1	1	1	1	1	1	1	1	1	1
+% 2	0.9994	0.9995	0.999666667	0.99975	0.99984	0.999933333	1.000028571	1.0001	1.000177778
+% 3	0.9948	0.9958	0.996733333	0.9977	0.99856	0.9994	1.0002	1.0009	1.001577778
+% 4	0.972	0.9771	0.982133333	0.9871	0.99188	0.996566667	1.001114286	1.005525	1.009977778
+% 5	0.9502	0.9591	0.967733333	0.9764	0.98496	0.9935	1.002085714	1.010875	1.020644444
+% 6	0.946	0.9556	0.965	0.9743	0.98356	0.9928	1.002171429	1.011825	1.022711111
+% 7	0.9456	0.9552	0.964666667	0.97405	0.9834	0.992733333	1.002171429	1.011925	1.022911111
+% 8	0.9456	0.9552	0.964666667	0.97405	0.98336	0.992733333	1.002171429	1.011925	1.022933333
+% 9	0.9456	0.9552	0.964666667	0.97405	0.98336	0.992733333	1.002171429	1.011925	1.022933333
+% 
+% }\datatableC
+% 
+% \pgfplotstableread{
+% K	0.05	0.1	0.15	0.2	0.25	0.3	0.35	0.4	0.45
+% 1	1	1	1	1	1	1	1	1	1
+% 2	0.987	0.988	0.989	0.98995	0.99084	0.991766667	0.992657143	0.9935	0.994333333
+% 3	0.9012	0.9079	0.914533333	0.9211	0.92756	0.934	0.940342857	0.9466	0.9528
+% 4	0.7104	0.7239	0.737466667	0.7511	0.76496	0.778966667	0.793228571	0.807825	0.822866667
+% 5	0.641	0.6551	0.669066667	0.6831	0.69724	0.711533333	0.726085714	0.740925	0.7562
+% 6	0.6324	0.6463	0.660266667	0.67425	0.68836	0.702566667	0.717	0.7317	0.746822222
+% 7	0.6314	0.6454	0.659333333	0.67335	0.68744	0.701633333	0.716057143	0.73075	0.745844444
+% 8	0.6314	0.6453	0.659266667	0.67325	0.68736	0.701566667	0.715971429	0.730675	0.745755556
+% 9	0.6314	0.6453	0.659266667	0.67325	0.68736	0.701566667	0.715971429	0.730675	0.745755556
+% 
+% 
+% 
+% }\datatableD
+% 
+% \pgfplotstableread{
+% K	0.05	0.1	0.15	0.2	0.25	0.3	0.35	0.4	0.45
+% 1	1	1	1	1	1	1	1	1	1
+% 2	0.9902	0.99	0.9898	0.9897	0.98964	0.9896	0.989628571	0.989725	0.989888889
+% 3	0.9328	0.9315	0.930266667	0.9292	0.92832	0.927733333	0.927428571	0.927475	0.927955556
+% 4	0.84	0.8365	0.833266667	0.83015	0.82724	0.8246	0.822285714	0.820325	0.8188
+% 5	0.815	0.8118	0.8088	0.80595	0.80328	0.800933333	0.798828571	0.797075	0.795733333
+% 6	0.8122	0.8094	0.8066	0.80405	0.80172	0.799666667	0.797885714	0.7965	0.795533333
+% 7	0.812	0.8091	0.8064	0.8039	0.80164	0.7996	0.797885714	0.79655	0.795644444
+% 8	0.812	0.8091	0.8064	0.8039	0.8016	0.7996	0.797885714	0.79655	0.795666667
+% 9	0.812	0.8091	0.8064	0.8039	0.8016	0.7996	0.797885714	0.79655	0.795666667
+% 
+% }\datatableE
+% 
+% 
+% 
+% \begin{axis}[
+% name=plot0,height=6cm,width=5cm,
+%     title={a)},
+% %    xlabel={Temperature [\textcelsius]},
+%     ylabel={Normalized Young's modulus},
+%     xmin=1, xmax=9,
+%     ymin=0.99, ymax=1.5,
+%     xtick={1,...,9},
+% %    ytick={0,20,40,60,80},
+%     xticklabels={}, 
+%     ymajorgrids=true,
+%     xmajorgrids=true,
+%     grid style=dashed,
+% ]
+% % \end{axis}    
+% % \begin{axis}[legend pos=outer north east]
+%  
+%  
+%     \addplot table[x=K,y=0.05] {\datatable};
+% %     \addlegendentry{$\nu$=0.05}
+%     \addplot table[x=K,y=0.1] {\datatable};
+% %     \addlegendentry{$\nu$=0.1}
+%     \addplot table[x=K,y=0.15] {\datatable};
+% %     \addlegendentry{$\nu$=0.15}
+%     \addplot table[x=K,y=0.2] {\datatable};
+% %     \addlegendentry{$\nu$=0.2}
+%     \addplot table[x=K,y=0.25] {\datatable};
+% %     \addlegendentry{$\nu$=0.25}
+%     \addplot table[x=K,y=0.3] {\datatable};
+% %     \addlegendentry{$\nu$=0.3}
+%     \addplot table[x=K,y=0.35] {\datatable};
+% %     \addlegendentry{$\nu$=0.35}
+%     \addplot table[x=K,y=0.4] {\datatable};
+% %     \addlegendentry{$\nu$=0.4}
+%     \addplot table[x=K,y=0.45] {\datatable};
+% %     \addlegendentry{$\nu$=0.45}
+% \end{axis}
+% 
+% \begin{axis}[
+% name=plot1,at={($(plot0.east)+(1cm,0)$)},anchor=west,
+% height=6cm,width=5cm, title={b)},
+% %    xlabel={Temperature [\textcelsius]},
+% %    ylabel={Measured stiffness [Pa]},
+%     xmin=1, xmax=9,
+%     ymin=1, ymax=1.003,
+%     yticklabel style={/pgf/number format/fixed,
+%                   /pgf/number format/precision=3},
+%     xtick={1,...,9},
+% %    ytick={0,20,40,60,80},
+% %     xticklabels={$0$,$0.001$,$0.01$,$0.1$,$1$, $10$, $100$,
+% %     $1000$, $\infty$}, 
+%     xticklabels={}, 
+%     ymajorgrids=true,
+%     xmajorgrids=true,
+%     grid style=dashed,
+%     bar shift=0pt
+% ]
+% 
+% 	\addplot table[x=K,y=0.05] {\datatableA};
+% %      \addlegendentry{$\nu$=0.05}
+%     \addplot table[x=K,y=0.1] {\datatableA};
+% %      \addlegendentry{$\nu$=0.1}
+%     \addplot table[x=K,y=0.15] {\datatableA};
+% %     \addlegendentry{$\nu$=0.15}
+%     \addplot table[x=K,y=0.2] {\datatableA};
+% %      \addlegendentry{$\nu$=0.2}
+%     \addplot table[x=K,y=0.25] {\datatableA};
+% %      \addlegendentry{$\nu$=0.25}
+%     \addplot table[x=K,y=0.3] {\datatableA};
+% %      \addlegendentry{$\nu$=0.3}
+%     \addplot table[x=K,y=0.35] {\datatableA};
+% %      \addlegendentry{$\nu$=0.35}
+%     \addplot table[x=K,y=0.4] {\datatableA};
+% %      \addlegendentry{$\nu$=0.4}
+%     \addplot table[x=K,y=0.45] {\datatableA};
+% %     \addlegendentry{$\nu$=0.45}
+% 
+% 
+% \end{axis}
+% 
+% \begin{axis}[
+% 	name=plot2,at={($(plot1.east)+(1cm,0)$)},anchor=west, height=6cm,width=5cm,
+%     title={c)},
+% %    xlabel={Temperature [\textcelsius]},
+% %    ylabel={Measured stiffness [Pa]},
+%     xmin=1, xmax=9,
+%     ymin=1, ymax=1.06,
+%     yticklabel style={/pgf/number format/fixed,
+%                   /pgf/number format/precision=3},
+%     xtick={1,...,9},
+% %    ytick={0,20,40,60,80},
+%     xticklabels={}, 
+%     ymajorgrids=true,
+%     xmajorgrids=true,
+%     grid style=dashed,
+%     bar shift=0pt
+% ]
+% 
+% 	\addplot table[x=K,y=0.05] {\datatableB};
+% %     \addlegendentry{$\nu$=0.05}
+%     \addplot table[x=K,y=0.1] {\datatableB};
+% %     \addlegendentry{$\nu$=0.1}
+%     \addplot table[x=K,y=0.15] {\datatableB};
+% %    \addlegendentry{$\nu$=0.15}
+%     \addplot table[x=K,y=0.2] {\datatableB};
+% %     \addlegendentry{$\nu$=0.2}
+%     \addplot table[x=K,y=0.25] {\datatableB};
+% %     \addlegendentry{$\nu$=0.25}
+%     \addplot table[x=K,y=0.3] {\datatableB};
+% %     \addlegendentry{$\nu$=0.3}
+%     \addplot table[x=K,y=0.35] {\datatableB};
+% %     \addlegendentry{$\nu$=0.35}
+%     \addplot table[x=K,y=0.4] {\datatableB};
+% %     \addlegendentry{$\nu$=0.4}
+%     \addplot table[x=K,y=0.45] {\datatableB};
+% %    \addlegendentry{$\nu$=0.45}
+% 
+% 
+% \end{axis}
+% 
+% \begin{axis}[name=plot3,at={($(plot0.south)-(0,1cm)$)},anchor=north,
+% height=6cm,width=5cm, title={a')},
+% %    xlabel={Temperature [\textcelsius]},
+%     ylabel={Normalized Poisson's ratio},
+%     xmin=1, xmax=9,
+%     ymin=0.94, ymax=1.03,
+%     xtick={1,...,9},
+% %    ytick={0,20,40,60,80},
 %     xticklabels={$0$,$0.001$,$0.01$,$0.1$,$1$, $10$, $100$,
 %     $1000$, $\infty$}, 
-    xticklabels={}, 
-    ymajorgrids=true,
-    xmajorgrids=true,
-    grid style=dashed,
-    bar shift=0pt
-]
-
-	\addplot table[x=K,y=0.05] {\datatableA};
-%      \addlegendentry{$\nu$=0.05}
-    \addplot table[x=K,y=0.1] {\datatableA};
-%      \addlegendentry{$\nu$=0.1}
-    \addplot table[x=K,y=0.15] {\datatableA};
-%     \addlegendentry{$\nu$=0.15}
-    \addplot table[x=K,y=0.2] {\datatableA};
-%      \addlegendentry{$\nu$=0.2}
-    \addplot table[x=K,y=0.25] {\datatableA};
-%      \addlegendentry{$\nu$=0.25}
-    \addplot table[x=K,y=0.3] {\datatableA};
-%      \addlegendentry{$\nu$=0.3}
-    \addplot table[x=K,y=0.35] {\datatableA};
-%      \addlegendentry{$\nu$=0.35}
-    \addplot table[x=K,y=0.4] {\datatableA};
-%      \addlegendentry{$\nu$=0.4}
-    \addplot table[x=K,y=0.45] {\datatableA};
-%     \addlegendentry{$\nu$=0.45}
-
-
-\end{axis}
-
-\begin{axis}[
-	name=plot2,at={($(plot1.east)+(1cm,0)$)},anchor=west, height=6cm,width=5cm,
-    title={c)},
-%    xlabel={Temperature [\textcelsius]},
-%    ylabel={Measured stiffness [Pa]},
-    xmin=1, xmax=9,
-    ymin=1, ymax=1.06,
-    yticklabel style={/pgf/number format/fixed,
-                  /pgf/number format/precision=3},
-    xtick={1,...,9},
-%    ytick={0,20,40,60,80},
-    xticklabels={}, 
-    ymajorgrids=true,
-    xmajorgrids=true,
-    grid style=dashed,
-    bar shift=0pt
-]
-
-	\addplot table[x=K,y=0.05] {\datatableB};
+%     x tick label style={yshift=-1ex,
+%     rotate=45,anchor=east},
+%     ymajorgrids=true,
+%     xmajorgrids=true,
+%     grid style=dashed,
+% ]
+% % \end{axis}    
+% % \begin{axis}[legend pos=outer north east]
+%  
+%  
+%     \addplot table[x=K,y=0.05] {\datatableC};
+% %     \addlegendentry{$\nu$=0.05}
+%     \addplot table[x=K,y=0.1] {\datatableC};
+% %     \addlegendentry{$\nu$=0.1}
+%     \addplot table[x=K,y=0.15] {\datatableC};
+% %     \addlegendentry{$\nu$=0.15}
+%     \addplot table[x=K,y=0.2] {\datatableC};
+% %     \addlegendentry{$\nu$=0.2}
+%     \addplot table[x=K,y=0.25] {\datatableC};
+% %     \addlegendentry{$\nu$=0.25}
+%     \addplot table[x=K,y=0.3] {\datatableC};
+% %     \addlegendentry{$\nu$=0.3}
+%     \addplot table[x=K,y=0.35] {\datatableC};
+% %     \addlegendentry{$\nu$=0.35}
+%     \addplot table[x=K,y=0.4] {\datatableC};
+% %     \addlegendentry{$\nu$=0.4}
+%     \addplot table[x=K,y=0.45] {\datatableC};
+% %     \addlegendentry{$\nu$=0.45}
+% \end{axis}
+% 
+% \begin{axis}[legend style={at={(0.5,-0.2)}, legend columns=5, anchor=north},
+% 	name=plot4,at={($(plot1.south)-(0,1cm)$)},anchor=north, height=6cm,width=5cm,
+%     title={b')},
+% %    xlabel={Temperature [\textcelsius]},
+% %    ylabel={Measured stiffness [Pa]},
+%     xmin=1, xmax=9,
+%     ymin=0.6, ymax=1.1,
+%     yticklabel style={/pgf/number format/fixed,
+%                   /pgf/number format/precision=3},
+%     xtick={1,...,9},
+% %    ytick={0,20,40,60,80},
+%     xticklabels={$0$,$0.001$,$0.01$,$0.1$,$1$, $10$, $100$,
+%     $1000$, $\infty$}, 
+%     x tick label style={yshift=-1ex,
+%         rotate=45,anchor=east},
+%     ymajorgrids=true,
+%     xmajorgrids=true,
+%     grid style=dashed,
+%     bar shift=0pt
+% ]
+% 
+% 	\addplot table[x=K,y=0.05] {\datatableD};
 %     \addlegendentry{$\nu$=0.05}
-    \addplot table[x=K,y=0.1] {\datatableB};
+%     \addplot table[x=K,y=0.1] {\datatableD};
 %     \addlegendentry{$\nu$=0.1}
-    \addplot table[x=K,y=0.15] {\datatableB};
+%     \addplot table[x=K,y=0.15] {\datatableD};
 %    \addlegendentry{$\nu$=0.15}
-    \addplot table[x=K,y=0.2] {\datatableB};
+%     \addplot table[x=K,y=0.2] {\datatableD};
 %     \addlegendentry{$\nu$=0.2}
-    \addplot table[x=K,y=0.25] {\datatableB};
+%     \addplot table[x=K,y=0.25] {\datatableD};
 %     \addlegendentry{$\nu$=0.25}
-    \addplot table[x=K,y=0.3] {\datatableB};
+%     \addplot table[x=K,y=0.3] {\datatableD};
 %     \addlegendentry{$\nu$=0.3}
-    \addplot table[x=K,y=0.35] {\datatableB};
+%     \addplot table[x=K,y=0.35] {\datatableD};
 %     \addlegendentry{$\nu$=0.35}
-    \addplot table[x=K,y=0.4] {\datatableB};
+%     \addplot table[x=K,y=0.4] {\datatableD};
 %     \addlegendentry{$\nu$=0.4}
-    \addplot table[x=K,y=0.45] {\datatableB};
+%     \addplot table[x=K,y=0.45] {\datatableD};
 %    \addlegendentry{$\nu$=0.45}
-
-
-\end{axis}
-
-\begin{axis}[name=plot3,at={($(plot0.south)-(0,1cm)$)},anchor=north,
-height=6cm,width=5cm, title={a')},
-%    xlabel={Temperature [\textcelsius]},
-    ylabel={Normalized Poisson's ratio},
-    xmin=1, xmax=9,
-    ymin=0.94, ymax=1.03,
-    xtick={1,...,9},
-%    ytick={0,20,40,60,80},
-    xticklabels={$0$,$0.001$,$0.01$,$0.1$,$1$, $10$, $100$,
-    $1000$, $\infty$}, 
-    x tick label style={yshift=-1ex,
-    rotate=45,anchor=east},
-    ymajorgrids=true,
-    xmajorgrids=true,
-    grid style=dashed,
-]
-% \end{axis}    
-% \begin{axis}[legend pos=outer north east]
- 
- 
-    \addplot table[x=K,y=0.05] {\datatableC};
-%     \addlegendentry{$\nu$=0.05}
-    \addplot table[x=K,y=0.1] {\datatableC};
-%     \addlegendentry{$\nu$=0.1}
-    \addplot table[x=K,y=0.15] {\datatableC};
-%     \addlegendentry{$\nu$=0.15}
-    \addplot table[x=K,y=0.2] {\datatableC};
-%     \addlegendentry{$\nu$=0.2}
-    \addplot table[x=K,y=0.25] {\datatableC};
-%     \addlegendentry{$\nu$=0.25}
-    \addplot table[x=K,y=0.3] {\datatableC};
-%     \addlegendentry{$\nu$=0.3}
-    \addplot table[x=K,y=0.35] {\datatableC};
-%     \addlegendentry{$\nu$=0.35}
-    \addplot table[x=K,y=0.4] {\datatableC};
-%     \addlegendentry{$\nu$=0.4}
-    \addplot table[x=K,y=0.45] {\datatableC};
-%     \addlegendentry{$\nu$=0.45}
-\end{axis}
-
-\begin{axis}[legend style={at={(0.5,-0.2)}, legend columns=5, anchor=north},
-	name=plot4,at={($(plot1.south)-(0,1cm)$)},anchor=north, height=6cm,width=5cm,
-    title={b')},
-%    xlabel={Temperature [\textcelsius]},
-%    ylabel={Measured stiffness [Pa]},
-    xmin=1, xmax=9,
-    ymin=0.6, ymax=1.1,
-    yticklabel style={/pgf/number format/fixed,
-                  /pgf/number format/precision=3},
-    xtick={1,...,9},
-%    ytick={0,20,40,60,80},
-    xticklabels={$0$,$0.001$,$0.01$,$0.1$,$1$, $10$, $100$,
-    $1000$, $\infty$}, 
-    x tick label style={yshift=-1ex,
-        rotate=45,anchor=east},
-    ymajorgrids=true,
-    xmajorgrids=true,
-    grid style=dashed,
-    bar shift=0pt
-]
-
-	\addplot table[x=K,y=0.05] {\datatableD};
-    \addlegendentry{$\nu$=0.05}
-    \addplot table[x=K,y=0.1] {\datatableD};
-    \addlegendentry{$\nu$=0.1}
-    \addplot table[x=K,y=0.15] {\datatableD};
-   \addlegendentry{$\nu$=0.15}
-    \addplot table[x=K,y=0.2] {\datatableD};
-    \addlegendentry{$\nu$=0.2}
-    \addplot table[x=K,y=0.25] {\datatableD};
-    \addlegendentry{$\nu$=0.25}
-    \addplot table[x=K,y=0.3] {\datatableD};
-    \addlegendentry{$\nu$=0.3}
-    \addplot table[x=K,y=0.35] {\datatableD};
-    \addlegendentry{$\nu$=0.35}
-    \addplot table[x=K,y=0.4] {\datatableD};
-    \addlegendentry{$\nu$=0.4}
-    \addplot table[x=K,y=0.45] {\datatableD};
-   \addlegendentry{$\nu$=0.45}
-
-\end{axis}
-
-
-\begin{axis}[
-	name=plot5,at={($(plot2.south)-(0,1cm)$)},anchor=north, height=6cm,width=5cm,
-    title={c')},
-%    xlabel={Temperature [\textcelsius]},
-%    ylabel={Measured stiffness [Pa]},
-    xmin=1, xmax=9,
-    ymin=0.79, ymax=1.01,
-    yticklabel style={/pgf/number format/fixed,
-                  /pgf/number format/precision=3},
-    xtick={1,...,9},
-%    ytick={0,20,40,60,80},
-    xticklabels={$0$,$0.001$,$0.01$,$0.1$,$1$, $10$, $100$,
-    $1000$, $\infty$}, 
-        x tick label style={yshift=-1ex,
-        rotate=45,anchor=east		},
-    ymajorgrids=true,
-    xmajorgrids=true,
-    grid style=dashed,
-    bar shift=0pt
-]
-
-	\addplot table[x=K,y=0.05] {\datatableE};
-%     \addlegendentry{$\nu$=0.05}
-    \addplot table[x=K,y=0.1] {\datatableE};
-%     \addlegendentry{$\nu$=0.1}
-    \addplot table[x=K,y=0.15] {\datatableE};
-%    \addlegendentry{$\nu$=0.15}
-    \addplot table[x=K,y=0.2] {\datatableE};
-%     \addlegendentry{$\nu$=0.2}
-    \addplot table[x=K,y=0.25] {\datatableE};
-%     \addlegendentry{$\nu$=0.25}
-    \addplot table[x=K,y=0.3] {\datatableE};
-%     \addlegendentry{$\nu$=0.3}
-    \addplot table[x=K,y=0.35] {\datatableE};
-%     \addlegendentry{$\nu$=0.35}
-    \addplot table[x=K,y=0.4] {\datatableE};
-%     \addlegendentry{$\nu$=0.4}
-    \addplot table[x=K,y=0.45] {\datatableE};
-%    \addlegendentry{$\nu$=0.45}
-
-\end{axis}
-
-
-\end{tikzpicture}
-
-
-\captionsetup{justification=centering}
-\caption{a)Simulated Young's moduli error values of material with
-different given Poisson's ratio ($\nu_{12}$) values for isotropic material, b)
-$E_3$, and c) $E_1, E_2$ for transverse-isotropic material.
-a')Simulated Poisson's ratio error values of material with different given
-Poisson's ratio ($\nu_{12}$) values for isotropic material, b')
-$\nu_{31},\nu_{32}$ and c') $\nu_{12}$ for transverse-isotropic material.}
-
-
-\label{fig:isovstriso}
-\end{figure}
-
-\end{center}
+% 
+% \end{axis}
+% 
+% 
+% \begin{axis}[
+% 	name=plot5,at={($(plot2.south)-(0,1cm)$)},anchor=north, height=6cm,width=5cm,
+%     title={c')},
+% %    xlabel={Temperature [\textcelsius]},
+% %    ylabel={Measured stiffness [Pa]},
+%     xmin=1, xmax=9,
+%     ymin=0.79, ymax=1.01,
+%     yticklabel style={/pgf/number format/fixed,
+%                   /pgf/number format/precision=3},
+%     xtick={1,...,9},
+% %    ytick={0,20,40,60,80},
+%     xticklabels={$0$,$0.001$,$0.01$,$0.1$,$1$, $10$, $100$,
+%     $1000$, $\infty$}, 
+%         x tick label style={yshift=-1ex,
+%         rotate=45,anchor=east		},
+%     ymajorgrids=true,
+%     xmajorgrids=true,
+%     grid style=dashed,
+%     bar shift=0pt
+% ]
+% 
+% 	\addplot table[x=K,y=0.05] {\datatableE};
+% %     \addlegendentry{$\nu$=0.05}
+%     \addplot table[x=K,y=0.1] {\datatableE};
+% %     \addlegendentry{$\nu$=0.1}
+%     \addplot table[x=K,y=0.15] {\datatableE};
+% %    \addlegendentry{$\nu$=0.15}
+%     \addplot table[x=K,y=0.2] {\datatableE};
+% %     \addlegendentry{$\nu$=0.2}
+%     \addplot table[x=K,y=0.25] {\datatableE};
+% %     \addlegendentry{$\nu$=0.25}
+%     \addplot table[x=K,y=0.3] {\datatableE};
+% %     \addlegendentry{$\nu$=0.3}
+%     \addplot table[x=K,y=0.35] {\datatableE};
+% %     \addlegendentry{$\nu$=0.35}
+%     \addplot table[x=K,y=0.4] {\datatableE};
+% %     \addlegendentry{$\nu$=0.4}
+%     \addplot table[x=K,y=0.45] {\datatableE};
+% %    \addlegendentry{$\nu$=0.45}
+% 
+% \end{axis}
+% 
+% 
+% \end{tikzpicture}
+% 
+% 
+% \captionsetup{justification=centering}
+% \caption{a)Simulated Young's moduli error values of material with
+% different given Poisson's ratio ($\nu_{12}$) values for isotropic material, b)
+% $E_3$, and c) $E_1, E_2$ for transverse-isotropic material.
+% a')Simulated Poisson's ratio error values of material with different given
+% Poisson's ratio ($\nu_{12}$) values for isotropic material, b')
+% $\nu_{31},\nu_{32}$ and c') $\nu_{12}$ for transverse-isotropic material.}
+% 
+% 
+% \label{fig:isovstriso}
+% \end{figure}
+% 
+% \end{center}
 
 % \begin{center}% note that \centering uses less vspace...
 % \begin{figure}[!ht]
