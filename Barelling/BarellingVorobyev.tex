@@ -225,7 +225,7 @@ experiments on cubic samples.
     \hfill
     \begin{subfigure}[b]{0.4\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{experiment.pdf}
+        \includegraphics[width=\textwidth]{experiment.png}
         \caption{}
         \label{fig:experiment}
     \end{subfigure}
@@ -386,7 +386,7 @@ parameters obtained from the experiments \cite{vorobyevcharacterisation}.
 Three strain measuring cases were taken intro account in simulation. The first
 case can be considered the same as taking the average dimensional changes of a
 sample. In particular the average strain from the total surface area was
-obtained and used as a value for obtaining axial stiffness $E_3$. In the
+obtained and used as a value for obtaining axial stiffness $E_L$. In the
 \textit{second} case, 50\% of cube surface (Figure \ref{fig:experiment}) was used to calculate the
  average strain. The area was chosen in order to disregard the ``clamping''
  effect between the platens of UTM and contact surface of the cube. Finally in
@@ -556,6 +556,8 @@ name=plot0,height=6cm,width=5cm,
 %     \addlegendentry{$\nu$=0.4}
     \addplot table[y=s9,x=0.45] {\datatable};
 %     \addlegendentry{$\nu$=0.45}
+
+% \draw	(70,160) node{{Isotropic}};
 \end{axis}
 
 \begin{axis}[
@@ -682,7 +684,7 @@ height=6cm,width=5cm, title={a')},
 \begin{axis}[legend style={at={(0.5,-0.3)}, legend columns=5, anchor=north},
 	name=plot4,at={($(plot1.south)-(0,1cm)$)},anchor=north, height=6cm,width=5cm,
     title={b')},
-    xlabel={Displacement factor},
+    xlabel={Displacement factor $\delta/\delta_{max}$},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0, xmax=1,
     ymin=0.5, ymax=1,
@@ -769,12 +771,12 @@ height=6cm,width=5cm, title={a')},
 
 
 \captionsetup{justification=centering}
-\caption{a)Simulated Young's moduli error values of material with
-different given Poisson's ratio ($\nu_{12}$) values for isotropic material, b)
-$E_3$, and c) $E_1, E_2$ for transverse-isotropic material.
-a')Simulated Poisson's ratio error values of material with different given
-Poisson's ratio ($\nu_{12}$) values for isotropic material, b')
-$\nu_{31},\nu_{32}$ and c') $\nu_{12}$ for transverse-isotropic material.}
+\caption{a) Simulated and normalized Young's moduli values of material with
+different given Poisson's ratio ($\nu$) values for isotropic material ($a=1$),
+b) $E_L$, and c) $E_T$ for transversely isotropic material ($a=10$; $b=2$).
+a') Simulated Poisson's ratio error values of material with different given
+Poisson's ratio ($\nu$) values for isotropic material, b')
+$\nu_{LT},$ and c') $\nu_{TL}$ for transversely isotropic material.}
 
 
 \label{fig:isovstriso}
@@ -1131,7 +1133,7 @@ $\nu_{31},\nu_{32}$ and c') $\nu_{12}$ for transverse-isotropic material.}
 % \captionsetup{justification=centering}
 % \caption{a)Simulated Young's moduli error values of material with
 % different given Poisson's ratio ($\nu_{12}$) values for isotropic material, b)
-% $E_3$, and c) $E_1, E_2$ for transverse-isotropic material.
+% $E_L$, and c) $E_1, E_2$ for transverse-isotropic material.
 % a')Simulated Poisson's ratio error values of material with different given
 % Poisson's ratio ($\nu_{12}$) values for isotropic material, b')
 % $\nu_{31},\nu_{32}$ and c') $\nu_{12}$ for transverse-isotropic material.}
@@ -1315,15 +1317,15 @@ $\nu_{31},\nu_{32}$ and c') $\nu_{12}$ for transverse-isotropic material.}
 
 \pgfplotstableread{
 nuxy	tr0	tr0.1	trINF
-0.05	1	1.00678	1.00864
-0.1	1	1.0139	1.0179
-0.15	1	1.02135	1.02779
-0.2	1	1.02912	1.03838
-0.25	1	1.03719	1.04972
-0.3	1	1.04556	1.0619
-0.35	1	1.05424	1.07508
-0.4	1	1.06323	1.08945
-0.45	1	1.07256	1.10531
+0.05	1	1.000678	1.000864
+0.1	1	1.00139	1.00179
+0.15	1	1.002135	1.002779
+0.2	1	1.002912	1.003838
+0.25	1	1.003719	1.004972
+0.3	1	1.004556	1.00619
+0.35	1	1.005424	1.007508
+0.4	1	1.006323	1.008945
+0.45	1	1.007256	1.010531
 
 }\totarea
 
@@ -1343,15 +1345,15 @@ nuxy	tr0	tr0.1	trINF
 
 \pgfplotstableread{
 nuxy	tr0	tr0.1	trINF	
-0.05	1	1.00683	1.00869
-0.1	1	1.01413	1.01817
-0.15	1	1.02193	1.0285
-0.2	1	1.03024	1.03977
-0.25	1	1.03908	1.05211
-0.3	1	1.0485	1.06571
-0.35	1	1.05855	1.0808
-0.4	1	1.06931	1.09777
-0.45	1	1.08091	1.11712
+0.05	1	1.000683	1.000869
+0.1	1	1.001413	1.001817
+0.15	1	1.002193	1.00285
+0.2	1	1.003024	1.003977
+0.25	1	1.003908	1.005211
+0.3	1	1.00485	1.006571
+0.35	1	1.005855	1.00808
+0.4	1	1.006931	1.009777
+0.45	1	1.008091	1.011712
 
 
 
@@ -1410,7 +1412,7 @@ name=b1,height=5cm,width=4cm,
 %    xlabel={Temperature [\textcelsius]},
     ylabel={Normalized Young's modulus},
     xmin=0.05, xmax=0.45,
-    ymin=0.99, ymax=1.15,
+    ymin=0.999, ymax=1.02,
         yticklabel style={/pgf/number format/fixed,
                   /pgf/number format/precision=3},
 %     xtick={1,...,9},
@@ -1444,7 +1446,7 @@ name=b1,height=5cm,width=4cm,
 % xlabel={Poisson's ratio [-]},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0.05, xmax=0.45,
-    ymin=0.99, ymax=1.15,
+    ymin=0.999, ymax=1.1,
     yticklabel style={/pgf/number format/fixed,
                   /pgf/number format/precision=4},
 %     xtick={1,...,9},
@@ -1477,7 +1479,7 @@ name=b1,height=5cm,width=4cm,
 %    xlabel={Temperature [\textcelsius]},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0.05, xmax=0.45,
-    ymin=0.99, ymax=1.15,
+    ymin=0.999, ymax=1.02,
     yticklabel style={/pgf/number format/fixed,
                   /pgf/number format/precision=3},
 %     xtick={1,...,9},
@@ -1794,44 +1796,47 @@ interest, b') total area of interest c') experimental methodology.
 
 \section{Results and Discussions}
 The simulated strain results were acquired in order to compare those with the
-actual for the experiments. The set of experimental and simulations are
-compared. Simulation results are now possible to use for the
-estimation of error that appears due to different strain estimation principles.
+ones in the experiment. The set of experimental and simulations are
+compared. The results of the simulations can be used for the
+estimation of error that appears due to different strain measurement principles.
 
 \begin{description}
 \item{\textit{ Barrelling in Isotropic and Transverse-Isotropic material}}
 \end{description}
-The results of the simulation shows that the isotropic material barrels
-significantly more than transverse-isotropic and orthotropic. 
-Intuitively three plots can be compared in Figure \ref{fig:isovstriso}. The plot
-(a-c) compares relative errors in measured Young's moduli depending on the
-Poisson's ratio depending on $K$ factor. The barrelling
-for all simulations is leading to an overestimation of the Young's moduli. The
-overestimation is happening due to consideration of a strain field in the
+The results of the simulation shows that isotropic material barrels
+significantly more than transverse-isotropic and orthotropic materials. \\	
+Intuitively three plots can be compared in Figure \ref{fig:isovstriso}. 
+From the plots a)-c) one can compare the difference between the measured and actual 
+Young's moduli depending on the Poisson's ratio versus the displacement of the
+top edge.
+For all simulations the barrelling is leading to an overestimation of the
+Young's moduli. This is caused by the strain field in the
  area close to the edges, where constrained material has a stiffer response.
-In general, the larger Poisson's ratio $\nu_{12}$, the error is larger. However
-the error for the isotropic material is significantly larger when factor $K=1$. 
-The error in Young's moduli for the transverse isotropic material, is less in the axial direction $3$ than in transverse direction $1$ (Figure \ref{fig:isovstriso} b,c).
-This behaviour can be discussed with the help of Figure \ref{fig:Error}a', b' and c'. For the
-isotropic material the severe influence of barrelling occurs due to the
-isotropic parameters in all planes. The severe effect of ``clamping'' can be
-observed on the $25\%$ of heigh from the horisontal edges of the model.  Whereas
-in transverse-isotropic material, the influence of barrelling is spread less in
-the surface area.
-Opposite situation with the Poisson's ratio values. It can be noticed that the
-relative error for the Poisson's ratio is less in Isotropic material. Moreover
-the dependency is differently oriented, for the values of more than $0.35$ the
-Poissons ratio is overestimated (Figure \ref{fig:isovstriso}a'). Alternatively
-Figure \ref{fig:isovstriso} b' and c' describing the effect of barreling on the
-measured materials Poisson's ratio in transverse-isotropic material. It is seen
-that for the planes $31$ and $32$ the presence of barrelling can influence
-significantly. As an example, for the $K=1$ Poisson's ratio is underestimated by
-$20-30\%$. The same situation is for the plane $21$ But the effect is less
-severe. Again, referring to Figure \ref{fig:Error} a-c  it is observable that
-the effect of clamping is crucial in estimation of Poisson's ratio. Blue
-coloured area where the error is above $5\%$ spreading from the horisontal edges
-of the model throughout the central area of the material. Finally it was
-observed that evaluation of Poisson's ratio in plane $13$ and $23$ will lead to
+In general, for increasing Poisson's ratio, the error becomes larger. 
+For the transverse isotropic material the error in Young's moduli is less in
+transverse direction $T$ than in the axial direction $L$ (Figure
+\ref{fig:isovstriso} b,c).
+This difefrence in behaviour can be discussed by examining the strain fields for isotropic and 
+transversely isotropic materials shown in of Figure
+\ref{fig:Error}a', b' and c'.  The effect of ``clamping'' can be
+observed on the $25\%$ of height from the horisontal edges of the model. 
+Whereas in transversely isotropic material, the influence of barrelling is
+spread less in the surface area.\\
+The opposite is the case for situation with the Poisson's ratio values. In
+Figure \ref{fig:isovstriso} can be noticed that the relative error for the
+Poisson's ratio is less in isotropic material. 
+Alternatively Figure \ref{fig:isovstriso} b' and c' describing the effect of barreling on the
+measured materials Poisson's ratio in transversely isotropic material. It is
+seen that for the $LT$ planes the presence of barrelling can
+influence the measurements significantly. For example, for the displacement
+factor $\delta/\delta_{max}\approx0.2 $ where $K=0.1$,  the Poisson's ratio is
+underestimated by $30-40\%$.
+The same situation is for the plane $TT$ but the effect is less severe. Again,
+referring to Figure \ref{fig:Error} a-c  we can see that the
+effect of clamping is crucial for the estimation of the Poisson's ratio. Blue
+coloured area where the error is above $5\%$ spreading from the horisontal edges of 
+the model throughout the central area of the material. Finally it was
+observed that evaluation of Poisson's ratio in plane $TL$ will lead to
 the overestimation of the value.
 
 
@@ -1839,39 +1844,38 @@ the overestimation of the value.
 \item{\textit{Strain measurement}}
 \end{description}
 Measured mechanical properties varies with strain measurement methods
-(Figure \ref{fig:strainmethods}). Method where the total area of the specimen is
-taken for measuring the strain (Figure \ref{fig:strainmethods}b) is giving
-considerable error for given $K$ factor values. The error emerges from the
-``clammed'' region close to the horizontal edges (Fig \ref{fig:Error}a-c).  In
-the second approach (Figure \ref{fig:strainmethods}a) the part of the area was
+(Figure \ref{fig:strainmethods}). The method where the total area of the
+specimen is taken for measuring the strain (Figure \ref{fig:strainmethods}b)
+results in considerable error for given $K$ factor values. The error originates
+from the ``clamped'' region close to the horizontal edges (Fig
+\ref{fig:Error}a-c).  \\
+In the second approach (Figure \ref{fig:strainmethods}a)
+only the middle 50\% of the area part was
 taken for determination of strain. The plot shows that with this method the
-Young's moduli is overestimated by $0.23\%$. 
-The decrease of error for Poisson's ratio more than $\nu_{12}=0.3$ is due to 
-emerging of underestimated strains that are evening out the overestimated within
-the chosen area of interest(Fig \ref{fig:Error}b,c).
-In the last approach (Figure \ref{fig:strainmethods}c) where ASTM standard was
-used, the error was not as significant as in the ``total area'' approach. 
+Young's moduli is much less overestimated.  \\
+In the last approach (Figure \ref{fig:strainmethods}c) where ASTM standard with
+strain gauge technique was used, the error was not as significant as in the
+``total area'' approach.
 However it is larger than in the second approach. This is due to the
 strain is measured between two points in the center of the specimen where
-``clamping'' is still dominating. Large error values for the Young's modulus
-close to the horizontal edges of isotropic model are clearly visible in
-Figure \ref{fig:Error}a'. Contrarily less error (Fig \ref{fig:Error}b') for the
+the constraining effect is still present. Large error values for the Young's
+modulus close to the horizontal edges of isotropic model are clearly visible in
+Figure \ref{fig:Error}a'. In contrary, the error is smaller for the
 transverse-isotropic model which can be the result of different mechanical parameters in the
-transverse directions. These simulations are supporting
-the experimental result in Figure \ref{fig:explot}. Where the
-average strain diagram for the total area is showing larger Young's moduli than
+transverse directions (Fig \ref{fig:Error}b'). \\
+These simulations are supporting the experimental results in Figure
+\ref{fig:explot}. Where the average strain diagram for the total area is showing larger Young's moduli than
 the one for the chosen area.
 Additional outcomes are deduced  while observing the error fields in Figure
 \ref{fig:Error} a-c. The ASTM standard \cite{american2009standard} requires
 installation of strain gauges in the center of the specimen. This approach will
 lead to underestimation of Poisson's ratio in transverse isotropic cubic
-specimen due to the barrelling formation. On the other hand The correct values will be
-obtained for the isotropic material, where the effect of ``clamping'' affects
-the horizontal edges of the specimen. 
-Other Picture is happening for the errors of Young's moduli \ref{fig:Error}
-a'-c'. The central area of the isotropic specimen happen to be most favourable
-for avoiding the barrelling formation. Opposite for the transverse isotropic specimen, where the
-central are does overestimation the Young's moduli.
+specimen due to the barrelling formation. On the other hand accurate values will
+be obtained for the isotropic material, where the effect of ``clamping'' affects
+the horizontal edges of the specimen. The central area of the isotropic specimen
+is most favourable for accurate measurements (Figure
+\ref{fig:Error} a'). The opposite is true for the transverse isotropic specimen
+in (Figure \ref{fig:Error}b',c'), in the central area the Young's moduli are overestimated.
 
 
 
@@ -1882,10 +1886,10 @@ central are does overestimation the Young's moduli.
 \caption{\label{fig:Error} a) Simulated results of error for measured
 Poisson's ratio ($\nu_{31};\nu_{32};\nu_{21}$) of Isotropic, b)
 Transverse-Isotropic material and c) Transverse-Isotropic material plane $21$.
-b) Simulated results of error for measured Young's moduli ($E_3$)
-of Isotropic, b') Transverse-Isotropic material and ($E_2;E_1$) for
+b) Simulated results of error for measured Young's moduli ($E_L$)
+of Isotropic, b') Transverse-Isotropic material and ($E_T$) for
 Transverse-Isotropic material in c'). ($K=0.1;
-\nu_{12}=0.3$)}
+\nu=0.3$)}
 \end{figure}
 
 
@@ -2292,14 +2296,13 @@ while measuring total area strain field from same directions as previous.}
 
 
 \section{Conclusions}
-The barrelling formation can be well quantified by the FE modelling. The strain
-identification using the DIC systems gives better view on the distribution of
-strains and therefore it is easier to identify the distribution of ``clamped''
-regions where the barrelling formation appeared. 
+Barrelling formation can be well quantified by  FE modelling. strain
+identification using the DIC system gives better view on the distribution of
+strains and therefore it is possibly easier to identify the distribution of
+``clamped'' regions where the barrelling formation appeared. 
 In general the mechanical experiments are overestimating the actual values for
-the Young's moduli due to the presence of the underestimated strain regions
-within the chosen area or measuring points. In the case of quantifying the
-pPoisson's ratio, the DIC measurement has benefits, because the true values of Poisson's ratio are close
+the Young's moduli due underestimation of strain. In the case of quantifying the
+Poisson's ratio, the DIC measurement has benefits, because the true values of Poisson's ratio are close
 to the central part of vertical edges of the specimen and not in the center,
 where the strain gauges are usually placed. 
 The cubic samples can be used for the mechanical experiments in case of low
@@ -2323,14 +2326,14 @@ out within the ``Support Vasa'' project.
 \begin{description}
 
 \item[]
-\begin{sidewaystable}[!htbp]\
+\begin{table}[!htbp]\
 \caption{Engineering constants used in model} % title of Table
 \centering % used for centering table
-\begin{tabular}{c c c c c c c c c c c c} % centered columns (4 columns)
+\begin{tabular}{c c c c c c c c c} % centered columns (4 columns)
 \hline\hline %inserts double horizontal lines
- $E_{1}$ (GPa) & $E_{2}$ (GPa) & $E_{3}$ (GPa) & $G_{31}$ (GPa) &
-$G_{21}$ (GPa) & $G_{32}$ (GPa) &
-$\nu_{13}$ & $\nu_{12}$ & $\nu_{23}$ \\ % inserts table heading
+ $E_{T}$ (GPa) & $E_{T}$ (GPa) & $E_L$ (GPa) & $G_{LT}$ (GPa) &
+$G_{TT}$ (GPa) & $G_{LT}$ (GPa) &
+$\nu_{TL}$ & $\nu_{TT}$ & $\nu_{TL}$ \\ % inserts table heading
 
 \hline % inserts single horizontal line
 $E$ & $E$ & $a\cdot{E}$ & $\frac{(b\cdot(a-1)+1)\cdot{E}}{2(1+\nu)}$  &
@@ -2352,34 +2355,38 @@ $\frac{a\cdot{E}}{2(1+\nu)}$ & $\frac{(b\cdot(a-1)+1)\cdot{E}}{2(1+\nu)}$ & $\fr
 \end{tabular}
 
 \label{table:simulpar} % is used to refer this table in the text
-\end{sidewaystable}
+\end{table}
 
 \item[]
-\begin{sidewaystable}[!htbp]\
+\begin{table}[!htbp]\
 \caption{Typical engineering properties of transverse-isotropic materials\cite{hyer2009stress}} % title of Table
 \centering % used for centering table
 \begin{tabular}{l c c c } % centered columns (4 columns)
 \hline\hline %inserts double horizontal lines
 
-& Graphite-polymer composite \cite{hyer2009stress}  & Glass-polymer composite
-\cite{hyer2009stress} & Archaeoligical wood \cite{vorobyevcharacterisation}\\
-%  & $E_{1}$  & $E_{2}$ (GPa) & $E_{3}$ (GPa) & $\nu_{12}$ & $\nu_{13}$
+& \begin{tabular}{@{}c@{}}Graphite-polymer \\ composite \cite{hyer2009stress}
+\end{tabular} & \begin{tabular}{@{}c@{}}Glass-polymer \\
+composite \cite{hyer2009stress}\end{tabular}  & \begin{tabular}{@{}c@{}}
+Archaeoligical \\
+wood \cite{vorobyevcharacterisation} \end{tabular}  
+\\
+%  & $E_{1}$  & $E_{2}$ (GPa) & $E_L$ (GPa) & $\nu_{12}$ & $\nu_{13}$
 % & $\nu_{23}$ & $G_{12}$ (GPa) & $G_{13}$ (GPa) & $G_{23}$ (GPa) \\ % inserts
 % % table heading
 
 \hline % inserts single horizontal line
 
-$E_{1}$ (GPa) & 12.10 & 15.20 & 0.60\\
-$E_{2}$ (GPa) & 12.10 & 15.20 & 0.35\\
-$E_{3}$ (GPa) & 155.0 & 50.00 & 6.75\\
+$E_{T_1}$ (GPa) & 12.10 & 15.20 & 0.60\\
+$E_{T_2}$ (GPa) & 12.10 & 15.20 & 0.35\\
+$E_L$ (GPa) & 155.0 & 50.00 & 6.75\\
 
-$G_{31}$ (GPa) & 4.40 & 4.70 & 0.62\\
-$G_{21}$ (GPa) & 3.20 & 3.28 & 0.14\\
-$G_{32}$ (GPa) & 4.40 & 4.70 & 0.33\\
+$G_{LT_2}$ (GPa) & 4.40 & 4.70 & 0.62\\
+$G_{T_1T_2}$ (GPa) & 3.20 & 3.28 & 0.14\\
+$G_{LT_1}$ (GPa) & 4.40 & 4.70 & 0.33\\
 
-$\nu_{31}$ (-) & 0.248 & 0.254 & 0.37\\
-$\nu_{21}$ (-) & 0.458 & 0.428 & 0.30\\
-$\nu_{32}$ (-) & 0.248 & 0.254 & 0.69\\
+$\nu_{LT_1}$ (-) & 0.248 & 0.254 & 0.37\\
+$\nu_{T_1T_2}$ (-) & 0.458 & 0.428 & 0.30\\
+$\nu_{LT_2}$ (-) & 0.248 & 0.254 & 0.69\\
 
 
 
@@ -2394,7 +2401,7 @@ $\nu_{32}$ (-) & 0.248 & 0.254 & 0.69\\
 \hline %inserts single line
 \end{tabular}
 \label{table:nonlin} % is used to refer this table in the text
-\end{sidewaystable}
+\end{table}
 \end{description}
 
 
