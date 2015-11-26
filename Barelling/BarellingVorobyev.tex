@@ -109,8 +109,8 @@ Uppsala, Sweden }
 \begin{abstract}
 For scarce materials, such as archaeological wood, one often resorts to cubic
 samples instead of prisms. For these samples barreling formation gives rise to additional difficulties.
-Natural orthotropy, availability and variation between and within samples make
-the mechanical characterisation of wood  challenging. 
+Furthermore natural orthotropy, availability and variation between and within
+samples make the mechanical characterisation of wood  challenging. 
 The primary purpose of the present study is to identify barrelling
 formation in cubic samples during compressive experiments. Secondly, to investigate and
 compare barrelling formation on isotropic, transverse
@@ -138,14 +138,13 @@ Wood
 Characterisation of material stiffness parameters of orthotropic materials can
 be challenging. In  careful design of wood structures, not only one parameter, but the full
 orthotropic set of elastic parameters is needed \cite{tsoumis1991science},
-e.g. for finite-element modelling of wood joints that are locally subjected to a triaxial stress state.
-Compressive experiments are considered to be one of the most reliable methods
-for identifying engineering constants such as Young's moduli and Poisson's
-ratios.The general approach is to measure the material response due to applied
+e.g. for finite-element modelling of wood joints that are locally subjected to a
+triaxial stress state. Compressive experiments are considered to be one of the most reliable methods for identifying engineering constants such as Young's moduli and Poisson's
+ratios. The general approach is to measure the material response due to applied
 forces. The procedure is straighforward and easy to perform due to simplicity of experimental installation and low requirements to specimen
 geometry. Standards such as ASTM \cite{standard1997d143,
-johnson1983compression}require the usage of rectangular prisms for
-the compressive testing.
+johnson1983compression} require the usage of rectangular prisms for
+the compressive testing along with strain gauges.
 For rare materials such as archaeological wood, it is more convenient to use
 cubic samples \cite{ljungdahl2007transverse} to save material. 
 This enables testing of the same sample several times and in
@@ -154,7 +153,7 @@ applied within the elastic range.
 A disadvantage with compressive testing of cubes compared to tensile testing of
 dog-bone specimens, is that it can be complicated to ensure a homogeneous stress state
 due to geometrical imperfections of test specimens \cite{Toftegaard1999849}.
-Moreover, barrelling formation (Fig \ref{fig:barrelling}) in compressive
+Moreover, barrelling formation (Figure \ref{fig:barrelling}) in compressive
 loading \cite{oldroyd1966stress}, due to friction between the platens and the
 sample, makes it difficult to assess the  deformations.
 Consequently, the Poisson's ratios are thus more difficult to obtain directly from this kind
@@ -166,7 +165,7 @@ as digital speckle photography (DSP) \cite{synnergren1999stereoscopic} or
 and more. Strain field measurements technique using DIC has shown a good
 performance in comparison to the traditional strain gauges
 \cite{huang2010optical,xavier2012stereovision} Additionally it helps to
-improves the estimation of the stiffness parameters \cite{dahl2009planar,
+improve the estimation of the stiffness parameters \cite{dahl2009planar,
 majano2012test, ozyhar2013moisture}. 
 Nevertheless, compressive testing of wooden cubes is the reasonable 
 choice of test method if the amount of available material is limited, as is the case for archaeological material.
@@ -183,8 +182,8 @@ In order to verify the results from the compressive experiments the effect of
 barrelling was investigated by the simulation using the Finite Element
 Modelling (FEM).\\
 Previously compressive experiments on prism samples with orthotropic material
-behavior were simulated by \cite{Toftegaard1999849} in order to investigate the 
-effect of geometrical imperfections on identification of engineering constants. 
+behavior were simulated by Toftegaard \cite{Toftegaard1999849} in order to
+investigate the effect of geometrical imperfections on identification of engineering constants. 
 in his work he compared the simulated strain field to the measurements of strain
 gauges and obtained good agreement between the simulated data and experimental
 curves.\\
@@ -203,13 +202,13 @@ formation of the prism.
 
 
 
-The present work investigates on an investigation of
-barrelling formation three different material behaviour. Additionally three
-measuring techniques are compared in order to identify the magnitude of
+The present work investigates
+barrelling formation in three different types of material behaviour.
+Additionally three measuring techniques are compared in order to identify the magnitude of
 resulting errors.
-The results can help to identify the accuracy of the obtained material constants values
-of material elastic parameters that can be obtained during compressive
-experiments on cubic samples. 
+The results can help to identify the accuracy of the material constants values
+of elastic parameters that can be obtained during compressive experiments on
+cubic samples.
 
 
 \section{Materials and Methods}
@@ -334,6 +333,21 @@ interest(\ref{ex2}) and total surface area  (\ref{ex1}).}
 \item{\textit{Model}}
 \end{description}
 
+
+
+
+
+The finite element program COMSOL Multiphysics 4.4 \cite{Comsol} was used for
+the experimental simulations.
+A cube with unity dimensions was modeled with
+3D solid elements.
+The platens of the universal testing machine were not included in the model.
+Instead, the compressive loading was simulated as a downward vertical prescribed
+displacement. The magnitude of this prescribed displacement was set to 0.01
+which corresponds to  1\%  of  strain respectively.
+After a mesh refinement study, a $10\times10\times10$ mesh of quadratic brick
+elements was determined to provide reasonably accurate results for the purpose of this study.
+
 \begin{figure}[h]
 \centering
 \includegraphics[width=8cm]{BarellingPaper.pdf}
@@ -343,23 +357,11 @@ specimen used in the FEM simulation. ​
 a) Horizontal boundary conditions and b) vertical boundary conditions.}
 \end{figure}
 
-
-
-The finite element program COMSOL Multiphysics 4.4 \cite{Comsol} was used for
-the experimental simulations.
-A cube (Figure \ref{fig:Barrelling})  with unity dimensions was modeled with
-3D solid elements.
-The platens of the universal testing machine were not included in the model.
-Instead, the compressive loading was simulated as a downward vertical prescribed
-displacement. The magnitude of this prescribed displacement was set to 0.01
-which corresponds to  1\%  of  strain respectively.
-After a mesh refinement study, a $10\times10\times10$ mesh of quadratic brick
-elements was determined to provide reasonably accurate results for the purpose of this study.
-
 The main reason for the barrelling formation is the friction between platens
 and specimen \cite{Narayanasamy198821, kulkarni1969}. To simulate the effect of friction, 
 we have introduced springs with friction parameters $K$ that partially constrain
-lateral displacements on the top and bottom of the cube, see Figure \ref{fig:Barrelling}.
+lateral displacements on the top and bottom of the cube (Figure
+\ref{fig:Barrelling}).
 For $K=0$ the displacement of the corresponding edges is fully free
 and for increasing $K$ the edges are constrained.
 
@@ -367,16 +369,15 @@ and for increasing $K$ the edges are constrained.
 \item{\textit{Material input parameters}}
 \end{description}
 
-In this work we study isotropic, transversely isotropic and orthotropic material behavior 
-in combination with linear elasticity.
+Present work investigates isotropic, transversely isotropic and orthotropic
+material behavior in combination with linear elasticity.
 The material properties that were adopted are listed in
 Table \ref{table:simulpar}. Two parameters $a$ and $b$ were introduced for a continuous transition between isotropy and transverse isotropy. 
 The first one , a, is controlling the stiffness difference between the longitudinal and transverse directions and the corresponding Poisson's ratio. 
 The second one, b, controls the independent shear modulus based on observations
 of shear moduli for materials in Table \ref{table:nonlin}.
 The remaining three Poisson's ratios were be obtained from the symmetry
-principle relations. The orthotropic material was simulated using input
-parameters obtained from the experiments \cite{vorobyevcharacterisation}.
+principle relations. The orthotropic material was simulated using input parameters obtained from the experiments \cite{vorobyevcharacterisation}.
 
 
 \begin{description}
