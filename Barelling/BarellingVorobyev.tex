@@ -113,7 +113,7 @@ Furthermore natural orthotropy, availability and variation between and within
 samples make the mechanical characterisation of wood  challenging. 
 The primary purpose of the present study is to identify barrelling
 formation in cubic samples during compressive experiments. Secondly, to investigate and
-compare barrelling formation on isotropic, transverse
+compare barrelling formation on isotropic, transversely 
 isotropic and orthotropic material parameters. Finally to compare three 
 different strain measurement techniques and investigate which is better for quantification 
 of mechanical parameters such as Young's moduli and Poisson's ratios.
@@ -373,9 +373,10 @@ Present work investigates isotropic, transversely isotropic and orthotropic
 material behavior in combination with linear elasticity.
 The material properties that were adopted are listed in
 Table \ref{table:simulpar}. Two parameters $a$ and $b$ were introduced for a continuous transition between isotropy and transverse isotropy. 
-The first one , a, is controlling the stiffness difference between the longitudinal and transverse directions and the corresponding Poisson's ratio. 
-The second one, b, controls the independent shear modulus based on observations
-of shear moduli for materials in Table \ref{table:nonlin}.
+The first one , $a$, is controlling the stiffness difference between the
+longitudinal and transverse directions and the corresponding Poisson's ratio.
+The second one, $b$, controls the independent shear modulus based on
+observations of shear moduli for materials in Table \ref{table:nonlin}.
 The remaining three Poisson's ratios were be obtained from the symmetry
 principle relations. The orthotropic material was simulated using input parameters obtained from the experiments \cite{vorobyevcharacterisation}.
 
@@ -389,11 +390,13 @@ Three strain measuring cases were taken intro account in simulation. The first
 case can be considered the same as taking the average dimensional changes of a
 sample. In particular the average strain from the total surface area was
 obtained and used as a value for obtaining axial stiffness $E_L$. In the
-\textit{second} case, 50\% of cube surface (Figure \ref{fig:experiment}) was used to calculate the
- average strain. The area was chosen in order to disregard the ``clamping''
- effect between the platens of UTM and contact surface of the cube. Finally in
- the \textit{third} method the strain is measured between two points in the
- center of the specimen as it is with the strain gauge based on ASTM code \cite{american2009standard}.
+second case, $50\%$ of cube surface (Figure \ref{fig:experiment}) was
+used to calculate the average strain. The area was chosen in order to disregard
+the constraining effect between the platens of UTM and contact surface of the
+cube.
+Finally in the third method the strain is measured between two points
+in horisontal and two points in vertical direction in the center of the specimen
+as it is with the strain gauge based on ASTM code \cite{american2009standard}.
 
 \begin{description}
 \item{\textit{Experiment}}
@@ -1309,8 +1312,249 @@ $\nu_{LT},$ and c') $\nu_{TL}$ for transversely isotropic material.}
 
 
 
+
+
+\color{black}
+
+% \begin{center}
+% \begin{figure}[!ht]
+% \pgfplotsset{every axis legend/.append style={
+% 		at={(0.5,1.03)},
+% 		anchor=north}}
+% 
+% \begin{tikzpicture}[scale=1]
+% 
+% \pgfplotstableread{
+% nuxy	tr0	tr0.1	trINF	i0	i0.1	iINF
+% 0.05	1	0.8322	0.7962	1	0.9382	0.8238
+% 0.1	1	0.8404	0.8063	1	0.942	0.8349
+% 0.15	1	0.848533333	0.816	1	0.946266667	0.846
+% 0.2	1	0.8565	0.82535	1	0.951	0.8571
+% 0.25	1	0.86428	0.8344	1	0.95616	0.86792
+% 0.3	1	0.871933333	0.843166667	1	0.961866667	0.878266667
+% 0.35	1	0.879485714	0.851657143	1	0.968228571	0.887942857
+% 0.4	1	0.886975	0.8599	1	0.975575	0.89565
+% 0.45	1	0.894466667	0.867955556	1	0.984644444	0.8698
+% 
+% 
+% }\nutotarea
+% 
+% \pgfplotstableread{
+% nuxy	tr0	tr0.1	trINF	i0	i0.1	iINF
+% 0.05	1	0.926	0.91	1	0.9812	0.9456
+% 0.1	1	0.9342	0.9201	1	0.9847	0.9552
+% 0.15	1	0.9422	0.9296	1	0.988066667	0.964666667
+% 0.2	1	0.94975	0.9387	1	0.99145	0.97405
+% 0.25	1	0.95704	0.9474	1	0.99464	0.98336
+% 0.3	1	0.963933333	0.9557	1	0.997766667	0.992733333
+% 0.35	1	0.970542857	0.963628571	1	1.000742857	1.002171429
+% 0.4	1	0.9768	0.971175	1	1.00355	1.011925
+% 0.45	1	0.982755556	0.978377778	1	1.006288889	1.022933333
+% 
+% }\nuchosenarea
+% 
+% \pgfplotstableread{
+% nuxy	tr0	tr0.1	trINF	i0	i0.1	iINF
+% 0.05	1	0.832	0.794	1	0.938	0.818
+% 0.1	1	0.839	0.804	1	0.941	0.825
+% 0.15	1	0.846666667	0.813333333	1	0.946666667	0.833333333
+% 0.2	1	0.855	0.82	1	0.95	0.84
+% 0.25	1	0.86	0.828	1	0.956	0.852
+% 0.3	1	0.866666667	0.836666667	1	0.96	0.866666667
+% 0.35	1	0.874285714	0.845714286	1	0.968571429	0.882857143
+% 0.4	1	0.8825	0.855	1	0.975	0.905
+% 0.45	1	0.891111111	0.862222222	1	0.984444444	0.931111111
+% 
+% }\nuexperiment
+% 
+% 
+% 
+% 
+% \begin{axis}[name=plot3,at={($(plot0.south)-(0,1cm)$)},anchor=north,
+% height=6cm,width=5cm, title={a')},
+% %    xlabel={Temperature [\textcelsius]},
+%     ylabel={Measured Poisson's ratio [-]},
+%     xmin=0.05, xmax=0.45,
+%     ymin=0.75, ymax=1.01,
+%         yticklabel style={/pgf/number format/fixed,
+%                   /pgf/number format/precision=3},
+% %     xtick={1,...,9},
+% %    ytick={0,20,40,60,80},
+% %     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
+% %     $K=1000$, $K=\infty$}, 
+% %     x tick label style={
+% %     rotate=60,anchor=east},
+%     ymajorgrids=true,
+%     grid style=dashed,
+% ]
+% % \end{axis}    
+% % \begin{axis}[legend pos=outer north east]
+%  
+%  
+%     \addplot table[x=nuxy,y=tr0	] {\nutotarea}; \label{nuk1}
+% %     \addlegendentry{$\nu$=0.05}
+%     \addplot table[x=nuxy,y=tr0.1 ] {\nutotarea}; \label{nuk2}
+% %     \addlegendentry{$\nu$=0.1}
+%     \addplot table[x=nuxy,y=trINF ] {\nutotarea}; \label{nuk3}
+% %     \addlegendentry{$\nu$=0.15}
+% 
+% \end{axis}
+% 
+% 
+% % plot transviso chosen area  DSP
+% 
+% \begin{axis}[legend pos=outer north east,
+% 	name=c2,at={($(c1.east)+(1cm,0)$)},anchor=west, height=4cm, width=4cm,
+%     title={b')},
+%     xlabel={Given Poisson's ratio [-]},
+% %    ylabel={Measured stiffness [Pa]},
+%     xmin=0.05, xmax=0.45,
+%     ymin=0.75, ymax=1.01,
+% %     yticklabel style={/pgf/number format/fixed,
+% %                   /pgf/number format/precision=3},
+% %     xtick={1,...,9},
+% %    ytick={0,20,40,60,80},
+% %     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
+% %     $K=1000$, $K=\infty$},
+% %     x tick label style={
+% %         rotate=60,anchor=east},
+%     ymajorgrids=true,
+%     grid style=dashed,
+%     bar shift=0pt
+% ]
+% 
+%     \addplot table[x=nuxy,y=tr0	] {\nuchosenarea}; \label{nuk1}
+% %     \addlegendentry{$\nu$=0.05}
+%     \addplot table[x=nuxy,y=tr0.1 ] {\nuchosenarea}; \label{nuk2}
+% %     \addlegendentry{$\nu$=0.1}
+%     \addplot table[x=nuxy,y=trINF ] {\nuchosenarea}; \label{nuk3}
+% %     \addlegendentry{$\nu$=0.15}
+% 
+% %Experimental approach
+% 
+% \end{axis}
+% 
+% 
+% \begin{axis}[legend pos=outer north east,
+% 	name=c3,at={($(c2.east)+(1cm,0)$)},anchor=west, height=4cm,width=4cm,
+%     title={c')},
+% %    xlabel={Temperature [\textcelsius]},
+% %    ylabel={Measured stiffness [Pa]},
+%     xmin=0.05, xmax=0.45,
+%     ymin=0.75, ymax=1.01,
+% %     yticklabel style={/pgf/number format/fixed,
+% %                   /pgf/number format/precision=3},
+% %     xtick={1,...,9},
+% %    ytick={0,20,40,60,80},
+% %     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
+% %     $K=1000$, $K=\infty$},
+% %     x tick label style={
+% %         rotate=60,anchor=east},
+%     ymajorgrids=true,
+%     grid style=dashed,
+%     bar shift=0pt
+% ]
+% 
+%     \addplot table[x=nuxy,y=tr0	] {\nuexperiment}; \label{nuk1}
+% %     \addlegendentry{$\nu$=0.05}
+%     \addplot table[x=nuxy,y=tr0.1 ] {\nuexperiment}; \label{nuk2}
+% %     \addlegendentry{$\nu$=0.1}
+%     \addplot table[x=nuxy,y=trINF ] {\nuexperiment}; \label{nuk3}
+% %     \addlegendentry{$\nu$=0.15}
+% 
+% 
+% 
+% 
+% \end{axis}
+% 
+% 
+% \end{tikzpicture}
+% \captionsetup{justification=centering}
+% \caption{Measured vs. given Poisson's ratio
+% ($\nu_{31}$, $\nu_{32}$) in transverse-isotropic material for spring
+% coefficients $K=0$ (\ref{k1}), $K=0.1$ (\ref{k2}) and $K=\infty$ (\ref{k3});\\
+% \color{red}{a) total area of interest, b) chosen area of interest c)
+% experiment.}}
+% 
+% 
+% \end{figure}
+% \end{center}
+
+
+
+
+
+
+
+
+
+\section{Results and Discussions}
+The simulated strain results were acquired in order to compare those with the
+ones in the experiment. The set of experimental and simulations are
+compared. The results of the simulations can be used for the
+estimation of error that appears due to different strain measurement principles.
+
+\begin{description}
+\item{\textit{ Barrelling in Isotropic and Transversely isotropic material}}
+\end{description}
+The results of the simulation shows that isotropic material barrels
+significantly more than transversely isotropic and orthotropic materials. \\	
+Three plots can be compared in Figure \ref{fig:isovstriso}. 
+From the plots a)-c) one can compare the difference between the measured and actual 
+Young's moduli depending on the Poisson's ratio versus the
+displacement of the top edge. The displacement is represented as a displacement
+factor which is relation between the actual $\delta$ and maximum
+displacement $\delta_{max}$ that is based on factor $K$. For all simulations the
+barrelling is leading to an overestimation of the Young's moduli. This is caused by the strain field in the area close to the edges, where constrained material has a stiffer response.
+In general, for increasing Poisson's ratio, the error becomes larger. 
+For the transversely isotropic material in Figure
+\ref{fig:isovstriso} $b,c$ the error in Young's moduli is less in
+transverse direction $T$ than in the axial direction $L$.
+This difefrence in behaviour can be discussed by examining the strain fields for isotropic and 
+transversely isotropic materials shown in of Figure
+\ref{fig:Error} a, b and c. One can
+observe the cones of the constraining effect that are originating from the top
+and bottom. The constraining effect is dominant on the $25\%$ of height
+from the horisontal edges of the model. Whereas in transversely isotropic
+material in the $TT$ plane , the is spread less in the surface area.\\
+Observation of Poisson's ratio values showed the opposite behaviour concerning
+the measurement.
+Figure \ref{fig:isovstriso} $a'$ showed that the relative error for the
+Poisson's ratio is less significant in isotropic material. This is supported
+with the corresponidng strain field in Figure \ref{fig:Error} $a'$. The normal
+Poisson's ratio values are within the central area of the model. 
+Alternatively Figure \ref{fig:isovstriso} $b'$ and $c'$ describing the effect
+of barreling on the measured materials Poisson's ratio in transversely isotropic material. 
+It is seen that for the $LT$ planes the constraining effect influence the
+measurements significantly. For example, for the displacement factor $\delta/\delta_{max}\approx0.2 $ where $K=0.1$,  the Poisson's ratio is
+underestimated by $30-40\%$.
+The same situation is for the plane $TT$ but the effect is less severe.
+Referring to Figure \ref{fig:Error} $a-c$  we can see that the constraining effect is
+crucial for the estimation of the Poisson's ratio. Blue coloured area where the error is above $5\%$ spreading from the horisontal edges of 
+the model throughout the central area of the material. So the most accurate
+estimation of Poisson's ratio is in the central area close to the vertical
+edges of the cube as it seen in Figure \ref{fig:Error} $c,d$. However it was
+mentioned that usage of strain gauges are usually placed in the center of the
+specimen, whereas presented results are supporting the fact that central
+region of the specimen is not always beneficial for the measurements. In this
+case the usage of DIC is preferable. 
+
+
+\begin{description}
+\item{\textit{Strain measurement}}
+\end{description}
+Measured mechanical properties varies with strain measurement methods. In
+present work, three methods were measured and compared. The
+first method is shown in Figure \ref{fig:strainmethods}$b$, where the total area
+including the constrained region is taken for measuring the strain.  
+Here the error originates from the underestimated axial strains that are the
+reason of constraining effect of horisontal edges. However the evaluation of
+Poisson's ratio has less error due to inclusion of the total area into the
+strain evaluations. Strain field in Figure \ref{fig:Error}$b$ shows that total
+area has more regions where error is not significant.
+
 \begin{center}
-\begin{figure}[!ht]
+\begin{figure}[h]
 \pgfplotsset{every axis legend/.append style={
 		at={(0.5,1.03)},
 		anchor=north}}
@@ -1607,7 +1851,7 @@ height=4cm,width=4cm, title={c')},
 
 \end{tikzpicture}
 \captionsetup{justification=centering}
-\caption{Simulated Young's moduli error values of transverse-isotropic
+\caption{Simulated Young's moduli error values of transversely isotropic
 material for spring parameters $K=0$ (\ref{k1}), $K=0.1$ (\ref{k2}) and
 $K=\infty$ (\ref{k3}) vs.
 different given Poisson's ratio ($\nu$) values for a) chosen area of
@@ -1623,278 +1867,51 @@ interest, b') total area of interest c') experimental methodology.
 \end{center}
 
 
-\color{black}
 
-% \begin{center}
-% \begin{figure}[!ht]
-% \pgfplotsset{every axis legend/.append style={
-% 		at={(0.5,1.03)},
-% 		anchor=north}}
-% 
-% \begin{tikzpicture}[scale=1]
-% 
-% \pgfplotstableread{
-% nuxy	tr0	tr0.1	trINF	i0	i0.1	iINF
-% 0.05	1	0.8322	0.7962	1	0.9382	0.8238
-% 0.1	1	0.8404	0.8063	1	0.942	0.8349
-% 0.15	1	0.848533333	0.816	1	0.946266667	0.846
-% 0.2	1	0.8565	0.82535	1	0.951	0.8571
-% 0.25	1	0.86428	0.8344	1	0.95616	0.86792
-% 0.3	1	0.871933333	0.843166667	1	0.961866667	0.878266667
-% 0.35	1	0.879485714	0.851657143	1	0.968228571	0.887942857
-% 0.4	1	0.886975	0.8599	1	0.975575	0.89565
-% 0.45	1	0.894466667	0.867955556	1	0.984644444	0.8698
-% 
-% 
-% }\nutotarea
-% 
-% \pgfplotstableread{
-% nuxy	tr0	tr0.1	trINF	i0	i0.1	iINF
-% 0.05	1	0.926	0.91	1	0.9812	0.9456
-% 0.1	1	0.9342	0.9201	1	0.9847	0.9552
-% 0.15	1	0.9422	0.9296	1	0.988066667	0.964666667
-% 0.2	1	0.94975	0.9387	1	0.99145	0.97405
-% 0.25	1	0.95704	0.9474	1	0.99464	0.98336
-% 0.3	1	0.963933333	0.9557	1	0.997766667	0.992733333
-% 0.35	1	0.970542857	0.963628571	1	1.000742857	1.002171429
-% 0.4	1	0.9768	0.971175	1	1.00355	1.011925
-% 0.45	1	0.982755556	0.978377778	1	1.006288889	1.022933333
-% 
-% }\nuchosenarea
-% 
-% \pgfplotstableread{
-% nuxy	tr0	tr0.1	trINF	i0	i0.1	iINF
-% 0.05	1	0.832	0.794	1	0.938	0.818
-% 0.1	1	0.839	0.804	1	0.941	0.825
-% 0.15	1	0.846666667	0.813333333	1	0.946666667	0.833333333
-% 0.2	1	0.855	0.82	1	0.95	0.84
-% 0.25	1	0.86	0.828	1	0.956	0.852
-% 0.3	1	0.866666667	0.836666667	1	0.96	0.866666667
-% 0.35	1	0.874285714	0.845714286	1	0.968571429	0.882857143
-% 0.4	1	0.8825	0.855	1	0.975	0.905
-% 0.45	1	0.891111111	0.862222222	1	0.984444444	0.931111111
-% 
-% }\nuexperiment
-% 
-% 
-% 
-% 
-% \begin{axis}[name=plot3,at={($(plot0.south)-(0,1cm)$)},anchor=north,
-% height=6cm,width=5cm, title={a')},
-% %    xlabel={Temperature [\textcelsius]},
-%     ylabel={Measured Poisson's ratio [-]},
-%     xmin=0.05, xmax=0.45,
-%     ymin=0.75, ymax=1.01,
-%         yticklabel style={/pgf/number format/fixed,
-%                   /pgf/number format/precision=3},
-% %     xtick={1,...,9},
-% %    ytick={0,20,40,60,80},
-% %     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
-% %     $K=1000$, $K=\infty$}, 
-% %     x tick label style={
-% %     rotate=60,anchor=east},
-%     ymajorgrids=true,
-%     grid style=dashed,
-% ]
-% % \end{axis}    
-% % \begin{axis}[legend pos=outer north east]
-%  
-%  
-%     \addplot table[x=nuxy,y=tr0	] {\nutotarea}; \label{nuk1}
-% %     \addlegendentry{$\nu$=0.05}
-%     \addplot table[x=nuxy,y=tr0.1 ] {\nutotarea}; \label{nuk2}
-% %     \addlegendentry{$\nu$=0.1}
-%     \addplot table[x=nuxy,y=trINF ] {\nutotarea}; \label{nuk3}
-% %     \addlegendentry{$\nu$=0.15}
-% 
-% \end{axis}
-% 
-% 
-% % plot transviso chosen area  DSP
-% 
-% \begin{axis}[legend pos=outer north east,
-% 	name=c2,at={($(c1.east)+(1cm,0)$)},anchor=west, height=4cm, width=4cm,
-%     title={b')},
-%     xlabel={Given Poisson's ratio [-]},
-% %    ylabel={Measured stiffness [Pa]},
-%     xmin=0.05, xmax=0.45,
-%     ymin=0.75, ymax=1.01,
-% %     yticklabel style={/pgf/number format/fixed,
-% %                   /pgf/number format/precision=3},
-% %     xtick={1,...,9},
-% %    ytick={0,20,40,60,80},
-% %     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
-% %     $K=1000$, $K=\infty$},
-% %     x tick label style={
-% %         rotate=60,anchor=east},
-%     ymajorgrids=true,
-%     grid style=dashed,
-%     bar shift=0pt
-% ]
-% 
-%     \addplot table[x=nuxy,y=tr0	] {\nuchosenarea}; \label{nuk1}
-% %     \addlegendentry{$\nu$=0.05}
-%     \addplot table[x=nuxy,y=tr0.1 ] {\nuchosenarea}; \label{nuk2}
-% %     \addlegendentry{$\nu$=0.1}
-%     \addplot table[x=nuxy,y=trINF ] {\nuchosenarea}; \label{nuk3}
-% %     \addlegendentry{$\nu$=0.15}
-% 
-% %Experimental approach
-% 
-% \end{axis}
-% 
-% 
-% \begin{axis}[legend pos=outer north east,
-% 	name=c3,at={($(c2.east)+(1cm,0)$)},anchor=west, height=4cm,width=4cm,
-%     title={c')},
-% %    xlabel={Temperature [\textcelsius]},
-% %    ylabel={Measured stiffness [Pa]},
-%     xmin=0.05, xmax=0.45,
-%     ymin=0.75, ymax=1.01,
-% %     yticklabel style={/pgf/number format/fixed,
-% %                   /pgf/number format/precision=3},
-% %     xtick={1,...,9},
-% %    ytick={0,20,40,60,80},
-% %     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
-% %     $K=1000$, $K=\infty$},
-% %     x tick label style={
-% %         rotate=60,anchor=east},
-%     ymajorgrids=true,
-%     grid style=dashed,
-%     bar shift=0pt
-% ]
-% 
-%     \addplot table[x=nuxy,y=tr0	] {\nuexperiment}; \label{nuk1}
-% %     \addlegendentry{$\nu$=0.05}
-%     \addplot table[x=nuxy,y=tr0.1 ] {\nuexperiment}; \label{nuk2}
-% %     \addlegendentry{$\nu$=0.1}
-%     \addplot table[x=nuxy,y=trINF ] {\nuexperiment}; \label{nuk3}
-% %     \addlegendentry{$\nu$=0.15}
-% 
-% 
-% 
-% 
-% \end{axis}
-% 
-% 
-% \end{tikzpicture}
-% \captionsetup{justification=centering}
-% \caption{Measured vs. given Poisson's ratio
-% ($\nu_{31}$, $\nu_{32}$) in transverse-isotropic material for spring
-% coefficients $K=0$ (\ref{k1}), $K=0.1$ (\ref{k2}) and $K=\infty$ (\ref{k3});\\
-% \color{red}{a) total area of interest, b) chosen area of interest c)
-% experiment.}}
-% 
-% 
-% \end{figure}
-% \end{center}
-
-
-
-
-
-
-
-
-
-\section{Results and Discussions}
-The simulated strain results were acquired in order to compare those with the
-ones in the experiment. The set of experimental and simulations are
-compared. The results of the simulations can be used for the
-estimation of error that appears due to different strain measurement principles.
-
-\begin{description}
-\item{\textit{ Barrelling in Isotropic and Transverse-Isotropic material}}
-\end{description}
-The results of the simulation shows that isotropic material barrels
-significantly more than transverse-isotropic and orthotropic materials. \\	
-Intuitively three plots can be compared in Figure \ref{fig:isovstriso}. 
-From the plots a)-c) one can compare the difference between the measured and actual 
-Young's moduli depending on the Poisson's ratio versus the displacement of the
-top edge.
-For all simulations the barrelling is leading to an overestimation of the
-Young's moduli. This is caused by the strain field in the
- area close to the edges, where constrained material has a stiffer response.
-In general, for increasing Poisson's ratio, the error becomes larger. 
-For the transverse isotropic material the error in Young's moduli is less in
-transverse direction $T$ than in the axial direction $L$ (Figure
-\ref{fig:isovstriso} b,c).
-This difefrence in behaviour can be discussed by examining the strain fields for isotropic and 
-transversely isotropic materials shown in of Figure
-\ref{fig:Error}a', b' and c'.  The effect of ``clamping'' can be
-observed on the $25\%$ of height from the horisontal edges of the model. 
-Whereas in transversely isotropic material, the influence of barrelling is
-spread less in the surface area.\\
-The opposite is the case for situation with the Poisson's ratio values. In
-Figure \ref{fig:isovstriso} can be noticed that the relative error for the
-Poisson's ratio is less in isotropic material. 
-Alternatively Figure \ref{fig:isovstriso} b' and c' describing the effect of barreling on the
-measured materials Poisson's ratio in transversely isotropic material. It is
-seen that for the $LT$ planes the presence of barrelling can
-influence the measurements significantly. For example, for the displacement
-factor $\delta/\delta_{max}\approx0.2 $ where $K=0.1$,  the Poisson's ratio is
-underestimated by $30-40\%$.
-The same situation is for the plane $TT$ but the effect is less severe. Again,
-referring to Figure \ref{fig:Error} a-c  we can see that the
-effect of clamping is crucial for the estimation of the Poisson's ratio. Blue
-coloured area where the error is above $5\%$ spreading from the horisontal edges of 
-the model throughout the central area of the material. Finally it was
-observed that evaluation of Poisson's ratio in plane $TL$ will lead to
-the overestimation of the value.
-
-
-\begin{description}
-\item{\textit{Strain measurement}}
-\end{description}
-Measured mechanical properties varies with strain measurement methods
-(Figure \ref{fig:strainmethods}). The method where the total area of the
-specimen is taken for measuring the strain (Figure \ref{fig:strainmethods}b)
-results in considerable error for given $K$ factor values. The error originates
-from the ``clamped'' region close to the horizontal edges (Fig
-\ref{fig:Error}a-c).  \\
-In the second approach (Figure \ref{fig:strainmethods}a)
-only the middle 50\% of the area part was
-taken for determination of strain. The plot shows that with this method the
-Young's moduli is much less overestimated.  \\
-In the last approach (Figure \ref{fig:strainmethods}c) where ASTM standard with
-strain gauge technique was used, the error was not as significant as in the
-``total area'' approach.
-However it is larger than in the second approach. This is due to the
-strain is measured between two points in the center of the specimen where
-the constraining effect is still present. Large error values for the Young's
-modulus close to the horizontal edges of isotropic model are clearly visible in
-Figure \ref{fig:Error}a'. In contrary, the error is smaller for the
-transverse-isotropic model which can be the result of different mechanical parameters in the
-transverse directions (Fig \ref{fig:Error}b'). \\
-These simulations are supporting the experimental results in Figure
-\ref{fig:explot}. Where the average strain diagram for the total area is showing larger Young's moduli than
-the one for the chosen area.
-Additional outcomes are deduced  while observing the error fields in Figure
-\ref{fig:Error} a-c. The ASTM standard \cite{american2009standard} requires
-installation of strain gauges in the center of the specimen. This approach will
-lead to underestimation of Poisson's ratio in transverse isotropic cubic
-specimen due to the barrelling formation. On the other hand accurate values will
-be obtained for the isotropic material, where the effect of ``clamping'' affects
-the horizontal edges of the specimen. The central area of the isotropic specimen
-is most favourable for accurate measurements (Figure
-\ref{fig:Error} a'). The opposite is true for the transverse isotropic specimen
-in (Figure \ref{fig:Error}b',c'), in the central area the Young's moduli are overestimated.
-
-
+In the second approach only the middle 50\% of the area part was
+taken for determination of strain. The plot in Figure \ref{fig:strainmethods}$a$
+shows that with this method the Young's moduli is less overestimated.\par
+  In the last approach where ASTM standard
+with strain gauge technique was used, the error is very close to the one in
+second approach. The plot in Figure \ref{fig:strainmethods}$c$ depicts that.
+This is due to the strain is measured between two points in the center of 
+the specimen where the constraining effect is less severe. 
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=10cm]{BarellingError.pdf}
 \label{fig:Error}
 \caption{\label{fig:Error} a) Simulated results of error for measured Young's
-moduli ($E$) of Isotropic, b) Transverse-Isotropic material ($E_L$) and for
-Transverse-Isotropic material ($E_T$) in c). 
+moduli ($E$) of Isotropic, b) transversely Isotropic material ($E_L$) and for
+transversely Isotropic material ($E_T$) in c). 
 a') Simulated results of error for measured
 Poisson's ratio ($\nu$) of Isotropic, b')
-Transverse-Isotropic material ($\nu_{LT}$) and c') Transverse-Isotropic
+transversely isotropic material ($\nu_{LT}$) and c') transversely isotropic
 material plane ($\nu_{TT}$).($K=0.1;\nu=0.3$)}
 
 \end{figure}
+
+Large error values for the Young's
+modulus close to the horizontal edges of isotropic model are clearly visible in
+Figure \ref{fig:Error}$a$. The opposite is true for the transversely isotropic
+specimen in (Figure \ref{fig:Error} $b,c$), for $LT$ plane 
+the Young's moduli in the central area is overestimatedn whereas for $TT$ plane
+the strain field looks similar to the isotropic material.\par
+These simulations are supporting the experimental results in Figure
+\ref{fig:explot}. Where the average strain diagram for the total area is showing larger Young's moduli than
+the one for the chosen area.
+Additional outcomes are deduced  while observing the error fields in Figure
+\ref{fig:Error} $a'-c'$. The ASTM standard \cite{american2009standard} requires
+installation of strain gauges in the center of the specimen. This approach will
+lead to underestimation of Poisson's ratio in transversely isotropic cubic
+specimen due to the barrelling formation. On the other hand accurate values will
+be obtained for the isotropic material, where the constraining effect influence
+the horizontal edges of the specimen. The central area of the isotropic specimen
+is most favourable for accurate measurements.
+
+
+
+
 
 
 \begin{description}
@@ -2031,7 +2048,7 @@ $TR$(\ref{VasaXY}). b) Simulated Poisson's ratio normalized values of material
 while measuring total area strain field from same directions as previous.}
 
 
-\label{fig:isovstriso}
+\label{fig:ortho}
 \end{figure}
 
 \end{center}
@@ -2349,8 +2366,8 @@ $\frac{a\cdot{E}}{2(1+\nu)}$ & $\frac{(b\cdot(a-1)+1)\cdot{E}}{2(1+\nu)}$ & $\fr
 \multicolumn{6}{l}{%
   \begin{minipage}{9cm}%
 \tiny Note: $E=1$; $\nu=0.25$; Parameter $a=1$ for isotropic and $a=10$
-    for transverse-isotropic material model; Shear stiffness parameter 
-    $b=1$ for isotropic and for transverse-isotropic
+    for transversely isotropic material model; Shear stiffness parameter 
+    $b=1$ for isotropic and for transversely isotropic
     $b=[0.1,2,3]$.
       \end{minipage}%
 }\\
@@ -2363,7 +2380,7 @@ $\frac{a\cdot{E}}{2(1+\nu)}$ & $\frac{(b\cdot(a-1)+1)\cdot{E}}{2(1+\nu)}$ & $\fr
 
 \item[]
 \begin{table}[!htbp]\
-\caption{Typical engineering properties of transverse-isotropic materials\cite{hyer2009stress}} % title of Table
+\caption{Typical engineering properties of transversely isotropic materials\cite{hyer2009stress}} % title of Table
 \centering % used for centering table
 \begin{tabular}{l c c c } % centered columns (4 columns)
 \hline\hline %inserts double horizontal lines
