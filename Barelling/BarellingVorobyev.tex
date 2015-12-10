@@ -77,7 +77,8 @@
 \begin{frontmatter}
 
 \title{Barrelling formation during the axial compressive experiments on cubic
-samples with orthotropic properties {\color{red} Preliminary title}}
+samples with  isotropic, transversely isotropic and orthotropic properties
+{\color{red} Preliminary title}}
 %%\tnotetext[mytitlenote]{Fully documented templates are available in the
 % elsarticle package on \href{http://www.ctan.org/tex-archive/macros/latex/contrib/elsarticle}{CTAN}.}
 
@@ -160,7 +161,7 @@ Consequently, the Poisson's ratios are thus more difficult to obtain directly fr
 of loading.
 The conventional way to measure strains is by using the built in measurement
 system or strain gages. Nowadays, full field strain measurement techniques such
-as digital speckle photography (DSP) \cite{synnergren1999stereoscopic} or
+as digital speckle photography (DSP) \cite{synnergren1999stereoscopic} and
 3D/stereo-digital image correlation (DIC) \cite{majano2012test} are used more
 and more. Strain field measurements technique using DIC has shown a good
 performance in comparison to the traditional strain gauges
@@ -183,7 +184,8 @@ barrelling was investigated by the simulation using the Finite Element
 Modelling (FEM).\\
 Previously compressive experiments on prism samples with orthotropic material
 behavior were simulated by Toftegaard \cite{Toftegaard1999849} in order to
-investigate the effect of geometrical imperfections on identification of engineering constants. 
+investigate the effect of geometrical imperfections on identification of
+engineering elastic constants.
 in his work he compared the simulated strain field to the measurements of strain
 gauges and obtained good agreement between the simulated data and experimental
 curves.\\
@@ -193,7 +195,7 @@ gauge.
 Chen \cite{Chen001} has simulated the behaviour of specimens with geometrical
 imperfections on a locked  seat during the compressive experiments
 of composite materials. This is relevant when the platens of universal testing
-machine (UTM) are locked and cannot adjust to sample geometry.
+machine are locked and cannot adjust to sample geometry.
 When a prism specimen is compressed between platens it expand transversely.
 Its surfaces bear heterogeneous deformation that are resulting in barreling
 formation of the prism. 
@@ -204,8 +206,8 @@ formation of the prism.
 
 The present work investigates
 barrelling formation in three different types of material behaviour.
-Additionally three measuring techniques are compared in order to identify the magnitude of
-resulting errors.
+Additionally three strain measuring techniques usinf DIC and strain gauges are
+compared in order to identify the magnitude of resulting errors.
 The results can help to identify the accuracy of the material constants values
 of elastic parameters that can be obtained during compressive experiments on
 cubic samples.
@@ -224,7 +226,7 @@ cubic samples.
     \hfill
     \begin{subfigure}[b]{0.4\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{experiment.png}
+        \includegraphics[width=\textwidth]{BarellingPaper-eps-converted-to.pdf}
         \caption{}
         \label{fig:experiment}
     \end{subfigure}
@@ -338,13 +340,14 @@ interest(\ref{ex2}) and total surface area  (\ref{ex1}).}
 
 
 The finite element program COMSOL Multiphysics 4.4 \cite{Comsol} was used for
-the experimental simulations.
+the numerical simulations.
 A cube with unity dimensions was modeled with
 3D solid elements.
-The platens of the universal testing machine were not included in the model.
-Instead, the compressive loading was simulated as a downward vertical prescribed
+The rigidplatens of the universal testing machine were not included in the
+model.
+The compressive loading was simulated as a downward vertical prescribed
 displacement. The magnitude of this prescribed displacement was set to 0.01
-which corresponds to  1\%  of  strain respectively.
+which corresponds to  1\%  of average compressive strain.
 After a mesh refinement study, a $10\times10\times10$ mesh of quadratic brick
 elements was determined to provide reasonably accurate results for the purpose of this study.
 
@@ -353,17 +356,18 @@ elements was determined to provide reasonably accurate results for the purpose o
 \includegraphics[width=8cm]{BarellingPaper.pdf}
 \label{fig:Barrelling}
 \caption{\label{fig:Barrelling} Mechanical model of cubic
-specimen used in the FEM simulation. ​
+specimen used in the FEM simulation. 
 a) Horizontal boundary conditions and b) vertical boundary conditions.}
 \end{figure}
 
 The main reason for the barrelling formation is the friction between platens
-and specimen \cite{Narayanasamy198821, kulkarni1969}. To simulate the effect of friction, 
-we have introduced springs with friction parameters $K$ that partially constrain
-lateral displacements on the top and bottom of the cube (Figure
-\ref{fig:Barrelling}).
-For $K=0$ the displacement of the corresponding edges is fully free
-and for increasing $K$ the edges are constrained.
+and specimen \cite{Narayanasamy198821, kulkarni1969}. To simulate the effect of
+friction, we have introduced springs with spring constant $K$ that is friction parameter
+in the model. Those springs are partially constrain lateral displacements
+on the top and the bottom of the cube (Figure \ref{fig:Barrelling}).  
+As a result, for $K=0$ the displacement of the corresponding
+edges is unconstrained and for $K>0$ the edges are partially constrained up to
+the case where the egdes are completely constraint for $K=\infty$.
 
 \begin{description}
 \item{\textit{Material input parameters}}
@@ -377,8 +381,9 @@ The first one , $a$, is controlling the stiffness difference between the
 longitudinal and transverse directions and the corresponding Poisson's ratio.
 The second one, $b$, controls the independent shear modulus based on
 observations of shear moduli for materials in Table \ref{table:nonlin}.
-The remaining three Poisson's ratios were be obtained from the symmetry
-principle relations. The orthotropic material was simulated using input parameters obtained from the experiments \cite{vorobyevcharacterisation}.
+The remaining three Poisson's ratios were obtained from the symmetry
+principle relations (symmetry of stiffness tensor\cite{hyer2009stress}). The
+orthotropic material was simulated using input parameters obtained from the experiments \cite{vorobyevcharacterisation}.
 
 
 \begin{description}
@@ -391,42 +396,42 @@ case can be considered the same as taking the average dimensional changes of a
 sample. In particular the average strain from the total surface area was
 obtained and used as a value for obtaining axial stiffness $E_L$. In the
 second case, $50\%$ of cube surface (Figure \ref{fig:experiment}) was
-used to calculate the average strain. The area was chosen in order to disregard
-the constraining effect between the platens of UTM and contact surface of the
-cube.
-Finally in the third method the strain is measured between two points
+used to calculate the average strain corresponding to experimental measurement. 
+Finally, in the third method the strain is measured between two points
 in horisontal and two points in vertical direction in the center of the specimen
-as it is with the strain gauge based on ASTM code \cite{american2009standard}.
+as it is with the strain gauge based on ASTM-D143-94 standard
+\cite{american2009standard}.
 
 \begin{description}
-\item{\textit{Experiment}}
+\item{\textit{Experimental procedures}}
 \end{description}
 
 Finally we compare the results to an actual experiment on \textit{Vasa}
 material.
 An Instron universal testing machine with 100 kN load cell was used to carry out static tests. 
 Special care was taken in order to manufacture almost exactly cubic specimens. 
-The size of the samples was  $25\times25\times25$ $mm$  The accuracy for
-parallelity between the opposite edges of the cube was 0.01 $mm$. 
+The size of the samples was  $25\times25\times25$ mm\textsuperscript{3}.  The
+accuracy for parallelity between the opposite edges of the cube was 0.01 mm. 
 Initial tests were conducted on dummy wood specimens in order to find the approximate elastic loading range for all specimen orientations.
-Full-field displacements were observed with a digital-image correlation (DIC) equipment GOM Aramis stereo system 5M.
+Full-field displacements were observed with a DIC equipment GOM Aramis stereo system 5M.
 The distance to the measured object was 300 mm. The surfaces of specimens was spray
 painted with speckles for better contrast. The applied force values were continuously recorded by the DIC system during testing, and stored together with the sampled images. The displacement rate was 0.5 mm per minute. 
 The ambient conditions were $23\,^{\circ}{\rm C}$ and 51\% relative humidity.
 All tests were performed without delay after the samples were removed from the conditioning storage container, so that the moisture content would essentially be the same as after conditioning. The measurement sampling frequency was 1 Hz. 
 Every frame that was recorded by the DIC system was compared with the undeformed state in order to calculate the displacement and in-plane strain field. 
 The total surface area of interest used in image analysis was a centred square
-of 625 $mm^\textsuperscript{2}$, where a uniform deformation field was found.
+of 625 $mm\textsuperscript{2}$.
 The chosen surface area of interest is marked by the dashed line in Figure
-\ref{fig:experiment}. The acquired strain fields were smoothed by averaging of
-each data pixel with $3\times3$ surrounding pixels in order to avoid the
+\ref{fig:experiment} and is about 350 $mm\textsuperscript{2}$ . The acquired
+strain fields were smoothed by averaging of each data pixel with $3\times3$ surrounding pixels in order to avoid the
 unwanted artefacts in the measured strain field.
-The strains determined by DIC in the loading direction was plotted against the applied stress, see Figure
-\ref{fig:explot}. The choice of this area is the subject of a later
-discussion in the present paper.
-Poisson's ratios $\nu_{ij}$ for all corresponding orthotropic planes were
+The strains determined by DIC in the loading direction was plotted against the
+applied stress, as exemplified in Figure \ref{fig:explot}. The choice of this
+area is the subject of a later discussion in the present paper.
+Poisson's ratios $\nu_{xy}$ for all corresponding orthotropic planes were
 calculated as the negative ratio between the average transverse
-$\varepsilon_{jj}$ (passive) and normal $\varepsilon_{ii}$ (compressive and active) strains.
+$\varepsilon_{x}$ (passive) and normal $\varepsilon_{y}$ (compressive and
+active) strains.
 
 
 \begin{center}% note that \centering uses less vspace...
@@ -1488,10 +1493,10 @@ $\nu_{LT},$ and c') $\nu_{TL}$ for transversely isotropic material.}
 
 
 
-\section{Results and Discussions}
-The simulated strain results were acquired in order to compare those with the
-ones in the experiment. The set of experimental and simulations are
-compared. The results of the simulations can be used for the
+\section{Results and Discussion}
+The simulated strain results were acquired in order to obtain the tolerance
+bounds and compare the suitability of strain measurements.
+The set of experimental and simulations are compared. The results of the simulations can be used for the
 estimation of error that appears due to different strain measurement principles.
 
 \begin{description}
@@ -2361,7 +2366,7 @@ out within the ``Support Vasa'' project.
 
 \item[]
 \begin{table}[!htbp]\
-\caption{Engineering constants used in model} % title of Table
+\caption{Engineering elastic constants used in the model} % title of Table
 \centering % used for centering table
 \begin{tabular}{c c c c c c c c c} % centered columns (4 columns)
 \hline\hline %inserts double horizontal lines
@@ -2370,18 +2375,18 @@ $G_{TT}$ (GPa) & $G_{LT}$ (GPa) &
 $\nu_{TL}$ & $\nu_{TT}$ & $\nu_{TL}$ \\ % inserts table heading
 
 \hline % inserts single horizontal line
-$E$ & $E$ & $a\cdot{E}$ & $\frac{(b\cdot(a-1)+1)\cdot{E}}{2(1+\nu)}$  &
-$\frac{a\cdot{E}}{2(1+\nu)}$ & $\frac{(b\cdot(a-1)+1)\cdot{E}}{2(1+\nu)}$ & $\frac{\nu}{a}$ & $\nu$ & $\frac{\nu}{a}$ \\
+$E$ & $E$ & $a{E}$ & $\frac{\Big(b\big[a-1\big]+1\Big){E}}{2(1+\nu)}$  &
+$\frac{a{E}}{2(1+\nu)}$ & $\frac{\Big(b\big[a-1\big]+1\Big){E}}{2(1+\nu)}$ & $\frac{\nu}{a}$ & $\nu$ & $\frac{\nu}{a}$ \\
 % inserting body of the table
 [1ex] % [1ex] adds vertical space
 \hline %inserts single lines
 
 \multicolumn{6}{l}{%
   \begin{minipage}{9cm}%
-\tiny Note: $E=1$; $\nu=0.25$; Parameter $a=1$ for isotropic and $a=10$
+\footnotesize Note: $E=1$; $\nu=0.25$; Parameter $a=1$ for isotropic and $a=10$
     for transversely isotropic material model; Shear stiffness parameter 
     $b=1$ for isotropic and for transversely isotropic
-    $b=[0.1,2,3]$.
+    $b=2$.
       \end{minipage}%
 }\\
       
@@ -2395,14 +2400,16 @@ $\frac{a\cdot{E}}{2(1+\nu)}$ & $\frac{(b\cdot(a-1)+1)\cdot{E}}{2(1+\nu)}$ & $\fr
 \begin{table}[!htbp]\
 \caption{Typical engineering properties of transversely isotropic materials\cite{hyer2009stress}} % title of Table
 \centering % used for centering table
-\begin{tabular}{l c c c } % centered columns (4 columns)
+\begin{tabular}{l c c c c } % centered columns (4 columns)
 \hline\hline %inserts double horizontal lines
 
-& \begin{tabular}{@{}c@{}}Graphite-polymer \\ composite \cite{hyer2009stress}
-\end{tabular} & \begin{tabular}{@{}c@{}}Glass-polymer \\
+& \begin{tabular}{@{}c@{}}
+Vasa oak \\
+(ref. nr. 65742)  \cite{vorobyevcharacterisation} \end{tabular} &
+\begin{tabular}{@{}c@{}}Graphite-polymer \\ composite \cite{hyer2009stress} \end{tabular} & \begin{tabular}{@{}c@{}}Glass-polymer \\
 composite \cite{hyer2009stress}\end{tabular}  & \begin{tabular}{@{}c@{}}
-Archaeoligical \\
-wood \cite{vorobyevcharacterisation} \end{tabular}  
+ S2 glass reinforced  \\
+epoxy \cite{american2002composite} \end{tabular}  
 \\
 %  & $E_{1}$  & $E_{2}$ (GPa) & $E_L$ (GPa) & $\nu_{12}$ & $\nu_{13}$
 % & $\nu_{23}$ & $G_{12}$ (GPa) & $G_{13}$ (GPa) & $G_{23}$ (GPa) \\ % inserts
@@ -2410,17 +2417,17 @@ wood \cite{vorobyevcharacterisation} \end{tabular}
 
 \hline % inserts single horizontal line
 
-$E_{T_1}$ (GPa) & 12.10 & 15.20 & 0.60\\
-$E_{T_2}$ (GPa) & 12.10 & 15.20 & 0.35\\
-$E_L$ (GPa) & 155.0 & 50.00 & 6.75\\
+$E_{T_1}$ (GPa) & 0.60 & 12.10 & 15.20 & 14.7\\
+$E_{T_2}$ (GPa) & 0.35 & 12.10 & 15.20 & 14.7\\
+$E_L$ (GPa) & 6.75 & 155.0 & 50.00 & 49.3\\
 
-$G_{LT_2}$ (GPa) & 4.40 & 4.70 & 0.62\\
-$G_{T_1T_2}$ (GPa) & 3.20 & 3.28 & 0.14\\
-$G_{LT_1}$ (GPa) & 4.40 & 4.70 & 0.33\\
+$G_{LT_2}$ (GPa) & 0.62 & 4.40 & 4.70 & 6.8\\
+$G_{T_1T_2}$ (GPa) & 0.14 & 3.20 & 3.28 & 4.9\\
+$G_{LT_1}$ (GPa) & 0.33 & 4.40 & 4.70 & 6.8\\
 
-$\nu_{LT_1}$ (-) & 0.248 & 0.254 & 0.37\\
-$\nu_{T_1T_2}$ (-) & 0.458 & 0.428 & 0.30\\
-$\nu_{LT_2}$ (-) & 0.248 & 0.254 & 0.69\\
+$\nu_{LT_1}$ (-) & 0.37 & 0.248 & 0.254 & 0.296\\
+$\nu_{T_1T_2}$ (-) & 0.30 & 0.458 & 0.428 & 0.449\\
+$\nu_{LT_2}$ (-) & 0.69 & 0.248 & 0.254 & 0.306\\
 
 
 
