@@ -532,7 +532,7 @@ K	p1	0.05	p2	0.1	p3	0.15	p4	0.2	p5	0.25	p6	0.3	p7	0.35	p8	0.4	p9	0.45
 
 \begin{axis}[
 name=plot0,height=6cm,width=\textwidth/3,
-    title={a)},
+    title={(a) Isotropic},
 %    xlabel={Temperature [\textcelsius]},
     ylabel={Normalized Young's modulus},
     xmin=0, xmax=1,
@@ -572,7 +572,7 @@ name=plot0,height=6cm,width=\textwidth/3,
 
 \begin{axis}[
 name=plot1,at={($(plot0.east)+(1cm,0)$)},anchor=west,
-height=6cm,width=\textwidth/3, title={b)},
+height=6cm,width=\textwidth/3, title={(b) $E_3$},
 %    xlabel={Temperature [\textcelsius]},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0, xmax=1,
@@ -613,7 +613,7 @@ height=6cm,width=\textwidth/3, title={b)},
 
 \begin{axis}[
 	name=plot2,at={($(plot1.east)+(1cm,0)$)},anchor=west, height=6cm,width=\textwidth/3,
-    title={c)},
+    title={(c) $E_1$ and $E_2$},
 %    xlabel={Temperature [\textcelsius]},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0, xmax=1,
@@ -652,7 +652,7 @@ height=6cm,width=\textwidth/3, title={b)},
 \end{axis}
 
 \begin{axis}[name=plot3,at={($(plot0.south)-(0,1cm)$)},anchor=north,
-height=6cm,width=\textwidth/3, title={a')},
+height=6cm,width=\textwidth/3, title={(a')},
 %    xlabel={Temperature [\textcelsius]},
     ylabel={Normalized Poisson's ratio},
     xmin=0, xmax=1,
@@ -693,7 +693,7 @@ height=6cm,width=\textwidth/3, title={a')},
 
 \begin{axis}[legend style={at={(0.5,-0.3)}, legend columns=5, anchor=north},
 	name=plot4,at={($(plot1.south)-(0,1cm)$)},anchor=north, height=6cm,width=\textwidth/3,
-    title={b')},
+    title={(b') $\nu_{LT}$},
     xlabel={Displacement factor $\delta/\delta_{max}$},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0, xmax=1,
@@ -736,7 +736,7 @@ height=6cm,width=\textwidth/3, title={a')},
 
 \begin{axis}[
 	name=plot5,at={($(plot2.south)-(0,1cm)$)},anchor=north, height=6cm,width=\textwidth/3,
-    title={c')},
+    title={(c') $\nu_{TT}$},
 %    xlabel={Temperature [\textcelsius]},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0, xmax=1,
@@ -1659,7 +1659,7 @@ nuxy	tr0	tr0.1	trINF	i0	i0.1	iINF
 
 \begin{axis}[
 name=b1,height=5cm,width=\textwidth/3,
-    title={a)},
+    title={(a)},
 %    xlabel={Temperature [\textcelsius]},
     ylabel={Normalized Young's modulus},
     xmin=0.05, xmax=0.45,
@@ -1693,7 +1693,7 @@ name=b1,height=5cm,width=\textwidth/3,
 
 \begin{axis}[legend pos=outer north east,
 	name=b2,at={($(b1.east)+(1cm,0)$)},anchor=west, height=5cm, width=\textwidth/3,
-    title={b)},
+    title={(b)},
 % xlabel={Poisson's ratio [-]},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0.05, xmax=0.45,
@@ -1726,7 +1726,7 @@ name=b1,height=5cm,width=\textwidth/3,
 
 \begin{axis}[legend pos=outer north east,
 	name=b3,at={($(b2.east)+(1cm,0)$)},anchor=west, height=5cm,width=\textwidth/3,
-    title={c)},
+    title={(c)},
 %    xlabel={Temperature [\textcelsius]},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0.05, xmax=0.45,
@@ -1757,7 +1757,7 @@ name=b1,height=5cm,width=\textwidth/3,
 \end{axis}
 
 \begin{axis}[name=b4,at={($(b2.south)-(0,1.5cm)$)},anchor=north,
-height=4cm,width=\textwidth/3, title={b')},
+height=4cm,width=\textwidth/3, title={(b')},
     xlabel={Given Poisson's ratio [-]},
 %     ylabel={Error Poisson's ratio},
     xmin=0.05, xmax=0.45,
@@ -1791,7 +1791,7 @@ height=4cm,width=\textwidth/3, title={b')},
 
 \begin{axis}[
 	name=b5,at={($(b1.south)-(0,1.5cm)$)},anchor=north, height=4cm, width=\textwidth/3,
-    title={a')},
+    title={(a')},
 %     xlabel={Given Poisson's ratio [-]},
    ylabel={Normalized Poisson's ratio},
     xmin=0.05, xmax=0.45,
@@ -1822,7 +1822,7 @@ height=4cm,width=\textwidth/3, title={b')},
 
 
 \begin{axis}[name=b6,at={($(b3.south)-(0,1.5cm)$)},anchor=north,
-height=4cm,width=\textwidth/3, title={c')},
+height=4cm,width=\textwidth/3, title={(c')},
 %    xlabel={Temperature [\textcelsius]},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0.05, xmax=0.45,
@@ -1856,15 +1856,14 @@ height=4cm,width=\textwidth/3, title={c')},
 
 \end{tikzpicture}
 \captionsetup{justification=centering}
-\caption{Simulated Young's moduli error values of transversely isotropic
-material for spring parameters $K=0$ (\ref{k1}), $K=0.1$ (\ref{k2}) and
-$K=\infty$ (\ref{k3}) vs.
+\caption{Normalizad Young's moduli of transversely isotropic
+material for spring constant $K=0$ (\ref{k1}) gliding, $K=0.1$ (\ref{k2})
+intermediate and $K=\infty$ (\ref{k3}) no slipping vs.
 different given Poisson's ratio ($\nu$) values for a) chosen area of
-interest, total area of interest c) experimental methodology.
-a') Simulated Poisson's ratio error values of material with different given
+interest, b) total area of interest and c) experimental methodology.
+a') Normalized Poisson's ratio values of material with different given
 Poisson's ratio ($\nu$) values for chosen area of
-interest, b') total area of interest c') experimental methodology.
-}
+interest, b') total area of interest c') experimental methodology.}
 \label{fig:strainmethods}
 
 
@@ -1884,7 +1883,7 @@ the specimen where the constraining effect is less severe.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=10cm]{BarellingError.pdf}
+\includegraphics[width=\textwidth]{BarellingError.pdf}
 \label{fig:Error}
 \caption{\label{fig:Error} a) Simulated results of error for measured Young's
 moduli ($E$) of Isotropic, b) transversely Isotropic material ($E_L$) and for
@@ -1965,7 +1964,7 @@ K	ZY	dZY	ZX	dZX	XZ	dXZ	XY	dXY
 
 \begin{axis}[
 name=plot0,height=6cm,width=\textwidth/2,
-    title={a)},
+    title={(a)},
 	xlabel={Displacement factor $\delta/\delta_{max}$},
     ylabel={Normalized Young's modulus},
     xmin=0, xmax=1,
@@ -2002,7 +2001,7 @@ name=plot0,height=6cm,width=\textwidth/2,
 
 \begin{axis}[
 name=plot1,at={($(plot0.east)+(2cm,0)$)},anchor=west,
-height=6cm,width=\textwidth/2, title={b)},
+height=6cm,width=\textwidth/2, title={(b)},
 	xlabel={Displacement factor $\delta/\delta_{max}$},
     ylabel={Normalized Poisson's ratio},
     xmin=0, xmax=1,
@@ -2038,7 +2037,7 @@ height=6cm,width=\textwidth/2, title={b)},
 
 
 \captionsetup{justification=centering}
-\caption{a)Simulated and normalized results based on experiment of
+\caption{Simulated and normalized results based on experiment of
 orthotropic material. a) Young's moduli and b) Poisson's ratio while measuring
 chosen strain field from directions $LT$(\ref{VasaZY}),
 $LR$(\ref{VasaZX}), 
@@ -2056,13 +2055,13 @@ Displacement factor are plotted in Figure \ref{fig:ortho}. It shows that the
 magnitude of error is less than those for the transversaly isotropic material. 
 In case of identifying the Youngs moduli $E_L$, plane  $LT$ might be
 beneficial. This is due to the less slope of $LT$ curve in comparison to $LR$ in
-Figure \ref{fig:ortho}$a$. \par
+Figure \ref{fig:ortho}a. \par
 As for transversely isotropic material the Poissons's ratio is underestimated
 with the increasing constarining effect the same is observed for the orthotropic
 material simulation. The magnitude of error is spread, however the $\nu_{LT}$,
 $\nu_{LR}$, $\nu_{TR}$ are less influenced by the barrelling. Contrary
 $\nu_{TL}$ is more underestimated than the others, presented in Figure
-\ref{fig:ortho}$b$. When $L$
+\ref{fig:ortho}b. When $L$
 direction is in transverse plane, the geometrical response is less significant
 because of its stiffness. Therefore the magnitude of possible error depending on
 barrelling is larger. Howevere having the $\nu_{LT}$,
@@ -2354,8 +2353,8 @@ overestimation in transverse isotropic materials.
 \section*{Acknowledgements}
 This article was produced in collaboration with the National Maritime Museums
 and, in particular, the Vasa Museum. The work has been carried
-out within the ``Support Vasa'' project.
-\section*{References}
+out within the ``Support Vasa'' project. Furthermore  Formas, Vinnova,
+Vetenskapsr{\aa}det. \section*{References}
 \bibliography{mybibfile}
 
 
