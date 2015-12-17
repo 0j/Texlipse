@@ -572,7 +572,7 @@ name=plot0,height=6cm,width=\textwidth/3,
 
 \begin{axis}[
 name=plot1,at={($(plot0.east)+(1cm,0)$)},anchor=west,
-height=6cm,width=\textwidth/3, title={(b) $E_3$},
+height=6cm,width=\textwidth/3, title={(b) $E_L$},
 %    xlabel={Temperature [\textcelsius]},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0, xmax=1,
@@ -613,7 +613,7 @@ height=6cm,width=\textwidth/3, title={(b) $E_3$},
 
 \begin{axis}[
 	name=plot2,at={($(plot1.east)+(1cm,0)$)},anchor=west, height=6cm,width=\textwidth/3,
-    title={(c) $E_1$ and $E_2$},
+    title={(c) $E_T$},
 %    xlabel={Temperature [\textcelsius]},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0, xmax=1,
@@ -2334,6 +2334,30 @@ be used to determine the rest.
 
 
 \section{Conclusions}
+
+The barrelling formation in cubic samples is an artefact that can influence the
+estimation of the engineering constansts. It significantly influences the
+magnitude of error while estimation, depending on the material type as
+exemplified:
+
+\begin{itemize}
+  \item \textit{Isotropic} material is affected by the barrelling the most.
+  The measured Young's moduli is overestimated by up to 20 percent for the
+  material poisson's ratio $\nu=0.45$. Whereas the estimation of Poisson's ratio
+  gives less errors in comparison to other material.
+  \item \textit{Transversely-isotropic} material has slight overestimation and
+\end{itemize}
+
+
+ Isotropic: Overestimation of Young's modulus, Poisson's ratios over/underestimated but not so much
+Transversely isotropic: Slight overestimation of Young's moduli, relatively large underestimation of Poisson's ratios.
+Orthotropy: you do not have anything?
+Measurement methods:
+Total area/dimensional changes: relatively large errors due to constrained cone
+Middle area: relatively good results due to over and underestimation that compensate each other to some extent
+Strain gauge/ ASTM: Better that total area, but we are still measuring only inside the cone, so there will be errors
+Experiments: show blabla, do they confirm something?
+
 Barrelling formation can be well quantified by  FE modelling. strain
 identification using the DIC system gives better view on the distribution of
 strains and therefore it is possibly easier to identify the distribution of
