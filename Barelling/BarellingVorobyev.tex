@@ -142,7 +142,7 @@ orthotropic set of elastic parameters is needed \cite{tsoumis1991science},
 e.g. for finite-element modelling of wood joints that are locally subjected to a
 triaxial stress state. Compressive experiments are considered to be one of the most reliable methods for identifying engineering constants such as Young's moduli and Poisson's
 ratios. The general approach is to measure the material response due to applied
-forces. The procedure is straighforward and easy to perform due to simplicity of experimental installation and low requirements to specimen
+forces. The procedure is straightforward and easy to perform due to simplicity of experimental installation and low requirements to specimen
 geometry. Standards such as ASTM \cite{standard1997d143,
 johnson1983compression} require the usage of rectangular prisms for
 the compressive testing along with strain gauges.
@@ -169,7 +169,7 @@ performance in comparison to the traditional strain gauges
 improve the estimation of the stiffness parameters \cite{dahl2009planar,
 majano2012test, ozyhar2013moisture}. 
 Nevertheless, compressive testing of wooden cubes is the reasonable 
-choice of test method if the amount of available material is limited, as is the case for archaeological material.
+choice of test method if the amount of available material is limited, as is the case for archaeological material.\par 
 
 In 2012, a project with the aim of designing a new support structure for the
 archaeological Vasa ship was initiated. The ship was capsized in 1628, and was salvaged in 1961. 
@@ -188,7 +188,7 @@ investigate the effect of geometrical imperfections on identification of
 engineering elastic constants.
 in his work he compared the simulated strain field to the measurements of strain
 gauges and obtained good agreement between the simulated data and experimental
-curves.\\
+curves.\par
 The present work uses DSP in order to obtain the experimental strain field,
 based on the displacements in an area rather than two points using a strain
 gauge.
@@ -198,7 +198,7 @@ of composite materials. This is relevant when the platens of universal testing
 machine are locked and cannot adjust to sample geometry.
 When a prism specimen is compressed between platens it expand transversely.
 Its surfaces bear heterogeneous deformation that are resulting in barreling
-formation of the prism. 
+formation of the prism.\par 
 
 %The purpose of experiment
 
@@ -206,7 +206,7 @@ formation of the prism.
 
 The present work investigates
 barrelling formation in three different types of material behaviour.
-Additionally three strain measuring techniques usinf DIC and strain gauges are
+Additionally three strain measuring techniques using DSP and strain gauges are
 compared in order to identify the magnitude of resulting errors.
 The results can help to identify the accuracy of the material constants values
 of elastic parameters that can be obtained during compressive experiments on
@@ -312,7 +312,7 @@ cubic samples.
         \label{fig:explot}
     \end{subfigure}
 
-\caption{a) Barrelling formation on initially cubic shape. b) DIC image of
+\caption{a) Barrelling formation on initially cubic shape. b) DSP image of
 \textit{Vasa} oak specimen during compressive testing including displacement
 field $(mm)$. c) Experimental strain vs.
 stress curves for \textit{Vasa} oak  specimen, chosen surface area of
@@ -343,7 +343,7 @@ The finite element program COMSOL Multiphysics 4.4 \cite{Comsol} was used for
 the numerical simulations.
 A cube with unity dimensions was modeled with
 3D solid elements.
-The rigidplatens of the universal testing machine were not included in the
+The rigid platens of the universal testing machine were not included in the
 model.
 The compressive loading was simulated as a downward vertical prescribed
 displacement. The magnitude of this prescribed displacement was set to 0.01
@@ -367,7 +367,7 @@ in the model. Those springs are partially constrain lateral displacements
 on the top and the bottom of the cube (Figure \ref{fig:Barrelling}).  
 As a result, for $K=0$ the displacement of the corresponding
 edges is unconstrained and for $K>0$ the edges are partially constrained up to
-the case where the egdes are completely constraint for $K=\infty$.
+the case where the edges are completely constraint for $K=\infty$.
 
 \begin{description}
 \item{\textit{Material input parameters}}
@@ -398,7 +398,7 @@ obtained and used as a value for obtaining axial stiffness $E_L$. In the
 second case, $50\%$ of cube surface (Figure \ref{fig:experiment}) was
 used to calculate the average strain corresponding to experimental measurement. 
 Finally, in the third method the strain is measured between two points
-in horisontal and two points in vertical direction in the center of the specimen
+in horizontal and two points in vertical direction in the center of the specimen
 as it is with the strain gauge based on ASTM-D143-94 standard
 \cite{american2009standard}.
 
@@ -413,19 +413,19 @@ Special care was taken in order to manufacture almost exactly cubic specimens.
 The size of the samples was  $25\times25\times25$ mm\textsuperscript{3}.  The
 accuracy for parallelity between the opposite edges of the cube was 0.01 mm. 
 Initial tests were conducted on dummy wood specimens in order to find the approximate elastic loading range for all specimen orientations.
-Full-field displacements were observed with a DIC equipment GOM Aramis stereo system 5M.
+Full-field displacements were observed with a DSP equipment GOM Aramis stereo system 5M.
 The distance to the measured object was 300 mm. The surfaces of specimens was spray
-painted with speckles for better contrast. The applied force values were continuously recorded by the DIC system during testing, and stored together with the sampled images. The displacement rate was 0.5 mm per minute. 
+painted with speckles for better contrast. The applied force values were continuously recorded by the DSP system during testing, and stored together with the sampled images. The displacement rate was 0.5 mm per minute. 
 The ambient conditions were $23\,^{\circ}{\rm C}$ and 51\% relative humidity.
 All tests were performed without delay after the samples were removed from the conditioning storage container, so that the moisture content would essentially be the same as after conditioning. The measurement sampling frequency was 1 Hz. 
-Every frame that was recorded by the DIC system was compared with the undeformed state in order to calculate the displacement and in-plane strain field. 
+Every frame that was recorded by the DSP system was compared with the undeformed state in order to calculate the displacement and in-plane strain field. 
 The total surface area of interest used in image analysis was a centred square
 of 625 $mm\textsuperscript{2}$.
 The chosen surface area of interest is marked by the dashed line in Figure
 \ref{fig:experiment} and is about 350 $mm\textsuperscript{2}$ . The acquired
 strain fields were smoothed by averaging of each data pixel with $3\times3$ surrounding pixels in order to avoid the
-unwanted artefacts in the measured strain field.
-The strains determined by DIC in the loading direction was plotted against the
+unwanted artifacts in the measured strain field.
+The strains determined by DSP in the loading direction was plotted against the
 applied stress, as exemplified in Figure \ref{fig:explot}. The choice of this
 area is the subject of a later discussion in the present paper.
 Poisson's ratios $\nu_{xy}$ for all corresponding orthotropic planes were
@@ -1515,18 +1515,18 @@ In general, for increasing Poisson's ratio, the error becomes larger.
 For the transversely isotropic material in Figure
 \ref{fig:isovstriso} $b,c$ the error in Young's moduli is less in
 transverse direction $T$ than in the axial direction $L$.
-This difefrence in behaviour can be discussed by examining the strain fields for isotropic and 
+This difference in behaviour can be discussed by examining the strain fields for isotropic and 
 transversely isotropic materials shown in of Figure
 \ref{fig:Error} a, b and c. One can
 observe the cones of the constraining effect that are originating from the top
 and bottom. The constraining effect is dominant on the $25\%$ of height
-from the horisontal edges of the model. Whereas in transversely isotropic
+from the horizontal edges of the model. Whereas in transversely isotropic
 material in the $TT$ plane , the is spread less in the surface area.\\
 Observation of Poisson's ratio values showed the opposite behaviour concerning
 the measurement.
 Figure \ref{fig:isovstriso} $a'$ showed that the relative error for the
 Poisson's ratio is less significant in isotropic material. This is supported
-with the corresponidng strain field in Figure \ref{fig:Error} $a'$. The normal
+with the corresponding strain field in Figure \ref{fig:Error} $a'$. The normal
 Poisson's ratio values are within the central area of the model. 
 Alternatively Figure \ref{fig:isovstriso} $b'$ and $c'$ describing the effect
 of barreling on the measured materials Poisson's ratio in transversely isotropic material. 
@@ -1535,14 +1535,14 @@ measurements significantly. For example, for the displacement factor $\delta/\de
 underestimated by $30-40\%$.
 The same situation is for the plane $TT$ but the effect is less severe.
 Referring to Figure \ref{fig:Error} $a-c$  we can see that the constraining effect is
-crucial for the estimation of the Poisson's ratio. Blue coloured area where the error is above $5\%$ spreading from the horisontal edges of 
+crucial for the estimation of the Poisson's ratio. Blue coloured area where the error is above $5\%$ spreading from the horizontal edges of 
 the model throughout the central area of the material. So the most accurate
 estimation of Poisson's ratio is in the central area close to the vertical
 edges of the cube as it seen in Figure \ref{fig:Error} $c,d$. However it was
 mentioned that usage of strain gauges are usually placed in the center of the
 specimen, whereas presented results are supporting the fact that central
 region of the specimen is not always beneficial for the measurements. In this
-case the usage of DIC is preferable. 
+case the usage of DSP is preferable. 
 
 
 \begin{description}
@@ -1553,7 +1553,7 @@ present work, three methods were measured and compared. The
 first method is shown in Figure \ref{fig:strainmethods}$b$, where the total area
 including the constrained region is taken for measuring the strain.  
 Here the error originates from the underestimated axial strains that are the
-reason of constraining effect of horisontal edges. However the evaluation of
+reason of constraining effect of horizontal edges. However the evaluation of
 Poisson's ratio has less error due to inclusion of the total area into the
 strain evaluations. Strain field in Figure \ref{fig:Error}$b$ shows that total
 area has more regions where error is not significant.
@@ -1875,7 +1875,7 @@ interest, b') total area of interest c') experimental methodology.}
 In the second approach only the middle 50\% of the area part was
 taken for determination of strain. The plot in Figure \ref{fig:strainmethods}$a$
 shows that with this method the Young's moduli is less overestimated.\par
-  In the last approach where ASTM standard
+  In the last approach where ASTM-D143-94 standard
 with strain gauge technique was used, the error is very close to the one in
 second approach. The plot in Figure \ref{fig:strainmethods}$c$ depicts that.
 This is due to the strain is measured between two points in the center of 
@@ -1899,13 +1899,13 @@ Large error values for the Young's
 modulus close to the horizontal edges of isotropic model are clearly visible in
 Figure \ref{fig:Error}$a$. The opposite is true for the transversely isotropic
 specimen in (Figure \ref{fig:Error}$b,c$), for $LT$ plane 
-the Young's moduli in the central area is overestimatedn whereas for $TT$ plane
+the Young's moduli in the central area is overestimated whereas for $TT$ plane
 the strain field looks similar to the isotropic material.\par
 These simulations are supporting the experimental results in Figure
 \ref{fig:explot}. Where the average strain diagram for the total area is showing larger Young's moduli than
 the one for the chosen area.
 Additional outcomes are deduced  while observing the error fields in Figure
-\ref{fig:Error}$a'-c'$. The ASTM standard \cite{american2009standard} requires
+\ref{fig:Error}$a'-c'$. The ASTM-D143-94 standard \cite{american2009standard} requires
 installation of strain gauges in the center of the specimen. This approach will
 lead to underestimation of Poisson's ratio in transversely isotropic cubic
 specimen due to the barrelling formation. On the other hand accurate values will
@@ -1918,8 +1918,8 @@ specimen is most favourable for accurate measurements.
 \item{\textit{Barrelling in orthotropic material}}
 \end{description}
 As it was mentioned, the barreling is more severe in the isotropic material and
-less in transverse isotropic. To check wether this stands for the orthotropic
-materials, a true orthotropic model was simulated, based material properties
+less in transverse isotropic. To check whether this stands for the orthotropic
+materials, a true orthotropic model was simulated, based on wood material properties
 that were experimentally determined \cite{vorobyevcharacterisation}. \par
 
 \begin{center}% note that \centering uses less vspace...
@@ -2050,21 +2050,19 @@ $TR$(\ref{VasaXY}).}
 
 \end{center}
 
-The results for normalised youngs moduli and Poisson's ratio versus the
-Displacement factor are plotted in Figure \ref{fig:ortho}. It shows that the
-magnitude of error is less than those for the transversaly isotropic material. 
-In case of identifying the Youngs moduli $E_L$, plane  $LT$ might be
+The results is for normalised Young's moduli in all wood orthotropic directions and Poisson's ratio versus the displacement factor are plotted in Figure \ref{fig:ortho}. The notation for the wood planes in Figure is corresponding to the wood principal orthotropic directions, where Longitudinal $(L)$, Radial $R$, Tangential $T$. \par It shows that the magnitude of error is less than those for the transversely isotropic material. 
+In case of identifying the Young's moduli $E_L$, plane  $LT$ might be
 beneficial. This is due to the less slope of $LT$ curve in comparison to $LR$ in
 Figure \ref{fig:ortho}a. \par
-As for transversely isotropic material the Poissons's ratio is underestimated
-with the increasing constarining effect the same is observed for the orthotropic
+As for transversely isotropic material the Poisson's ratio is underestimated
+with the increasing constraining effect the same is observed for the orthotropic
 material simulation. The magnitude of error is spread, however the $\nu_{LT}$,
 $\nu_{LR}$, $\nu_{TR}$ are less influenced by the barrelling. Contrary
 $\nu_{TL}$ is more underestimated than the others, presented in Figure
 \ref{fig:ortho}b. When $L$
 direction is in transverse plane, the geometrical response is less significant
 because of its stiffness. Therefore the magnitude of possible error depending on
-barrelling is larger. Howevere having the $\nu_{LT}$,
+barrelling is larger. However having the $\nu_{LT}$,
 $\nu_{LR}$, $\nu_{TR}$ ratios the symmetry principle can
 be used to determine the rest.
 
@@ -2335,43 +2333,34 @@ be used to determine the rest.
 
 \section{Conclusions}
 
-The barrelling formation in cubic samples is an artefact that can influence the
-estimation of the engineering constansts. It significantly influences the
+The barrelling formation in cubic samples is an artifact that can influence the
+estimation of the engineering constants. It significantly influences the
 magnitude of error while estimation, depending on the material type as
 exemplified:
 
 \begin{itemize}
   \item \textit{Isotropic} material is affected by the barrelling the most.
   The measured Young's moduli is overestimated by up to 20 percent for the
-  material poisson's ratio $\nu=0.45$. Whereas the estimation of Poisson's ratio
+  material Poisson's ratio $\nu=0.45$. Whereas the estimation of Poisson's ratio
   gives less errors in comparison to other material.
-  \item \textit{Transversely-isotropic} material has slight overestimation and
+  \item \textit{Transversely-isotropic} material has an overestimation of Young's moduli while measuring in both $L$ and $T$ direction but less in comparison to the \textit{Isotropic}. The error is larger for the $LT$  and $TT$ plane for the estimation of the Poisson's ratio. 
+  \item \textit{Orthotropic} material was simulated using the experimental input data for the archaeological wood. The result is an overestimation of Young's moduli in all principal orthotropical wood planes, but the magnitude is alike to the $TT$ plane in \textit{Transversely-isotropic} material which is below $1,5\%$ of error margin.
 \end{itemize}
 
+The strain measurement methods proven the benefit of usage the "chosen" area for the estimation of strains in the corresponding plane. The results can be summarized as follows: 
 
- Isotropic: Overestimation of Young's modulus, Poisson's ratios over/underestimated but not so much
-Transversely isotropic: Slight overestimation of Young's moduli, relatively large underestimation of Poisson's ratios.
-Orthotropy: you do not have anything?
-Measurement methods:
-Total area/dimensional changes: relatively large errors due to constrained cone
-Middle area: relatively good results due to over and underestimation that compensate each other to some extent
-Strain gauge/ ASTM: Better that total area, but we are still measuring only inside the cone, so there will be errors
-Experiments: show blabla, do they confirm something?
+\begin{itemize}
+  \item Using the strain-field from the \textit{Total area} of the specimen plane is leading to relative large errors. It happens due to constrained cone that is spreading towards the center  of specimen.  
+  The measured Young's moduli is overestimated by up to 20 percent for the
+  material Poisson's ratio $\nu=0.45$. Whereas the estimation of Poisson's ratio
+  gives less errors in comparison to other material.
+  \item Strains from the \textit{Strain gauges} measurement shows better results than using the previous approach. However the measurements are done between the two points and inside the constraining cone. Thus it leads to errors as well.
+  \item  \textit{"Chosen" area} of strain-field in the centre of the specimen was the beneficial method. Here a relatively good results were obtained due to over and underestimation that compensate each other to some extent.
+\end{itemize}
 
-Barrelling formation can be well quantified by  FE modelling. strain
-identification using the DIC system gives better view on the distribution of
-strains and therefore it is possibly easier to identify the distribution of
-``clamped'' regions where the barrelling formation appeared. 
-In general the mechanical experiments are overestimating the actual values for
-the Young's moduli due underestimation of strain. In the case of quantifying the
-Poisson's ratio, the DIC measurement has benefits, because the true values of Poisson's ratio are close
-to the central part of vertical edges of the specimen and not in the center,
-where the strain gauges are usually placed. 
-The cubic samples can be used for the mechanical experiments in case of low
-availability of material. However strain identification with the help of DIC is
-beneficial. It was identified that central position of strain gauges as it
-stated in is good for the isotropic materials but leads to a strain
-overestimation in transverse isotropic materials. 
+Two strain-field measuring techniques (\textit{total area and "chosen" area}) were used in the experimental part. However the "chosen"area approach was used for the identification of elastic constants. The results of numerical simulation from the present work validated the beneficial method.\par
+Finally cubic specimens can be used for the mechanical experiments in case of low
+availability of material. It was also proved that all elastic constants can be extracted using one specimen with the consideration of barrelling formation.
 
 
 \section*{Acknowledgements}
