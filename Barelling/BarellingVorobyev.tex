@@ -29,6 +29,7 @@
 \usepackage{subcaption}
 \usepackage{rotating}
 \usepackage{threeparttable}
+\usepackage{setspace}
 \usetikzlibrary{matrix}
 \usetikzlibrary{spy}
 \usepgfplotslibrary{groupplots}
@@ -73,6 +74,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
+\doublespacing
+%\Large
+%\setstretch{1.1}
+
 
 \begin{frontmatter}
 
@@ -1610,6 +1615,23 @@ nuxy	tr0	tr0.1	trINF
 
 }\experiment
 
+
+\pgfplotstableread{
+nuxy	tr0	tr0.1	trINF	
+0.05	1	1.00018	1.00027
+0.1	1	1.00072	1.00113
+0.15	1	1.00166	1.00263
+0.2	1	1.00303	1.00489
+0.25	1	1.00488	1.00802
+0.3	1	1.00727	1.0122
+0.35	1	1.01025	1.01767
+0.45	1	1.01843	1.03399
+
+
+
+
+}\experimentBasic
+
 \pgfplotstableread{
 nuxy	tr0	tr0.1	trINF	i0	i0.1	iINF
 0.05	1	0.59508	0.48536	1	0.9382	0.8238
@@ -1654,11 +1676,25 @@ nuxy	tr0	tr0.1	trINF	i0	i0.1	iINF
 }\nuexperiment
 
 
+\pgfplotstableread{
+nuxy	tr0	tr0.1	trINF	
+0.05	1	0.469722892	0.177420121
+0.1	1	0.481606855	0.181931174
+0.15	1	0.494385965	0.186522064
+0.2	1	0.507614213	0.191215676
+0.25	1	0.521384929	0.196042474
+0.3	1	0.537963909	0.200827288
+0.35	1	0.555636789	0.205808631
+0.4	1	0.571794872	0.211041361
+0.45	1	0.593810666	0.216371772
+
+
+}\nuexperimentBasic
 
 %plot transv iso total area DSP
 
 \begin{axis}[
-name=b1,height=5cm,width=\textwidth/3,
+name=b1,height=5cm,width=\textwidth/3.5,
     title={(a)},
 %    xlabel={Temperature [\textcelsius]},
     ylabel={Normalized Young's modulus},
@@ -1692,8 +1728,8 @@ name=b1,height=5cm,width=\textwidth/3,
 %plot transviso chosen area  DSP
 
 \begin{axis}[legend pos=outer north east,
-	name=b2,at={($(b1.east)+(1cm,0)$)},anchor=west, height=5cm, width=\textwidth/3,
-    title={(b)},
+	name=b2,at={($(b1.east)+(1cm,0)$)},anchor=west, height=5cm,
+	width=\textwidth/3.5, title={(b)},
 % xlabel={Poisson's ratio [-]},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0.05, xmax=0.45,
@@ -1725,8 +1761,8 @@ name=b1,height=5cm,width=\textwidth/3,
 
 
 \begin{axis}[legend pos=outer north east,
-	name=b3,at={($(b2.east)+(1cm,0)$)},anchor=west, height=5cm,width=\textwidth/3,
-    title={(c)},
+	name=b3,at={($(b2.east)+(1cm,0)$)},anchor=west,
+	height=5cm,width=\textwidth/3.5, title={(c)},
 %    xlabel={Temperature [\textcelsius]},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0.05, xmax=0.45,
@@ -1756,12 +1792,46 @@ name=b1,height=5cm,width=\textwidth/3,
 
 \end{axis}
 
-\begin{axis}[name=b4,at={($(b2.south)-(0,1.5cm)$)},anchor=north,
-height=4cm,width=\textwidth/3, title={(b')},
+
+\begin{axis}[legend pos=outer north east,
+	name=b3a,at={($(b3.east)+(1cm,0)$)},anchor=west,
+	height=5cm,width=\textwidth/3.5, title={(d)},
+%    xlabel={Temperature [\textcelsius]},
+%    ylabel={Measured stiffness [Pa]},
+    xmin=0.05, xmax=0.45,
+    ymin=0.999, ymax=1.04,
+    yticklabel style={/pgf/number format/fixed,
+                  /pgf/number format/precision=3},
+%     xtick={1,...,9},
+%    ytick={0,20,40,60,80},
+%     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
+%     $K=1000$, $K=\infty$},
+%     x tick label style={
+%         rotate=60,anchor=east},
+    ymajorgrids=true,
+    grid style=dashed,
+    bar shift=0pt
+]
+
+    \addplot table[x=nuxy,y=tr0	] {\experimentBasic}; \label{k1}
+%     \addlegendentry{$\nu$=0.05}
+    \addplot table[x=nuxy,y=tr0.1 ] {\experimentBasic}; \label{k2}
+%     \addlegendentry{$\nu$=0.1}
+    \addplot table[x=nuxy,y=trINF ] {\experimentBasic}; \label{k3}
+%     \addlegendentry{$\nu$=0.15}
+
+
+
+
+\end{axis}
+
+\begin{axis}
+[name=b4,at={($(b2.south)-(0,1.5cm)$)},anchor=north,
+height=4cm,width=\textwidth/3.5, title={(b')},
     xlabel={Given Poisson's ratio [-]},
 %     ylabel={Error Poisson's ratio},
     xmin=0.05, xmax=0.45,
-    ymin=0.46, ymax=1.01,
+    ymin=0.1, ymax=1.01,
         yticklabel style={/pgf/number format/fixed,
                   /pgf/number format/precision=3},
 %     xtick={1,...,9},
@@ -1790,18 +1860,17 @@ height=4cm,width=\textwidth/3, title={(b')},
 % plot transviso chosen area  DSP
 
 \begin{axis}[
-	name=b5,at={($(b1.south)-(0,1.5cm)$)},anchor=north, height=4cm, width=\textwidth/3,
-    title={(a')},
+	name=b5,at={($(b1.south)-(0,1.5cm)$)},anchor=north, height=4cm,
+	width=\textwidth/3.5, title={(a')},
 %     xlabel={Given Poisson's ratio [-]},
    ylabel={Normalized Poisson's ratio},
     xmin=0.05, xmax=0.45,
-    ymin=0.75, ymax=1.01,
+    ymin=0.1, ymax=1.01,
 %     yticklabel style={/pgf/number format/fixed,
 %                   /pgf/number format/precision=3},
 %     xtick={1,...,9},
 %    ytick={0,20,40,60,80},
-%     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
-%     $K=1000$, $K=\infty$},
+%     xticklabels={$0.05$,$0.3$,,,$0.45$},
 %     x tick label style={
 %         rotate=60,anchor=east},
     ymajorgrids=true,
@@ -1822,11 +1891,11 @@ height=4cm,width=\textwidth/3, title={(b')},
 
 
 \begin{axis}[name=b6,at={($(b3.south)-(0,1.5cm)$)},anchor=north,
-height=4cm,width=\textwidth/3, title={(c')},
+height=4cm,width=\textwidth/3.5, title={(c')},
 %    xlabel={Temperature [\textcelsius]},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0.05, xmax=0.45,
-    ymin=0.75, ymax=1.01,
+    ymin=0.1, ymax=1.01,
 %     yticklabel style={/pgf/number format/fixed,
 %                   /pgf/number format/precision=3},
 %     xtick={1,...,9},
@@ -1852,18 +1921,52 @@ height=4cm,width=\textwidth/3, title={(c')},
 
 \end{axis}
 
+\begin{axis}
+[name=b6a,at={($(b3a.south)-(0,1.5cm)$)},anchor=north,
+height=4cm,width=\textwidth/3.5, title={(d')},
+%    xlabel={Temperature [\textcelsius]},
+%    ylabel={Measured stiffness [Pa]},
+    xmin=0.05, xmax=0.45,
+    ymin=0.1, ymax=1.01,
+%     yticklabel style={/pgf/number format/fixed,
+%                   /pgf/number format/precision=3},
+%     xtick={1,...,9},
+%    ytick={0,20,40,60,80},
+%     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
+%     $K=1000$, $K=\infty$},
+%     x tick label style={
+%         rotate=60,anchor=east},
+    ymajorgrids=true,
+    grid style=dashed,
+    bar shift=0pt
+]
+
+    \addplot table[x=nuxy,y=tr0	] {\nuexperimentBasic}; \label{nuk1}
+%     \addlegendentry{$\nu$=0.05}
+    \addplot table[x=nuxy,y=tr0.1 ] {\nuexperimentBasic}; \label{nuk2}
+%     \addlegendentry{$\nu$=0.1}
+    \addplot table[x=nuxy,y=trINF ] {\nuexperimentBasic}; \label{nuk3}
+%     \addlegendentry{$\nu$=0.15}
+
+
+
+
+\end{axis}
 
 
 \end{tikzpicture}
+
 \captionsetup{justification=centering}
 \caption{Normalizad Young's moduli of transversely isotropic
 material for spring constant $K=0$ (\ref{k1}) gliding, $K=0.1$ (\ref{k2})
 intermediate and $K=\infty$ (\ref{k3}) no slipping vs.
 different given Poisson's ratio ($\nu$) values for a) chosen area of
 interest, b) total area of interest and c) experimental methodology.
-a') Normalized Poisson's ratio values of material with different given
-Poisson's ratio ($\nu$) values for chosen area of
-interest, b') total area of interest c') experimental methodology.}
+d) Basic methodology from strain obtaint from the testing mashine plates
+displacement a') Normalized Poisson's ratio values of material with different
+given Poisson's ratio ($\nu$) values for chosen area of
+interest, b') total area of interest c') experimental methodology d) Basic methodology from strain obtaint from the testing mashine plates
+displacement with the manual transverse displacement measurement.}
 \label{fig:strainmethods}
 
 
