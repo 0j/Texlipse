@@ -82,8 +82,8 @@
 \begin{frontmatter}
 
 \title{Barrelling formation during the axial compressive experiments on cubic
-samples with  isotropic, transversely isotropic and orthotropic properties
-{\color{red} Preliminary title}}
+samples with  isotropic, transversely isotropic and orthotropic elastic
+properties {\color{red} Preliminary title}}
 %%\tnotetext[mytitlenote]{Fully documented templates are available in the
 % elsarticle package on \href{http://www.ctan.org/tex-archive/macros/latex/contrib/elsarticle}{CTAN}.}
 
@@ -114,19 +114,23 @@ Uppsala, Sweden }
 
 \begin{abstract}
 For scarce materials, such as archaeological wood, one often resorts to cubic
-samples instead of prisms. For these samples barreling formation gives rise to additional difficulties.
+samples instead of standardised prisms for mechanical tests. For these samples
+barreling formation gives rise to additional difficulties difficulties in
+identifying the elastic properties.
 Furthermore natural orthotropy, availability and variation between and within
 samples make the mechanical characterisation of wood  challenging. 
-The primary purpose of the present study is to identify barrelling
+The purpose of the present study is to experimentally and numerically investigate the effects of barrelling
 formation in cubic samples during compressive experiments. Secondly, to investigate and
 compare barrelling formation on isotropic, transversely 
-isotropic and orthotropic material parameters. Finally to compare three 
-different strain measurement techniques and investigate which is better for quantification 
-of mechanical parameters such as Young's moduli and Poisson's ratios.
-The measured engineering parameters were normalised and presented as an error
-depending on input configuration.
+isotropic and orthotropic material parameters. \par
+Finally to compare four strain measurement techniques using
+Digital Image Correlation (DIC), strain gauges and direct
+reading from of universal testing mashine and investigate which is better for
+quantification of mechanical parameters such as Young's moduli and Poisson's ratios.
+The elastic parameters determined from the simulated tests were normalised with regards to the input parameters. The presented relative errors provide information when the perturbation caused by barreling effect is negligible or significant for various materials and strain measurements. 
 As an example, compressive tests on waterlogged archaeological oak impregnated
 with polyethylene glycol (PEG) are discussed.
+
 
 \end{abstract}
 
@@ -141,87 +145,147 @@ Wood
 
 \section{Introduction}
 
-Characterisation of material stiffness parameters of orthotropic materials can
+Characterisation of material stiffness properties of orthotropic materials can
 be challenging. In  careful design of wood structures, not only one parameter, but the full
 orthotropic set of elastic parameters is needed \cite{tsoumis1991science},
 e.g. for finite-element modelling of wood joints that are locally subjected to a
-triaxial stress state. Compressive experiments are considered to be one of the most reliable methods for identifying engineering constants such as Young's moduli and Poisson's
-ratios. The general approach is to measure the material response due to applied
-forces. The procedure is straightforward and easy to perform due to simplicity of experimental installation and low requirements to specimen
-geometry. Standards such as ASTM \cite{standard1997d143,
-johnson1983compression} require the usage of rectangular prisms for
+triaxial stress state. Compressive experiments are generally considered to be
+reliable method for identifying engineering constants such as Young's moduli and Poisson's ratios. The general approach is to measure the material response due to applied
+forces. The procedure is straightforward and easy to perform due to simplicity of experimental installation and low requirements to sample
+geometry. ASTM D143 standard \cite{standard1997d143,
+johnson1983compression} require the usage of elongated rectangular prisms for
 the compressive testing along with strain gauges.
 For rare materials such as archaeological wood, it is more convenient to use
-cubic samples \cite{ljungdahl2007transverse} to save material. 
-This enables testing of the same sample several times and in
-different directions (radial, tangential, longitudinal) if the loads are
-applied within the elastic range.
-A disadvantage with compressive testing of cubes compared to tensile testing of
-dog-bone specimens, is that it can be complicated to ensure a homogeneous stress state
-due to geometrical imperfections of test specimens \cite{Toftegaard1999849}.
-Moreover, barrelling formation (Figure \ref{fig:barrelling}) in compressive
-loading \cite{oldroyd1966stress}, due to friction between the platens and the
-sample, makes it difficult to assess the  deformations.
-Consequently, the Poisson's ratios are thus more difficult to obtain directly from this kind
-of loading.
-The conventional way to measure strains is by using the built in measurement
-system or strain gages. Nowadays, full field strain measurement techniques such
+cubic samples \cite{ljungdahl2007transverse, vorobyevcharacterisation} to save
+material.
+This enables the same sample to be tested several times and in
+different directions (typically radial, tangential, longitudinal) if the loads are
+applied within the elastic range and do not cause and irreversible damage in the material.
+A disadvantage of compressive testing of cubes compared to the tensile testing
+of dog-bone samples is that it can be difficult to ensure a homogeneous stress
+state due to geometrical imperfections in the test samples
+\cite{Toftegaard1999849}.
+Moreover, barrelling  (as illustrated in Figure \ref{fig:barrelling}) during
+compressive loading \cite{oldroyd1966stress} caused by friction between the platens and the
+sample makes it difficult to assess the non-uniform deformation in order to determine the elastic paramters.
+Consequently, the Poisson's ratios cannot be obtained directly under such constraints. 
+The classical way to measure strain is by using the loading platen position or electrical-resistance strain gauges. Nowadays, full field strain measurement techniques such
 as digital speckle photography (DSP) \cite{synnergren1999stereoscopic} and
-3D/stereo-digital image correlation (DIC) \cite{majano2012test} are used more
-and more. Strain field measurements technique using DIC has shown a good
-performance in comparison to the traditional strain gauges
-\cite{huang2010optical,xavier2012stereovision} Additionally it helps to
-improve the estimation of the stiffness parameters \cite{dahl2009planar,
+3D/stereo-digital image correlation (DIC) \cite{majano2012test} are 
+increasingly being used.The strain-field measurement technique using
+DIC has been shown advantages in comparison with the traditional strain gauges
+\cite{huang2010optical,xavier2012stereovision}. In particular, full-field measurements can help to improve the estimation of the stiffness parameters \cite{dahl2009planar,
 majano2012test, ozyhar2013moisture}. 
-Nevertheless, compressive testing of wooden cubes is the reasonable 
-choice of test method if the amount of available material is limited, as is the case for archaeological material.\par 
+Despite technical difficulties in obtaining accurate elastic properties by compressive testing of wooden cubes, it is still a reasonable 
+choice of test method if the amount of available material is limited, as is the case for e.g.\ archaeological material. The intention of the present work is to estimate how large the measurement errors can due to the inevitable barrelling effect, and which strain measures are suitable to reduce such errors.  \par 
 
-In 2012, a project with the aim of designing a new support structure for the
-archaeological Vasa ship was initiated. The ship was capsized in 1628, and was salvaged in 1961. 
+This study was initiated when in order to better estimate the stiffness properties of water-logged and preservation-treated  oak of the Vasa shipwreck, displayed at a public museum in Stockholm. The stiffness of the material is needed as input parameters in a finite-element model of the ship, which can be used in the design of a future improved support system for the ship. The Vasa capsized in 1628, and was salvaged in 1961. 
 The waterlogged ship was impregnated with polyethylene glycol (PEG) in an extensive conservation process aiming to prevent deformation during drying. 
-Extensive research during the last decades have found that the ship suffers from
-aggressive chemical degradation. Both the degradation \cite{bjurhager2012state}
-and the PEG impregnation \cite{ljungdahl2007transverse} have had a negative effect on the mechanical properties of the ship, which is in need of a better support. In 2012 a project with the aim of 
-designing a new support structure for the fragile and soft ship was also initiated. For this task, the elastic, ultimate and creep properties of the 
-Vasa oak need to be determined. Due to the limited access to material, cubic samples which can be tested several times is preferred.
-In order to verify the results from the compressive experiments the effect of
-barrelling was investigated by the simulation using the Finite Element
-Modelling (FEM).\\
-Previously compressive experiments on prism samples with orthotropic material
-behavior were simulated by Toftegaard \cite{Toftegaard1999849} in order to
-investigate the effect of geometrical imperfections on identification of
+Extensive research during the last decades have shown that the ship is suffering
+from aggressive chemical degradation. Both the degradation \cite{bjurhager2012state}
+and the PEG impregnation \cite{ljungdahl2007transverse} have had a negative effect on the mechanical properties of the ship, which is in need of a better support. \par
+Previously compressive experiments on prismatic samples with orthotropic
+material behavior were simulated by Toftegaard \cite{Toftegaard1999849} who investigated the effect of geometrical imperfections on the
 engineering elastic constants.
-in his work he compared the simulated strain field to the measurements of strain
-gauges and obtained good agreement between the simulated data and experimental
-curves.\par
-The present work uses DSP in order to obtain the experimental strain field,
-based on the displacements in an area rather than two points using a strain
-gauge.
-Chen \cite{Chen001} has simulated the behaviour of specimens with geometrical
-imperfections on a locked  seat during the compressive experiments
-of composite materials. This is relevant when the platens of universal testing
-machine are locked and cannot adjust to sample geometry.
-When a prism specimen is compressed between platens it expand transversely.
-Its surfaces bear heterogeneous deformation that are resulting in barreling
-formation of the prism.\par 
+In his work Toftegaard compared the simulated strain field to the measurements
+of strain gauges and obtained good agreement between the simulated and experimental
+data.\par
+In the present work, DSP has been used in order to obtain the experimental
+strain field, based on the displacement field over an area rather than locally
+at metallic foil pattern of a strain gauge.
+Chen \cite{Chen001} simulated the deformation behaviour of samples with geometrical
+imperfections supported by a locked hemispherical seat compared to conventional platens. This is useful for rigid platens which cannot adjust to sample geometry to spread the loads more evenly over the contact area.
+\par 
 
 %The purpose of experiment
 
 
 
-The present work investigates
-barrelling formation in three different types of material behaviour.
-Additionally three strain measuring techniques using DSP and strain gauges are
-compared in order to identify the magnitude of resulting errors.
-The results can help to identify the accuracy of the material constants values
-of elastic parameters that can be obtained during compressive experiments on
-cubic samples.
+The purpose of the present work is to investigates the occurence of barrelling
+ on the accuracy of the obtained elastic properties in three different types of material behaviour, namely isotropic, transversely isotropic and orthotropic elastic properties, in ranges applicable for archeological wood.
+Additionally, four strain measuring techniques using DSP (full field and central
+area of interest), strain gauges (recommended by the standard 
+\cite{standard1997d143, johnson1983compression}) and direct compressive platen
+displacement measurement are compared in order to assess the magnitude of the
+resulting errors.
+The results can help to estimate the induced errors for the alternative strain measurement methods. 
+% 
+% This enables testing of the same sample several times and in
+% different directions (radial, tangential, longitudinal) if the loads are
+% applied within the elastic range.
+% A disadvantage with compressive testing of cubes compared to tensile testing of
+% dog-bone specimens, is that it can be complicated to ensure a homogeneous stress state
+% due to geometrical imperfections of test specimens \cite{Toftegaard1999849}.
+% Moreover, barrelling formation (Figure \ref{fig:barrelling}) in compressive
+% loading \cite{oldroyd1966stress}, due to friction between the platens and the
+% sample, makes it difficult to assess the  deformations.
+% Consequently, the Poisson's ratios are thus more difficult to obtain directly from this kind
+% of loading.
+% The conventional way to measure strains is by using the built in measurement
+% system or strain gages. Nowadays, full field strain measurement techniques such
+% as digital speckle photography (DSP) \cite{synnergren1999stereoscopic} and
+% 3D/stereo-digital image correlation (DIC) \cite{majano2012test} are used more
+% and more. Strain field measurements technique using DIC has shown a good
+% performance in comparison to the traditional strain gauges
+% \cite{huang2010optical,xavier2012stereovision} Additionally it helps to
+% improve the estimation of the stiffness parameters \cite{dahl2009planar,
+% majano2012test, ozyhar2013moisture}. 
+% Nevertheless, compressive testing of wooden cubes is the reasonable 
+% choice of test method if the amount of available material is limited, as is the case for archaeological material.\par 
+% 
+% In 2012, a project with the aim of designing a new support structure for the
+% archaeological Vasa ship was initiated. The ship was capsized in 1628, and was salvaged in 1961. 
+% The waterlogged ship was impregnated with polyethylene glycol (PEG) in an extensive conservation process aiming to prevent deformation during drying. 
+% Extensive research during the last decades have found that the ship suffers from
+% aggressive chemical degradation. Both the degradation \cite{bjurhager2012state}
+% and the PEG impregnation \cite{ljungdahl2007transverse} have had a negative effect on the mechanical properties of the ship, which is in need of a better support. In 2012 a project with the aim of 
+% designing a new support structure for the fragile and soft ship was also initiated. For this task, the elastic, ultimate and creep properties of the 
+% Vasa oak need to be determined. Due to the limited access to material, cubic samples which can be tested several times is preferred.
+% In order to verify the results from the compressive experiments the effect of
+% barrelling was investigated by the simulation using the Finite Element
+% Modelling (FEM).\\
+% Previously compressive experiments on prism samples with orthotropic material
+% behavior were simulated by Toftegaard \cite{Toftegaard1999849} in order to
+% investigate the effect of geometrical imperfections on identification of
+% engineering elastic constants.
+% in his work he compared the simulated strain field to the measurements of strain
+% gauges and obtained good agreement between the simulated data and experimental
+% curves.\par
+% The present work uses DSP in order to obtain the experimental strain field,
+% based on the displacements in an area rather than two points using a strain
+% gauge.
+% Chen \cite{Chen001} has simulated the behaviour of specimens with geometrical
+% imperfections on a locked  seat during the compressive experiments
+% of composite materials. This is relevant when the platens of universal testing
+% machine are locked and cannot adjust to sample geometry.
+% When a prism specimen is compressed between platens it expand transversely.
+% Its surfaces bear heterogeneous deformation that are resulting in barreling
+% formation of the prism.\par 
+% 
+% % %The purpose of experiment
+% 
+% 
+% 
+% The present work investigates
+% barrelling formation in three different types of material behaviour.
+% Additionally three strain measuring techniques using DSP and strain gauges are
+% compared in order to identify the magnitude of resulting errors.
+% The results can help to identify the accuracy of the material constants values
+% of elastic parameters that can be obtained during compressive experiments on
+% cubic samples.
 
 
 \section{Materials and Methods}
 
 \begin{figure}
     \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{VasaCube.pdf}
+        \caption{}
+        \label{fig:vasacube}
+    \end{subfigure}
+    \hfill
     \begin{subfigure}[b]{0.4\textwidth}
         \centering
         \includegraphics[width=\textwidth]{BarellingEffectZoomed.pdf}
@@ -286,7 +350,7 @@ cubic samples.
 		\begin{axis}[no markers,
 		name=plot0,height=6cm,width=\textwidth,
 		    xlabel={Strain $\varepsilon_y$ [\%]},
-		    ylabel={Stress stress $\sigma_y$ [MPa]},
+		    ylabel={Stress $\sigma_y$ [MPa]},
 		    xmin=0, xmax=1.5,
 		    ymin=0, ymax=30,
 		%     xtick={0,...,5},
@@ -301,13 +365,16 @@ cubic samples.
 		% \begin{axis}[legend pos=outer north east]
 		 
 		 
-		    \addplot [thick, blue] table[x=areaoi,y=stress] {\datatable}; \label{ex1}
+		    \addplot [thick, red] table[x=areaoi,y=stress] {\datatable};
+		    \label{ex1}
 		%     \addlegendentry{Total surface area}
-		    \addplot [thick, red	] table[x=totarea,y=stress] {\datatable};
+		    \addplot [thick, blue] table[x=totarea,y=stress] {\datatable};
 		    \label{ex2}
 		%     \addlegendentry{Surface area of interest}
 % 			\addplot [thin, red] coordinates {(0.0, 0.3) (0.28,28.0)};
 % 			\addplot [thin, blue] coordinates {(0.05, 0.3) (0.25,28.0)};
+\node at (axis cs:0.2,8) [anchor=west,red] {\ref{ex1} full field};
+\node at (axis cs:0.2,5) [anchor=west,blue] {\ref{ex2} central band};
 			
 		
 		\end{axis}
@@ -317,11 +384,12 @@ cubic samples.
         \label{fig:explot}
     \end{subfigure}
 
-\caption{a) Barrelling formation on initially cubic shape. b) DSP image of
-\textit{Vasa} oak specimen during compressive testing including displacement
-field $(mm)$. c) Experimental strain vs.
-stress curves for \textit{Vasa} oak  specimen, chosen surface area of
-interest(\ref{ex2}) and total surface area  (\ref{ex1}).}
+\caption{(a) Vasa oak sample (b) Barrelling of an initially cubic shape.
+(c) DSP image of Vasa oak sample during compressive testing including the
+displacement field. (d) Experimental stress-strain curves for Vasa oak  sample
+%, chosen surface area of interest(\ref{ex2}) and total surface area 
+%(\ref{ex1})
+.}
 \label{fig:threegraphs}
 \end{figure}
 
@@ -337,7 +405,7 @@ interest(\ref{ex2}) and total surface area  (\ref{ex1}).}
 
 
 \begin{description}
-\item{\textit{Model}}
+\item{\textit{Numerical Model}}m
 \end{description}
 
 
@@ -346,29 +414,29 @@ interest(\ref{ex2}) and total surface area  (\ref{ex1}).}
 
 The finite element program COMSOL Multiphysics 4.4 \cite{Comsol} was used for
 the numerical simulations.
-A cube with unity dimensions was modeled with
+A cube with unit dimensions was modelled with
 3D solid elements.
-The rigid platens of the universal testing machine were not included in the
-model.
-The compressive loading was simulated as a downward vertical prescribed
+The rig compliance was neglected since the platens were assumed to be rigid, leading to uniform normal displacement on the loaded surfaces.
+The compressive loading was simulated as a downward vertical
 displacement. The magnitude of this prescribed displacement was set to 0.01
-which corresponds to  1\%  of average compressive strain.
-After a mesh refinement study, a $10\times10\times10$ mesh of quadratic brick
-elements was determined to provide reasonably accurate results for the purpose of this study.
+which corresponds to an average compressive strain of  1\%.
+A mesh refinement study showed that a $10\times10\times10$ mesh of quadratic
+brick elements would provide sufficiently accurate results for the
+purpose of this study.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=8cm]{BarellingPaper.pdf}
 \label{fig:Barrelling}
-\caption{\label{fig:Barrelling} Mechanical model of cubic
-specimen used in the FEM simulation. 
-a) Horizontal boundary conditions and b) vertical boundary conditions.}
+\caption{\label{fig:Barrelling} Model of cubic
+sample used in the FEM simulation. 
+(a) Horizontal boundary conditions and (b) vertical boundary conditions.}
 \end{figure}
 
-The main reason for the barrelling formation is the friction between platens
-and specimen \cite{Narayanasamy198821, kulkarni1969}. To simulate the effect of
-friction, we have introduced springs with spring constant $K$ that is friction parameter
-in the model. Those springs are partially constrain lateral displacements
+The main reason for the occurence of barrelling is the restraining friction
+between the platens and the sample \cite{Narayanasamy198821, kulkarni1969}. To
+simulate the effect of friction, we have introduced line springs with a spring
+constant $K$ that is friction parameter in the model. Those springs are partially constrain lateral displacements
 on the top and the bottom of the cube (Figure \ref{fig:Barrelling}).  
 As a result, for $K=0$ the displacement of the corresponding
 edges is unconstrained and for $K>0$ the edges are partially constrained up to
@@ -403,7 +471,7 @@ obtained and used as a value for obtaining axial stiffness $E_L$. In the
 second case, $50\%$ of cube surface (Figure \ref{fig:experiment}) was
 used to calculate the average strain corresponding to experimental measurement. 
 Finally, in the third method the strain is measured between two points
-in horizontal and two points in vertical direction in the center of the specimen
+in horizontal and two points in vertical direction in the center of the sample
 as it is with the strain gauge based on ASTM-D143-94 standard
 \cite{american2009standard}.
 
@@ -414,12 +482,12 @@ as it is with the strain gauge based on ASTM-D143-94 standard
 Finally we compare the results to an actual experiment on \textit{Vasa}
 material.
 An Instron universal testing machine with 100 kN load cell was used to carry out static tests. 
-Special care was taken in order to manufacture almost exactly cubic specimens. 
+Special care was taken in order to manufacture almost exactly cubic samples. 
 The size of the samples was  $25\times25\times25$ mm\textsuperscript{3}.  The
 accuracy for parallelity between the opposite edges of the cube was 0.01 mm. 
-Initial tests were conducted on dummy wood specimens in order to find the approximate elastic loading range for all specimen orientations.
+Initial tests were conducted on dummy wood samples in order to find the approximate elastic loading range for all sample orientations.
 Full-field displacements were observed with a DSP equipment GOM Aramis stereo system 5M.
-The distance to the measured object was 300 mm. The surfaces of specimens was spray
+The distance to the measured object was 300 mm. The surfaces of samples was spray
 painted with speckles for better contrast. The applied force values were continuously recorded by the DSP system during testing, and stored together with the sampled images. The displacement rate was 0.5 mm per minute. 
 The ambient conditions were $23\,^{\circ}{\rm C}$ and 51\% relative humidity.
 All tests were performed without delay after the samples were removed from the conditioning storage container, so that the moisture content would essentially be the same as after conditioning. The measurement sampling frequency was 1 Hz. 
@@ -1545,8 +1613,8 @@ the model throughout the central area of the material. So the most accurate
 estimation of Poisson's ratio is in the central area close to the vertical
 edges of the cube as it seen in Figure \ref{fig:Error} $c,d$. However it was
 mentioned that usage of strain gauges are usually placed in the center of the
-specimen, whereas presented results are supporting the fact that central
-region of the specimen is not always beneficial for the measurements. In this
+sample, whereas presented results are supporting the fact that central
+region of the sample is not always beneficial for the measurements. In this
 case the usage of DSP is preferable. 
 
 
@@ -1982,7 +2050,7 @@ shows that with this method the Young's moduli is less overestimated.\par
 with strain gauge technique was used, the error is very close to the one in
 second approach. The plot in Figure \ref{fig:strainmethods}$c$ depicts that.
 This is due to the strain is measured between two points in the center of 
-the specimen where the constraining effect is less severe. 
+the sample where the constraining effect is less severe. 
 
 \begin{figure}[h]
 \centering
@@ -2001,7 +2069,7 @@ material plane ($\nu_{TT}$).($K=0.1;\nu=0.3$)}
 Large error values for the Young's
 modulus close to the horizontal edges of isotropic model are clearly visible in
 Figure \ref{fig:Error}$a$. The opposite is true for the transversely isotropic
-specimen in (Figure \ref{fig:Error}$b,c$), for $LT$ plane 
+sample in (Figure \ref{fig:Error}$b,c$), for $LT$ plane 
 the Young's moduli in the central area is overestimated whereas for $TT$ plane
 the strain field looks similar to the isotropic material.\par
 These simulations are supporting the experimental results in Figure
@@ -2009,12 +2077,12 @@ These simulations are supporting the experimental results in Figure
 the one for the chosen area.
 Additional outcomes are deduced  while observing the error fields in Figure
 \ref{fig:Error}$a'-c'$. The ASTM-D143-94 standard \cite{american2009standard} requires
-installation of strain gauges in the center of the specimen. This approach will
+installation of strain gauges in the center of the sample. This approach will
 lead to underestimation of Poisson's ratio in transversely isotropic cubic
-specimen due to the barrelling formation. On the other hand accurate values will
+sample due to the barrelling formation. On the other hand accurate values will
 be obtained for the isotropic material, where the constraining effect influence
-the horizontal edges of the specimen. The chosen central area of the isotropic
-specimen is most favourable for accurate measurements.
+the horizontal edges of the sample. The chosen central area of the isotropic
+sample is most favourable for accurate measurements.
 
 
 \begin{description}
@@ -2453,17 +2521,17 @@ exemplified:
 The strain measurement methods proven the benefit of usage the "chosen" area for the estimation of strains in the corresponding plane. The results can be summarized as follows: 
 
 \begin{itemize}
-  \item Using the strain-field from the \textit{Total area} of the specimen plane is leading to relative large errors. It happens due to constrained cone that is spreading towards the center  of specimen.  
+  \item Using the strain-field from the \textit{Total area} of the sample plane is leading to relative large errors. It happens due to constrained cone that is spreading towards the center  of sample.  
   The measured Young's moduli is overestimated by up to 20 percent for the
   material Poisson's ratio $\nu=0.45$. Whereas the estimation of Poisson's ratio
   gives less errors in comparison to other material.
   \item Strains from the \textit{Strain gauges} measurement shows better results than using the previous approach. However the measurements are done between the two points and inside the constraining cone. Thus it leads to errors as well.
-  \item  \textit{"Chosen" area} of strain-field in the centre of the specimen was the beneficial method. Here a relatively good results were obtained due to over and underestimation that compensate each other to some extent.
+  \item  \textit{"Chosen" area} of strain-field in the centre of the sample was the beneficial method. Here a relatively good results were obtained due to over and underestimation that compensate each other to some extent.
 \end{itemize}
 
 Two strain-field measuring techniques (\textit{total area and "chosen" area}) were used in the experimental part. However the "chosen"area approach was used for the identification of elastic constants. The results of numerical simulation from the present work validated the beneficial method.\par
-Finally cubic specimens can be used for the mechanical experiments in case of low
-availability of material. It was also proved that all elastic constants can be extracted using one specimen with the consideration of barrelling formation.
+Finally cubic samples can be used for the mechanical experiments in case of low
+availability of material. It was also proved that all elastic constants can be extracted using one sample with the consideration of barrelling formation.
 
 
 \section*{Acknowledgements}
