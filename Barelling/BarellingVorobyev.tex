@@ -295,7 +295,7 @@ The results can help to estimate the induced errors for the alternative strain m
     \hfill
     \begin{subfigure}[b]{0.4\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{BarellingPaper-eps-converted-to.pdf}
+        \includegraphics[width=\textwidth]{BarrellingPapper.pdf}
         \caption{}
         \label{fig:experiment}
     \end{subfigure}
@@ -365,16 +365,16 @@ The results can help to estimate the induced errors for the alternative strain m
 		% \begin{axis}[legend pos=outer north east]
 		 
 		 
-		    \addplot [thick, red] table[x=areaoi,y=stress] {\datatable};
+		    \addplot [thick, blue] table[x=areaoi,y=stress] {\datatable};
 		    \label{ex1}
 		%     \addlegendentry{Total surface area}
-		    \addplot [thick, blue] table[x=totarea,y=stress] {\datatable};
+		    \addplot [thick, red] table[x=totarea,y=stress] {\datatable};
 		    \label{ex2}
 		%     \addlegendentry{Surface area of interest}
 % 			\addplot [thin, red] coordinates {(0.0, 0.3) (0.28,28.0)};
 % 			\addplot [thin, blue] coordinates {(0.05, 0.3) (0.25,28.0)};
-\node at (axis cs:0.2,8) [anchor=west,red] {\ref{ex1} full field};
-\node at (axis cs:0.2,5) [anchor=west,blue] {\ref{ex2} central band};
+\node at (axis cs:0.2,8) [anchor=west,blue] {\ref{ex1} full field};
+\node at (axis cs:0.2,5) [anchor=west,red] {\ref{ex2} central band};
 			
 		
 		\end{axis}
@@ -404,9 +404,8 @@ displacement field. (d) Experimental stress-strain curves for Vasa oak  sample
 
 
 
-\begin{description}
-\item{\textit{Numerical Model}}m
-\end{description}
+
+\subsection{Numerical model}
 
 
 
@@ -433,51 +432,68 @@ sample used in the FEM simulation.
 (a) Horizontal boundary conditions and (b) vertical boundary conditions.}
 \end{figure}
 
-The main reason for the occurence of barrelling is the restraining friction
-between the platens and the sample \cite{Narayanasamy198821, kulkarni1969}. To
-simulate the effect of friction, we have introduced line springs with a spring
-constant $K$ that is friction parameter in the model. Those springs are partially constrain lateral displacements
-on the top and the bottom of the cube (Figure \ref{fig:Barrelling}).  
-As a result, for $K=0$ the displacement of the corresponding
-edges is unconstrained and for $K>0$ the edges are partially constrained up to
-the case where the edges are completely constraint for $K=\infty$.
+The main reason for the barrelling formation is the restraining friction between platens
+and specimen \cite{Narayanasamy198821, kulkarni1969}. To simulate the effect of
+friction, we have introduced line springs with spring constant $K$ (N/m$^2$) that represent the friction 
+in the model. Those springs are evenly distributed along the edges on the top and the bottom of the cube as shown in Figure \ref{fig:Barrelling}.  
+For $K=0$ (N/m$^2$) the displacement of the corresponding
+edges is unconstrained, and for $K>0$ (N/m$^2$) the edges are partially
+constrained up to the extreme case where the edges are completely constraint for
+$K=\infty$ (N/m$^2$). It should be noted that the $K$ is not a physical friction
+constant, such as the Coulomb friction over the contact area, but serves well to numerical simulate the effect of contact friction. 
+In comparing the effects of barrelling on stiffness measurement, one would like to use an easily measurable parameter, unlike the line spring constant or a coefficient of static friction, $\mu$. An effect of friction closely related to the barrel formation is the degree of slippage at the contact face. We define this slippage as $\delta/\delta_\mathrm{max}$, where $\delta$ is the lateral displacement and $\delta_\mathrm{max}$ is the maximum displacement, corresponding to a maintained cuboid geometry. 
+Thus, $\delta/\delta_\mathrm{max}=0$ corresponinds to no slippage with $K=\infty$, and $\delta/\delta_\mathrm{max}=1$ corresponds to full slippage with $K=0$ and $\mu=0$. The slippage $\delta$ is directly measurable from the edge positions of the cube deformed cube, and $\delta_\mathrm{max}$ can be calculated  from the deformed cuboid with no barrelling.
 
-\begin{description}
-\item{\textit{Material input parameters}}
-\end{description}
 
-Present work investigates isotropic, transversely isotropic and orthotropic
-material behavior in combination with linear elasticity.
-The material properties that were adopted are listed in
-Table \ref{table:simulpar}. Two parameters $a$ and $b$ were introduced for a continuous transition between isotropy and transverse isotropy. 
-The first one , $a$, is controlling the stiffness difference between the
-longitudinal and transverse directions and the corresponding Poisson's ratio.
-The second one, $b$, controls the independent shear modulus based on
-observations of shear moduli for materials in Table \ref{table:nonlin}.
+\subsection{Material input parameters}
+
+Isotropic, transversely isotropic and orthotropic
+linear elastic behaviour was investigated. Wood and composites materials are known to be anisotropic, although they are occasionally assumed to be transversely isotropic if two material axes have similar elastic properties compared the main material axis of fibre. The simplified isotropic case is added as reference. 
+The relation between the elastic  properties are listed in
+Table \ref{table:simulpar}. Two parameters $a$ and $b$ were introduced for a continuous transition between complete isotropy and transverse isotropy, while maintaining the symmetry conditions of the stiffness tensor. 
+The first one , $a$, controls the relation between the stiffness in the
+longitudinal and transverse directions as well as the corresponding Poisson's ratio.
+The second one, $b$, controls the out-of-plane shear modulus.  
 The remaining three Poisson's ratios were obtained from the symmetry
-principle relations (symmetry of stiffness tensor\cite{hyer2009stress}). The
-orthotropic material was simulated using input parameters obtained from the experiments \cite{vorobyevcharacterisation}.
+principle relations for the stiffness tensor \cite{hyer2009stress}. The parameters $a$ and $b$ were fitted to the  experimental elastic values of wooden and some composite materials in Table \ref{table:nonlin}. For the listed orthotropic wood and composite materials, $a=10$ and $b=2$ were found to provide a suitable compromise for a common transversely isotropic material. In the isotropic case, $a=1$ corresponding to uniform Young’s modulus $E$ and Poisson’s ratio $\nu$ in all directions. 
+The orthotropic material was simulated using experimental input parameters
+obtained from the experiments \cite{vorobyevcharacterisation}.
 
 
-\begin{description}
-\item{\textit{Strain measuring methods}}
-\end{description}
+\subsection{Strain measuring methods}
 
-
-Three strain measuring cases were taken intro account in simulation. The first
-case can be considered the same as taking the average dimensional changes of a
-sample. In particular the average strain from the total surface area was
-obtained and used as a value for obtaining axial stiffness $E_L$. In the
-second case, $50\%$ of cube surface (Figure \ref{fig:experiment}) was
-used to calculate the average strain corresponding to experimental measurement. 
-Finally, in the third method the strain is measured between two points
-in horizontal and two points in vertical direction in the center of the sample
-as it is with the strain gauge based on ASTM-D143-94 standard
+Three realistic ways of measuring strain were taken into account in the simulations. These strains are a result of the imposed displacement of the opposite faces of the unit cube of 0.01, corresponding to and average strain of 1\%.  The strains measured from the simulation results are:
+\begin{itemize}
+\item Average strain in the $x$ and $y$ directions over the entire analysed cube
+face (Full field).
+\item Average strains in the $x$ and $y$ directions over a centred area spanning
+the width and covering 60\% of the total analysed cube face, as shown in Figure
+\ref{fig:experiment}. This area of interest was chosen to represent DSP
+measurements away from the constrained regions affected by restrained slippage
+along the platens (Central band).
+\item Average strain between two points in the $x$ and $y$ directions,
+respectively, located close to the centre of the cube face. This corresponds to
+the zone in which the strains are determined by the strain gauge as suggested in
+the standard ASTM D143 (Strain gauges).
 \cite{american2009standard}.
+\item Average strain based directly on the 
+measurements in the universal testing mashine from the
+dissplacements of the compression platens (Basic method)
+\end{itemize}
 
-\begin{description}
-\item{\textit{Experimental procedures}}
-\end{description}
+
+% Three strain measuring cases were taken intro account in simulation. The first
+% case can be considered the same as taking the average dimensional changes of a
+% sample. In particular the average strain from the total surface area was
+% obtained and used as a value for obtaining axial stiffness $E_L$. In the
+% second case, $50\%$ of cube surface (Figure \ref{fig:experiment}) was
+% used to calculate the average strain corresponding to experimental measurement.
+% Finally, in the third method the strain is measured between two points
+% in horizontal and two points in vertical direction in the center of the sample
+% as it is with the strain gauge based on ASTM-D143-94 standard
+% \cite{american2009standard}.
+
+\subsection{Experimental procedures}
 
 Finally we compare the results to an actual experiment on \textit{Vasa}
 material.
