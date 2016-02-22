@@ -442,8 +442,18 @@ edges is unconstrained, and for $K>0$ (N/m$^2$) the edges are partially
 constrained up to the extreme case where the edges are completely constraint for
 $K=\infty$ (N/m$^2$). It should be noted that the $K$ is not a physical friction
 constant, such as the Coulomb friction over the contact area, but serves well to numerical simulate the effect of contact friction. 
-In comparing the effects of barrelling on stiffness measurement, one would like to use an easily measurable parameter, unlike the line spring constant or a coefficient of static friction, $\mu$. An effect of friction closely related to the barrel formation is the degree of slippage at the contact face. We define this slippage as $\delta/\delta_\mathrm{max}$, where $\delta$ is the lateral displacement and $\delta_\mathrm{max}$ is the maximum displacement, corresponding to a maintained cuboid geometry. 
-Thus, $\delta/\delta_\mathrm{max}=0$ corresponinds to no slippage with $K=\infty$, and $\delta/\delta_\mathrm{max}=1$ corresponds to full slippage with $K=0$ and $\mu=0$. The slippage $\delta$ is directly measurable from the edge positions of the cube deformed cube, and $\delta_\mathrm{max}$ can be calculated  from the deformed cuboid with no barrelling.
+In comparing the effects of barrelling on stiffness measurement, one would like
+to use an easily measurable parameter, unlike the line spring constant or a
+coefficient of static friction, $\mu$. An effect of friction closely related to
+the barrel formation is the degree of slippage at the contact face. We define
+this slippage as $\delta/\delta_{\mathrm{max}}$, where $\delta$ is the lateral
+displacement and $\delta_{\mathrm{max}}$ is the maximum displacement,
+corresponding to a maintained cuboid geometry.
+Thus, $\delta/\delta_{\mathrm{max}}=0$ corresponinds to no slippage with
+$K=\infty$, and $\delta/\delta_{\mathrm{max}}=1$ corresponds to full slippage
+with $K=0$ and $\mu=0$. The slippage $\delta$ is directly measurable from the
+edge positions of the cube deformed cube, and $\delta_{\mathrm{max}}$ can be
+calculated  from the deformed cuboid with no barrelling.
 
 
 \subsection{Material input parameters}
@@ -629,15 +639,15 @@ name=plot0,height=6cm,width=\textwidth/3,
     ymin=1, ymax=1.2,
 %     xtick={1,...,9},
 %    ytick={0,20,40,60,80},
-    xticklabels={}, 
+    xticklabels={},
     ymajorgrids=true,
     xmajorgrids=true,
     grid style=dashed,
 ]
-% \end{axis}    
+% \end{axis}
 % \begin{axis}[legend pos=outer north east]
- 
- 
+
+
     \addplot table[y=s1,x=0.05] {\datatable};
 %     \addlegendentry{$\nu$=0.05}
     \addplot table[y=s2,x=0.1] {\datatable};
@@ -674,8 +684,8 @@ title={Transversely-isotropic\\E$_{L}$\\(b)},
 %     xtick={1,...,9},
 %    ytick={0,20,40,60,80},
 %     xticklabels={$0$,$0.001$,$0.01$,$0.1$,$1$, $10$, $100$,
-%     $1000$, $\infty$}, 
-    xticklabels={}, 
+%     $1000$, $\infty$},
+    xticklabels={},
     ymajorgrids=true,
     xmajorgrids=true,
     grid style=dashed,
@@ -715,7 +725,7 @@ title={Transversely-isotropic\\E$_{T}$\\(c)},
                   /pgf/number format/precision=3},
 %     xtick={1,...,9},
 %    ytick={0,20,40,60,80},
-    xticklabels={}, 
+    xticklabels={},
     ymajorgrids=true,
     xmajorgrids=true,
     grid style=dashed,
@@ -747,7 +757,7 @@ title={Transversely-isotropic\\E$_{T}$\\(c)},
 \begin{axis}[name=plot3,at={($(plot0.south)-(0,2cm)$)},anchor=north,
 height=6cm,width=\textwidth/3,
 align =center,
-title={($a\textprime$)\\ \nu},
+title={(a\textprime)\\ $\nu$},
 %    xlabel={Temperature [\textcelsius]},
     ylabel={Normalized Poisson's ratio},
     xmin=0, xmax=1,
@@ -755,17 +765,17 @@ title={($a\textprime$)\\ \nu},
 %     xtick={1,...,9},
 %    ytick={0,20,40,60,80},
 %     xticklabels={$0$,$0.001$,$0.01$,$0.1$,$1$, $10$, $100$,
-%     $1000$, $\infty$}, 
+%     $1000$, $\infty$},
 %     x tick label style={yshift=-1ex,
 %     rotate=45,anchor=east},
     ymajorgrids=true,
     xmajorgrids=true,
     grid style=dashed,
 ]
-% \end{axis}    
+% \end{axis}
 % \begin{axis}[legend pos=outer north east]
- 
- 
+
+
     \addplot table[y=p1,x=0.05] {\datatableC};
 %     \addlegendentry{$\nu$=0.05}
     \addplot table[y=p2,x=0.1] {\datatableC};
@@ -787,8 +797,9 @@ title={($a\textprime$)\\ \nu},
 \end{axis}
 
 \begin{axis}[legend style={at={(0.5,-0.3)}, legend columns=5, anchor=north},
-	name=plot4,at={($(plot1.south)-(0,1cm)$)},anchor=north, height=6cm,width=\textwidth/3,
-    title={($b\textprime$) $\nu_{LT}$},
+	name=plot4,at={($(plot1.south)-(0,2cm)$)},anchor=north,
+	height=6cm,width=\textwidth/3, align=center,
+title={(b\textprime) \\ $\nu_{LT}$},
     xlabel={Displacement factor $\delta/\delta_{max}$},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0, xmax=1,
@@ -798,7 +809,7 @@ title={($a\textprime$)\\ \nu},
 %     xtick={1,...,9},
 %    ytick={0,20,40,60,80},
 %     xticklabels={$0$,$0.001$,$0.01$,$0.1$,$1$, $10$, $100$,
-%     $1000$, $\infty$}, 
+%     $1000$, $\infty$},
 %     x tick label style={yshift=-1ex,
 %         rotate=45,anchor=east},
     ymajorgrids=true,
@@ -830,8 +841,9 @@ title={($a\textprime$)\\ \nu},
 
 
 \begin{axis}[
-	name=plot5,at={($(plot2.south)-(0,1cm)$)},anchor=north, height=6cm,width=\textwidth/3,
-    title={(c') $\nu_{TT}$},
+	name=plot5,at={($(plot2.south)-(0,2cm)$)},anchor=north,
+	height=6cm,width=\textwidth/3, align=center,
+	 title={(c\textprime)\\ $\nu_{TT}$},
 %    xlabel={Temperature [\textcelsius]},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0, xmax=1,
@@ -841,7 +853,7 @@ title={($a\textprime$)\\ \nu},
 %     xtick={1,...,9},
 %    ytick={0,20,40,60,80},
 %     xticklabels={$0$,$0.001$,$0.01$,$0.1$,$1$, $10$, $100$,
-%     $1000$, $\infty$}, 
+%     $1000$, $\infty$},
 %         x tick label style={yshift=-1ex,
 %         rotate=45,anchor=east		},
     ymajorgrids=true,
