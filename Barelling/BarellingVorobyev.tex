@@ -1,4 +1,4 @@
-\documentclass[review]{elsarticle}
+\documentclass[3p]{elsarticle}
 
 \makeatletter
 \def\@author#1{\g@addto@macro\elsauthors{\normalsize%
@@ -30,6 +30,7 @@
 \usepackage{rotating}
 \usepackage{threeparttable}
 \usepackage{setspace}
+\usepackage{flexisym}
 \usetikzlibrary{matrix}
 \usetikzlibrary{spy}
 \usepgfplotslibrary{groupplots}
@@ -462,7 +463,7 @@ obtained from the experiments \cite{vorobyevcharacterisation}.
 
 \subsection{Strain measuring methods}
 
-Three realistic ways of measuring strain were considered in the simulations.
+Four realistic ways of measuring strain were considered in the simulations.
 These strains are a result of the imposed displacement of the opposite faces of the unit cube of 0.01, corresponding to and average strain of 1\%.  The strains measured from the simulation results are:
 \begin{itemize}
 \item Average strain in the $x$ and $y$ directions over the entire analysed cube
@@ -620,7 +621,8 @@ K	p1	0.05	p2	0.1	p3	0.15	p4	0.2	p5	0.25	p6	0.3	p7	0.35	p8	0.4	p9	0.45
 
 \begin{axis}[
 name=plot0,height=6cm,width=\textwidth/3,
-    title={(a) Isotropic},
+	align =center,
+    title={Isotropic\\E\\(a)},
 %    xlabel={Temperature [\textcelsius]},
     ylabel={Normalized Young's modulus},
     xmin=0, xmax=1,
@@ -660,7 +662,9 @@ name=plot0,height=6cm,width=\textwidth/3,
 
 \begin{axis}[
 name=plot1,at={($(plot0.east)+(1cm,0)$)},anchor=west,
-height=6cm,width=\textwidth/3, title={(b) $E_L$},
+height=6cm,width=\textwidth/3,
+align =center,
+title={Transversely-isotropic\\E$_{L}$\\(b)},
 %    xlabel={Temperature [\textcelsius]},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0, xmax=1,
@@ -701,7 +705,8 @@ height=6cm,width=\textwidth/3, title={(b) $E_L$},
 
 \begin{axis}[
 	name=plot2,at={($(plot1.east)+(1cm,0)$)},anchor=west, height=6cm,width=\textwidth/3,
-    title={(c) $E_T$},
+align =center,
+title={Transversely-isotropic\\E$_{T}$\\(c)},
 %    xlabel={Temperature [\textcelsius]},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0, xmax=1,
@@ -739,8 +744,10 @@ height=6cm,width=\textwidth/3, title={(b) $E_L$},
 
 \end{axis}
 
-\begin{axis}[name=plot3,at={($(plot0.south)-(0,1cm)$)},anchor=north,
-height=6cm,width=\textwidth/3, title={(a')},
+\begin{axis}[name=plot3,at={($(plot0.south)-(0,2cm)$)},anchor=north,
+height=6cm,width=\textwidth/3,
+align =center,
+title={($a\textprime$)\\ \nu},
 %    xlabel={Temperature [\textcelsius]},
     ylabel={Normalized Poisson's ratio},
     xmin=0, xmax=1,
@@ -781,7 +788,7 @@ height=6cm,width=\textwidth/3, title={(a')},
 
 \begin{axis}[legend style={at={(0.5,-0.3)}, legend columns=5, anchor=north},
 	name=plot4,at={($(plot1.south)-(0,1cm)$)},anchor=north, height=6cm,width=\textwidth/3,
-    title={(b') $\nu_{LT}$},
+    title={($b\textprime$) $\nu_{LT}$},
     xlabel={Displacement factor $\delta/\delta_{max}$},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0, xmax=1,
@@ -882,769 +889,73 @@ $\nu_{LT},$ and c') $\nu_{TL}$ for transversely isotropic material.}
 
 \end{center}
 
-% 
-% \begin{center}% note that \centering uses less vspace...
-% \begin{figure}[!ht]
-% \pgfplotsset{every axis legend/.append style={
-% 		at={(0.5,1.03)},
-% 		anchor=north}}
-% 
-% \begin{tikzpicture}[scale=1]
-% 
-% 	\pgfplotstableread{
-% 	K	0.05	0.1	0.15	0.2	0.25	0.3	0.35	0.4	0.45
-% 1	1	1	1	1	1	1	1	1	1
-% 2	1.00001	1.00002	1.00004	1.00008	1.00013	1.00018	1.00025	1.00033	1.00042
-% 3	1.00005	1.00019	1.00043	1.00076	1.00121	1.00174	1.00241	1.00319	1.00412
-% 4	1.00032	1.00127	1.00283	1.00505	1.00802	1.01194	1.01722	1.02472	1.03666
-% 5	1.00075	1.00292	1.00645	1.0115	1.01853	1.02879	1.04539	1.07813	1.18128
-% 6	1.00087	1.00335	1.0074	1.01319	1.02137	1.03365	1.0547	1.10164	1.34588
-% 7	1.00089	1.00341	1.00751	1.01339	1.0217	1.03423	1.05589	1.10502	1.39391
-% 8	1.00089	1.00341	1.00752	1.0134	1.02174	1.03429	1.05602	1.10538	1.39995
-% 9	1.00089	1.00341	1.00752	1.01341	1.02174	1.0343	1.05603	1.10542	1.40064
-% }\datatable
-% 
-% \pgfplotstableread{
-% K	0.05	0.1	0.15	0.2	0.25	0.3	0.35	0.4	0.45
-% 1	1	1	1	1	1	1	1	1	1
-% 2	1	1.00001	1.00002	1.00003	1.00004	1.00005	1.00006	1.00006	1.00005
-% 3	1.00002	1.00008	1.00016	1.00024	1.00033	1.0004	1.00045	1.00046	1.00043
-% 4	1.00006	1.00023	1.00048	1.00077	1.00107	1.00135	1.00156	1.00166	1.0016
-% 5	1.00008	1.00029	1.00061	1.00098	1.00138	1.00176	1.00206	1.00222	1.00219
-% 6	1.00008	1.0003	1.00062	1.00101	1.00142	1.00181	1.00213	1.0023	1.00226
-% 7	1.00008	1.0003	1.00062	1.00101	1.00143	1.00182	1.00213	1.00231	1.00227
-% 8	1.00008	1.0003	1.00062	1.00101	1.00143	1.00182	1.00213	1.00231	1.00227
-% 9	1.00008	1.0003	1.00062	1.00101	1.00143	1.00182	1.00213	1.00231	1.00227
-% 
-% }\datatableA
-% 
-% \pgfplotstableread{
-% K	0.05	0.1	0.15	0.2	0.25	0.3	0.35	0.4	0.45
-% 1	1	1	1	1	1	1	1	1	1
-% 2	1	1.0001	1.0002	1.0004	1.0007	1.001	1.0014	1.002	1.0026
-% 3	1.0002	1.0007	1.0016	1.003	1.0048	1.0072	1.0101	1.0138	1.0183
-% 4	1.0004	1.0017	1.0038	1.0071	1.0116	1.0174	1.0249	1.0344	1.0462
-% 5	1.0005	1.0019	1.0044	1.0081	1.0132	1.0198	1.0283	1.0389	1.0523
-% 6	1.0005	1.0019	1.0045	1.0082	1.0133	1.0199	1.0284	1.0391	1.0524
-% 7	1.0005	1.0019	1.0045	1.0082	1.0133	1.0199	1.0284	1.0391	1.0524
-% 8	1.0005	1.0019	1.0045	1.0082	1.0133	1.0199	1.0284	1.0391	1.0524
-% 9	1.0005	1.0019	1.0045	1.0082	1.0133	1.0199	1.0284	1.0391	1.0524
-% 
-% 
-% }\datatableB
-% 
-% \pgfplotstableread{
-% 	K	0.05	0.1	0.15	0.2	0.25	0.3	0.35	0.4	0.45
-% 1	1	1	1	1	1	1	1	1	1
-% 2	0.9994	0.9995	0.999666667	0.99975	0.99984	0.999933333	1.000028571	1.0001	1.000177778
-% 3	0.9948	0.9958	0.996733333	0.9977	0.99856	0.9994	1.0002	1.0009	1.001577778
-% 4	0.972	0.9771	0.982133333	0.9871	0.99188	0.996566667	1.001114286	1.005525	1.009977778
-% 5	0.9502	0.9591	0.967733333	0.9764	0.98496	0.9935	1.002085714	1.010875	1.020644444
-% 6	0.946	0.9556	0.965	0.9743	0.98356	0.9928	1.002171429	1.011825	1.022711111
-% 7	0.9456	0.9552	0.964666667	0.97405	0.9834	0.992733333	1.002171429	1.011925	1.022911111
-% 8	0.9456	0.9552	0.964666667	0.97405	0.98336	0.992733333	1.002171429	1.011925	1.022933333
-% 9	0.9456	0.9552	0.964666667	0.97405	0.98336	0.992733333	1.002171429	1.011925	1.022933333
-% 
-% }\datatableC
-% 
-% \pgfplotstableread{
-% K	0.05	0.1	0.15	0.2	0.25	0.3	0.35	0.4	0.45
-% 1	1	1	1	1	1	1	1	1	1
-% 2	0.987	0.988	0.989	0.98995	0.99084	0.991766667	0.992657143	0.9935	0.994333333
-% 3	0.9012	0.9079	0.914533333	0.9211	0.92756	0.934	0.940342857	0.9466	0.9528
-% 4	0.7104	0.7239	0.737466667	0.7511	0.76496	0.778966667	0.793228571	0.807825	0.822866667
-% 5	0.641	0.6551	0.669066667	0.6831	0.69724	0.711533333	0.726085714	0.740925	0.7562
-% 6	0.6324	0.6463	0.660266667	0.67425	0.68836	0.702566667	0.717	0.7317	0.746822222
-% 7	0.6314	0.6454	0.659333333	0.67335	0.68744	0.701633333	0.716057143	0.73075	0.745844444
-% 8	0.6314	0.6453	0.659266667	0.67325	0.68736	0.701566667	0.715971429	0.730675	0.745755556
-% 9	0.6314	0.6453	0.659266667	0.67325	0.68736	0.701566667	0.715971429	0.730675	0.745755556
-% 
-% 
-% 
-% }\datatableD
-% 
-% \pgfplotstableread{
-% K	0.05	0.1	0.15	0.2	0.25	0.3	0.35	0.4	0.45
-% 1	1	1	1	1	1	1	1	1	1
-% 2	0.9902	0.99	0.9898	0.9897	0.98964	0.9896	0.989628571	0.989725	0.989888889
-% 3	0.9328	0.9315	0.930266667	0.9292	0.92832	0.927733333	0.927428571	0.927475	0.927955556
-% 4	0.84	0.8365	0.833266667	0.83015	0.82724	0.8246	0.822285714	0.820325	0.8188
-% 5	0.815	0.8118	0.8088	0.80595	0.80328	0.800933333	0.798828571	0.797075	0.795733333
-% 6	0.8122	0.8094	0.8066	0.80405	0.80172	0.799666667	0.797885714	0.7965	0.795533333
-% 7	0.812	0.8091	0.8064	0.8039	0.80164	0.7996	0.797885714	0.79655	0.795644444
-% 8	0.812	0.8091	0.8064	0.8039	0.8016	0.7996	0.797885714	0.79655	0.795666667
-% 9	0.812	0.8091	0.8064	0.8039	0.8016	0.7996	0.797885714	0.79655	0.795666667
-% 
-% }\datatableE
-% 
-% 
-% 
-% \begin{axis}[
-% name=plot0,height=6cm,width=5cm,
-%     title={a)},
-% %    xlabel={Temperature [\textcelsius]},
-%     ylabel={Normalized Young's modulus},
-%     xmin=1, xmax=9,
-%     ymin=0.99, ymax=1.5,
-%     xtick={1,...,9},
-% %    ytick={0,20,40,60,80},
-%     xticklabels={}, 
-%     ymajorgrids=true,
-%     xmajorgrids=true,
-%     grid style=dashed,
-% ]
-% % \end{axis}    
-% % \begin{axis}[legend pos=outer north east]
-%  
-%  
-%     \addplot table[x=K,y=0.05] {\datatable};
-% %     \addlegendentry{$\nu$=0.05}
-%     \addplot table[x=K,y=0.1] {\datatable};
-% %     \addlegendentry{$\nu$=0.1}
-%     \addplot table[x=K,y=0.15] {\datatable};
-% %     \addlegendentry{$\nu$=0.15}
-%     \addplot table[x=K,y=0.2] {\datatable};
-% %     \addlegendentry{$\nu$=0.2}
-%     \addplot table[x=K,y=0.25] {\datatable};
-% %     \addlegendentry{$\nu$=0.25}
-%     \addplot table[x=K,y=0.3] {\datatable};
-% %     \addlegendentry{$\nu$=0.3}
-%     \addplot table[x=K,y=0.35] {\datatable};
-% %     \addlegendentry{$\nu$=0.35}
-%     \addplot table[x=K,y=0.4] {\datatable};
-% %     \addlegendentry{$\nu$=0.4}
-%     \addplot table[x=K,y=0.45] {\datatable};
-% %     \addlegendentry{$\nu$=0.45}
-% \end{axis}
-% 
-% \begin{axis}[
-% name=plot1,at={($(plot0.east)+(1cm,0)$)},anchor=west,
-% height=6cm,width=5cm, title={b)},
-% %    xlabel={Temperature [\textcelsius]},
-% %    ylabel={Measured stiffness [Pa]},
-%     xmin=1, xmax=9,
-%     ymin=1, ymax=1.003,
-%     yticklabel style={/pgf/number format/fixed,
-%                   /pgf/number format/precision=3},
-%     xtick={1,...,9},
-% %    ytick={0,20,40,60,80},
-% %     xticklabels={$0$,$0.001$,$0.01$,$0.1$,$1$, $10$, $100$,
-% %     $1000$, $\infty$}, 
-%     xticklabels={}, 
-%     ymajorgrids=true,
-%     xmajorgrids=true,
-%     grid style=dashed,
-%     bar shift=0pt
-% ]
-% 
-% 	\addplot table[x=K,y=0.05] {\datatableA};
-% %      \addlegendentry{$\nu$=0.05}
-%     \addplot table[x=K,y=0.1] {\datatableA};
-% %      \addlegendentry{$\nu$=0.1}
-%     \addplot table[x=K,y=0.15] {\datatableA};
-% %     \addlegendentry{$\nu$=0.15}
-%     \addplot table[x=K,y=0.2] {\datatableA};
-% %      \addlegendentry{$\nu$=0.2}
-%     \addplot table[x=K,y=0.25] {\datatableA};
-% %      \addlegendentry{$\nu$=0.25}
-%     \addplot table[x=K,y=0.3] {\datatableA};
-% %      \addlegendentry{$\nu$=0.3}
-%     \addplot table[x=K,y=0.35] {\datatableA};
-% %      \addlegendentry{$\nu$=0.35}
-%     \addplot table[x=K,y=0.4] {\datatableA};
-% %      \addlegendentry{$\nu$=0.4}
-%     \addplot table[x=K,y=0.45] {\datatableA};
-% %     \addlegendentry{$\nu$=0.45}
-% 
-% 
-% \end{axis}
-% 
-% \begin{axis}[
-% 	name=plot2,at={($(plot1.east)+(1cm,0)$)},anchor=west, height=6cm,width=5cm,
-%     title={c)},
-% %    xlabel={Temperature [\textcelsius]},
-% %    ylabel={Measured stiffness [Pa]},
-%     xmin=1, xmax=9,
-%     ymin=1, ymax=1.06,
-%     yticklabel style={/pgf/number format/fixed,
-%                   /pgf/number format/precision=3},
-%     xtick={1,...,9},
-% %    ytick={0,20,40,60,80},
-%     xticklabels={}, 
-%     ymajorgrids=true,
-%     xmajorgrids=true,
-%     grid style=dashed,
-%     bar shift=0pt
-% ]
-% 
-% 	\addplot table[x=K,y=0.05] {\datatableB};
-% %     \addlegendentry{$\nu$=0.05}
-%     \addplot table[x=K,y=0.1] {\datatableB};
-% %     \addlegendentry{$\nu$=0.1}
-%     \addplot table[x=K,y=0.15] {\datatableB};
-% %    \addlegendentry{$\nu$=0.15}
-%     \addplot table[x=K,y=0.2] {\datatableB};
-% %     \addlegendentry{$\nu$=0.2}
-%     \addplot table[x=K,y=0.25] {\datatableB};
-% %     \addlegendentry{$\nu$=0.25}
-%     \addplot table[x=K,y=0.3] {\datatableB};
-% %     \addlegendentry{$\nu$=0.3}
-%     \addplot table[x=K,y=0.35] {\datatableB};
-% %     \addlegendentry{$\nu$=0.35}
-%     \addplot table[x=K,y=0.4] {\datatableB};
-% %     \addlegendentry{$\nu$=0.4}
-%     \addplot table[x=K,y=0.45] {\datatableB};
-% %    \addlegendentry{$\nu$=0.45}
-% 
-% 
-% \end{axis}
-% 
-% \begin{axis}[name=plot3,at={($(plot0.south)-(0,1cm)$)},anchor=north,
-% height=6cm,width=5cm, title={a')},
-% %    xlabel={Temperature [\textcelsius]},
-%     ylabel={Normalized Poisson's ratio},
-%     xmin=1, xmax=9,
-%     ymin=0.94, ymax=1.03,
-%     xtick={1,...,9},
-% %    ytick={0,20,40,60,80},
-%     xticklabels={$0$,$0.001$,$0.01$,$0.1$,$1$, $10$, $100$,
-%     $1000$, $\infty$}, 
-%     x tick label style={yshift=-1ex,
-%     rotate=45,anchor=east},
-%     ymajorgrids=true,
-%     xmajorgrids=true,
-%     grid style=dashed,
-% ]
-% % \end{axis}    
-% % \begin{axis}[legend pos=outer north east]
-%  
-%  
-%     \addplot table[x=K,y=0.05] {\datatableC};
-% %     \addlegendentry{$\nu$=0.05}
-%     \addplot table[x=K,y=0.1] {\datatableC};
-% %     \addlegendentry{$\nu$=0.1}
-%     \addplot table[x=K,y=0.15] {\datatableC};
-% %     \addlegendentry{$\nu$=0.15}
-%     \addplot table[x=K,y=0.2] {\datatableC};
-% %     \addlegendentry{$\nu$=0.2}
-%     \addplot table[x=K,y=0.25] {\datatableC};
-% %     \addlegendentry{$\nu$=0.25}
-%     \addplot table[x=K,y=0.3] {\datatableC};
-% %     \addlegendentry{$\nu$=0.3}
-%     \addplot table[x=K,y=0.35] {\datatableC};
-% %     \addlegendentry{$\nu$=0.35}
-%     \addplot table[x=K,y=0.4] {\datatableC};
-% %     \addlegendentry{$\nu$=0.4}
-%     \addplot table[x=K,y=0.45] {\datatableC};
-% %     \addlegendentry{$\nu$=0.45}
-% \end{axis}
-% 
-% \begin{axis}[legend style={at={(0.5,-0.2)}, legend columns=5, anchor=north},
-% 	name=plot4,at={($(plot1.south)-(0,1cm)$)},anchor=north, height=6cm,width=5cm,
-%     title={b')},
-% %    xlabel={Temperature [\textcelsius]},
-% %    ylabel={Measured stiffness [Pa]},
-%     xmin=1, xmax=9,
-%     ymin=0.6, ymax=1.1,
-%     yticklabel style={/pgf/number format/fixed,
-%                   /pgf/number format/precision=3},
-%     xtick={1,...,9},
-% %    ytick={0,20,40,60,80},
-%     xticklabels={$0$,$0.001$,$0.01$,$0.1$,$1$, $10$, $100$,
-%     $1000$, $\infty$}, 
-%     x tick label style={yshift=-1ex,
-%         rotate=45,anchor=east},
-%     ymajorgrids=true,
-%     xmajorgrids=true,
-%     grid style=dashed,
-%     bar shift=0pt
-% ]
-% 
-% 	\addplot table[x=K,y=0.05] {\datatableD};
-%     \addlegendentry{$\nu$=0.05}
-%     \addplot table[x=K,y=0.1] {\datatableD};
-%     \addlegendentry{$\nu$=0.1}
-%     \addplot table[x=K,y=0.15] {\datatableD};
-%    \addlegendentry{$\nu$=0.15}
-%     \addplot table[x=K,y=0.2] {\datatableD};
-%     \addlegendentry{$\nu$=0.2}
-%     \addplot table[x=K,y=0.25] {\datatableD};
-%     \addlegendentry{$\nu$=0.25}
-%     \addplot table[x=K,y=0.3] {\datatableD};
-%     \addlegendentry{$\nu$=0.3}
-%     \addplot table[x=K,y=0.35] {\datatableD};
-%     \addlegendentry{$\nu$=0.35}
-%     \addplot table[x=K,y=0.4] {\datatableD};
-%     \addlegendentry{$\nu$=0.4}
-%     \addplot table[x=K,y=0.45] {\datatableD};
-%    \addlegendentry{$\nu$=0.45}
-% 
-% \end{axis}
-% 
-% 
-% \begin{axis}[
-% 	name=plot5,at={($(plot2.south)-(0,1cm)$)},anchor=north, height=6cm,width=5cm,
-%     title={c')},
-% %    xlabel={Temperature [\textcelsius]},
-% %    ylabel={Measured stiffness [Pa]},
-%     xmin=1, xmax=9,
-%     ymin=0.79, ymax=1.01,
-%     yticklabel style={/pgf/number format/fixed,
-%                   /pgf/number format/precision=3},
-%     xtick={1,...,9},
-% %    ytick={0,20,40,60,80},
-%     xticklabels={$0$,$0.001$,$0.01$,$0.1$,$1$, $10$, $100$,
-%     $1000$, $\infty$}, 
-%         x tick label style={yshift=-1ex,
-%         rotate=45,anchor=east		},
-%     ymajorgrids=true,
-%     xmajorgrids=true,
-%     grid style=dashed,
-%     bar shift=0pt
-% ]
-% 
-% 	\addplot table[x=K,y=0.05] {\datatableE};
-% %     \addlegendentry{$\nu$=0.05}
-%     \addplot table[x=K,y=0.1] {\datatableE};
-% %     \addlegendentry{$\nu$=0.1}
-%     \addplot table[x=K,y=0.15] {\datatableE};
-% %    \addlegendentry{$\nu$=0.15}
-%     \addplot table[x=K,y=0.2] {\datatableE};
-% %     \addlegendentry{$\nu$=0.2}
-%     \addplot table[x=K,y=0.25] {\datatableE};
-% %     \addlegendentry{$\nu$=0.25}
-%     \addplot table[x=K,y=0.3] {\datatableE};
-% %     \addlegendentry{$\nu$=0.3}
-%     \addplot table[x=K,y=0.35] {\datatableE};
-% %     \addlegendentry{$\nu$=0.35}
-%     \addplot table[x=K,y=0.4] {\datatableE};
-% %     \addlegendentry{$\nu$=0.4}
-%     \addplot table[x=K,y=0.45] {\datatableE};
-% %    \addlegendentry{$\nu$=0.45}
-% 
-% \end{axis}
-% 
-% 
-% \end{tikzpicture}
-% 
-% 
-% \captionsetup{justification=centering}
-% \caption{a)Simulated Young's moduli error values of material with
-% different given Poisson's ratio ($\nu_{12}$) values for isotropic material, b)
-% $E_L$, and c) $E_1, E_2$ for transverse-isotropic material.
-% a')Simulated Poisson's ratio error values of material with different given
-% Poisson's ratio ($\nu_{12}$) values for isotropic material, b')
-% $\nu_{31},\nu_{32}$ and c') $\nu_{12}$ for transverse-isotropic material.}
-% 
-% 
-% \label{fig:isovstriso}
-% \end{figure}
-% 
-% \end{center}
-
-% \begin{center}% note that \centering uses less vspace...
-% \begin{figure}[!ht]
-% \pgfplotsset{every axis legend/.append style={
-% 		at={(0.5,1.03)},
-% 		anchor=north}}
-% 
-% \begin{tikzpicture}[scale=1]
-% 
-% 	\pgfplotstableread{
-% 	K	0.05	0.1	0.15	0.2	0.25	0.3	0.35	0.4	0.45
-% 1	1	1	1	1	1	1	1	1	1
-% 2	0.9994	0.9995	0.999666667	0.99975	0.99984	0.999933333	1.000028571	1.0001	1.000177778
-% 3	0.9948	0.9958	0.996733333	0.9977	0.99856	0.9994	1.0002	1.0009	1.001577778
-% 4	0.972	0.9771	0.982133333	0.9871	0.99188	0.996566667	1.001114286	1.005525	1.009977778
-% 5	0.9502	0.9591	0.967733333	0.9764	0.98496	0.9935	1.002085714	1.010875	1.020644444
-% 6	0.946	0.9556	0.965	0.9743	0.98356	0.9928	1.002171429	1.011825	1.022711111
-% 7	0.9456	0.9552	0.964666667	0.97405	0.9834	0.992733333	1.002171429	1.011925	1.022911111
-% 8	0.9456	0.9552	0.964666667	0.97405	0.98336	0.992733333	1.002171429	1.011925	1.022933333
-% 9	0.9456	0.9552	0.964666667	0.97405	0.98336	0.992733333	1.002171429	1.011925	1.022933333
-% 
-% }\datatable
-% 
-% \pgfplotstableread{
-% K	0.05	0.1	0.15	0.2	0.25	0.3	0.35	0.4	0.45
-% 1	1	1	1	1	1	1	1	1	1
-% 2	0.987	0.988	0.989	0.98995	0.99084	0.991766667	0.992657143	0.9935	0.994333333
-% 3	0.9012	0.9079	0.914533333	0.9211	0.92756	0.934	0.940342857	0.9466	0.9528
-% 4	0.7104	0.7239	0.737466667	0.7511	0.76496	0.778966667	0.793228571	0.807825	0.822866667
-% 5	0.641	0.6551	0.669066667	0.6831	0.69724	0.711533333	0.726085714	0.740925	0.7562
-% 6	0.6324	0.6463	0.660266667	0.67425	0.68836	0.702566667	0.717	0.7317	0.746822222
-% 7	0.6314	0.6454	0.659333333	0.67335	0.68744	0.701633333	0.716057143	0.73075	0.745844444
-% 8	0.6314	0.6453	0.659266667	0.67325	0.68736	0.701566667	0.715971429	0.730675	0.745755556
-% 9	0.6314	0.6453	0.659266667	0.67325	0.68736	0.701566667	0.715971429	0.730675	0.745755556
-% 
-% 
-% 
-% }\datatableA
-% 
-% \pgfplotstableread{
-% K	0.05	0.1	0.15	0.2	0.25	0.3	0.35	0.4	0.45
-% 1	1	1	1	1	1	1	1	1	1
-% 2	0.9902	0.99	0.9898	0.9897	0.98964	0.9896	0.989628571	0.989725	0.989888889
-% 3	0.9328	0.9315	0.930266667	0.9292	0.92832	0.927733333	0.927428571	0.927475	0.927955556
-% 4	0.84	0.8365	0.833266667	0.83015	0.82724	0.8246	0.822285714	0.820325	0.8188
-% 5	0.815	0.8118	0.8088	0.80595	0.80328	0.800933333	0.798828571	0.797075	0.795733333
-% 6	0.8122	0.8094	0.8066	0.80405	0.80172	0.799666667	0.797885714	0.7965	0.795533333
-% 7	0.812	0.8091	0.8064	0.8039	0.80164	0.7996	0.797885714	0.79655	0.795644444
-% 8	0.812	0.8091	0.8064	0.8039	0.8016	0.7996	0.797885714	0.79655	0.795666667
-% 9	0.812	0.8091	0.8064	0.8039	0.8016	0.7996	0.797885714	0.79655	0.795666667
-% 
-% 
-% 
-% 
-% }\datatableB
-% 
-% 
-% 
-% \begin{axis}[
-% name=plot0,height=6cm,width=6cm,
-%     title={a)},
-% %    xlabel={Temperature [\textcelsius]},
-%     ylabel={Measured Poisson's ratio[-]},
-%     xmin=1, xmax=9,
-%     ymin=0.94, ymax=1.03,
-%     xtick={1,...,9},
-% %    ytick={0,20,40,60,80},
-%     xticklabels={$0$,$0.001$,$0.01$,$0.1$,$1$, $10$, $100$,
-%     $1000$, $\infty$}, 
-%     x tick label style={yshift=-1ex,
-%     rotate=45,anchor=east},
-%     ymajorgrids=true,
-%     grid style=dashed,
-% ]
-% % \end{axis}    
-% % \begin{axis}[legend pos=outer north east]
-%  
-%  
-%     \addplot table[x=K,y=0.05] {\datatable};
-% %     \addlegendentry{$\nu$=0.05}
-%     \addplot table[x=K,y=0.1] {\datatable};
-% %     \addlegendentry{$\nu$=0.1}
-%     \addplot table[x=K,y=0.15] {\datatable};
-% %     \addlegendentry{$\nu$=0.15}
-%     \addplot table[x=K,y=0.2] {\datatable};
-% %     \addlegendentry{$\nu$=0.2}
-%     \addplot table[x=K,y=0.25] {\datatable};
-% %     \addlegendentry{$\nu$=0.25}
-%     \addplot table[x=K,y=0.3] {\datatable};
-% %     \addlegendentry{$\nu$=0.3}
-%     \addplot table[x=K,y=0.35] {\datatable};
-% %     \addlegendentry{$\nu$=0.35}
-%     \addplot table[x=K,y=0.4] {\datatable};
-% %     \addlegendentry{$\nu$=0.4}
-%     \addplot table[x=K,y=0.45] {\datatable};
-% %     \addlegendentry{$\nu$=0.45}
-% \end{axis}
-% 
-% \begin{axis}[legend pos=outer north east,
-% 	name=plot2,at={($(plot0.east)+(1cm,0)$)},anchor=west, height=6cm,width=6cm,
-%     title={b)},
-% %    xlabel={Temperature [\textcelsius]},
-% %    ylabel={Measured stiffness [Pa]},
-%     xmin=1, xmax=9,
-%     ymin=0.6, ymax=1.1,
-%     yticklabel style={/pgf/number format/fixed,
-%                   /pgf/number format/precision=3},
-%     xtick={1,...,9},
-% %    ytick={0,20,40,60,80},
-%     xticklabels={$0$,$0.001$,$0.01$,$0.1$,$1$, $10$, $100$,
-%     $1000$, $\infty$}, 
-%     x tick label style={yshift=-1ex,
-%         rotate=45,anchor=east},
-%     ymajorgrids=true,
-%     grid style=dashed,
-%     bar shift=0pt
-% ]
-% 
-% 	\addplot table[x=K,y=0.05] {\datatableA};
-%     \addlegendentry{$\nu$=0.05}
-%     \addplot table[x=K,y=0.1] {\datatableA};
-%     \addlegendentry{$\nu$=0.1}
-%     \addplot table[x=K,y=0.15] {\datatableA};
-%    \addlegendentry{$\nu$=0.15}
-%     \addplot table[x=K,y=0.2] {\datatableA};
-%     \addlegendentry{$\nu$=0.2}
-%     \addplot table[x=K,y=0.25] {\datatableA};
-%     \addlegendentry{$\nu$=0.25}
-%     \addplot table[x=K,y=0.3] {\datatableA};
-%     \addlegendentry{$\nu$=0.3}
-%     \addplot table[x=K,y=0.35] {\datatableA};
-%     \addlegendentry{$\nu$=0.35}
-%     \addplot table[x=K,y=0.4] {\datatableA};
-%     \addlegendentry{$\nu$=0.4}
-%     \addplot table[x=K,y=0.45] {\datatableA};
-%    \addlegendentry{$\nu$=0.45}
-% 
-% 
-% \end{axis}
-% 
-% 
-% \end{tikzpicture}
-% 
-% 
-% \captionsetup{justification=centering}
-% \caption{Relations between Poisson's ratio and spring
-% coefficient \textit{K} for a) isotropic material and b) transverse isotropic
-% $a=10$ material with different input Poisson's ratios $\nu_{12}$.}
-% 
-% 
-% \label{fig:isovstriso}
-% \end{figure}
-% 
-% \end{center}
-
-
-
-
-
-
-
-
-
-
-
 
 \color{black}
 
-% \begin{center}
-% \begin{figure}[!ht]
-% \pgfplotsset{every axis legend/.append style={
-% 		at={(0.5,1.03)},
-% 		anchor=north}}
-% 
-% \begin{tikzpicture}[scale=1]
-% 
-% \pgfplotstableread{
-% nuxy	tr0	tr0.1	trINF	i0	i0.1	iINF
-% 0.05	1	0.8322	0.7962	1	0.9382	0.8238
-% 0.1	1	0.8404	0.8063	1	0.942	0.8349
-% 0.15	1	0.848533333	0.816	1	0.946266667	0.846
-% 0.2	1	0.8565	0.82535	1	0.951	0.8571
-% 0.25	1	0.86428	0.8344	1	0.95616	0.86792
-% 0.3	1	0.871933333	0.843166667	1	0.961866667	0.878266667
-% 0.35	1	0.879485714	0.851657143	1	0.968228571	0.887942857
-% 0.4	1	0.886975	0.8599	1	0.975575	0.89565
-% 0.45	1	0.894466667	0.867955556	1	0.984644444	0.8698
-% 
-% 
-% }\nutotarea
-% 
-% \pgfplotstableread{
-% nuxy	tr0	tr0.1	trINF	i0	i0.1	iINF
-% 0.05	1	0.926	0.91	1	0.9812	0.9456
-% 0.1	1	0.9342	0.9201	1	0.9847	0.9552
-% 0.15	1	0.9422	0.9296	1	0.988066667	0.964666667
-% 0.2	1	0.94975	0.9387	1	0.99145	0.97405
-% 0.25	1	0.95704	0.9474	1	0.99464	0.98336
-% 0.3	1	0.963933333	0.9557	1	0.997766667	0.992733333
-% 0.35	1	0.970542857	0.963628571	1	1.000742857	1.002171429
-% 0.4	1	0.9768	0.971175	1	1.00355	1.011925
-% 0.45	1	0.982755556	0.978377778	1	1.006288889	1.022933333
-% 
-% }\nuchosenarea
-% 
-% \pgfplotstableread{
-% nuxy	tr0	tr0.1	trINF	i0	i0.1	iINF
-% 0.05	1	0.832	0.794	1	0.938	0.818
-% 0.1	1	0.839	0.804	1	0.941	0.825
-% 0.15	1	0.846666667	0.813333333	1	0.946666667	0.833333333
-% 0.2	1	0.855	0.82	1	0.95	0.84
-% 0.25	1	0.86	0.828	1	0.956	0.852
-% 0.3	1	0.866666667	0.836666667	1	0.96	0.866666667
-% 0.35	1	0.874285714	0.845714286	1	0.968571429	0.882857143
-% 0.4	1	0.8825	0.855	1	0.975	0.905
-% 0.45	1	0.891111111	0.862222222	1	0.984444444	0.931111111
-% 
-% }\nuexperiment
-% 
-% 
-% 
-% 
-% \begin{axis}[name=plot3,at={($(plot0.south)-(0,1cm)$)},anchor=north,
-% height=6cm,width=5cm, title={a')},
-% %    xlabel={Temperature [\textcelsius]},
-%     ylabel={Measured Poisson's ratio [-]},
-%     xmin=0.05, xmax=0.45,
-%     ymin=0.75, ymax=1.01,
-%         yticklabel style={/pgf/number format/fixed,
-%                   /pgf/number format/precision=3},
-% %     xtick={1,...,9},
-% %    ytick={0,20,40,60,80},
-% %     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
-% %     $K=1000$, $K=\infty$}, 
-% %     x tick label style={
-% %     rotate=60,anchor=east},
-%     ymajorgrids=true,
-%     grid style=dashed,
-% ]
-% % \end{axis}    
-% % \begin{axis}[legend pos=outer north east]
-%  
-%  
-%     \addplot table[x=nuxy,y=tr0	] {\nutotarea}; \label{nuk1}
-% %     \addlegendentry{$\nu$=0.05}
-%     \addplot table[x=nuxy,y=tr0.1 ] {\nutotarea}; \label{nuk2}
-% %     \addlegendentry{$\nu$=0.1}
-%     \addplot table[x=nuxy,y=trINF ] {\nutotarea}; \label{nuk3}
-% %     \addlegendentry{$\nu$=0.15}
-% 
-% \end{axis}
-% 
-% 
-% % plot transviso chosen area  DSP
-% 
-% \begin{axis}[legend pos=outer north east,
-% 	name=c2,at={($(c1.east)+(1cm,0)$)},anchor=west, height=4cm, width=4cm,
-%     title={b')},
-%     xlabel={Given Poisson's ratio [-]},
-% %    ylabel={Measured stiffness [Pa]},
-%     xmin=0.05, xmax=0.45,
-%     ymin=0.75, ymax=1.01,
-% %     yticklabel style={/pgf/number format/fixed,
-% %                   /pgf/number format/precision=3},
-% %     xtick={1,...,9},
-% %    ytick={0,20,40,60,80},
-% %     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
-% %     $K=1000$, $K=\infty$},
-% %     x tick label style={
-% %         rotate=60,anchor=east},
-%     ymajorgrids=true,
-%     grid style=dashed,
-%     bar shift=0pt
-% ]
-% 
-%     \addplot table[x=nuxy,y=tr0	] {\nuchosenarea}; \label{nuk1}
-% %     \addlegendentry{$\nu$=0.05}
-%     \addplot table[x=nuxy,y=tr0.1 ] {\nuchosenarea}; \label{nuk2}
-% %     \addlegendentry{$\nu$=0.1}
-%     \addplot table[x=nuxy,y=trINF ] {\nuchosenarea}; \label{nuk3}
-% %     \addlegendentry{$\nu$=0.15}
-% 
-% %Experimental approach
-% 
-% \end{axis}
-% 
-% 
-% \begin{axis}[legend pos=outer north east,
-% 	name=c3,at={($(c2.east)+(1cm,0)$)},anchor=west, height=4cm,width=4cm,
-%     title={c')},
-% %    xlabel={Temperature [\textcelsius]},
-% %    ylabel={Measured stiffness [Pa]},
-%     xmin=0.05, xmax=0.45,
-%     ymin=0.75, ymax=1.01,
-% %     yticklabel style={/pgf/number format/fixed,
-% %                   /pgf/number format/precision=3},
-% %     xtick={1,...,9},
-% %    ytick={0,20,40,60,80},
-% %     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
-% %     $K=1000$, $K=\infty$},
-% %     x tick label style={
-% %         rotate=60,anchor=east},
-%     ymajorgrids=true,
-%     grid style=dashed,
-%     bar shift=0pt
-% ]
-% 
-%     \addplot table[x=nuxy,y=tr0	] {\nuexperiment}; \label{nuk1}
-% %     \addlegendentry{$\nu$=0.05}
-%     \addplot table[x=nuxy,y=tr0.1 ] {\nuexperiment}; \label{nuk2}
-% %     \addlegendentry{$\nu$=0.1}
-%     \addplot table[x=nuxy,y=trINF ] {\nuexperiment}; \label{nuk3}
-% %     \addlegendentry{$\nu$=0.15}
-% 
-% 
-% 
-% 
-% \end{axis}
-% 
-% 
-% \end{tikzpicture}
-% \captionsetup{justification=centering}
-% \caption{Measured vs. given Poisson's ratio
-% ($\nu_{31}$, $\nu_{32}$) in transverse-isotropic material for spring
-% coefficients $K=0$ (\ref{k1}), $K=0.1$ (\ref{k2}) and $K=\infty$ (\ref{k3});\\
-% \color{red}{a) total area of interest, b) chosen area of interest c)
-% experiment.}}
-% 
-% 
-% \end{figure}
-% \end{center}
+
+\section{Results and discussion}
+The simulated strain results can be used to compare the errors in the estimated elastic parameters and the suitability of the different strain measures.
+There is an unlimited number of parametric simulations that could be done, and we limit ourselves to a set that we consider relevant for wood and composite applications. 
 
 
 
+\subsection{ Barrelling in Isotropic and Transversely isotropic material}
+% The results of the simulation shows that isotropic material barrels
+% significantly more than transversely isotropic and orthotropic materials. \\	
 
-
-
-
-
-
-\section{Results and Discussion}
-The simulated strain results were acquired in order to obtain the tolerance
-bounds and compare the suitability of strain measurements.
-The set of experimental and simulations are compared. The results of the simulations can be used for the
-estimation of error that appears due to different strain measurement principles.
-
-\begin{description}
-\item{\textit{ Barrelling in Isotropic and Transversely isotropic material}}
-\end{description}
-The results of the simulation shows that isotropic material barrels
-significantly more than transversely isotropic and orthotropic materials. \\	
-Three plots can be compared in Figure \ref{fig:isovstriso}. 
-From the plots a)-c) one can compare the difference between the measured and actual 
-Young's moduli depending on the Poisson's ratio versus the
-displacement of the top edge. The displacement is represented as a displacement
-factor which is relation between the actual $\delta$ and maximum
-displacement $\delta_{max}$ that is based on factor $K$. For all simulations the
-barrelling is leading to an overestimation of the Young's moduli. This is caused by the strain field in the area close to the edges, where constrained material has a stiffer response.
+Elastic moduli and Poisson’s ratios normalized with the correct values are presented in Figure \ref{fig:isovstriso} as a function of relative slippage due to platen friction and Poisson’s ratios for the isotropic case (a) and the transversely isotropic case, (b) and (c). 
+For all simulations the
+barrelling is leading to an overestimation of the Young's moduli, as shown in Figures \ref{fig:isovstriso}(a), (b) and (c). This is caused by the perturbed strain field in the area close to the upper and lower edges, where constrained material has a stiffer response. Noting the difference in scales of the $y$-axes, it is clear that the errors in Young’s modulus is significantly higher for the isotropic case than for the transversely isotropic case. This effect is larger for LT plane (loading in the L direction) than for the TT plane, comparing Figures \ref{fig:isovstriso}(b) and (c). As expected, the error is becomes larger for increasing Poisson’s ratio $\nu$. The perturbed zones are shown in Figure \ref{fig:Error} in term of local error on the examined face, where the modulus is determined simply as $\sigma_y/{\epsilon_y(x,y)}$ in (a), (b) and (c), and the Poisson ratio is determined as $-\epsilon_x/{\epsilon_y(x,y)}$. 
 In general, for increasing Poisson's ratio, the error becomes larger. 
-For the transversely isotropic material in Figure
-\ref{fig:isovstriso} $b,c$ the error in Young's moduli is less in
-transverse direction $T$ than in the axial direction $L$.
-This difference in behaviour can be discussed by examining the strain fields for isotropic and 
-transversely isotropic materials shown in of Figure
-\ref{fig:Error} a, b and c. One can
-observe the cones of the constraining effect that are originating from the top
-and bottom. The constraining effect is dominant on the $25\%$ of height
-from the horizontal edges of the model. Whereas in transversely isotropic
-material in the $TT$ plane , the is spread less in the surface area.\\
-Observation of Poisson's ratio values showed the opposite behaviour concerning
-the measurement.
-Figure \ref{fig:isovstriso} $a'$ showed that the relative error for the
-Poisson's ratio is less significant in isotropic material. This is supported
-with the corresponding strain field in Figure \ref{fig:Error} $a'$. The normal
-Poisson's ratio values are within the central area of the model. 
-Alternatively Figure \ref{fig:isovstriso} $b'$ and $c'$ describing the effect
-of barreling on the measured materials Poisson's ratio in transversely isotropic material. 
-It is seen that for the $LT$ planes the constraining effect influence the
-measurements significantly. For example, for the displacement factor $\delta/\delta_{max}\approx0.2 $ where $K=0.1$,  the Poisson's ratio is
-underestimated by $30-40\%$.
-The same situation is for the plane $TT$ but the effect is less severe.
-Referring to Figure \ref{fig:Error} $a-c$  we can see that the constraining effect is
-crucial for the estimation of the Poisson's ratio. Blue coloured area where the error is above $5\%$ spreading from the horizontal edges of 
-the model throughout the central area of the material. So the most accurate
-estimation of Poisson's ratio is in the central area close to the vertical
-edges of the cube as it seen in Figure \ref{fig:Error} $c,d$. However it was
-mentioned that usage of strain gauges are usually placed in the center of the
-sample, whereas presented results are supporting the fact that central
-region of the sample is not always beneficial for the measurements. In this
-case the usage of DSP is preferable. 
+For the transversely isotropic material in Figures
+\ref{fig:isovstriso} (b) and (c) the error in Young's moduli is less in
+transverse direction T than in the axial direction L.
+This difference in behavior can be discussed by examining the spatial variation of elastic parameters determined from strain fields for isotropic and 
+transversely isotropic materials shown in Figure 
+\ref{fig:Error} (a-c). One can
+observe the patterns of the constraining effect that originate from the top
+and bottom of the cube face where the sample is in contact with the platens. The constraining effect is significant in the zones within $20\%$ of height
+from the horizontal edges of the model. 
+Figure \ref{fig:isovstriso} (a’) shows that the relative error for the
+Poisson's ratio is smaller in isotropic material than in transversely isotropic
+materials in Figure \ref{fig:isovstriso} (b’,c’). This can also be observed
+by the with the corresponding strain ratio field in Figure \ref{fig:Error} (a').
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{BarellingError.pdf}
+\label{fig:Error}
+\caption{\label{fig:Error} Simulated results of error for measured Young's
+moduli and Poisson's ratio of isotropic and transversely isotropic
+material. ($K=0.1; \nu=0.3; \delta/\delta_{max}\approx0.2$)}
+
+\end{figure}
+
+The green zones corresponding to vanishing error is found in the central band of
+the numerical model. For the transversely isotropic cases, Figures
+\ref{fig:isovstriso} (b'), (LT plane) and (c'), (TT plane) the error is
+non-negligible also in the central part of the cube face. The effect is stronger for the LT plane, where the perturbed zones extends over a larger area.
+For instance, for the displacement factor $\delta/\delta_{max}\approx0.2 $ (where $K=0.1$),  the Poisson's ratio is
+underestimated by as much as $30-40\%$, $cf.$\ Figure \ref{fig:isovstriso} (b’).
+The same situation is for the TT plane  but the effect is not as critical as the LT plane.
+Referring to Figure \ref{fig:Error} (a’-c’),we can see that the constraining
+effect is significant for the case of the Poisson's ratio. Blue colored area where the error is above $5\%$ tend to spread from the horizontal edges of 
+the model throughout the central area of the material. The most accurate
+estimation of Poisson's ratio would be in the central area close to the vertical
+edges of the cube as it seen in Figures \ref{fig:Error} (c’) and (d’). However,
+rosette or crossed strain gauges are usually placed in the center of the specimen, where constraint effects persist for transverse isotropic specimens in the LT plane. Full-field DSP measurements allows direct determination of Poisson ratios in the unperturbed zones closer to the face edges. 
 
 
-\begin{description}
-\item{\textit{Strain measurement}}
-\end{description}
-Measured mechanical properties varies with strain measurement methods. In
-present work, three methods were measured and compared. The
-first method is shown in Figure \ref{fig:strainmethods}$b$, where the total area
-including the constrained region is taken for measuring the strain.  
-Here the error originates from the underestimated axial strains that are the
-reason of constraining effect of horizontal edges. However the evaluation of
-Poisson's ratio has less error due to inclusion of the total area into the
-strain evaluations. Strain field in Figure \ref{fig:Error}$b$ shows that total
-area has more regions where error is not significant.
+\subsection{Effects of strain measurement}
+The measured Young’s moduli and Poisson ratios vary with employed strain measurement methods. In the
+present work, four methods were used in the simulations and compared. The
+first method is shown in Figure \ref{fig:strainmethods}(a), was a full-field.
+Here, the error in Young’s moduli originates from the underestimated axial strains that are the
+reason of constraining effect close to the platens. The evaluation of
+Poisson's ratio shows large error in comparison to the central band and strain
+gauge methods  due to inclusion of the total surface area into the strain
+evaluations. One can observe strain field in Figure \ref{fig:Error}(b) where the total area includes the close to the constrained regions where the error is dominating.
+
 
 \begin{center}
 \begin{figure}[h]
@@ -1778,17 +1089,18 @@ nuxy	tr0	tr0.1	trINF
 
 \begin{axis}[
 name=b1,height=5cm,width=\textwidth/3.5,
-    title={(a)},
+    align =center,
+    title={Full-field \\ (a)},
 %    xlabel={Temperature [\textcelsius]},
     ylabel={Normalized Young's modulus},
     xmin=0.05, xmax=0.45,
-    ymin=0.999, ymax=1.02,
+    ymin=0.999, ymax=1.1,
         yticklabel style={/pgf/number format/fixed,
                   /pgf/number format/precision=3},
 %     xtick={1,...,9},
-%    ytick={0,20,40,60,80},
-%     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
-%     $K=1000$, $K=\infty$}, 
+%   ytick={0,20,40,60,80},
+%      xticklabels={$0$,$1$,$.1$,$.2$,$.3$, $.4$, $6$,
+%      $7$, $8$},
 %     x tick label style={
 %     rotate=60,anchor=east},
     ymajorgrids=true,
@@ -1798,12 +1110,20 @@ name=b1,height=5cm,width=\textwidth/3.5,
 % \begin{axis}[legend pos=outer north east]
  
  
-    \addplot table[x=nuxy,y=tr0	] {\totarea}; \label{k1}
+    \addplot table[x=nuxy,y=tr0	] {\chosenarea}; \label{k1}
 %     \addlegendentry{$\nu$=0.05}
-    \addplot table[x=nuxy,y=tr0.1 ] {\totarea}; \label{k2}
+    \addplot table[x=nuxy,y=tr0.1 ] {\chosenarea}; \label{k2}
 %     \addlegendentry{$\nu$=0.1}
-    \addplot table[x=nuxy,y=trINF ] {\totarea}; \label{k3}
+    \addplot table[x=nuxy,y=trINF ] {\chosenarea}; \label{k3}
 %     \addlegendentry{$\nu$=0.15}
+
+
+\node at (axis cs:0.05,1.085) [anchor=west,brown] {\footnotesize
+{$\delta/\delta_{max}=0$}};
+\node at (axis cs:0.05,1.075) [anchor=west,red] {\footnotesize
+{$\delta/\delta_{max}\approx0.2$}};
+\node at (axis cs:0.05,1.065) [anchor=west,blue] {\footnotesize
+{$\delta/\delta_{max}=1$}};
 
 \end{axis}
 
@@ -1812,11 +1132,13 @@ name=b1,height=5cm,width=\textwidth/3.5,
 
 \begin{axis}[legend pos=outer north east,
 	name=b2,at={($(b1.east)+(1cm,0)$)},anchor=west, height=5cm,
-	width=\textwidth/3.5, title={(b)},
+	width=\textwidth/3.5,
+	align =center,
+	title={Central band\\(b)},
 % xlabel={Poisson's ratio [-]},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0.05, xmax=0.45,
-    ymin=0.999, ymax=1.1,
+    ymin=0.999, ymax=1.02,
     yticklabel style={/pgf/number format/fixed,
                   /pgf/number format/precision=4},
 %     xtick={1,...,9},
@@ -1831,11 +1153,11 @@ name=b1,height=5cm,width=\textwidth/3.5,
     bar shift=0pt
 ]
 
-    \addplot table[x=nuxy,y=tr0	] {\chosenarea}; \label{k1}
+    \addplot table[x=nuxy,y=tr0	] {\totarea}; \label{k1}
 %     \addlegendentry{$\nu$=0.05}
-    \addplot table[x=nuxy,y=tr0.1 ] {\chosenarea}; \label{k2}
+    \addplot table[x=nuxy,y=tr0.1 ] {\totarea}; \label{k2}
 %     \addlegendentry{$\nu$=0.1}
-    \addplot table[x=nuxy,y=trINF ] {\chosenarea}; \label{k3}
+    \addplot table[x=nuxy,y=trINF ] {\totarea}; \label{k3}
 %     \addlegendentry{$\nu$=0.15}
 
 %Experimental approach
@@ -1845,7 +1167,8 @@ name=b1,height=5cm,width=\textwidth/3.5,
 
 \begin{axis}[legend pos=outer north east,
 	name=b3,at={($(b2.east)+(1cm,0)$)},anchor=west,
-	height=5cm,width=\textwidth/3.5, title={(c)},
+	height=5cm,width=\textwidth/3.5, 	align =center,
+	title={Strain gauges\\(c)},
 %    xlabel={Temperature [\textcelsius]},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0.05, xmax=0.45,
@@ -1878,7 +1201,8 @@ name=b1,height=5cm,width=\textwidth/3.5,
 
 \begin{axis}[legend pos=outer north east,
 	name=b3a,at={($(b3.east)+(1cm,0)$)},anchor=west,
-	height=5cm,width=\textwidth/3.5, title={(d)},
+	height=5cm,width=\textwidth/3.5, 	align =center,
+	title={Basic method\\(d)},,
 %    xlabel={Temperature [\textcelsius]},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0.05, xmax=0.45,
@@ -1911,7 +1235,7 @@ name=b1,height=5cm,width=\textwidth/3.5,
 \begin{axis}
 [name=b4,at={($(b2.south)-(0,1.5cm)$)},anchor=north,
 height=4cm,width=\textwidth/3.5, title={(b')},
-    xlabel={Given Poisson's ratio [-]},
+    xlabel={\hspace{3cm}Given Poisson's ratio [-]},
 %     ylabel={Error Poisson's ratio},
     xmin=0.05, xmax=0.45,
     ymin=0.1, ymax=1.01,
@@ -1930,11 +1254,11 @@ height=4cm,width=\textwidth/3.5, title={(b')},
 % \begin{axis}[legend pos=outer north east]
  
  
-    \addplot table[x=nuxy,y=tr0	] {\nutotarea}; \label{nuk1}
+    \addplot table[x=nuxy,y=tr0	] {\nuchosenarea}; \label{nuk1}
 %     \addlegendentry{$\nu$=0.05}
-    \addplot table[x=nuxy,y=tr0.1 ] {\nutotarea}; \label{nuk2}
+    \addplot table[x=nuxy,y=tr0.1 ] {\nuchosenarea}; \label{nuk2}
 %     \addlegendentry{$\nu$=0.1}
-    \addplot table[x=nuxy,y=trINF ] {\nutotarea}; \label{nuk3}
+    \addplot table[x=nuxy,y=trINF ] {\nuchosenarea}; \label{nuk3}
 %     \addlegendentry{$\nu$=0.15}
 
 \end{axis}
@@ -1961,11 +1285,11 @@ height=4cm,width=\textwidth/3.5, title={(b')},
     bar shift=0pt
 ]
 
-    \addplot table[x=nuxy,y=tr0	] {\nuchosenarea}; \label{nuk1}
+    \addplot table[x=nuxy,y=tr0	] {\nutotarea}; \label{nuk1}
 %     \addlegendentry{$\nu$=0.05}
-    \addplot table[x=nuxy,y=tr0.1 ] {\nuchosenarea}; \label{nuk2}
+    \addplot table[x=nuxy,y=tr0.1 ] {\nutotarea}; \label{nuk2}
 %     \addlegendentry{$\nu$=0.1}
-    \addplot table[x=nuxy,y=trINF ] {\nuchosenarea}; \label{nuk3}
+    \addplot table[x=nuxy,y=trINF ] {\nutotarea}; \label{nuk3}
 %     \addlegendentry{$\nu$=0.15}
 
 %Experimental approach
@@ -2039,17 +1363,9 @@ height=4cm,width=\textwidth/3.5, title={(d')},
 
 \end{tikzpicture}
 
-\captionsetup{justification=centering}
-\caption{Normalizad Young's moduli of transversely isotropic
-material for spring constant $K=0$ (\ref{k1}) gliding, $K=0.1$ (\ref{k2})
-intermediate and $K=\infty$ (\ref{k3}) no slipping vs.
-different given Poisson's ratio ($\nu$) values for a) chosen area of
-interest, b) total area of interest and c) experimental methodology.
-d) Basic methodology from strain obtaint from the testing mashine plates
-displacement a') Normalized Poisson's ratio values of material with different
-given Poisson's ratio ($\nu$) values for chosen area of
-interest, b') total area of interest c') experimental methodology d) Basic methodology from strain obtaint from the testing mashine plates
-displacement with the manual transverse displacement measurement.}
+\caption{Normalizad Young's moduli and Poisson's ratio vs. given Poisson's ratio
+of transversely isotropic material with different slippage conditions relative
+to different ways of measuring strain}
 \label{fig:strainmethods}
 
 
@@ -2058,41 +1374,82 @@ displacement with the manual transverse displacement measurement.}
 
 
 
+% 
+% Three plots can be compared in Figure \ref{fig:isovstriso}. 
+% From the plots a)-c) one can compare the difference between the measured and actual 
+% Young's moduli depending on the Poisson's ratio versus the
+% displacement of the top edge. The displacement is represented as a displacement
+% factor which is relation between the actual $\delta$ and maximum
+% displacement $\delta_{max}$ that is based on factor $K$. For all simulations the
+% barrelling is leading to an overestimation of the Young's moduli. This is caused by the strain field in the area close to the edges, where constrained material has a stiffer response.
+% In general, for increasing Poisson's ratio, the error becomes larger. 
+% For the transversely isotropic material in Figure
+% \ref{fig:isovstriso} $b,c$ the error in Young's moduli is less in
+% transverse direction $T$ than in the axial direction $L$.
+% This difference in behaviour can be discussed by examining the strain fields for isotropic and 
+% transversely isotropic materials shown in of Figure
+% \ref{fig:Error} a, b and c. One can
+% observe the cones of the constraining effect that are originating from the top
+% and bottom. The constraining effect is dominant on the $25\%$ of height
+% from the horizontal edges of the model. Whereas in transversely isotropic
+% material in the $TT$ plane , the is spread less in the surface area.\\
+% Observation of Poisson's ratio values showed the opposite behaviour concerning
+% the measurement.
+% Figure \ref{fig:isovstriso} $a'$ showed that the relative error for the
+% Poisson's ratio is less significant in isotropic material. This is supported
+% with the corresponding strain field in Figure \ref{fig:Error} $a'$. The normal
+% Poisson's ratio values are within the central area of the model. 
+% Alternatively Figure \ref{fig:isovstriso} $b'$ and $c'$ describing the effect
+% of barreling on the measured materials Poisson's ratio in transversely isotropic material. 
+% It is seen that for the $LT$ planes the constraining effect influence the
+% measurements significantly. For example, for the displacement factor $\delta/\delta_{max}\approx0.2 $ where $K=0.1$,  the Poisson's ratio is
+% underestimated by $30-40\%$.
+% The same situation is for the plane $TT$ but the effect is less severe.
+% Referring to Figure \ref{fig:Error} $a-c$  we can see that the constraining effect is
+% crucial for the estimation of the Poisson's ratio. Blue coloured area where the error is above $5\%$ spreading from the horizontal edges of 
+% the model throughout the central area of the material. So the most accurate
+% estimation of Poisson's ratio is in the central area close to the vertical
+% edges of the cube as it seen in Figure \ref{fig:Error} $c,d$. However it was
+% mentioned that usage of strain gauges are usually placed in the center of the
+% sample, whereas presented results are supporting the fact that central
+% region of the sample is not always beneficial for the measurements. In this
+% case the usage of DSP is preferable. 
+% 
+% 
+% \begin{description}
+% \item{\textit{Strain measurement}}
+% \end{description}
+% Measured mechanical properties varies with strain measurement methods. In
+% present work, three methods were measured and compared. The
+% first method is shown in Figure \ref{fig:strainmethods}$b$, where the total area
+% including the constrained region is taken for measuring the strain.  
+% Here the error originates from the underestimated axial strains that are the
+% reason of constraining effect of horizontal edges. However the evaluation of
+% Poisson's ratio has less error due to inclusion of the total area into the
+% strain evaluations. Strain field in Figure \ref{fig:Error}$b$ shows that total
+% area has more regions where error is not significant.
+
 In the second approach only the middle 50\% of the area part was
-taken for determination of strain. The plot in Figure \ref{fig:strainmethods}$a$
+taken for determination of strain. The plot in Figure \ref{fig:strainmethods}(a)
 shows that with this method the Young's moduli is less overestimated.\par
   In the last approach where ASTM-D143-94 standard
 with strain gauge technique was used, the error is very close to the one in
-second approach. The plot in Figure \ref{fig:strainmethods}$c$ depicts that.
+second approach. The plot in Figure \ref{fig:strainmethods}(c) depicts that.
 This is due to the strain is measured between two points in the center of 
 the sample where the constraining effect is less severe. 
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=\textwidth]{BarellingError.pdf}
-\label{fig:Error}
-\caption{\label{fig:Error} a) Simulated results of error for measured Young's
-moduli ($E$) of Isotropic, b) transversely Isotropic material ($E_L$) and for
-transversely Isotropic material ($E_T$) in c). 
-a') Simulated results of error for measured
-Poisson's ratio ($\nu$) of Isotropic, b')
-transversely isotropic material ($\nu_{LT}$) and c') transversely isotropic
-material plane ($\nu_{TT}$).($K=0.1;\nu=0.3$)}
-
-\end{figure}
-
 Large error values for the Young's
 modulus close to the horizontal edges of isotropic model are clearly visible in
-Figure \ref{fig:Error}$a$. The opposite is true for the transversely isotropic
-sample in (Figure \ref{fig:Error}$b,c$), for $LT$ plane 
+Figure \ref{fig:Error}(a). The opposite is true for the transversely isotropic
+sample in Figure \ref{fig:Error}(b,c), for $LT$ plane 
 the Young's moduli in the central area is overestimated whereas for $TT$ plane
 the strain field looks similar to the isotropic material.\par
 These simulations are supporting the experimental results in Figure
 \ref{fig:explot}. Where the average strain diagram for the total area is showing larger Young's moduli than
 the one for the chosen area.
 Additional outcomes are deduced  while observing the error fields in Figure
-\ref{fig:Error}$a'-c'$. The ASTM-D143-94 standard \cite{american2009standard} requires
-installation of strain gauges in the center of the sample. This approach will
+\ref{fig:Error}(a'-c'). The ASTM-D143-94 standard \cite{american2009standard}
+requires installation of strain gauges in the center of the sample. This approach will
 lead to underestimation of Poisson's ratio in transversely isotropic cubic
 sample due to the barrelling formation. On the other hand accurate values will
 be obtained for the isotropic material, where the constraining effect influence
@@ -2106,7 +1463,7 @@ sample is most favourable for accurate measurements.
 As it was mentioned, the barreling is more severe in the isotropic material and
 less in transverse isotropic. To check whether this stands for the orthotropic
 materials, a true orthotropic model was simulated, based on wood material properties
-that were experimentally determined \cite{vorobyevcharacterisation}. \par
+that were experimentally determined \cite{vorobyevcharacterisation}.
 
 \begin{center}% note that \centering uses less vspace...
 \begin{figure}[h]
@@ -2255,261 +1612,6 @@ be used to determine the rest.
 
 
 
-
-
-
-%poisson's vs poisson's dependency
-% \color{black}
-% 
-% \begin{center}
-% \begin{figure}[!ht]
-% \pgfplotsset{every axis legend/.append style={
-% 		at={(0.5,1.03)},
-% 		anchor=north}}
-% 
-% \begin{tikzpicture}[scale=1]
-% 
-% \pgfplotstableread{
-% nuxy	tr0	tr0.1	trINF	i0	i0.1	iINF
-% 0.05	0.05	0.04161	0.03981	0.05	0.04691	0.04119
-% 0.1	0.1	0.08404	0.08063	0.1	0.0942	0.08349
-% 0.15	0.15	0.12728	0.1224	0.15	0.14194	0.1269
-% 0.2	0.2	0.1713	0.16507	0.2	0.1902	0.17142
-% 0.25	0.25	0.21607	0.2086	0.25	0.23904	0.21698
-% 0.3	0.3	0.26158	0.25295	0.3	0.28856	0.26348
-% 0.35	0.35	0.30782	0.29808	0.35	0.33888	0.31078
-% 0.4	0.4	0.35479	0.34396	0.4	0.39023	0.35826
-% 0.45	0.45	0.40251	0.39058	0.45	0.44309	0.39141
-% 
-% }\nutotarea
-% 
-% \pgfplotstableread{
-% nuxy	tr0	tr0.1	trINF	i0	i0.1	iINF
-% 0.05	0.05	0.0463	0.0455	0.05	0.04906	0.04728
-% 0.1	0.1	0.09342	0.09201	0.1	0.09847	0.09552
-% 0.15	0.15	0.14133	0.13944	0.15	0.14821	0.1447
-% 0.2	0.2	0.18995	0.18774	0.2	0.19829	0.19481
-% 0.25	0.25	0.23926	0.23685	0.25	0.24866	0.24584
-% 0.3	0.3	0.28918	0.28671	0.3	0.29933	0.29782
-% 0.35	0.35	0.33969	0.33727	0.35	0.35026	0.35076
-% 0.4	0.4	0.39072	0.38847	0.4	0.40142	0.40477
-% 0.45	0.45	0.44224	0.44027	0.45	0.45283	0.46032
-% }\nuchosenarea
-% 
-% \pgfplotstableread{
-% nuxy	tr0	tr0.1	trINF	i0	i0.1	iINF
-% 0.05	0.05	0.0416	0.03970	0.05	0.04690	0.04090
-% 0.1	0.1	0.0839	0.08040	0.1	0.09410	0.08250
-% 0.15	0.15	0.127	0.12200	0.15	0.14200	0.12500
-% 0.2	0.2	0.171	0.16400	0.2	0.19000	0.16800
-% 0.25	0.25	0.215	0.20700	0.25	0.23900	0.21300
-% 0.3	0.3	0.26	0.25100	0.3	0.28800	0.26000
-% 0.35	0.35	0.306	0.29600	0.35	0.33900	0.30900
-% 0.4	0.4	0.353	0.34200	0.4	0.39000	0.36200
-% 0.45	0.45	0.401	0.38800	0.45	0.44300	0.41900
-% 
-% }\nuexperiment
-% 
-% 
-% 
-% 
-% \begin{axis}[
-% name=c1,height=4cm,width=4cm,
-%     title={a)},
-% %    xlabel={Temperature [\textcelsius]},
-%     ylabel={Measured Poisson's ratio [-]},
-%     xmin=0.05, xmax=0.45,
-%     ymin=0.05, ymax=0.45,
-%         yticklabel style={/pgf/number format/fixed,
-%                   /pgf/number format/precision=3},
-% %     xtick={1,...,9},
-% %    ytick={0,20,40,60,80},
-% %     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
-% %     $K=1000$, $K=\infty$}, 
-% %     x tick label style={
-% %     rotate=60,anchor=east},
-%     ymajorgrids=true,
-%     grid style=dashed,
-% ]
-% % \end{axis}    
-% % \begin{axis}[legend pos=outer north east]
-%  
-%  
-%     \addplot table[x=nuxy,y=tr0	] {\nutotarea}; \label{nuk1}
-% %     \addlegendentry{$\nu$=0.05}
-%     \addplot table[x=nuxy,y=tr0.1 ] {\nutotarea}; \label{nuk2}
-% %     \addlegendentry{$\nu$=0.1}
-%     \addplot table[x=nuxy,y=trINF ] {\nutotarea}; \label{nuk3}
-% %     \addlegendentry{$\nu$=0.15}
-% 
-% \end{axis}
-% 
-% 
-% % plot transviso chosen area  DSP
-% 
-% \begin{axis}[legend pos=outer north east,
-% 	name=c2,at={($(c1.east)+(1cm,0)$)},anchor=west, height=4cm, width=4cm,
-%     title={b)},
-%     xlabel={Given Poisson's ratio [-]},
-% %    ylabel={Measured stiffness [Pa]},
-%     xmin=0.05, xmax=0.45,
-%     ymin=0.05, ymax=0.45,
-% %     yticklabel style={/pgf/number format/fixed,
-% %                   /pgf/number format/precision=3},
-% %     xtick={1,...,9},
-% %    ytick={0,20,40,60,80},
-% %     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
-% %     $K=1000$, $K=\infty$},
-% %     x tick label style={
-% %         rotate=60,anchor=east},
-%     ymajorgrids=true,
-%     grid style=dashed,
-%     bar shift=0pt
-% ]
-% 
-%     \addplot table[x=nuxy,y=tr0	] {\nuchosenarea}; \label{nuk1}
-% %     \addlegendentry{$\nu$=0.05}
-%     \addplot table[x=nuxy,y=tr0.1 ] {\nuchosenarea}; \label{nuk2}
-% %     \addlegendentry{$\nu$=0.1}
-%     \addplot table[x=nuxy,y=trINF ] {\nuchosenarea}; \label{nuk3}
-% %     \addlegendentry{$\nu$=0.15}
-% 
-% %Experimental approach
-% 
-% \end{axis}
-% 
-% 
-% \begin{axis}[legend pos=outer north east,
-% 	name=c3,at={($(c2.east)+(1cm,0)$)},anchor=west, height=4cm,width=4cm,
-%     title={c)},
-% %    xlabel={Temperature [\textcelsius]},
-% %    ylabel={Measured stiffness [Pa]},
-%     xmin=0.05, xmax=0.45,
-%     ymin=0.05, ymax=0.45,
-% %     yticklabel style={/pgf/number format/fixed,
-% %                   /pgf/number format/precision=3},
-% %     xtick={1,...,9},
-% %    ytick={0,20,40,60,80},
-% %     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
-% %     $K=1000$, $K=\infty$},
-% %     x tick label style={
-% %         rotate=60,anchor=east},
-%     ymajorgrids=true,
-%     grid style=dashed,
-%     bar shift=0pt
-% ]
-% 
-%     \addplot table[x=nuxy,y=tr0	] {\nuexperiment}; \label{nuk1}
-% %     \addlegendentry{$\nu$=0.05}
-%     \addplot table[x=nuxy,y=tr0.1 ] {\nuexperiment}; \label{nuk2}
-% %     \addlegendentry{$\nu$=0.1}
-%     \addplot table[x=nuxy,y=trINF ] {\nuexperiment}; \label{nuk3}
-% %     \addlegendentry{$\nu$=0.15}
-% 
-% 
-% 
-% 
-% \end{axis}
-% 
-% 
-% \end{tikzpicture}
-% \captionsetup{justification=centering}
-% \caption{Measured vs. given Poisson's ratio
-% ($\nu_{31}$, $\nu_{32}$) in transverse-isotropic material for spring
-% coefficients $K=0$ (\ref{k1}), $K=0.1$ (\ref{k2}) and $K=\infty$ (\ref{k3});\\
-% \color{red}{a) total area of interest, b) chosen area of interest c)
-% experiment.}}
-% 
-% 
-% \end{figure}
-% \end{center}
-
-
-
-
-
-
-% \begin{figure}[!ht]
-% \centering
-% \pgfplotsset{every axis legend/.append style={
-% 		at={(0.5,1.03)},
-% 		anchor=north}}
-% 
-% \begin{tikzpicture}
-%  [spy using outlines={circle,black,magnification=3,size=1cm,
-%  connect spies}]
-% % Data for the plot showing the stability and independency of Emod
-% 
-% \pgfplotstableread{
-% Emodgiven	nul	tr0.1	iso0.1	trinf	isoinf
-% 1	1	1.00638	1.02469	1.00797	0.89131
-% 2	2	2.01276	2.04938	2.01595	1.78262
-% 3	3	3.01914	3.07408	3.02392	2.67393
-% 4	4	4.02551	4.09877	4.0319	3.56524
-% 5	5	5.03189	5.12346	5.03987	4.45655
-% }\emodgivread
-% 
-% 
-% 
-% \begin{axis}[
-% name=c1,height=5cm,width=5cm,
-%     title={a)},
-%     xlabel={Given Young's modulus [Pa]},
-%     ylabel={Measured Young's modulus [Pa]},
-%     xmin=1, xmax=5.2,
-%     ymin=1, ymax=5.2,
-%         yticklabel style={/pgf/number format/fixed,
-%                   /pgf/number format/precision=3},
-% %     xtick={1,...,9},
-% %    ytick={0,20,40,60,80},
-% %     xticklabels={$K=0$,$K=0.001$,$K=0.01$,$K=0.1$,$K=1$, $K=10$, $K=100$,
-% %     $K=1000$, $K=\infty$}, 
-% %     x tick label style={
-% %     rotate=60,anchor=east},
-%     ymajorgrids=true,
-%     grid style=dashed,
-% ]
-% 
-%     \addplot[mark=otimes, green, solid] table[x=Emodgiven,y=nul	]
-%     {\emodgivread};
-%     \label{e1}
-% %     \addlegendentry{$\nu$=0.05}
-%     \addplot [mark=x, darkgray,    ] table[x=Emodgiven,y=tr0.1 ]
-%     {\emodgivread}; \label{e2}
-% %     \addlegendentry{$\nu$=0.1}
-%     \addplot [mark=x, gray,  ] table[x=Emodgiven,y=trinf ]
-%     {\emodgivread};
-%     \label{e3}
-% %     \addlegendentry{$\nu$=0.15}
-%     \addplot [mark=o, red  ] table[x=Emodgiven,y=iso0.1 ]
-%     {\emodgivread};
-%     \label{e4}
-% %     \addlegendentry{$\nu$=0.1}
-%     \addplot [mark=o, red    ] table[x=Emodgiven,y=isoinf ]
-%     {\emodgivread};
-%     \label{e5}
-% %     \addlegendentry{$\nu$=0.15}
-% 
-% \coordinate (spypoint) at (axis cs:4,4);
-% \coordinate (magnifyglass) at (axis cs:2.2,3.8);
-% 
-% \end{axis}
-% 
-% % \spy on (2.5,2.5) in node [left] at (1.25,1.75);
-% \spy [gray, size=1.5cm] on (spypoint)
-%    in node[fill=white] at (magnifyglass);
-% 
-% \end{tikzpicture}
-% \captionsetup{justification=centering}
-% \caption{Measured vs. given stiffness
-% ($E_{1}$) in transverse-isotropic(\ref{e2}) and isotropic(\ref{e4}) material for
-% spring coefficients $K=0$ (\ref{e1}), $K=0.1$ (\ref{e2}, \ref{e4}) and
-% $K=\infty$ (\ref{e3}, \ref{e5});\\
-% \color{red}{a) total area of interest, b) chosen area of interest c)
-% experiment.}}
-% 
-% 
-% \end{figure}
 
 
 
