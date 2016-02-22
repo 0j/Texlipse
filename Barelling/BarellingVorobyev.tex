@@ -147,8 +147,8 @@ Wood
 \section{Introduction}
 
 Characterisation of material stiffness properties of orthotropic materials can
-be challenging. In  careful design of wood structures, not only one parameter, but the full
-orthotropic set of elastic parameters is needed \cite{tsoumis1991science},
+be challenging. In  careful design of wood structures, not only one parameter,
+but the full orthotropic set of elastic parameters is needed \cite{tsoumis1991science},
 e.g. for finite-element modelling of wood joints that are locally subjected to a
 triaxial stress state. Compressive experiments are generally considered to be
 reliable method for identifying engineering constants such as Young's moduli and Poisson's ratios. The general approach is to measure the material response due to applied
@@ -888,13 +888,10 @@ title={(b\textprime) \\ $\nu_{LT}$},
 
 
 \captionsetup{justification=centering}
-\caption{a) Simulated and normalized Young's moduli values of material with
-different given Poisson's ratio ($\nu$) values for isotropic material ($a=1$),
-b) $E_L$, and c) $E_T$ for transversely isotropic material ($a=10$; $b=2$).
-a') Simulated Poisson's ratio error values of material with different given
-Poisson's ratio ($\nu$) values for isotropic material, b')
-$\nu_{LT},$ and c') $\nu_{TL}$ for transversely isotropic material.}
-
+\caption{Simulated and normalized Young's moduli and Poisson's ratio of
+isotropic material ($a=1$) and transversely isotropic
+material ($a=10$; $b=2$) with initial Poisson's ratio ($\nu$) versus
+displacement factor.}
 
 \label{fig:isovstriso}
 \end{figure}
@@ -931,7 +928,7 @@ from the horizontal edges of the model.
 Figure \ref{fig:isovstriso} (a’) shows that the relative error for the
 Poisson's ratio is smaller in isotropic material than in transversely isotropic
 materials in Figure \ref{fig:isovstriso} (b’,c’). This can also be observed
-by the with the corresponding strain ratio field in Figure \ref{fig:Error} (a').
+by the with the corresponding strain ratio field in Figure \ref{fig:Error} (a\textprime).
 
 \begin{figure}[h]
 \centering
@@ -945,17 +942,18 @@ material. ($K=0.1; \nu=0.3; \delta/\delta_{max}\approx0.2$)}
 
 The green zones corresponding to vanishing error is found in the central band of
 the numerical model. For the transversely isotropic cases, Figures
-\ref{fig:isovstriso} (b'), (LT plane) and (c'), (TT plane) the error is
+\ref{fig:isovstriso} (b\textprime), (LT plane) and (c\textprime), (TT plane) the error is
 non-negligible also in the central part of the cube face. The effect is stronger for the LT plane, where the perturbed zones extends over a larger area.
 For instance, for the displacement factor $\delta/\delta_{max}\approx0.2 $ (where $K=0.1$),  the Poisson's ratio is
 underestimated by as much as $30-40\%$, $cf.$\ Figure \ref{fig:isovstriso} (b’).
 The same situation is for the TT plane  but the effect is not as critical as the LT plane.
-Referring to Figure \ref{fig:Error} (a’-c’),we can see that the constraining
-effect is significant for the case of the Poisson's ratio. Blue colored area where the error is above $5\%$ tend to spread from the horizontal edges of 
+Referring to Figure \ref{fig:Error} (a\textprime-c’\textprime),we can see that
+the constraining effect is significant for the case of the Poisson's ratio. Blue colored area where the error is above $5\%$ tend to spread from the horizontal edges of 
 the model throughout the central area of the material. The most accurate
 estimation of Poisson's ratio would be in the central area close to the vertical
-edges of the cube as it seen in Figures \ref{fig:Error} (c’) and (d’). However,
-rosette or crossed strain gauges are usually placed in the center of the specimen, where constraint effects persist for transverse isotropic specimens in the LT plane. Full-field DSP measurements allows direct determination of Poisson ratios in the unperturbed zones closer to the face edges. 
+edges of the cube as it seen in Figures \ref{fig:Error} (c\textprime) and
+(d\textprime).
+However, rosette or crossed strain gauges are usually placed in the center of the specimen, where constraint effects persist for transverse isotropic specimens in the LT plane. Full-field DSP measurements allows direct determination of Poisson ratios in the unperturbed zones closer to the face edges. 
 
 
 \subsection{Effects of strain measurement}
@@ -1246,7 +1244,7 @@ name=b1,height=5cm,width=\textwidth/3.5,
 
 \begin{axis}
 [name=b4,at={($(b2.south)-(0,1.5cm)$)},anchor=north,
-height=4cm,width=\textwidth/3.5, title={(b')},
+height=4cm,width=\textwidth/3.5, title={(b\textprime)},
     xlabel={\hspace{3cm}Given Poisson's ratio [-]},
 %     ylabel={Error Poisson's ratio},
     xmin=0.05, xmax=0.45,
@@ -1280,7 +1278,7 @@ height=4cm,width=\textwidth/3.5, title={(b')},
 
 \begin{axis}[
 	name=b5,at={($(b1.south)-(0,1.5cm)$)},anchor=north, height=4cm,
-	width=\textwidth/3.5, title={(a')},
+	width=\textwidth/3.5, title={(a\textprime)},
 %     xlabel={Given Poisson's ratio [-]},
    ylabel={Normalized Poisson's ratio},
     xmin=0.05, xmax=0.45,
@@ -1310,7 +1308,7 @@ height=4cm,width=\textwidth/3.5, title={(b')},
 
 
 \begin{axis}[name=b6,at={($(b3.south)-(0,1.5cm)$)},anchor=north,
-height=4cm,width=\textwidth/3.5, title={(c')},
+height=4cm,width=\textwidth/3.5, title={(c\textprime)},
 %    xlabel={Temperature [\textcelsius]},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0.05, xmax=0.45,
@@ -1342,7 +1340,7 @@ height=4cm,width=\textwidth/3.5, title={(c')},
 
 \begin{axis}
 [name=b6a,at={($(b3a.south)-(0,1.5cm)$)},anchor=north,
-height=4cm,width=\textwidth/3.5, title={(d')},
+height=4cm,width=\textwidth/3.5, title={(d\textprime)},
 %    xlabel={Temperature [\textcelsius]},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0.05, xmax=0.45,
@@ -1441,7 +1439,7 @@ to different ways of measuring strain}
 % strain evaluations. Strain field in Figure \ref{fig:Error}$b$ shows that total
 % area has more regions where error is not significant.
 
-In the second approach only the middle 50\% of the area part was
+In the second approach only the middle 60\% of the area part was
 taken for determination of strain. The plot in Figure \ref{fig:strainmethods}(a)
 shows that with this method the Young's moduli is less overestimated.\par
   In the last approach where ASTM-D143-94 standard
@@ -1460,8 +1458,8 @@ These simulations are supporting the experimental results in Figure
 \ref{fig:explot}. Where the average strain diagram for the total area is showing larger Young's moduli than
 the one for the chosen area.
 Additional outcomes are deduced  while observing the error fields in Figure
-\ref{fig:Error}(a'-c'). The ASTM-D143-94 standard \cite{american2009standard}
-requires installation of strain gauges in the center of the sample. This approach will
+\ref{fig:Error}(a\textprime-c\textprime). The ASTM-D143-94 standard
+\cite{american2009standard} requires installation of strain gauges in the center of the sample. This approach will
 lead to underestimation of Poisson's ratio in transversely isotropic cubic
 sample due to the barrelling formation. On the other hand accurate values will
 be obtained for the isotropic material, where the constraining effect influence
@@ -1650,17 +1648,23 @@ exemplified:
 The strain measurement methods proven the benefit of usage the "chosen" area for the estimation of strains in the corresponding plane. The results can be summarized as follows: 
 
 \begin{itemize}
-  \item Using the strain-field from the \textit{Total area} of the sample plane is leading to relative large errors. It happens due to constrained cone that is spreading towards the center  of sample.  
+  \item Using the strain-field from the \textit{Full field} of the sample plane
+  is leading to relative large errors. It happens due to constrained cone that is spreading towards the center  of sample.
   The measured Young's moduli is overestimated by up to 20 percent for the
   material Poisson's ratio $\nu=0.45$. Whereas the estimation of Poisson's ratio
   gives less errors in comparison to other material.
   \item Strains from the \textit{Strain gauges} measurement shows better results than using the previous approach. However the measurements are done between the two points and inside the constraining cone. Thus it leads to errors as well.
-  \item  \textit{"Chosen" area} of strain-field in the centre of the sample was the beneficial method. Here a relatively good results were obtained due to over and underestimation that compensate each other to some extent.
+  \item  \textit{Central band} of strain-field in the centre of the sample was
+  the beneficial method. Here a relatively good results were obtained due to over and underestimation that compensate each other to some extent.
 \end{itemize}
 
-Two strain-field measuring techniques (\textit{total area and "chosen" area}) were used in the experimental part. However the "chosen"area approach was used for the identification of elastic constants. The results of numerical simulation from the present work validated the beneficial method.\par
-Finally cubic samples can be used for the mechanical experiments in case of low
-availability of material. It was also proved that all elastic constants can be extracted using one sample with the consideration of barrelling formation.
+Two strain-field measuring techniques (\textit{full field and central band})
+were used in the experimental part. However the central band case was used
+for the identification of elastic constants. The results of numerical simulation
+from the present work validated the beneficial method.\par Finally cubic samples
+can be used for the mechanical experiments in case of low availability of
+material. It hs also been proved that all elastic constants can be extracted
+using one sample with the consideration of barrelling formation.
 
 
 \section*{Acknowledgements}
