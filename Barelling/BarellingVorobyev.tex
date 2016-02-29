@@ -82,9 +82,10 @@
 
 \begin{frontmatter}
 
-\title{Barrelling formation during the axial compressive experiments on cubic
+\title{Effects of barrelling formation during the axial compressive tests of cubic
 samples with  isotropic, transversely isotropic and orthotropic elastic
-properties {\color{red} Preliminary title}}
+properties} 
+
 %%\tnotetext[mytitlenote]{Fully documented templates are available in the
 % elsarticle package on \href{http://www.ctan.org/tex-archive/macros/latex/contrib/elsarticle}{CTAN}.}
 
@@ -108,29 +109,30 @@ properties {\color{red} Preliminary title}}
 \author{Nico P. van Dijk}
 \author{Kristofer Gamstedt}
 
-\address{Uppsala University, Division of Appplied Mechanics,
-Uppsala, Sweden }
+\address{Division of Appplied Mechanics, Uppsala University, Box 534,
+SE-751 21, Uppsala, Sweden}
 
 
 
 \begin{abstract}
 For scarce materials, such as archaeological wood, one often resorts to cubic
-samples instead of standardised prisms for mechanical tests. For these samples
-barreling formation gives rise to additional difficulties difficulties in
+samples instead of standardised prisms for mechanical tests, since the elasticity can be tested in all three direction in one sample. For such samples
+barrelling  formation gives rise to additional difficulties difficulties in
 identifying the elastic properties.
 Furthermore natural orthotropy, availability and variation between and within
 samples make the mechanical characterisation of wood  challenging. 
-The purpose of the present study is to experimentally and numerically investigate the effects of barrelling
-formation in cubic samples during compressive experiments. Secondly, to investigate and
+The purpose of the present study is numerically investigate the effects of barrelling
+in cubic samples during compressive experiments. Secondly, to investigate and
 compare barrelling formation on isotropic, transversely 
-isotropic and orthotropic material parameters. \par
+isotropic and orthotropic material parameters. 
 Finally to compare four strain measurement techniques using
-Digital Image Correlation (DIC), strain gauges and direct
-reading from of universal testing mashine and investigate which is better for
+digital image correlation , strain gauges and direct
+reading from the testing machine and investigate which is better for
 quantification of mechanical parameters such as Young's moduli and Poisson's ratios.
-The elastic parameters determined from the simulated tests were normalised with regards to the input parameters. The presented relative errors provide information when the perturbation caused by barreling effect is negligible or significant for various materials and strain measurements. 
+The elastic parameters determined from the simulated tests were normalised with regards to the input parameters. The presented relative errors provide information when the perturbation caused by barrelling effect is negligible or significant for various materials and strain measurements. 
 As an example, compressive tests on waterlogged archaeological oak impregnated
-with polyethylene glycol (PEG) are discussed.
+with polyethylene glycol are discussed.
+
 
 
 \end{abstract}
@@ -261,7 +263,7 @@ The results can help to estimate the induced errors for the alternative strain m
 % of composite materials. This is relevant when the platens of universal testing
 % machine are locked and cannot adjust to sample geometry.
 % When a prism specimen is compressed between platens it expand transversely.
-% Its surfaces bear heterogeneous deformation that are resulting in barreling
+% Its surfaces bear heterogeneous deformation that are resulting in barrelling
 % formation of the prism.\par 
 % 
 % % %The purpose of experiment
@@ -286,6 +288,7 @@ The results can help to estimate the induced errors for the alternative strain m
         \includegraphics[width=\textwidth]{VasaCube.pdf}
         \caption{}
         \label{fig:vasacube}
+         \vspace*{1cm}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.4\textwidth}
@@ -293,6 +296,8 @@ The results can help to estimate the induced errors for the alternative strain m
         \includegraphics[width=\textwidth]{BarellingEffectZoomed.pdf}
         \caption{}
         \label{fig:barrelling}
+        \vspace*{1cm}
+        
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.4\textwidth}
@@ -633,7 +638,7 @@ K	p1	0.05	p2	0.1	p3	0.15	p4	0.2	p5	0.25	p6	0.3	p7	0.35	p8	0.4	p9	0.45
 \begin{axis}[
 name=plot0,height=6cm,width=\textwidth/3,
 	align =center,
-    title={Isotropic\\E\\(a)},
+    title={Isotropic\\$E$\\(a)},
 %    xlabel={Temperature [\textcelsius]},
     ylabel={Normalized Young's modulus},
     xmin=0, xmax=1,
@@ -675,7 +680,7 @@ name=plot0,height=6cm,width=\textwidth/3,
 name=plot1,at={($(plot0.east)+(1cm,0)$)},anchor=west,
 height=6cm,width=\textwidth/3,
 align =center,
-title={Transversely-isotropic\\E$_{L}$\\(b)},
+title={Transversely-isotropic\\$E_{\mathrm{L}}$\\(b)},
 %    xlabel={Temperature [\textcelsius]},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0, xmax=1,
@@ -717,7 +722,7 @@ title={Transversely-isotropic\\E$_{L}$\\(b)},
 \begin{axis}[
 	name=plot2,at={($(plot1.east)+(1cm,0)$)},anchor=west, height=6cm,width=\textwidth/3,
 align =center,
-title={Transversely-isotropic\\E$_{T}$\\(c)},
+title={Transversely-isotropic\\$E_{\mathrm{T}}$\\(c)},
 %    xlabel={Temperature [\textcelsius]},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0, xmax=1,
@@ -800,7 +805,7 @@ title={(a\textprime)\\ $\nu$},
 \begin{axis}[legend style={at={(0.5,-0.3)}, legend columns=5, anchor=north},
 	name=plot4,at={($(plot1.south)-(0,2cm)$)},anchor=north,
 	height=6cm,width=\textwidth/3, align=center,
-title={(b\textprime) \\ $\nu_{LT}$},
+title={(b\textprime) \\ $\nu_{\mathrm{LT}}$},
     xlabel={Displacement factor $\delta/\delta_{max}$},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0, xmax=1,
@@ -844,7 +849,7 @@ title={(b\textprime) \\ $\nu_{LT}$},
 \begin{axis}[
 	name=plot5,at={($(plot2.south)-(0,2cm)$)},anchor=north,
 	height=6cm,width=\textwidth/3, align=center,
-	 title={(c\textprime)\\ $\nu_{TT}$},
+	 title={(c\textprime)\\ $\nu_{\mathrm{TT}}$},
 %    xlabel={Temperature [\textcelsius]},
 %    ylabel={Measured stiffness [Pa]},
     xmin=0, xmax=1,
@@ -1410,7 +1415,7 @@ to different ways of measuring strain}
 % with the corresponding strain field in Figure \ref{fig:Error} $a'$. The normal
 % Poisson's ratio values are within the central area of the model. 
 % Alternatively Figure \ref{fig:isovstriso} $b'$ and $c'$ describing the effect
-% of barreling on the measured materials Poisson's ratio in transversely isotropic material. 
+% of barrelling on the measured materials Poisson's ratio in transversely isotropic material. 
 % It is seen that for the $LT$ planes the constraining effect influence the
 % measurements significantly. For example, for the displacement factor $\delta/\delta_{max}\approx0.2 $ where $K=0.1$,  the Poisson's ratio is
 % underestimated by $30-40\%$.
@@ -1470,7 +1475,7 @@ sample is most favourable for accurate measurements.
 \begin{description}
 \item{\textit{Barrelling in orthotropic material}}
 \end{description}
-As it was mentioned, the barreling is more severe in the isotropic material and
+As it was mentioned, the barrelling is more severe in the isotropic material and
 less in transverse isotropic. To check whether this stands for the orthotropic
 materials, a true orthotropic model was simulated, based on wood material properties
 that were experimentally determined \cite{vorobyevcharacterisation}.
@@ -1542,13 +1547,13 @@ name=plot0,height=6cm,width=\textwidth/2,
 % \begin{axis}[legend pos=outer north east]
  
  
-    \addplot+[smooth] table[x=dZY,y=ZY] {\datatable};
+    \addplot+[solid, black, mark=] table[x=dZY,y=ZY] {\datatable};
 %     \addlegendentry{$\nu$=0.05}
-    \addplot+[smooth] table[x=dZX,y=ZX] {\datatable};
+    \addplot+[dashed, black, mark=] table[x=dZX,y=ZX] {\datatable};
 %     \addlegendentry{$\nu$=0.1}
-    \addplot+[smooth] table[x=dXZ,y=XZ] {\datatable};
+    \addplot+[dashdotdotted, black, mark=] table[x=dXZ,y=XZ] {\datatable};
 %     \addlegendentry{$\nu$=0.15}
-    \addplot+[smooth] table[x=dXY,y=XY] {\datatable};
+    \addplot+[dashdotted, black, mark=] table[x=dXY,y=XY] {\datatable};
 
 \end{axis}
 
@@ -1573,13 +1578,18 @@ height=6cm,width=\textwidth/2, title={(b)},
     bar shift=0pt
 ]
 
-    \addplot+[smooth] table[x=dZY,y=ZY] {\datatableA}; \label{VasaZY}
+    \addplot+[solid, black, mark=] table[x=dZY,y=ZY] {\datatableA};
+    \label{VasaZY}
 %     \addlegendentry{$\nu$=0.05}
-    \addplot+[smooth] table[x=dZX,y=ZX] {\datatableA}; \label{VasaZX}
+    \addplot+[dashed, black, mark=] table[x=dZX,y=ZX]
+    {\datatableA};
+    \label{VasaZX}
 %     \addlegendentry{$\nu$=0.1}
-    \addplot+[smooth] table[x=dXZ,y=XZ] {\datatableA}; \label{VasaXZ}
+    \addplot+[dashdotdotted, black, mark=] table[x=dXZ,y=XZ] {\datatableA};
+    \label{VasaXZ}
 %     \addlegendentry{$\nu$=0.15}
-    \addplot+[smooth] table[x=dXY,y=XY] {\datatableA}; \label{VasaXY}
+    \addplot+[dashdotted, black, mark=] table[x=dXY,y=XY] {\datatableA};
+    \label{VasaXY}
 
 
 
@@ -1592,10 +1602,10 @@ height=6cm,width=\textwidth/2, title={(b)},
 \captionsetup{justification=centering}
 \caption{Simulated and normalized results based on experiment of
 orthotropic material. a) Young's moduli and b) Poisson's ratio while measuring
-chosen strain field from directions $LT$(\ref{VasaZY}),
-$LR$(\ref{VasaZX}), 
-$TL$(\ref{VasaXZ}), 
-$TR$(\ref{VasaXY}).}
+chosen strain field from directions LT(\ref{VasaZY}),
+LR(\ref{VasaZX}), 
+TL(\ref{VasaXZ}), 
+TR(\ref{VasaXY}).}
 
 
 \label{fig:ortho}
@@ -1603,22 +1613,26 @@ $TR$(\ref{VasaXY}).}
 
 \end{center}
 
-The results is for normalised Young's moduli in all wood orthotropic directions and Poisson's ratio versus the displacement factor are plotted in Figure \ref{fig:ortho}. The notation for the wood planes in Figure is corresponding to the wood principal orthotropic directions, where Longitudinal $(L)$, Radial $R$, Tangential $T$. \par It shows that the magnitude of error is less than those for the transversely isotropic material. 
-In case of identifying the Young's moduli $E_L$, plane  $LT$ might be
-beneficial. This is due to the less slope of $LT$ curve in comparison to $LR$ in
+The results is for normalised Young's moduli in all wood orthotropic directions
+and Poisson's ratio versus the displacement factor are plotted in Figure
+\ref{fig:ortho}. The notation for the wood planes in Figure is corresponding to
+the wood principal orthotropic directions, where Longitudinal (L), Radial (R),
+Tangential (T). \par It shows that the magnitude of error is less than those for
+the transversely isotropic material.
+In case of identifying the Young's moduli $E_{\mathrm{L}}$, plane  LT might be
+beneficial. This is due to the less slope of LT curve in comparison to LR in
 Figure \ref{fig:ortho}a. \par
 As for transversely isotropic material the Poisson's ratio is underestimated
 with the increasing constraining effect the same is observed for the orthotropic
-material simulation. The magnitude of error is spread, however the $\nu_{LT}$,
-$\nu_{LR}$, $\nu_{TR}$ are less influenced by the barrelling. Contrary
-$\nu_{TL}$ is more underestimated than the others, presented in Figure
-\ref{fig:ortho}b. When $L$
+material simulation. The magnitude of error is spread, however the
+$\nu_{\mathrm{LT}}$, $\nu_{\mathrm{LR}}$, $\nu_{\mathrm{TR}}$ are less
+influenced by the barrelling. Contrary $\nu_{\mathrm{TL}}$ is more
+underestimated than the others, presented in Figure \ref{fig:ortho}b. When L
 direction is in transverse plane, the geometrical response is less significant
 because of its stiffness. Therefore the magnitude of possible error depending on
-barrelling is larger. However having the $\nu_{LT}$,
-$\nu_{LR}$, $\nu_{TR}$ ratios the symmetry principle can
+barrelling is larger. However having the $\nu_{\mathrm{LT}}$,
+$\nu_{\mathrm{LR}}$, $\nu_{\mathrm{TR}}$ ratios the symmetry principle can
 be used to determine the rest.
-
 
 
 
@@ -1631,49 +1645,73 @@ be used to determine the rest.
 
 \section{Conclusions}
 
-The barrelling formation in cubic samples is an artifact that can influence the
-estimation of the engineering constants. It significantly influences the
-magnitude of error while estimation, depending on the material type as
-exemplified:
+The barrelling in cubic samples subjected to compressive testing is an phenonomenon that can influence the
+estimation of the engineering elastic constants. The magnitude of the error depends on the type of material anisotropy, viz. 
+isotropic, transversely isotropic and orthotropic materials, which are representative of most load carrying materials :
 
 \begin{itemize}
   \item \textit{Isotropic} material is affected by the barrelling the most.
-  The measured Young's moduli is overestimated by up to 20 percent for the
-  material Poisson's ratio $\nu=0.45$. Whereas the estimation of Poisson's ratio
-  gives less errors in comparison to other material.
-  \item \textit{Transversely-isotropic} material has an overestimation of Young's moduli while measuring in both $L$ and $T$ direction but less in comparison to the \textit{Isotropic}. The error is larger for the $LT$  and $TT$ plane for the estimation of the Poisson's ratio. 
-  \item \textit{Orthotropic} material was simulated using the experimental input data for the archaeological wood. The result is an overestimation of Young's moduli in all principal orthotropical wood planes, but the magnitude is alike to the $TT$ plane in \textit{Transversely-isotropic} material which is below $1,5\%$ of error margin.
+  As an example, the measured Young's moduli is overestimated  by up to 20\%  for 
+  materials with a Poisson's ratio of $\nu=0.45$. The estimation of Poisson's ratio
+  gives less errors in comparison to other materials.
+  \item \textit{Transversely-isotropic} material shows an overestimation of Young's 
+  moduli in both the L and T 
+  directions but less in comparison with the isotropic material. The error is larger for the LT  and TT plane in the estimation of the Poisson's ratio. 
+  \item \textit{Orthotropic} material was simulated using the experimental 
+  input data for the experimentally characterised archaeological wood. 
+  The result shows an overestimation of Young's moduli in all principal planes 
+  of orthotropic wood, but the error is similar to that of the TT plane in 
+  transversely-isotropic material, which is below $1.5\%$ of error margin.
 \end{itemize}
 
-The strain measurement methods proved the benefit of usage the central band for
-the estimation of strains in the corresponding plane. The results can be summarized as follows:
+The strain measurement methods showed advantages of using a central band for
+the estimation of strains in the corresponding plane. The results can be 
+summarized as follows:
 
 \begin{itemize}
-  \item Using the strain-field from the \textit{Full field} of the sample plane
-  is leading to relative large errors. It happens due to constrained cone that is spreading towards the center  of sample.
-  The measured Young's moduli is overestimated by up to 20 percent for the
-  material Poisson's ratio $\nu=0.45$. Whereas the estimation of Poisson's ratio
-  gives less errors in comparison to other material.
-  \item Strains from the \textit{Strain gauges} measurement shows better results than using the previous approach. However the measurements are done between the two points and inside the constraining cone. Thus it leads to errors as well.
-  \item  \textit{Central band} of strain-field in the centre of the sample was
-  the beneficial method. Here a relatively good results were obtained due to over and underestimation that compensate each other to some extent.
+  \item Using the entire strain field from the \textit{full field} measurement of the sample plane
+  is leading to relative large errors in the estimated elastic properties, since
+  the constrained regions close to the platens form a large part of the 
+  strain measurement.  In the severe case of rubber-like, almost incompressible 
+  materials with $\nu=0.45$, the measured Young's moduli is overestimated by up 
+  to a distressing level of 20 \% . On the other hand, the estimation of Poisson's 
+  ratio gives smaller errors comparable to the transverse isotropic and orthotropic 
+  materials.
+  \item Strains from the \textit{strain gauge} measurement 
+  (representing the strandaridized metod) shows smaller errors in the 
+  estimated elastic properties than for the full-field approach. 
+  However, the measurements are done between the two points and inside the 
+  constraining cone emanating from the friction of the platens. 
+  Thus, the strain gauge method leads to non-negligible errors as well.
+  \item  The \textit{central band} of full strain field in the centre of the 
+  sample was chosen to cover a zone which is relatively unperturbed by the 
+  frictional platens in the compressive test. Here, relatively good results with 
+  limited errors were obtained.
 \end{itemize}
 
-Two strain-field measuring techniques (\textit{full field and central band})
-were used in the experimental part. However the central band case was used
-for the identification of elastic constants. The results of numerical simulation
-from the present work validated the beneficial method.\par Finally cubic samples
-can be used for the mechanical experiments in case of low availability of
-material. It hs also been proved that all elastic constants can be extracted
-using one sample with the consideration of barrelling formation.
+Two strain-field measuring techniques, \textit{full field} 
+and \textit{central band}
+were used in the experiments. The elastic properties were estimated from the 
+strain measurements in the central band only, as this was shown to be more accurate. 
+Since full-field measurement techniques are becoming more commonplace in mechanical 
+testing laboratories, their advantages to point or line measurements 
+(e.g. strain gauges or extensometers) should be exploited. 
+It is recommended to use the part of the strain field that is only moderately 
+affected by loading constraints from the test rig. In the case of compressive 
+testing of cubes, a suitable part has been found to be a central lateral band 
+covering 60\% of the observed face. 
+
+
 
 
 \section*{Acknowledgements}
-This article was produced in collaboration with the National Maritime Museums
+The work presented in this article has been performed in collaboration with the National Maritime Museums of Sweden
 and, in particular, the Vasa Museum. The work has been carried
-out within the ``Support Vasa'' project. Furthermore  Formas, Vinnova,
-Vetenskapsr{\aa}det. \section*{References}
+out within the ``Support Vasa'' project, where financial contributions come from the funding agencies  Formas, Vinnova and
+Vetenskapsr{\aa}det in addition to the National Martime Museums of Sweden and Uppsala University. 
+\section*{References}
 \bibliography{mybibfile}
+
 
 
 \pagebreak
@@ -1687,9 +1725,10 @@ Vetenskapsr{\aa}det. \section*{References}
 \centering % used for centering table
 \begin{tabular}{c c c c c c c c c} % centered columns (4 columns)
 \hline\hline %inserts double horizontal lines
- $E_{T}$ (GPa) & $E_{T}$ (GPa) & $E_L$ (GPa) & $G_{LT}$ (GPa) &
-$G_{TT}$ (GPa) & $G_{LT}$ (GPa) &
-$\nu_{TL}$ & $\nu_{TT}$ & $\nu_{TL}$ \\ % inserts table heading
+ $E_{\mathrm{T}}$ (GPa) & $E_{\mathrm{T}}$ (GPa) & $E_{\mathrm{L}}$ (GPa) &
+ $G_{\mathrm{LT}}$ (GPa) & $G_{\mathrm{TT}}$ (GPa) & $G_{\mathrm{LT}}$ (GPa) &
+$\nu_{\mathrm{TL}}$ & $\nu_{\mathrm{TT}}$ & $\nu_{\mathrm{TL}}$ \\ % inserts
+% table heading
 
 \hline % inserts single horizontal line
 $E$ & $E$ & $a{E}$ & $\frac{\Big(b\big[a-1\big]+1\Big){E}}{2(1+\nu)}$  &
@@ -1715,7 +1754,7 @@ $\frac{a{E}}{2(1+\nu)}$ & $\frac{\Big(b\big[a-1\big]+1\Big){E}}{2(1+\nu)}$ & $\f
 
 \item[]
 \begin{table}[!htbp]\
-\caption{Typical engineering properties of transversely isotropic materials\cite{hyer2009stress}} % title of Table
+\caption{Typical engineering properties of transversely isotropic materials} % title of Table
 \centering % used for centering table
 \begin{tabular}{l c c c c } % centered columns (4 columns)
 \hline\hline %inserts double horizontal lines
@@ -1734,17 +1773,17 @@ epoxy \cite{american2002composite} \end{tabular}
 
 \hline % inserts single horizontal line
 
-$E_{T_1}$ (GPa) & 0.60 & 12.10 & 15.20 & 14.7\\
-$E_{T_2}$ (GPa) & 0.35 & 12.10 & 15.20 & 14.7\\
-$E_L$ (GPa) & 6.75 & 155.0 & 50.00 & 49.3\\
+$E_{\mathrm{T_1}}$ (GPa) & 0.60 & 12.10 & 15.20 & 14.7\\
+$E_{\mathrm{T_2}}$ (GPa) & 0.35 & 12.10 & 15.20 & 14.7\\
+$E_{\mathrm{L}}$ (GPa) & 6.75 & 155.0 & 50.00 & 49.3\\
 
-$G_{LT_2}$ (GPa) & 0.62 & 4.40 & 4.70 & 6.8\\
-$G_{T_1T_2}$ (GPa) & 0.14 & 3.20 & 3.28 & 4.9\\
-$G_{LT_1}$ (GPa) & 0.33 & 4.40 & 4.70 & 6.8\\
+$G_{\mathrm{LT_2}}$ (GPa) & 0.62 & 4.40 & 4.70 & 6.8\\
+$G_{\mathrm{T_1T_2}}$ (GPa) & 0.14 & 3.20 & 3.28 & 4.9\\
+$G_{\mathrm{LT_1}}$ (GPa) & 0.33 & 4.40 & 4.70 & 6.8\\
 
-$\nu_{LT_1}$ (-) & 0.37 & 0.248 & 0.254 & 0.296\\
-$\nu_{T_1T_2}$ (-) & 0.30 & 0.458 & 0.428 & 0.449\\
-$\nu_{LT_2}$ (-) & 0.69 & 0.248 & 0.254 & 0.306\\
+$\nu_{\mathrm{LT_1}}$ (-) & 0.37 & 0.248 & 0.254 & 0.296\\
+$\nu_{\mathrm{T_1T_2}}$ (-) & 0.30 & 0.458 & 0.428 & 0.449\\
+$\nu_{\mathrm{LT_2}}$ (-) & 0.69 & 0.248 & 0.254 & 0.306\\
 
 
 
