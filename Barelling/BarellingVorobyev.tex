@@ -919,7 +919,19 @@ There is an unlimited number of parametric simulations that could be done, and w
 
 Elastic moduli and Poisson’s ratios normalized with the correct values are presented in Figure \ref{fig:isovstriso} as a function of relative slippage due to platen friction and Poisson’s ratios for the isotropic case (a) and the transversely isotropic case, (b) and (c). 
 For all simulations the
-barrelling is leading to an overestimation of the Young's moduli, as shown in Figures \ref{fig:isovstriso}(a), (b) and (c). This is caused by the perturbed strain field in the area close to the upper and lower edges, where constrained material has a stiffer response. Noting the difference in scales of the $y$-axes, it is clear that the errors in Young’s modulus is significantly higher for the isotropic case than for the transversely isotropic case. This effect is larger for LT plane (loading in the L direction) than for the TT plane, comparing Figures \ref{fig:isovstriso}(b) and (c). As expected, the error is becomes larger for increasing Poisson’s ratio $\nu$. The perturbed zones are shown in Figure \ref{fig:Error} in term of local error on the examined face, where the modulus is determined simply as $\sigma_y/{\epsilon_y(x,y)}$ in (a), (b) and (c), and the Poisson ratio is determined as $-\epsilon_x/{\epsilon_y(x,y)}$. 
+barrelling is leading to an overestimation of the Young's moduli, as shown in
+Figures \ref{fig:isovstriso}(a), (b) and (c). This is caused by the perturbed
+strain field in the area close to the upper and lower edges, where constrained
+material has a stiffer response. Noting the difference in scales of the
+$y$-axes, it is clear that the errors in Young’s modulus is significantly higher
+for the isotropic case than for the transversely isotropic case. This effect is
+larger for LT plane (loading in the L direction) than for the TT plane,
+comparing Figures \ref{fig:isovstriso}(b) and (c). As expected, the error is
+becomes larger for increasing Poisson’s ratio $\nu$. The perturbed zones are
+shown in Figure \ref{fig:Error} in term of local error on the examined face,
+where the modulus is determined simply as
+$\bar{\sigma_y}/{\epsilon_y(x,y)}$ in (a), (b) and (c), and the
+Poisson ratio is determined as $-\epsilon_x/{\epsilon_y(x,y)}$.
 In general, for increasing Poisson's ratio, the error becomes larger. 
 For the transversely isotropic material in Figures
 \ref{fig:isovstriso} (b) and (c) the error in Young's moduli is less in
@@ -930,9 +942,9 @@ transversely isotropic materials shown in Figure
 observe the patterns of the constraining effect that originate from the top
 and bottom of the cube face where the sample is in contact with the platens. The constraining effect is significant in the zones within $20\%$ of height
 from the horizontal edges of the model. 
-Figure \ref{fig:isovstriso} (a’) shows that the relative error for the
+Figure \ref{fig:isovstriso} (a\textprime) shows that the relative error for the
 Poisson's ratio is smaller in isotropic material than in transversely isotropic
-materials in Figure \ref{fig:isovstriso} (b’,c’). This can also be observed
+materials in Figure \ref{fig:isovstriso} (b\textprime,c\textprime). This can also be observed
 by the with the corresponding strain ratio field in Figure \ref{fig:Error} (a\textprime).
 
 \begin{figure}[h]
@@ -950,9 +962,10 @@ the numerical model. For the transversely isotropic cases, Figures
 \ref{fig:isovstriso} (b\textprime), (LT plane) and (c\textprime), (TT plane) the error is
 non-negligible also in the central part of the cube face. The effect is stronger for the LT plane, where the perturbed zones extends over a larger area.
 For instance, for the displacement factor $\delta/\delta_{max}\approx0.2 $ (where $K=0.1$),  the Poisson's ratio is
-underestimated by as much as $30-40\%$, $cf.$\ Figure \ref{fig:isovstriso} (b’).
+underestimated by as much as $30-40\%$, $cf.$\ Figure \ref{fig:isovstriso}
+(b\textprime).
 The same situation is for the TT plane  but the effect is not as critical as the LT plane.
-Referring to Figure \ref{fig:Error} (a\textprime-c’\textprime),we can see that
+Referring to Figure \ref{fig:Error} (a\textprime-c\textprime),we can see that
 the constraining effect is significant for the case of the Poisson's ratio. Blue colored area where the error is above $5\%$ tend to spread from the horizontal edges of 
 the model throughout the central area of the material. The most accurate
 estimation of Poisson's ratio would be in the central area close to the vertical
@@ -1360,7 +1373,9 @@ height=4cm,width=\textwidth/3.5, title={(d\textprime)},
 %         rotate=60,anchor=east},
     ymajorgrids=true,
     grid style=dashed,
-    bar shift=0pt
+    bar shift=0pt,
+    cycle list name=black white,
+    smooth
 ]
 
     \addplot table[x=nuxy,y=tr0	] {\nuexperimentBasic}; \label{nuk1}
@@ -1380,7 +1395,7 @@ height=4cm,width=\textwidth/3.5, title={(d\textprime)},
 
 \caption{Normalized Young's moduli and Poisson's ratio vs. given Poisson's ratio
 of transversely isotropic material with different slippage conditions relative
-to different ways of measuring strain}
+to different ways of measuring strain.}
 \label{fig:strainmethods}
 
 
