@@ -76,7 +76,7 @@
 
 \begin{document}
 \doublespacing
-%\Large
+\Large
 %\setstretch{1.1}
 
 
@@ -155,12 +155,11 @@ e.g. for finite-element modelling of wood joints that are locally subjected to a
 triaxial stress state. Compressive experiments are generally considered to be
 reliable method for identifying engineering constants such as Young's moduli and Poisson's ratios. The general approach is to measure the material response due to applied
 forces. The procedure is straightforward and easy to perform due to simplicity of experimental installation and low requirements to sample
-geometry. ASTM D143 standard \cite{standard1997d143,
+geometry. The ASTM D-143 standard \cite{standard1997d143,
 johnson1983compression} require the usage of elongated rectangular prisms for
 the compressive testing along with strain gauges.
-For rare materials such as archaeological wood, it is more convenient to use
-cubic samples \cite{ljungdahl2007transverse, vorobyevcharacterisation} to save
-material.
+For rare materials such as archaeological wood (as exemplified in Figure
+\ref{fig:fourgraphs} (a)), it is more convenient to use cubic samples \cite{ljungdahl2007transverse, vorobyevcharacterisation} to save material.
 This enables the same sample to be tested several times and in
 different directions (typically radial, tangential, longitudinal) if the loads are
 applied within the elastic range and do not cause and irreversible damage in the material.
@@ -168,7 +167,7 @@ A disadvantage of compressive testing of cubes compared to the tensile testing
 of dog-bone samples is that it can be difficult to ensure a homogeneous stress
 state due to geometrical imperfections in the test samples
 \cite{Toftegaard1999849}.
-Moreover, barrelling  (as illustrated in Figure \ref{fig:barrelling}) during
+Moreover, barrelling  (as illustrated in Figure \ref{fig:fourgraphs} (b)) during
 compressive loading \cite{oldroyd1966stress} caused by friction between the platens and the
 sample makes it difficult to assess the non-uniform deformation in order to
 determine the elastic parameters.
@@ -205,7 +204,7 @@ imperfections supported by a locked hemispherical seat compared to conventional 
 
 
 
-The purpose of the present work is to investigates the occurence of barrelling
+The purpose of the present work is to investigates the occurrence of barrelling
  on the accuracy of the obtained elastic properties in three different types of material behaviour, namely isotropic, transversely isotropic and orthotropic elastic properties, in ranges applicable for archeological wood.
 Additionally, four strain measuring techniques using DSP (full field and central
 area of interest), strain gauges (recommended by the standard 
@@ -287,7 +286,7 @@ The results can help to estimate the induced errors for the alternative strain m
         \centering
         \includegraphics[width=\textwidth]{VasaCube.pdf}
         \caption{}
-        \label{fig:vasacube}
+        \label{}
          \vspace*{1cm}
     \end{subfigure}
     \hfill
@@ -295,7 +294,7 @@ The results can help to estimate the induced errors for the alternative strain m
         \centering
         \includegraphics[width=\textwidth]{BarellingEffectZoomed.pdf}
         \caption{}
-        \label{fig:barrelling}
+        \label{}
         \vspace*{1cm}
         
     \end{subfigure}
@@ -388,7 +387,7 @@ The results can help to estimate the induced errors for the alternative strain m
 		
 		\end{tikzpicture}		
         \caption{}
-        \label{fig:explot}
+        \label{}
     \end{subfigure}
 
 \caption{(a) Vasa oak sample (b) Barrelling of an initially cubic shape.
@@ -397,7 +396,7 @@ displacement field. (d) Experimental stress-strain curves for Vasa oak  sample
 %, chosen surface area of interest(\ref{ex2}) and total surface area 
 %(\ref{ex1})
 .}
-\label{fig:threegraphs}
+\label{fig:fourgraphs}
 \end{figure}
 
 
@@ -486,7 +485,7 @@ These strains are a result of the imposed displacement of the opposite faces of 
 face (Full field).
 \item Average strains in the $x$ and $y$ directions over a centred area spanning
 the width and covering 60\% of the total analysed cube face, as shown in Figure
-\ref{fig:experiment}. This area of interest was chosen to represent DSP
+\ref{fig:fourgraphs} (c). This area of interest was chosen to represent DSP
 measurements away from the constrained regions affected by restrained slippage
 along the platens (Central band).
 \item Average strain between two points in the $x$ and $y$ directions,
@@ -495,21 +494,11 @@ the zone in which the strains are determined by the strain gauge as suggested in
 the ASTM D143 standard (Strain gauges).
 \cite{american2009standard}.
 \item Average strain based directly on the 
-measurements in the universal testing mashine from the
+measurements in the universal testing machine from the
 displacements of the compression platens (Basic method)
 \end{itemize}
 
 
-% Three strain measuring cases were taken intro account in simulation. The first
-% case can be considered the same as taking the average dimensional changes of a
-% sample. In particular the average strain from the total surface area was
-% obtained and used as a value for obtaining axial stiffness $E_L$. In the
-% second case, $50\%$ of cube surface (Figure \ref{fig:experiment}) was
-% used to calculate the average strain corresponding to experimental measurement.
-% Finally, in the third method the strain is measured between two points
-% in horizontal and two points in vertical direction in the center of the sample
-% as it is with the strain gauge based on ASTM-D143-94 standard
-% \cite{american2009standard}.
 
 \subsection{Experimental procedures}
 
@@ -531,8 +520,8 @@ The chosen region of interest is marked by the dashed line in Figure
 strain fields were smoothed by averaging of each data pixel with $3\times3$ surrounding pixels in order to avoid 
 undesired spike artifacts in the measured strain field.
 The strain determined by DSP in the loading direction was plotted against the
-applied stress, as exemplified in Figure \ref{fig:explot}(c). The choice of strain measure
-is the subject of a later discussion.
+applied stress, as exemplified in Figure \ref{fig:fourgraphs}(d). The choice of
+strain measure is the subject of a later discussion.
 The Poisson's ratios $\nu_{xy}$ for all corresponding orthotropic planes were
 calculated as the negative ratio between the average transverse
 $\varepsilon_{x}$ (passive ) and normal $\varepsilon_{y}$ (compressive and
@@ -1463,7 +1452,7 @@ In the second approach only the middle 60\% of the area part was
 taken for determination of strain. The plot in Figure
 \ref{fig:strainmethods}(a) shows that with this method the Young's moduli is
 less overestimated than in the first approach.\par In the third approach where
-the Standard ASTM-D143-94 with strain gauge technique was used, the error is very close to the one in
+the Standard ASTM D143-94 with strain gauge technique was used, the error is very close to the one in
 second approach. The plot in Figure \ref{fig:strainmethods}(c) depicts that
 this happens because the strain is measured between two points in the center of 
 the sample where the constraining effect is less severe. 
@@ -1660,7 +1649,7 @@ be used to determine the rest.
 
 \section{Conclusions}
 
-The barrelling in cubic samples subjected to compressive testing is an phenonomenon that can influence the
+The barrelling in cubic samples subjected to compressive testing is an phenomenon that can influence the
 estimation of the engineering elastic constants. The magnitude of the error depends on the type of material anisotropy, viz. 
 isotropic, transversely isotropic and orthotropic materials, which are representative of most load carrying materials :
 
@@ -1726,6 +1715,8 @@ out within the ``Support Vasa'' project, where financial contributions come from
 Vetenskapsr{\aa}det in addition to the National Martime Museums of Sweden and Uppsala University. 
 \section*{References}
 \bibliography{mybibfile}
+\doublespacing
+\Large
 
 
 
@@ -1780,7 +1771,7 @@ Vasa oak \\
 \begin{tabular}{@{}c@{}}Graphite-polymer \\ composite \cite{hyer2009stress} \end{tabular} & \begin{tabular}{@{}c@{}}Glass-polymer \\
 composite \cite{hyer2009stress}\end{tabular}  & \begin{tabular}{@{}c@{}}
  S2 glass reinforced  \\
-epoxy \cite{american2002composite} \end{tabular}  
+epoxy \cite{hyer2009stress} \end{tabular}  
 \\
 %  & $E_{1}$  & $E_{2}$ (GPa) & $E_L$ (GPa) & $\nu_{12}$ & $\nu_{13}$
 % & $\nu_{23}$ & $G_{12}$ (GPa) & $G_{13}$ (GPa) & $G_{23}$ (GPa) \\ % inserts
